@@ -1,0 +1,37 @@
+{
+  "name": "js-datastructure",
+  "version": "1.0.0",
+  "description": "NodeJS library with lot of Data Structures to help Back-End Developors",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArjunAtlast/js-datastructure.git"
+  },
+  "keywords": [
+    "datastructure",
+    "queue",
+    "stack",
+    "tree",
+    "hash",
+    "map",
+    "matrix",
+    "vector",
+    "library"
+  ],
+  "author": "Arjun Atlast",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArjunAtlast/js-datastructure/issues"
+  },
+  "homepage": "https://github.com/ArjunAtlast/js-datastructure#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "typescript": "^2.8.3"
+  }
+}
