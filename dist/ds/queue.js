@@ -29,6 +29,16 @@ var Queue = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Queue.prototype, "length", {
+        /**
+          Returns size of the queue
+        */
+        get: function () {
+            return this._store.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
     /**
       Add item to the end of the queue
     */

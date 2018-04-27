@@ -53,7 +53,7 @@ var ListIterator = /** @class */ (function (_super) {
     */
     ListIterator.prototype.previous = function () {
         if (this.hasPrevious()) {
-            this.lastIndex = this._index;
+            this.lastIndex = this._index - 1;
             return this._target[--this._index];
         }
         return undefined;

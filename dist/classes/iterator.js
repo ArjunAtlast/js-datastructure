@@ -19,7 +19,7 @@ var Iterator = /** @class */ (function () {
       Returns true if the iteration has more elements.
     */
     Iterator.prototype.hasNext = function () {
-        return !(this._index == this._target.length - 1);
+        return !(this._index == this._target.length);
     };
     /**
       Returns the next element in the iteration.
@@ -31,8 +31,7 @@ var Iterator = /** @class */ (function () {
       Removes from the underlying Iterable the last element returned by this iterator.
     */
     Iterator.prototype.remove = function () {
-        this._target.splice(this._index - 1, 1);
-        this._index--;
+        this._target.splice(--this._index, 1);
     };
     return Iterator;
 }());

@@ -22,7 +22,7 @@ export class Iterator<E> {
     Returns true if the iteration has more elements.
   */
   hasNext():boolean {
-    return !(this._index == this._target.length-1);
+    return !(this._index == this._target.length);
   }
 
   /**
@@ -36,8 +36,7 @@ export class Iterator<E> {
     Removes from the underlying Iterable the last element returned by this iterator.
   */
   remove():void {
-    this._target.splice(this._index-1,1);
-    this._index--;
+    this._target.splice(--this._index,1);
   }
 
 }

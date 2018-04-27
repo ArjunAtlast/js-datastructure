@@ -11,6 +11,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var abstract_collection_1 = require("./abstract-collection");
+var list_iterator_1 = require("../classes/list-iterator");
 var AbstractList = /** @class */ (function (_super) {
     __extends(AbstractList, _super);
     function AbstractList() {
@@ -20,11 +21,18 @@ var AbstractList = /** @class */ (function (_super) {
         }
         return _super.apply(this, args) || this;
     }
-    /*
+    /**
       Read an item from the list
     */
     AbstractList.prototype.get = function (index) {
         return this._store[index];
+    };
+    /**
+      Returns a list iterator over the elements in this list
+    */
+    AbstractList.prototype.listIterator = function (index) {
+        if (index === void 0) { index = 0; }
+        return new list_iterator_1.ListIterator(this._store, index);
     };
     return AbstractList;
 }(abstract_collection_1.AbstractCollection));

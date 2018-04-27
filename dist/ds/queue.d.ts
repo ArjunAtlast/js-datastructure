@@ -12,6 +12,10 @@ export declare class Queue<T> implements Iterable<T> {
     */
     readonly rear: T | undefined;
     /**
+      Returns size of the queue
+    */
+    readonly length: number;
+    /**
       Add item to the end of the queue
     */
     enqueue(item: T): void;

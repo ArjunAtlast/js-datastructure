@@ -23,6 +23,13 @@ export class Queue<T> implements Iterable<T> {
   }
 
   /**
+    Returns size of the queue
+  */
+  get length():number {
+    return this._store.length;
+  }
+
+  /**
     Add item to the end of the queue
   */
   enqueue(item:T):void {

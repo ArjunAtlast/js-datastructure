@@ -10,6 +10,7 @@ describe("Checking Components..", () => {
     it("constructor", () => {
       expect(index.Stack).to.not.equal(undefined);
       expect(s).to.be.an.instanceOf(index.Stack);
+      expect(s.height).to.equal(3);
     });
     it("pop", () => {
       expect(s.pop()).to.equal(3);
@@ -39,7 +40,7 @@ describe("Checking Components..", () => {
     });
     it("remove", () => {
       itr.remove();
-      expect(q.first).to.not.equal(2);
+      expect(q.front).to.equal(2);
     });
     it("forEachRemaining", () => {
       let a = [2,3];
@@ -48,7 +49,12 @@ describe("Checking Components..", () => {
       });
     });
     it("hasNext", () => {
-
+      expect(itr.hasNext()).to.equal(true);
+      expect(itr.next()).to.equal(2);
+      expect(itr.hasNext()).to.equal(true);
+      expect(itr.next()).to.equal(3);
+      expect(itr.hasNext()).to.equal(false);
+      expect(itr.next()).to.equal(undefined);
     });
   });
 
@@ -60,6 +66,7 @@ describe("Checking Components..", () => {
       expect(q).to.be.an.instanceOf(index.Queue);
       expect(q.front).to.equal(1);
       expect(q.rear).to.equal(3);
+      expect(q.length).to.equal(3);
     });
     it("enqueue", () => {
       q.enqueue(5);
@@ -142,12 +149,70 @@ describe("Checking Components..", () => {
     it("toArray", () => {
       expect(ac.toArray()).to.be.an.instanceOf(Array);
     });
+    it("forEach", () => {
+      ac.forEach((item,index) => {
+        expect(item).to.equal(ac.toArray()[index]);
+      });
+    });
+    it("iterator", () => {
+      expect(ac.iterator()).to.be.an.instanceOf(index.Iterator);
+    });
   });
-
-  // it("ListIterator", () => {
-  //   expect(index.ListIterator).to.not.equal(undefined);
-  // });
-  // it("AbstractList", () => {
-  //   expect(index.AbstractList).to.not.equal(undefined);
-  // });
+  //ListIterator
+  describe("ListIterator", () => {
+    var l = new index.AbstractList(1,2,3);
+    var itr = l.listIterator();
+    it("constructor", () => {
+      expect(index.ListIterator).to.not.equal(undefined);
+      expect(itr).to.be.an.instanceOf(index.ListIterator);
+    });
+    it("next", () => {
+      expect(itr.next()).to.equal(1);
+    });
+    it("add", () => {
+      itr.add(1.5);
+      expect(itr.next()).to.equal(1.5);
+    });
+    it("remove", () => {
+      itr.remove();
+      expect(l.get(1)).to.equal(2);
+    });
+    it("previous, hasPrevious", () => {
+      expect(itr.hasPrevious()).to.equal(true);
+      expect(itr.previous()).to.equal(1);
+      expect(itr.hasPrevious()).to.equal(false);
+      expect(itr.previous()).to.equal(undefined);
+    });
+    it("nextIndex, previousIndex", () => {
+      expect(itr.previousIndex()).to.equal(-1);
+      itr.next()
+      expect(itr.previousIndex()).to.equal(0);
+      expect(itr.nextIndex()).to.equal(1);
+      itr.next();
+      expect(itr.nextIndex()).to.equal(2);
+      itr.next();
+      expect(itr.nextIndex()).to.equal(-1);
+      expect(itr.next()).to.equal(undefined);
+    });
+    it("set", () => {
+      itr.set(2.5);
+      expect(itr.previous()).to.equal(2.5);
+      itr.set(2.3);
+      expect(itr.next()).to.equal(2.3);
+    });
+  });
+  describe("AbstractList", () => {
+    let l = new index.AbstractList(1,2,3);
+    it("constructor", () => {
+      expect(index.AbstractList).to.not.equal(undefined);
+      expect(l).to.be.an.instanceOf(index.AbstractList);
+    });
+    it("get", () => {
+      expect(l.get(2)).to.equal(3);
+      expect(l.get(5)).to.equal(undefined);
+    });
+    it("listIterator", () => {
+      expect(l.listIterator()).to.be.an.instanceOf(index.ListIterator);
+    });
+  });
 });
