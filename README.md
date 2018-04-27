@@ -2,6 +2,8 @@
 
 NodeJS library with lot of Data Structures to help Back-End Developors
 
+[![Build Status](https://travis-ci.org/ArjunAtlast/js-datastructure.svg?branch=master)](https://travis-ci.org/ArjunAtlast/js-datastructure)
+
 ##Docs
 
 * [Stack](#stack)
