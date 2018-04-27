@@ -7,10 +7,10 @@ NodeJS library with lot of Data Structures to help Back-End Developors
 
 ##Docs
 
-* [Stack](#stack-class)
-* [Iterable](#iterable-interface)
-* [Queue](#queue-class)
-* [Iterator](#iterator-class)
+* [Stack](#stackt-class)
+* [Iterable](#iterablet-interface)
+* [Queue](#queuet-class)
+* [Iterator](#iteratore-class)
 
 ## Stack\<T\> <sup>Class</sup>
 
@@ -74,7 +74,7 @@ var q = new Queue<number>(1,2,3,...); //number stack
 *Note: an empty queue returns undefined for a dequeue operation*
 
 ---
-## Iterator<E> <sup>Class</sup>
+## Iterator\<E\> <sup>Class</sup>
 
 Used to iterate over element of type E.
 
