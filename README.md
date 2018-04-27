@@ -7,10 +7,12 @@ NodeJS library with lot of Data Structures to help Back-End Developors
 
 ##Docs
 
-* [Stack](#stack)
-* [Queue](#queue)
+* [Stack](#stack-class)
+* [Iterable](#iterable-interface)
+* [Queue](#queue-class)
+* [Iterator](#iterator-class)
 
-## Stack<T> *Class*
+## Stack\<T\> <sup>Class</sup>
 
 Creates a Stack datastructure.
 
@@ -28,23 +30,23 @@ var s = new Stack<number>(1,2,3,...); //number stack
 
 ### Operations
 
-* **push(item:<T>):void**   - Push item to the top of the stack.
-* **pop():<T>**             - Pop top of the stack and return.
-* **peek():<T>**            - Return top of the stack (does not pop).
+* **push(item:\<T\>):void**   - Push item to the top of the stack.
+* **pop():\<T\>**             - Pop top of the stack and return.
+* **peek():\<T\>**            - Return top of the stack (does not pop).
 * **search(item:T):number** - Return first index (from top of the stack) of an item in stack.*-1 is returned in case the item doesn't exist on stack*
 
 *Note: an empty stack returns undefined for a pop or peek operation.*
 
-## Iterable<T>*Interface*
+## Iterable\<T\> <sup>Interface</sup>
 
 Implementing this interface allows an object to have forEach functionality.
 
 ## Methods
 
 * **forEach(action:Function):void** - Loop over each element and execute an action.
-* **iterator():Iterator<T>**        - Returns an iterator over elements of type T.
+* **iterator():Iterator\<T\>**        - Returns an iterator over elements of type T.
 
-## Queue<T> *Class*
+## Queue\<T\> <sup>Class</sup>
 
 Creates a queue datastructure.*(Implements Iterable)*
 
@@ -72,7 +74,7 @@ var q = new Queue<number>(1,2,3,...); //number stack
 *Note: an empty queue returns undefined for a dequeue operation*
 
 ---
-## Iterator<E> *Class*
+## Iterator<E> <sup>Class</sup>
 
 Used to iterate over element of type E.
 
