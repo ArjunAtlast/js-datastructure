@@ -1,19 +1,62 @@
 import { Iterable } from "./iterable";
 import { Iterator } from "../classes/iterator";
 
+/** Collection is a set of elements of same type.*/
 export interface Collection<T> extends Iterable<T> {
-  add: (item:T) => boolean;
-  addAll: (items:T[]) => boolean;
-  clear: () => void;
-  contains: (item:T) => boolean;
-  containsAll: (items:T[]) => boolean;
-  equals: (collection:Collection<T>) => boolean;
-  isEmpty: () => boolean;
-  remove: (item:T) => boolean;
-  removeAll: (items:T[]) => boolean;
-  removeIf: (filterFn: (item:T, index:number, collection:Collection<T>)=>boolean) => boolean;
-  retainAll: (items:T[]) => boolean;
-  size: () => number;
-  toArray: () => T[];
-  forEach: (action:(item:T, index:number, collection:Collection<T>) => void)=>void;
+  /**
+    Add an item to collection
+  */
+  add(item:T):boolean;
+  /**
+    Add all items of an array to collection
+  */
+  addAll(items:T[]):boolean;
+  /**
+    Removes all of the elements from this collection
+  */
+  clear():void;
+  /**
+    Returns true if this collection contains the specified element.
+  */
+  contains(item:T):boolean;
+  /**
+    Returns true if this collection contains all of the elements in the specified array.
+  */
+  containsAll(items:T[]):boolean;
+  /**
+    Compares the specified object with this collection for equality.
+  */
+  equals(collection:Collection<T>):boolean;
+  /**
+    Returns true if this collection contains no elements.
+  */
+  isEmpty():boolean;
+  /**
+    Removes a single instance of the specified element from this collection, if it is present
+  */
+  remove(item:T):boolean;
+  /**
+    Removes all of this collection's elements that are also contained in the specified array.
+  */
+  removeAll(items:T[]):boolean;
+  /**
+    Removes all of the elements of this collection that satisfy the given filter function.
+  */
+  removeIf(filterFn: (item:T, index:number, collection:Collection<T>)=>boolean):boolean;
+  /**
+    Retains only the elements in this collection that are contained in the specified array.
+  */
+  retainAll(items:T[]):boolean;
+  /**
+    Returns the number of elements in this collection.
+  */
+  size():number;
+  /**
+    Returns an array containing all of the elements in this collection
+  */
+  toArray():T[];
+  /**
+    Performs an action for each item in this collection.
+  */
+  forEach(action:(item:T, index:number, collection:Collection<T>)=>void):void;
 }

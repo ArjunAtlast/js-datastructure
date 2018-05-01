@@ -1,6 +1,7 @@
 import { Iterable } from "../interfaces/iterable";
 import { Iterator } from "../classes/iterator";
 
+/** Creates a simple Queue (FIFO) datastructure */
 export class Queue<T> implements Iterable<T> {
   private _store:T[];
 

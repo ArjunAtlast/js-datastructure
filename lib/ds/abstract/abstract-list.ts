@@ -1,6 +1,9 @@
 import {AbstractCollection} from "./abstract-collection";
-import {ListIterator} from "../classes/list-iterator";
+import {ListIterator} from "../../classes/list-iterator";
 
+/**
+ An abstract implementation of List interface
+*/
 export class AbstractList<T> extends AbstractCollection<T>{
 
   constructor(...args:T[]) {
@@ -20,6 +23,4 @@ export class AbstractList<T> extends AbstractCollection<T>{
   listIterator(index:number=0):ListIterator<T> {
     return new ListIterator(this._store, index);
   }
-
-
 }

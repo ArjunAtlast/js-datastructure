@@ -1,3 +1,5 @@
+/** Create a Stack (LIFO) datastructure. */
+
 export class Stack<T> {
   private _store:T[];
 

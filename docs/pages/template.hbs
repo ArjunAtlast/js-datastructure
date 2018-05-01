@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="charset" content="utf-8">
+    <title>JS-Datastructures Documentation</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+    <link rel="stylesheet" href="hljs_custom.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <div id="sidebar" data-simplebar>
+        <ul class="sidebar-dropdown-list">
+        {{! Bring all exported modules to scope}}
+        {{#Exported project.children}}
+          {{#each this}}
+            <li class="dropdown-list-item">
+              <a class="dropdown-list-item-title" href="#jsd{{this.id}}">
+                <i class="material-icons">{{Icon this}}</i>
+                {{this.name}}
+              </a>
+              {{!Sublist}}
+                <ul class="sidebar-sublist">
+                  <li class="dropdown-sublist-item">
+                    <a class="item-type-accessor" href="#jsd{{this.id}}">
+                      _ intro
+                      <i class="material-icons">{{Icon this}}</i>
+                    </a>
+                  </li>
+                  {{!Accessors}}
+                  {{#Accessor this.children}}
+                    <li class="dropdown-sublist-item">
+                      <a class="item-type-accessor" href="#jsd{{this.id}}">
+                        _.{{this.name}}
+                        <i class="material-icons">{{Icon this}}</i>
+                      </a>
+                    </li>
+                  {{/Accessor}}
+                  {{!Methods}}
+                  {{#Method this.children}}
+                  <li class="dropdown-sublist-item">
+                    <a class="item-type-method" href="#jsd{{this.id}}">
+                      _.{{this.name}}
+                      <i class="material-icons">{{Icon this}}</i>
+                    </a>
+                  </li>
+                  {{/Method}}
+                </ul>
+            </li>
+          {{/each}}
+        {{/Exported}}
+        </ul>
+      </div>
+      <div class="wrapper">
+        <nav id="navbar">
+          <div class="navbar-action">
+            <button type="button" class="open-sidebar">
+              <i class="material-icons">menu</i>
+            </button>
+          </div>
+          <div class="navbar-brand">JSD</div>
+        </nav>
+
+        <!-- Main Documentation Area -->
+        <div class="doc-main">
+          {{#Exported project.children}}
+            {{#each this}}
+            <section class="doc-section">
+
+              {{!Title}}
+              <a name="jsd{{this.id}}">
+                <h3 class="section-title">
+                  <i class="material-icons">{{Icon this}}</i>
+                  {{this.name}}{{TypeParams this}}
+                </h3>
+              </a>
+
+              {{!Description}}
+              {{#Description this}}
+                <div class="section-description">
+                  - {{this.shortText}}
+                </div>
+              {{/Description}}
+
+              {{!Constructor}}
+              {{#Constructor this.children}}
+                <div class="section-constructor">
+                  {{#each this.signatures}}
+                    <div class="section-signature">
+                      {{../name}}({{Params this}})
+                    </div>
+                  {{/each}}
+                </div>
+              {{/Constructor}}
+
+              {{!Accessors}}
+              {{#hasKind this.children 'Accessor'}}
+              <div class="section-accessors">
+                {{!Subtitle}}
+                <h4 class="section-subtitle">
+                  <i class="material-icons">{{getIcon 'Accessor'}}</i>
+                  <big>"{{name}}"</big> Accessors
+                </h4>
+                {{!Each Accessor}}
+                {{#Accessor this.children}}
+                  <a name="jsd{{this.id}}"></a>
+                  <div class="section-accessor">
+                    <div class="section-signature">
+                      _.{{this.name}}
+                    </div>
+
+                    {{#Description this}}
+                      <div class="section-description">
+                        - {{this.shortText}}
+                      </div>
+                      <div class="section-examples">
+
+                        {{!Example}}
+                        {{#Example this}}
+                          <div class="section-example">
+                            <span class="min-title">@example</span>
+                            <pre><code class="js">
+                                {{~this.text}}
+                              </code></pre>
+                          </div>
+                        {{/Example}}
+
+                      </div>
+                    {{/Description}}
+
+                  </div>
+
+                  {{else}}
+                    <div class="placeholder">None</div>
+
+                {{/Accessor}}
+              </div>
+              {{/hasKind}}
+
+              {{!Methods}}
+              {{#hasKind this.children 'Method'}}
+              <div class="section-methods">
+                <h4 class="section-subtitle">
+                  <i class="material-icons">{{getIcon 'Method'}}</i>
+                  <big>"{{name}}"</big> Methods
+                </h4>
+                {{!Each Method}}
+                {{#Method this.children}}
+
+                  <a name="jsd{{this.id}}"></a>
+                  <div class="section-method">
+                    {{#each this.signatures}}
+                    <div class="section-signature">
+                      _.{{../name}}({{Params this}})
+                    </div>
+
+                    {{#Description this}}
+                      <div class="section-description">
+                        - {{this.shortText}}
+                      </div>
+                      <div class="section-examples">
+                        {{#Example this}}
+                          <div class="section-example">
+                            <span class="min-title">@example</span>
+                            <pre><code class="js">
+                                {{~this.text}}
+                              </code></pre>
+                          </div>
+                        {{/Example}}
+                      </div>
+                    {{/Description}}
+
+                    {{/each}}
+                  </div>
+
+                {{else}}
+                  <div class="placeholder">None</div>
+
+                {{/Method}}
+              </div>
+              {{/hasKind}}
+
+            </section>
+            {{/each}}
+          {{/Exported}}
+        </div>
+      </div>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script>
+      <script type="text/javascript" src="scripts/script.js"></script>
+  </body>
+</html>

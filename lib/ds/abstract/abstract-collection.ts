@@ -1,6 +1,9 @@
-import { Collection } from "../interfaces/collection";
-import { Iterator } from "../classes/iterator";
+import { Collection } from "../../interfaces/collection";
+import { Iterator } from "../../classes/iterator";
 
+/**
+ An abstract implementation of Collection interface
+*/
 export abstract class AbstractCollection<T> implements Collection<T>{
   protected _store:T[] = [];
 

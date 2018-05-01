@@ -1,0 +1,170 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  color: #050309; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.placeholder {
+  display: flex;
+  padding: 32px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #e8e1f5;
+  color: #050309;
+  font-weight: 100;
+  font-size: 1.3rem; }
+
+main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  main #sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100vh;
+    background: #673AB7;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14); }
+    main #sidebar.open {
+      width: 300px; }
+    main #sidebar .simplebar-content {
+      overflow-x: hidden !important; }
+    main #sidebar .sidebar-dropdown-list {
+      width: 300px; }
+      main #sidebar .sidebar-dropdown-list > .dropdown-list-item a.dropdown-list-item-title {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        color: #fff;
+        text-decoration: none;
+        background: #673AB7;
+        font-size: 1.5rem;
+        font-weight: 300; }
+        main #sidebar .sidebar-dropdown-list > .dropdown-list-item a.dropdown-list-item-title .material-icons {
+          padding-right: 8px; }
+      main #sidebar .sidebar-dropdown-list > .dropdown-list-item > .sidebar-sublist {
+        display: none; }
+        main #sidebar .sidebar-dropdown-list > .dropdown-list-item > .sidebar-sublist > .dropdown-sublist-item a {
+          display: flex;
+          align-items: center;
+          padding: 8px 16px;
+          padding-left: 32px;
+          color: #fff;
+          background: #050309;
+          text-decoration: none;
+          font-weight: 500;
+          transition: background 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14); }
+          main #sidebar .sidebar-dropdown-list > .dropdown-list-item > .sidebar-sublist > .dropdown-sublist-item a:hover {
+            background: rgba(5, 3, 9, 0.8); }
+            main #sidebar .sidebar-dropdown-list > .dropdown-list-item > .sidebar-sublist > .dropdown-sublist-item a:hover .material-icons {
+              opacity: 1; }
+          main #sidebar .sidebar-dropdown-list > .dropdown-list-item > .sidebar-sublist > .dropdown-sublist-item a .material-icons {
+            font-size: 18px;
+            margin-left: auto;
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14); }
+  main .wrapper {
+    width: 0px;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    transition: width 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14), padding 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14);
+    flex: 1;
+    background: #fff; }
+    main .wrapper #navbar {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.33);
+      transition: all 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14);
+      top: -100%; }
+      main .wrapper #navbar.locked {
+        position: fixed;
+        top: 0;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.33); }
+      main .wrapper #navbar .navbar-action {
+        padding: 16px; }
+        main .wrapper #navbar .navbar-action.left {
+          padding-right: 8px; }
+        main .wrapper #navbar .navbar-action .open-sidebar {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          transition: color 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14); }
+          main .wrapper #navbar .navbar-action .open-sidebar:hover {
+            color: #673AB7; }
+          main .wrapper #navbar .navbar-action .open-sidebar:focus {
+            box-shadow: none;
+            outline: none; }
+      main .wrapper #navbar .navbar-brand {
+        position: relative;
+        padding: 16px;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #050309; }
+        main .wrapper #navbar .navbar-brand::after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 5px;
+          background: #673AB7;
+          top: calc(100% - 5px);
+          left: 0; }
+    main .wrapper div.doc-main section.doc-section h3.section-title {
+      display: flex;
+      align-items: center;
+      font-weight: 300;
+      font-size: 1.7rem;
+      padding: 16px;
+      border-bottom: 5px solid #673AB7; }
+      main .wrapper div.doc-main section.doc-section h3.section-title .material-icons {
+        padding-right: 8px;
+        color: #673AB7; }
+    main .wrapper div.doc-main section.doc-section .section-description {
+      width: 100%;
+      padding: 24px;
+      padding-left: 48px;
+      font-size: 0.9rem;
+      background: #e8e1f5; }
+    main .wrapper div.doc-main section.doc-section .section-constructor, main .wrapper div.doc-main section.doc-section .section-methods .section-method, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor {
+      width: 100%; }
+      main .wrapper div.doc-main section.doc-section .section-constructor .section-signature, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-signature, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-signature {
+        padding: 16px 32px;
+        background: #daceef;
+        font-size: 1.2rem;
+        font-weight: 500; }
+      main .wrapper div.doc-main section.doc-section .section-constructor .section-examples .section-example, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-examples .section-example, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-examples .section-example {
+        margin: 0;
+        background: #050309;
+        padding: 16px 32px; }
+        main .wrapper div.doc-main section.doc-section .section-constructor .section-examples .section-example .min-title, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-examples .section-example .min-title, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-examples .section-example .min-title {
+          color: #E91E63;
+          font-weight: 500;
+          font-style: oblique; }
+    main .wrapper div.doc-main section.doc-section .section-methods, main .wrapper div.doc-main section.doc-section .section-accessors {
+      width: 100%; }
+      main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 1.2rem;
+        padding: 16px 32px; }
+        main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle .material-icons, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle .material-icons {
+          color: #E91E63;
+          padding-right: 8px; }
+        main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle big, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle big {
+          font-size: 1.3rem;
+          font-weight: 200; }
+
+/*# sourceMappingURL=style.css.map */
