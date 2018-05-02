@@ -6,5 +6,5 @@ export { Iterator } from "./classes/iterator";
 export { ListIterator } from "./classes/list-iterator";
 export { Stack } from "./ds/stack";
 export { Queue } from "./ds/queue";
-export { AbstractCollection } from "./ds/abstract-collection";
-export { AbstractList } from "./ds/abstract-list";
+export { AbstractCollection } from "./ds/abstract/abstract-collection";
+export { AbstractList } from "./ds/abstract/abstract-list";

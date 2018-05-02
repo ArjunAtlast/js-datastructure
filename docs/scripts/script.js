@@ -4,7 +4,7 @@ $(document).ready(function(e){
   stickyNavbar("#navbar");
   $(".open-sidebar").click(toggleSidebar);
   $(".dropdown-list-item-title").click(toggleSublist);
-  scrollTo(".dropdown-sublist-item [class^='item-type']");
+  scrollTo(".scrolly");
 });
 
 function stickyNavbar(selector) {
@@ -40,6 +40,6 @@ function scrollTo(trigger) {
     $target = $(`a[name=${$href.substr(1,$href.length)}]`);
     $(".wrapper").animate({
       scrollTop: `+=${$target.offset().top-100}px`
-    }, 800, "swing");
+    },600,"swing");
   });
 }

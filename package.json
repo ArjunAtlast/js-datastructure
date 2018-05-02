@@ -8,7 +8,7 @@
     "build": "tsc",
     "test": "mocha --reporter spec",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js - - -R spec",
-    "makedoc": "typedoc lib/ --json docs/doc.json --mode file --module commonjs && node docs/make-doc.js"
+    "makedoc": "typedoc lib/ --json makedoc/doc.json --mode file --module commonjs && node makedoc/make-doc.js"
   },
   "repository": {
     "type": "git",

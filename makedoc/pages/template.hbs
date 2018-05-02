@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
-    <link rel="stylesheet" href="hljs_custom.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/hljs_custom.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <main>
@@ -33,7 +33,7 @@
                   {{!Accessors}}
                   {{#Accessor this.children}}
                     <li class="dropdown-sublist-item">
-                      <a class="item-type-accessor" href="#jsd{{this.id}}">
+                      <a class="item-type-accessor scrolly" href="#jsd{{this.id}}">
                         _.{{this.name}}
                         <i class="material-icons">{{Icon this}}</i>
                       </a>
@@ -42,7 +42,7 @@
                   {{!Methods}}
                   {{#Method this.children}}
                   <li class="dropdown-sublist-item">
-                    <a class="item-type-method" href="#jsd{{this.id}}">
+                    <a class="item-type-method scrolly" href="#jsd{{this.id}}">
                       _.{{this.name}}
                       <i class="material-icons">{{Icon this}}</i>
                     </a>
@@ -84,6 +84,54 @@
                   - {{this.shortText}}
                 </div>
               {{/Description}}
+
+              {{#ExtendedTypes this}}
+                <div class="section-inheritance">
+                  <i class="material-icons">{{getIcon 'Inheritance'}}</i>
+                  <span class="label">
+                    Extends:
+                  </span>
+                  {{#each this}}
+                    <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
+                  {{/each}}
+                </div>
+              {{/ExtendedTypes}}
+
+              {{#ImplementedTypes this}}
+                <div class="section-implementation">
+                  <i class="material-icons">{{getIcon 'Implementation'}}</i>
+                  <span class="label">
+                    Implements:
+                  </span>
+                  {{#each this}}
+                    <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
+                  {{/each}}
+                </div>
+              {{/ImplementedTypes}}
+
+              {{#ExtendedBy this}}
+                <div class="section-extended-by">
+                  <i class="material-icons">{{getIcon 'Extended'}}</i>
+                  <span class="label">
+                    Extended By:
+                  </span>
+                  {{#each this}}
+                    <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
+                  {{/each}}
+                </div>
+              {{/ExtendedBy}}
+
+              {{#ImplementedBy this}}
+                <div class="section-extended-by">
+                  <i class="material-icons">{{getIcon 'Extended'}}</i>
+                  <span class="label">
+                    Implemented By:
+                  </span>
+                  {{#each this}}
+                    <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
+                  {{/each}}
+                </div>
+              {{/ImplementedBy}}
 
               {{!Constructor}}
               {{#Constructor this.children}}
@@ -161,6 +209,27 @@
                       <div class="section-description">
                         - {{this.shortText}}
                       </div>
+
+                      {{#Inheritance ../this}}
+                        <div class="section-inheritance">
+                          <i class="material-icons">{{getIcon 'Inheritance'}}</i>
+                          <span class="label">
+                            Inherited from:
+                          </span>
+                          <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
+                        </div>
+                      {{/Inheritance}}
+
+                      {{#Implementation ../this}}
+                        <div class="section-implementation">
+                          <i class="material-icons">{{getIcon 'Implementation'}}</i>
+                          <span class="label">
+                            Implementation of:
+                          </span>
+                          <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
+                        </div>
+                      {{/Implementation}}
+
                       <div class="section-examples">
                         {{#Example this}}
                           <div class="section-example">

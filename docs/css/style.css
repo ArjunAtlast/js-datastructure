@@ -20,6 +20,13 @@ html, body {
   font-weight: 100;
   font-size: 1.3rem; }
 
+a:link, a:visited {
+  color: #E91E63;
+  text-decoration: none;
+  transition: color 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91); }
+  a:link:hover, a:visited:hover {
+    color: #f06493; }
+
 main {
   display: flex;
   width: 100%;
@@ -33,7 +40,7 @@ main {
     background: #673AB7;
     width: 0;
     overflow: hidden;
-    transition: width 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14); }
+    transition: width 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91); }
     main #sidebar.open {
       width: 300px; }
     main #sidebar .simplebar-content {
@@ -62,7 +69,7 @@ main {
           background: #050309;
           text-decoration: none;
           font-weight: 500;
-          transition: background 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14); }
+          transition: background 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91); }
           main #sidebar .sidebar-dropdown-list > .dropdown-list-item > .sidebar-sublist > .dropdown-sublist-item a:hover {
             background: rgba(5, 3, 9, 0.8); }
             main #sidebar .sidebar-dropdown-list > .dropdown-list-item > .sidebar-sublist > .dropdown-sublist-item a:hover .material-icons {
@@ -71,13 +78,13 @@ main {
             font-size: 18px;
             margin-left: auto;
             opacity: 0;
-            transition: opacity 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14); }
+            transition: opacity 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91); }
   main .wrapper {
     width: 0px;
     height: 100%;
     position: relative;
     overflow-y: auto;
-    transition: width 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14), padding 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14);
+    transition: width 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91), padding 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91);
     flex: 1;
     background: #fff; }
     main .wrapper #navbar {
@@ -86,7 +93,7 @@ main {
       width: 100%;
       background: #fff;
       box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.33);
-      transition: all 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14);
+      transition: all 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91);
       top: -100%; }
       main .wrapper #navbar.locked {
         position: fixed;
@@ -100,7 +107,7 @@ main {
           background: transparent;
           border: none;
           cursor: pointer;
-          transition: color 0.6s cubic-bezier(0.53, 0.01, 0.56, 1.14); }
+          transition: color 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91); }
           main .wrapper #navbar .navbar-action .open-sidebar:hover {
             color: #673AB7; }
           main .wrapper #navbar .navbar-action .open-sidebar:focus {
@@ -137,6 +144,31 @@ main {
       padding-left: 48px;
       font-size: 0.9rem;
       background: #e8e1f5; }
+    main .wrapper div.doc-main section.doc-section .section-inheritance, main .wrapper div.doc-main section.doc-section .section-implementation, main .wrapper div.doc-main section.doc-section .section-extended-by, main .wrapper div.doc-main section.doc-section .section-implemented-by {
+      display: flex;
+      padding: 8px 16px;
+      align-items: center;
+      background: #e8e1f5;
+      font-size: 0.8rem; }
+      main .wrapper div.doc-main section.doc-section .section-inheritance .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by .material-icons {
+        font-size: 18px;
+        color: #E91E63;
+        margin-right: 4px; }
+      main .wrapper div.doc-main section.doc-section .section-inheritance .label, main .wrapper div.doc-main section.doc-section .section-implementation .label, main .wrapper div.doc-main section.doc-section .section-extended-by .label, main .wrapper div.doc-main section.doc-section .section-implemented-by .label {
+        font-weight: 300; }
+      main .wrapper div.doc-main section.doc-section .section-inheritance a, main .wrapper div.doc-main section.doc-section .section-implementation a, main .wrapper div.doc-main section.doc-section .section-extended-by a, main .wrapper div.doc-main section.doc-section .section-implemented-by a {
+        margin-left: 8px;
+        font-weight: 500;
+        color: #050309;
+        padding: 4px;
+        transition: color 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91);
+        margin-right: 8px; }
+        main .wrapper div.doc-main section.doc-section .section-inheritance a:hover, main .wrapper div.doc-main section.doc-section .section-implementation a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by a:hover {
+          color: #E91E63; }
+      main .wrapper div.doc-main section.doc-section .section-inheritance.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-inheritance.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-implemented-by .material-icons {
+        color: #009688; }
+      main .wrapper div.doc-main section.doc-section .section-inheritance.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-inheritance.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-implementation.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implementation.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-implemented-by a:hover {
+        color: #009688; }
     main .wrapper div.doc-main section.doc-section .section-constructor, main .wrapper div.doc-main section.doc-section .section-methods .section-method, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor {
       width: 100%; }
       main .wrapper div.doc-main section.doc-section .section-constructor .section-signature, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-signature, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-signature {

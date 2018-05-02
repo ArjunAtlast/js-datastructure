@@ -25,6 +25,15 @@ html, body {
   font-size: 1.3rem;
 }
 
+a:link, a:visited {
+  color: $tintColor;
+  text-decoration: none;
+  transition: color $animDuration $animEasing;
+  &:hover {
+    color: lighten($tintColor, 15%);
+  }
+}
+
 main {
   display: flex;
   width: 100%;
@@ -169,6 +178,36 @@ main {
           padding-left: 48px;
           font-size: 0.9rem;
           background: lighten($primaryColor,45%);
+        }
+
+        .section-inheritance, .section-implementation, .section-extended-by, .section-implemented-by {
+          display: flex;
+          padding: 8px 16px;
+          align-items: center;
+          background: lighten($primaryColor,45%);
+          font-size: 0.8rem;
+          .material-icons {
+            font-size: 18px;
+            color: $tintColor;
+            margin-right: 4px;
+          }
+          .label {
+            font-weight: 300;
+          }
+          a {
+            margin-left: 8px;
+            font-weight: 500;
+            color: $darkColor;
+            padding: 4px;
+            transition: color $animDuration $animEasing;
+            margin-right: 8px;
+            &:hover { color: $tintColor;}
+          }
+
+          &.section-extended-by, &.section-implemented-by {
+            .material-icons { color: $tertiaryColor; }
+            a:hover{ color: $tertiaryColor; }
+          }
         }
 
         .section-constructor, .section-methods .section-method, .section-accessors .section-accessor {

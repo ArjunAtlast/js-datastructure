@@ -38,6 +38,10 @@ const icon_map = {
   'Method' : 'play_circle_outline',
   'Function' : 'play_circle_filled',
   'Property' : 'radio_button_checked',
+  'Inheritance' : 'hdr_strong',
+  'Implementation' : 'hdr_strong',
+  'Extended' : 'hdr_weak',
+  'Implemented' : 'hdr_weak',
   'default' : 'code'
 };
 
@@ -45,7 +49,7 @@ const icon_map = {
 * Sidebar helper
 */
 hbs.registerHelper('Exported', function(modules, options){
-  var sorted_modules = modules.sort((x,y) => (x.id > y.id)).filter((x)=>(x.flags.isExported));
+  var sorted_modules = modules.sort((x,y) => (x.name.localeCompare(y.name))).filter((x)=>(x.flags.isExported));
   return options.fn(sorted_modules);
 });
 
@@ -197,7 +201,70 @@ hbs.registerHelper('Example', function(comment, options){
   else return options.inverse(this);
 });
 
-fs.readFile("docs/pages/template.hbs","utf8", (err, data) => {
+/**
+* Inheritance helper
+*/
+hbs.registerHelper('Inheritance', function(signature, options){
+  if(signature.inheritedFrom) {
+    return options.fn(signature.inheritedFrom);
+  }
+  else return options.inverse(this);
+});
+
+/**
+* Implementation helper
+*/
+hbs.registerHelper('Implementation', function(signature, options){
+  if(signature.implementationOf) {
+    return options.fn(signature.implementationOf);
+  }
+  else return options.inverse(this);
+});
+
+/**
+* ExtendedTypes helper
+*/
+hbs.registerHelper('ExtendedTypes', function(item, options){
+  if(item.extendedTypes) {
+    return options.fn(item.extendedTypes);
+  }
+  else return options.inverse(this);
+});
+
+/**
+* ExtendedBy helper
+*/
+hbs.registerHelper('ExtendedBy', function(item, options){
+  if(item.extendedBy) {
+    return options.fn(item.extendedBy);
+  }
+  else return options.inverse(this);
+});
+
+/**
+* ImplementedTypes helper
+*/
+hbs.registerHelper('ImplementedTypes', function(item, options){
+  if(item.implementedTypes) {
+    return options.fn(item.implementedTypes);
+  }
+  else return options.inverse(this);
+});
+
+/**
+* ImplementedBy helper
+*/
+hbs.registerHelper('ImplementedBy', function(item, options){
+  if(item.implementedBy) {
+    return options.fn(item.implementedBy);
+  }
+  else return options.inverse(this);
+});
+
+/**
+
+*/
+fs.readFile("makedoc/pages/template.hbs","utf8", (err, data) => {
   if(err) console.error(err);
   // The HTML template to use for our simple docs
   const tmpl = data;
@@ -205,5 +272,5 @@ fs.readFile("docs/pages/template.hbs","utf8", (err, data) => {
   // object as context key
   const result = hbs.compile(tmpl)({ project });
 
-  fs.writeFileSync('dist/docs/docs.html', result);
+  fs.writeFileSync('docs/index.html', result);
 });
