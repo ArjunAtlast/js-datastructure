@@ -11,7 +11,7 @@ NodeJS library with lot of Data Structures to help Back-End Developors.
 To install latest version run:
 
 ```
-  npm install js-datastructure
+  npm install js-ds
 ```
 
 To install the latest development version locally
