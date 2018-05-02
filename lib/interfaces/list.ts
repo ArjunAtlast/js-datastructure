@@ -40,11 +40,11 @@ export interface List<E> extends Collection<E> {
   /**
     Removes the element at the specified position in this list.
   */
-  removeAt(index:number):E;
+  removeAt(index:number):E|undefined;
   /**
     Replaces the element at the specified position in this list with the specified element
   */
-  set(index:number, item:E):E;
+  set(index:number, item:E):E|undefined;
   /**
     Sorts this list according to the compareFn
   */

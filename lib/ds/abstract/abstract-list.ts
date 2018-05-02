@@ -24,7 +24,7 @@ export class AbstractList<E> extends AbstractCollection<E> implements List<E>{
   */
   add(item:E, index:number):boolean
   add(item:E, index?:number):boolean {
-    if(index != undefined) {
+    if(index !== undefined) {
       return !!this._store.splice(index,0,item);
     }
     else {
@@ -88,7 +88,7 @@ export class AbstractList<E> extends AbstractCollection<E> implements List<E>{
   /**
   * Returns a list iterator over the elements in this list
   * @example
-  *   var listIterator = list.listIterator();
+  *   var listIterator = list.listIterator(); //starts at index 0
   */
   listIterator(index:number=0):ListIterator<E> {
     return new ListIterator(this._store, index);
@@ -101,7 +101,7 @@ export class AbstractList<E> extends AbstractCollection<E> implements List<E>{
   *   console.log(list.removeAt(1)); //[1,3]
   *   //Output: 2
   */
-  removeAt(index:number):E {
+  removeAt(index:number):E|undefined {
     return this._store.splice(index,1)[0];
   }
 
@@ -112,7 +112,7 @@ export class AbstractList<E> extends AbstractCollection<E> implements List<E>{
   *   console.log(list.set(1,2.5)); //[1,2.5,3]
   *   //Output: 2
   */
-  set(index:number, item:E):E {
+  set(index:number, item:E):E|undefined {
     return this._store.splice(index,1,item)[0];
   }
 

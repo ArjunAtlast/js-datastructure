@@ -211,6 +211,46 @@ describe("Checking Components..", () => {
       expect(l.get(2)).to.equal(3);
       expect(l.get(5)).to.equal(undefined);
     });
+    it("add", () => {
+      expect(l.add(4)).to.equal(true);
+      expect(l.get(3)).to.equal(4);
+      expect(l.add(2.5,2)).to.equal(true);
+      expect(l.get(2)).to.equal(2.5);
+    });
+    it("addAll", () => {
+      expect(l.addAll([5,6])).to.equal(true);
+      expect(l.get(6)).to.equal(6);
+      expect(l.addAll([5,2.2,2.3],2)).to.equal(true);
+      expect(l.get(3)).to.equal(2.2);
+    });
+    it("indexOf", () => {
+      expect(l.indexOf(2.3)).to.equal(4);
+      expect(l.indexOf(5)).to.equal(2);
+      expect(l.indexOf(10)).to.equal(-1);
+    });
+    it("lastIndexOf", () => {
+      expect(l.lastIndexOf(5)).to.equal(8);
+      expect(l.lastIndexOf(10)).to.equal(-1);
+    });
+    it("removeAt", () => {
+      expect(l.removeAt(4)).to.equal(2.3);
+      expect(l.get(4)).to.equal(2.5);
+      expect(l.removeAt(15)).to.equal(undefined);
+    });
+    it("set", () => {
+      expect(l.set(7,5.5)).to.equal(5);
+      expect(l.get(7)).to.equal(5.5);
+      expect(l.set(15,10)).to.equal(undefined);
+    });
+    it("sort", () => {
+      l.clear();
+      l.addAll([23,56,41,11,7,8,27,32,16,98]);
+      l.sort((x,y)=>(x-y));
+      expect(l.toArray()).to.deep.equal([7, 8, 11, 16, 23, 27, 32, 41, 56, 98]);
+    });
+    it("subList", () => {
+      expect(l.subList(2,6).toArray()).to.deep.equal([11, 16, 23, 27]);
+    });
     it("listIterator", () => {
       expect(l.listIterator()).to.be.an.instanceOf(index.ListIterator);
     });
