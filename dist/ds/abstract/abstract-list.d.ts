@@ -56,7 +56,7 @@ export declare class AbstractList<E> extends AbstractCollection<E> implements Li
     /**
     * Returns a list iterator over the elements in this list
     * @example
-    *   var listIterator = list.listIterator();
+    *   var listIterator = list.listIterator(); //starts at index 0
     */
     listIterator(index?: number): ListIterator<E>;
     /**
@@ -66,7 +66,15 @@ export declare class AbstractList<E> extends AbstractCollection<E> implements Li
     *   console.log(list.removeAt(1)); //[1,3]
     *   //Output: 2
     */
-    removeAt(index: number): E;
+    removeAt(index: number): E | undefined;
+    /**
+    * Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive.
+    * @example
+    *   //list contains [1,2,3,4,5,6]
+    *   console.log(list.removeRange(1,4)); //[1,5,6]
+    *   //Output: [2,3,4]
+    */
+    removeRange(fromIndex: number, toIndex: number): E[];
     /**
     * Replaces the element at the specified position in this list with the specified element
     * @example
@@ -74,7 +82,7 @@ export declare class AbstractList<E> extends AbstractCollection<E> implements Li
     *   console.log(list.set(1,2.5)); //[1,2.5,3]
     *   //Output: 2
     */
-    set(index: number, item: E): E;
+    set(index: number, item: E): E | undefined;
     /**
     * Sorts this list according to the compareFn.
     * compareFn is a function which should return a number value (-ve, zero, or +ve).

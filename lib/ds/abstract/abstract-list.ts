@@ -106,6 +106,17 @@ export class AbstractList<E> extends AbstractCollection<E> implements List<E>{
   }
 
   /**
+  * Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive.
+  * @example
+  *   //list contains [1,2,3,4,5,6]
+  *   console.log(list.removeRange(1,4)); //[1,5,6]
+  *   //Output: [2,3,4]
+  */
+  removeRange(fromIndex:number, toIndex:number):E[] {
+    return this._store.splice(fromIndex, (toIndex - fromIndex));
+  }
+
+  /**
   * Replaces the element at the specified position in this list with the specified element
   * @example
   *   //list contains [1,2,3]

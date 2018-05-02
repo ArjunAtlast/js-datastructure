@@ -1233,7 +1233,7 @@
 					}
 				},
 				{
-					"id": 317,
+					"id": 321,
 					"name": "_store",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1521,7 +1521,7 @@
 					}
 				},
 				{
-					"id": 318,
+					"id": 322,
 					"name": "clear",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1530,7 +1530,7 @@
 					},
 					"signatures": [
 						{
-							"id": 319,
+							"id": 323,
 							"name": "clear",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1579,7 +1579,7 @@
 					}
 				},
 				{
-					"id": 320,
+					"id": 324,
 					"name": "contains",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1588,7 +1588,7 @@
 					},
 					"signatures": [
 						{
-							"id": 321,
+							"id": 325,
 							"name": "contains",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1604,7 +1604,7 @@
 							},
 							"parameters": [
 								{
-									"id": 322,
+									"id": 326,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1650,7 +1650,7 @@
 					}
 				},
 				{
-					"id": 323,
+					"id": 327,
 					"name": "containsAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1659,7 +1659,7 @@
 					},
 					"signatures": [
 						{
-							"id": 324,
+							"id": 328,
 							"name": "containsAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1675,7 +1675,7 @@
 							},
 							"parameters": [
 								{
-									"id": 325,
+									"id": 329,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1722,7 +1722,7 @@
 					}
 				},
 				{
-					"id": 326,
+					"id": 330,
 					"name": "equals",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1731,7 +1731,7 @@
 					},
 					"signatures": [
 						{
-							"id": 327,
+							"id": 331,
 							"name": "equals",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1747,7 +1747,7 @@
 							},
 							"parameters": [
 								{
-									"id": 328,
+									"id": 332,
 									"name": "collection",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1800,7 +1800,7 @@
 					}
 				},
 				{
-					"id": 352,
+					"id": 356,
 					"name": "forEach",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1809,7 +1809,7 @@
 					},
 					"signatures": [
 						{
-							"id": 353,
+							"id": 357,
 							"name": "forEach",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1825,7 +1825,7 @@
 							},
 							"parameters": [
 								{
-									"id": 354,
+									"id": 358,
 									"name": "action",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1833,21 +1833,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 355,
+											"id": 359,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 356,
+													"id": 360,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 357,
+															"id": 361,
 															"name": "item",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1858,7 +1858,7 @@
 															}
 														},
 														{
-															"id": 358,
+															"id": 362,
 															"name": "index",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1869,7 +1869,7 @@
 															}
 														},
 														{
-															"id": 359,
+															"id": 363,
 															"name": "collection",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -2065,7 +2065,7 @@
 					}
 				},
 				{
-					"id": 329,
+					"id": 333,
 					"name": "isEmpty",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2074,7 +2074,7 @@
 					},
 					"signatures": [
 						{
-							"id": 330,
+							"id": 334,
 							"name": "isEmpty",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2123,7 +2123,7 @@
 					}
 				},
 				{
-					"id": 360,
+					"id": 364,
 					"name": "iterator",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2132,7 +2132,7 @@
 					},
 					"signatures": [
 						{
-							"id": 361,
+							"id": 365,
 							"name": "iterator",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2262,7 +2262,7 @@
 								"tags": [
 									{
 										"tag": "example",
-										"text": "\n  var listIterator = list.listIterator();\n"
+										"text": "\n  var listIterator = list.listIterator(); //starts at index 0\n"
 									}
 								]
 							},
@@ -2312,7 +2312,7 @@
 					}
 				},
 				{
-					"id": 331,
+					"id": 335,
 					"name": "remove",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2321,7 +2321,7 @@
 					},
 					"signatures": [
 						{
-							"id": 332,
+							"id": 336,
 							"name": "remove",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2337,7 +2337,7 @@
 							},
 							"parameters": [
 								{
-									"id": 333,
+									"id": 337,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2383,7 +2383,7 @@
 					}
 				},
 				{
-					"id": 334,
+					"id": 338,
 					"name": "removeAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2392,7 +2392,7 @@
 					},
 					"signatures": [
 						{
-							"id": 335,
+							"id": 339,
 							"name": "removeAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2408,7 +2408,7 @@
 							},
 							"parameters": [
 								{
-									"id": 336,
+									"id": 340,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2492,8 +2492,17 @@
 								}
 							],
 							"type": {
-								"type": "typeParameter",
-								"name": "E"
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
 							},
 							"implementationOf": {
 								"type": "reference",
@@ -2516,7 +2525,7 @@
 					}
 				},
 				{
-					"id": 337,
+					"id": 341,
 					"name": "removeIf",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2525,7 +2534,7 @@
 					},
 					"signatures": [
 						{
-							"id": 338,
+							"id": 342,
 							"name": "removeIf",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2541,7 +2550,7 @@
 							},
 							"parameters": [
 								{
-									"id": 339,
+									"id": 343,
 									"name": "filterFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2549,21 +2558,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 340,
+											"id": 344,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 341,
+													"id": 345,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 342,
+															"id": 346,
 															"name": "item",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -2574,7 +2583,7 @@
 															}
 														},
 														{
-															"id": 343,
+															"id": 347,
 															"name": "index",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -2585,7 +2594,7 @@
 															}
 														},
 														{
-															"id": 344,
+															"id": 348,
 															"name": "collection",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -2650,7 +2659,70 @@
 					}
 				},
 				{
-					"id": 345,
+					"id": 302,
+					"name": "removeRange",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 303,
+							"name": "removeRange",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,2,3,4,5,6]\n  console.log(list.removeRange(1,4)); //[1,5,6]\n  //Output: [2,3,4]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 304,
+									"name": "fromIndex",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 305,
+									"name": "toIndex",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"isArray": true,
+								"name": "E"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 115,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 349,
 					"name": "retainAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2659,7 +2731,7 @@
 					},
 					"signatures": [
 						{
-							"id": 346,
+							"id": 350,
 							"name": "retainAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2675,7 +2747,7 @@
 							},
 							"parameters": [
 								{
-									"id": 347,
+									"id": 351,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2722,7 +2794,7 @@
 					}
 				},
 				{
-					"id": 302,
+					"id": 306,
 					"name": "set",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2731,7 +2803,7 @@
 					},
 					"signatures": [
 						{
-							"id": 303,
+							"id": 307,
 							"name": "set",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2747,7 +2819,7 @@
 							},
 							"parameters": [
 								{
-									"id": 304,
+									"id": 308,
 									"name": "index",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2758,7 +2830,7 @@
 									}
 								},
 								{
-									"id": 305,
+									"id": 309,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2770,8 +2842,17 @@
 								}
 							],
 							"type": {
-								"type": "typeParameter",
-								"name": "E"
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
 							},
 							"implementationOf": {
 								"type": "reference",
@@ -2783,7 +2864,7 @@
 					"sources": [
 						{
 							"fileName": "ds/abstract/abstract-list.ts",
-							"line": 115,
+							"line": 126,
 							"character": 5
 						}
 					],
@@ -2794,7 +2875,7 @@
 					}
 				},
 				{
-					"id": 348,
+					"id": 352,
 					"name": "size",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2803,7 +2884,7 @@
 					},
 					"signatures": [
 						{
-							"id": 349,
+							"id": 353,
 							"name": "size",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2852,7 +2933,7 @@
 					}
 				},
 				{
-					"id": 306,
+					"id": 310,
 					"name": "sort",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2861,7 +2942,7 @@
 					},
 					"signatures": [
 						{
-							"id": 307,
+							"id": 311,
 							"name": "sort",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2877,7 +2958,7 @@
 							},
 							"parameters": [
 								{
-									"id": 308,
+									"id": 312,
 									"name": "compareFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2885,21 +2966,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 309,
+											"id": 313,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 310,
+													"id": 314,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 311,
+															"id": 315,
 															"name": "x",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -2910,7 +2991,7 @@
 															}
 														},
 														{
-															"id": 312,
+															"id": 316,
 															"name": "y",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -2930,7 +3011,7 @@
 											"sources": [
 												{
 													"fileName": "ds/abstract/abstract-list.ts",
-													"line": 130,
+													"line": 141,
 													"character": 17
 												}
 											]
@@ -2947,7 +3028,7 @@
 					"sources": [
 						{
 							"fileName": "ds/abstract/abstract-list.ts",
-							"line": 130,
+							"line": 141,
 							"character": 6
 						}
 					],
@@ -2958,7 +3039,7 @@
 					}
 				},
 				{
-					"id": 313,
+					"id": 317,
 					"name": "subList",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2967,7 +3048,7 @@
 					},
 					"signatures": [
 						{
-							"id": 314,
+							"id": 318,
 							"name": "subList",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2983,7 +3064,7 @@
 							},
 							"parameters": [
 								{
-									"id": 315,
+									"id": 319,
 									"name": "fromIndex",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2994,7 +3075,7 @@
 									}
 								},
 								{
-									"id": 316,
+									"id": 320,
 									"name": "toIndex",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3026,7 +3107,7 @@
 					"sources": [
 						{
 							"fileName": "ds/abstract/abstract-list.ts",
-							"line": 140,
+							"line": 151,
 							"character": 9
 						}
 					],
@@ -3037,7 +3118,7 @@
 					}
 				},
 				{
-					"id": 350,
+					"id": 354,
 					"name": "toArray",
 					"kind": 2048,
 					"kindString": "Method",
@@ -3046,7 +3127,7 @@
 					},
 					"signatures": [
 						{
-							"id": 351,
+							"id": 355,
 							"name": "toArray",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3108,7 +3189,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						317
+						321
 					]
 				},
 				{
@@ -3117,27 +3198,28 @@
 					"children": [
 						275,
 						281,
-						318,
-						320,
-						323,
-						326,
-						352,
+						322,
+						324,
+						327,
+						330,
+						356,
 						287,
 						290,
-						329,
-						360,
+						333,
+						364,
 						293,
 						296,
-						331,
-						334,
+						335,
+						338,
 						299,
-						337,
-						345,
+						341,
 						302,
-						348,
+						349,
 						306,
-						313,
-						350
+						352,
+						310,
+						317,
+						354
 					]
 				}
 			],
@@ -3153,6 +3235,2561 @@
 					"type": "reference",
 					"name": "AbstractCollection",
 					"id": 126,
+					"typeArguments": [
+						{
+							"type": "typeParameter",
+							"name": "E"
+						}
+					]
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"name": "ArrayList",
+					"id": 370
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "Collection",
+					"id": 74,
+					"typeArguments": [
+						{
+							"type": "typeParameter",
+							"name": "E"
+						}
+					]
+				},
+				{
+					"type": "reference",
+					"name": "List",
+					"id": 182,
+					"typeArguments": [
+						{
+							"type": "typeParameter",
+							"name": "E"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 370,
+			"name": "ArrayList",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true
+			},
+			"comment": {
+				"shortText": "Resizable-array implementation of the List interface."
+			},
+			"typeParameter": [
+				{
+					"id": 371,
+					"name": "E",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {}
+				}
+			],
+			"children": [
+				{
+					"id": 373,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Constructs an empty list with an initial capacity of ten.\nConstructs an empty list with the specified initial capacity.\nConstructs a list containing the items."
+					},
+					"signatures": [
+						{
+							"id": 374,
+							"name": "new ArrayList",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Constructs an empty list with an initial capacity of ten."
+							},
+							"type": {
+								"type": "reference",
+								"name": "ArrayList",
+								"id": 370
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractList.__constructor",
+								"id": 272
+							}
+						},
+						{
+							"id": 375,
+							"name": "new ArrayList",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Constructs an empty list with the specified initial capacity."
+							},
+							"parameters": [
+								{
+									"id": 376,
+									"name": "initialCapacity",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ArrayList",
+								"id": 370
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractList.__constructor",
+								"id": 272
+							}
+						},
+						{
+							"id": 377,
+							"name": "new ArrayList",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Constructs a list containing the items."
+							},
+							"parameters": [
+								{
+									"id": 378,
+									"name": "initialCapacity",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 379,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "typeParameter",
+										"isArray": true,
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ArrayList",
+								"id": 370
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractList.__constructor",
+								"id": 272
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 10,
+							"character": 30
+						},
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 15,
+							"character": 15
+						},
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 19,
+							"character": 37
+						},
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 23,
+							"character": 51
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "AbstractList.__constructor",
+						"id": 272
+					}
+				},
+				{
+					"id": 372,
+					"name": "_capacity",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 10,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "instrinct",
+						"name": "number"
+					}
+				},
+				{
+					"id": 439,
+					"name": "_store",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 8,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "typeParameter",
+						"isArray": true,
+						"name": "E"
+					},
+					"defaultValue": " []",
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection._store",
+						"id": 128
+					}
+				},
+				{
+					"id": 380,
+					"name": "add",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 381,
+							"name": "add",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Appends the specified element to the end of this list"
+							},
+							"parameters": [
+								{
+									"id": 382,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractList.add",
+								"id": 275
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.add",
+								"id": 185
+							}
+						},
+						{
+							"id": 383,
+							"name": "add",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Inserts the specified element at the specified position in this list",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,2,3]\n  list.add(4); //[1,2,3,4]\n  list.add(2.5,2); //[1,2,2.5,3,4]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 384,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								},
+								{
+									"id": 385,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractList.add",
+								"id": 275
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.add",
+								"id": 187
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 32,
+							"character": 5
+						},
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 40,
+							"character": 5
+						},
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 41,
+							"character": 5
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "AbstractList.add",
+						"id": 275
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.add",
+						"id": 184
+					}
+				},
+				{
+					"id": 386,
+					"name": "addAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 387,
+							"name": "addAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Appends all of the elements in the specified array to the end of this list"
+							},
+							"parameters": [
+								{
+									"id": 388,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"isArray": true,
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractList.addAll",
+								"id": 281
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.addAll",
+								"id": 191
+							}
+						},
+						{
+							"id": 389,
+							"name": "addAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Inserts all of the elements in the specified array into this list at the specified position.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,2,3]\n  list.addAll([4,5]); //[1,2,3,4,5]\n  list.addAll([2.1,2.2,2.3], 2); //[1,2,2.1,2.2,2.3,3,4]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 390,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"isArray": true,
+										"name": "E"
+									}
+								},
+								{
+									"id": 391,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractList.addAll",
+								"id": 281
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.addAll",
+								"id": 193
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 49,
+							"character": 8
+						},
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 57,
+							"character": 8
+						},
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 58,
+							"character": 8
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "AbstractList.addAll",
+						"id": 281
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.addAll",
+						"id": 190
+					}
+				},
+				{
+					"id": 440,
+					"name": "clear",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 441,
+							"name": "clear",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes all the elements",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3]\n  collection.clear();\n  //now collection contains []\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.clear",
+								"id": 138
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.clear",
+								"id": 227
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 47,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.clear",
+						"id": 138
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.clear",
+						"id": 226
+					}
+				},
+				{
+					"id": 401,
+					"name": "clone",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 402,
+							"name": "clone",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a shallow copy of this ArrayList instance.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  let newArrayList = arrayList.clone();\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "ArrayList",
+								"id": 370,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Cloneable.clone",
+								"id": 369
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 90,
+							"character": 6
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "Cloneable.clone",
+						"id": 368
+					}
+				},
+				{
+					"id": 442,
+					"name": "contains",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 443,
+							"name": "contains",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this collection contains the specified element.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3]\n  console.log(collection.contains(3));\n  //Output: true\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 444,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.contains",
+								"id": 140
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.contains",
+								"id": 229
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 58,
+							"character": 10
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.contains",
+						"id": 140
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.contains",
+						"id": 228
+					}
+				},
+				{
+					"id": 445,
+					"name": "containsAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 446,
+							"name": "containsAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this collection contains all of the elements in the specified array.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3]\n  console.log(collection.contains([1,2,4]));\n  //Output: false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 447,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"isArray": true,
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.containsAll",
+								"id": 143
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.containsAll",
+								"id": 232
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 71,
+							"character": 13
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.containsAll",
+						"id": 143
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.containsAll",
+						"id": 231
+					}
+				},
+				{
+					"id": 392,
+					"name": "ensureCapacity",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 393,
+							"name": "ensureCapacity",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Increases the capacity of this ArrayList instance, if necessary, to ensure that it can hold at least the number of elements specified by the minimum capacity argument.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //arrayList has a capacity 10\n  arrayList.ensureCapacity(15);\n  //new capacity is 15\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 394,
+									"name": "minCapacity",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 70,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 448,
+					"name": "equals",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 449,
+							"name": "equals",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Compares the specified object with this collection for equality.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection1 contains [1,2,3] and collection2 contains [1,2,3]\n  console.log(collection1.equals(collection2));\n  //Output: true\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 450,
+									"name": "collection",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Collection",
+										"id": 74,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "E"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.equals",
+								"id": 146
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.equals",
+								"id": 235
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 85,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.equals",
+						"id": 146
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.equals",
+						"id": 234
+					}
+				},
+				{
+					"id": 474,
+					"name": "forEach",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 475,
+							"name": "forEach",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Performs an action for each item in this collection.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3,4]\n  collection.forEach(function(item) {\n    console.log(item * 4);\n  });\n  //Output: 4 8 12 16\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 476,
+									"name": "action",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 477,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 478,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 479,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "E"
+															}
+														},
+														{
+															"id": 480,
+															"name": "index",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "instrinct",
+																"name": "number"
+															}
+														},
+														{
+															"id": 481,
+															"name": "collection",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Collection",
+																"id": 74,
+																"typeArguments": [
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "instrinct",
+														"name": "void"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-collection.ts",
+													"line": 198,
+													"character": 17
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.forEach",
+								"id": 172
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 198,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.forEach",
+						"id": 172
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.forEach",
+						"id": 260
+					}
+				},
+				{
+					"id": 405,
+					"name": "get",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 406,
+							"name": "get",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Read an item from the list",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,2,3]\n  console.log(list.get(2));\n  //Output: 3\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 407,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.get",
+								"id": 287
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.get",
+								"id": 197
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 63,
+							"character": 5
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.get",
+						"id": 287
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.get",
+						"id": 196
+					}
+				},
+				{
+					"id": 408,
+					"name": "indexOf",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 409,
+							"name": "indexOf",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,2,3,2,4]\n  console.log(list.indexOf(2));\n  //Output: 1\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 410,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.indexOf",
+								"id": 290
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.indexOf",
+								"id": 200
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 74,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.indexOf",
+						"id": 290
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.indexOf",
+						"id": 199
+					}
+				},
+				{
+					"id": 451,
+					"name": "isEmpty",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 452,
+							"name": "isEmpty",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this collection contains no elements.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3]\n  console.log(collection.isEmpty());\n  //Output: false\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.isEmpty",
+								"id": 149
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.isEmpty",
+								"id": 238
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 106,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.isEmpty",
+						"id": 149
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.isEmpty",
+						"id": 237
+					}
+				},
+				{
+					"id": 482,
+					"name": "iterator",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 483,
+							"name": "iterator",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns an iterator for the collection",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  var iterator = collection.iterator(); //returns an Iterator for the collection\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "Iterator",
+								"id": 13,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.iterator",
+								"id": 180
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.iterator",
+								"id": 269
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 209,
+							"character": 10
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.iterator",
+						"id": 180
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.iterator",
+						"id": 268
+					}
+				},
+				{
+					"id": 411,
+					"name": "lastIndexOf",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 412,
+							"name": "lastIndexOf",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the index of last occurrence of the element.\n  //list contains [1,2,3,2,4]\n  console.log(list.lastIndexOf(2));\n  //Output: 3"
+							},
+							"parameters": [
+								{
+									"id": 413,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.lastIndexOf",
+								"id": 293
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.lastIndexOf",
+								"id": 203
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 84,
+							"character": 13
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.lastIndexOf",
+						"id": 293
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.lastIndexOf",
+						"id": 202
+					}
+				},
+				{
+					"id": 414,
+					"name": "listIterator",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 415,
+							"name": "listIterator",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a list iterator over the elements in this list",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  var listIterator = list.listIterator(); //starts at index 0\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 416,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									},
+									"defaultValue": "0"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ListIterator",
+								"id": 36,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.listIterator",
+								"id": 296
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.listIterator",
+								"id": 206
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 93,
+							"character": 14
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.listIterator",
+						"id": 296
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.listIterator",
+						"id": 205
+					}
+				},
+				{
+					"id": 453,
+					"name": "remove",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 454,
+							"name": "remove",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes a single instance of the specified element from this collection, if it is present",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3]\n  collection.remove(3);\n  //now collection contains [1,2]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 455,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.remove",
+								"id": 151
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.remove",
+								"id": 240
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 117,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.remove",
+						"id": 151
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.remove",
+						"id": 239
+					}
+				},
+				{
+					"id": 456,
+					"name": "removeAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 457,
+							"name": "removeAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes all of this collection's elements that are also contained in the specified array.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3,4]\n  collection.removeAll([1,3,5,7]);\n  //now collection contains [2,4]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 458,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"isArray": true,
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.removeAll",
+								"id": 154
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.removeAll",
+								"id": 243
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 129,
+							"character": 11
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.removeAll",
+						"id": 154
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.removeAll",
+						"id": 242
+					}
+				},
+				{
+					"id": 417,
+					"name": "removeAt",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 418,
+							"name": "removeAt",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes the element at the specified position in this list.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,2,3]\n  console.log(list.removeAt(1)); //[1,3]\n  //Output: 2\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 419,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.removeAt",
+								"id": 299
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.removeAt",
+								"id": 209
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 104,
+							"character": 10
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.removeAt",
+						"id": 299
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.removeAt",
+						"id": 208
+					}
+				},
+				{
+					"id": 459,
+					"name": "removeIf",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 460,
+							"name": "removeIf",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes all of the elements of this collection that satisfy the given filter function.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n//collection contains [1,2,3,4,5,6,7,8,9]\ncollection.removeIf(function(x) {\n  return (x%2==0);\n}); //removing even numbers\n//now collection contains [1,3,5,7,9]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 461,
+									"name": "filterFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 462,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 463,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 464,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "E"
+															}
+														},
+														{
+															"id": 465,
+															"name": "index",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "instrinct",
+																"name": "number"
+															}
+														},
+														{
+															"id": 466,
+															"name": "collection",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Collection",
+																"id": 74,
+																"typeArguments": [
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "instrinct",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-collection.ts",
+													"line": 146,
+													"character": 20
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.removeIf",
+								"id": 157
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 146,
+							"character": 10
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.removeIf",
+						"id": 157
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.removeIf",
+						"id": 245
+					}
+				},
+				{
+					"id": 420,
+					"name": "removeRange",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 421,
+							"name": "removeRange",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,2,3,4,5,6]\n  console.log(list.removeRange(1,4)); //[1,5,6]\n  //Output: [2,3,4]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 422,
+									"name": "fromIndex",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 423,
+									"name": "toIndex",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"isArray": true,
+								"name": "E"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.removeRange",
+								"id": 302
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 115,
+							"character": 13
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.removeRange",
+						"id": 302
+					}
+				},
+				{
+					"id": 395,
+					"name": "replaceAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 396,
+							"name": "replaceAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Replaces each element of this list with the result of applying the mapping function",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //arrayList contains [1,2,3,4]\n  arrayList.map((x)=>(x*2));\n  //now arrayList contains [2,4,6,8]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 397,
+									"name": "mappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 398,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 399,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 400,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "E"
+															}
+														}
+													],
+													"type": {
+														"type": "typeParameter",
+														"name": "E"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/lists/array-list.ts",
+													"line": 81,
+													"character": 23
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 81,
+							"character": 12
+						}
+					]
+				},
+				{
+					"id": 467,
+					"name": "retainAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 468,
+							"name": "retainAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Retains only the elements in this collection that are contained in the specified array.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3,4]\n  collection.retainAll([1,3,5,7]);\n  //now collection contains [1,3]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 469,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"isArray": true,
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.retainAll",
+								"id": 165
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.retainAll",
+								"id": 254
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 163,
+							"character": 11
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.retainAll",
+						"id": 165
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.retainAll",
+						"id": 253
+					}
+				},
+				{
+					"id": 424,
+					"name": "set",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 425,
+							"name": "set",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Replaces the element at the specified position in this list with the specified element",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,2,3]\n  console.log(list.set(1,2.5)); //[1,2.5,3]\n  //Output: 2\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 426,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 427,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.set",
+								"id": 306
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.set",
+								"id": 212
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 126,
+							"character": 5
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.set",
+						"id": 306
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.set",
+						"id": 211
+					}
+				},
+				{
+					"id": 470,
+					"name": "size",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 471,
+							"name": "size",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the number of elements in this collection.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3,4]\n  console.log(collection.size());\n  //Output: 4\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.size",
+								"id": 168
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.size",
+								"id": 257
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 174,
+							"character": 6
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.size",
+						"id": 168
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.size",
+						"id": 256
+					}
+				},
+				{
+					"id": 428,
+					"name": "sort",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 429,
+							"name": "sort",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Sorts this list according to the compareFn.\ncompareFn is a function which should return a number value (-ve, zero, or +ve).\nx is sorted as the lowest value if compareFn(x,y) is the lowest.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,8,6,2,7,3,9,11]\n  list.sort(function(x,y) {\n    return x-y;\n  }); // [1, 2, 3, 6, 7, 8, 9, 11]\n\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 430,
+									"name": "compareFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 431,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 432,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 433,
+															"name": "x",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "E"
+															}
+														},
+														{
+															"id": 434,
+															"name": "y",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "E"
+															}
+														}
+													],
+													"type": {
+														"type": "instrinct",
+														"name": "number"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-list.ts",
+													"line": 141,
+													"character": 17
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.sort",
+								"id": 310
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 141,
+							"character": 6
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.sort",
+						"id": 310
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.sort",
+						"id": 215
+					}
+				},
+				{
+					"id": 435,
+					"name": "subList",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 436,
+							"name": "subList",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //list contains [1,8,6,2,7,3,9,11]\n  list.subList(2,7); // returns a list containing [6, 2, 7, 3, 9]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 437,
+									"name": "fromIndex",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 438,
+									"name": "toIndex",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "AbstractList",
+								"id": 270,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractList.subList",
+								"id": 317
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.subList",
+								"id": 223
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-list.ts",
+							"line": 151,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractList.subList",
+						"id": 317
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.subList",
+						"id": 222
+					}
+				},
+				{
+					"id": 472,
+					"name": "toArray",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 473,
+							"name": "toArray",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns an array containing all of the elements in this collection",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //collection contains [1,2,3,4]\n  console.log(collection.toArray());\n  //Output: [1,2,3,4]\n"
+									}
+								]
+							},
+							"type": {
+								"type": "typeParameter",
+								"isArray": true,
+								"name": "E"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCollection.toArray",
+								"id": 170
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "List.toArray",
+								"id": 259
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-collection.ts",
+							"line": 185,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractCollection.toArray",
+						"id": 170
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "List.toArray",
+						"id": 258
+					}
+				},
+				{
+					"id": 403,
+					"name": "trimToSize",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 404,
+							"name": "trimToSize",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Trims the capacity of this ArrayList instance to be the list's current size.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //arrayList contains [1,2,3,4,5] and capacity is 10\n  arrayList.trimToSize(); //new capacity is 5\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/lists/array-list.ts",
+							"line": 100,
+							"character": 12
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						373
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						372,
+						439
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						380,
+						386,
+						440,
+						401,
+						442,
+						445,
+						392,
+						448,
+						474,
+						405,
+						408,
+						451,
+						482,
+						411,
+						414,
+						453,
+						456,
+						417,
+						459,
+						420,
+						395,
+						467,
+						424,
+						470,
+						428,
+						435,
+						472,
+						403
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "ds/lists/array-list.ts",
+					"line": 8,
+					"character": 22
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "AbstractList",
+					"id": 270,
 					"typeArguments": [
 						{
 							"type": "typeParameter",
@@ -3181,6 +5818,24 @@
 						{
 							"type": "typeParameter",
 							"name": "E"
+						}
+					]
+				},
+				{
+					"type": "reference",
+					"name": "Cloneable",
+					"id": 366,
+					"typeArguments": [
+						{
+							"type": "reference",
+							"name": "ArrayList",
+							"id": 370,
+							"typeArguments": [
+								{
+									"type": "typeParameter",
+									"name": "E"
+								}
+							]
 						}
 					]
 				}
@@ -4396,7 +7051,7 @@
 			]
 		},
 		{
-			"id": 362,
+			"id": 484,
 			"name": "Queue",
 			"kind": 128,
 			"kindString": "Class",
@@ -4408,7 +7063,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 363,
+					"id": 485,
 					"name": "T",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4417,7 +7072,7 @@
 			],
 			"children": [
 				{
-					"id": 365,
+					"id": 487,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -4426,14 +7081,14 @@
 					},
 					"signatures": [
 						{
-							"id": 366,
+							"id": 488,
 							"name": "new Queue",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 367,
+									"id": 489,
 									"name": "args",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4450,7 +7105,7 @@
 							"type": {
 								"type": "reference",
 								"name": "Queue",
-								"id": 362
+								"id": 484
 							}
 						}
 					],
@@ -4463,7 +7118,7 @@
 					]
 				},
 				{
-					"id": 364,
+					"id": 486,
 					"name": "_store",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4485,7 +7140,7 @@
 					}
 				},
 				{
-					"id": 368,
+					"id": 490,
 					"name": "front",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -4503,7 +7158,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 369,
+							"id": 491,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -4541,7 +7196,7 @@
 					]
 				},
 				{
-					"id": 372,
+					"id": 494,
 					"name": "length",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -4559,7 +7214,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 373,
+							"id": 495,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -4588,7 +7243,7 @@
 					]
 				},
 				{
-					"id": 370,
+					"id": 492,
 					"name": "rear",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -4606,7 +7261,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 371,
+							"id": 493,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -4644,7 +7299,7 @@
 					]
 				},
 				{
-					"id": 377,
+					"id": 499,
 					"name": "dequeue",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4653,7 +7308,7 @@
 					},
 					"signatures": [
 						{
-							"id": 378,
+							"id": 500,
 							"name": "dequeue",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4691,7 +7346,7 @@
 					]
 				},
 				{
-					"id": 374,
+					"id": 496,
 					"name": "enqueue",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4700,7 +7355,7 @@
 					},
 					"signatures": [
 						{
-							"id": 375,
+							"id": 497,
 							"name": "enqueue",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4716,7 +7371,7 @@
 							},
 							"parameters": [
 								{
-									"id": 376,
+									"id": 498,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4742,7 +7397,7 @@
 					]
 				},
 				{
-					"id": 379,
+					"id": 501,
 					"name": "forEach",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4751,7 +7406,7 @@
 					},
 					"signatures": [
 						{
-							"id": 380,
+							"id": 502,
 							"name": "forEach",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4767,7 +7422,7 @@
 							},
 							"parameters": [
 								{
-									"id": 381,
+									"id": 503,
 									"name": "action",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4775,21 +7430,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 382,
+											"id": 504,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 383,
+													"id": 505,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 384,
+															"id": 506,
 															"name": "item",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -4800,7 +7455,7 @@
 															}
 														},
 														{
-															"id": 385,
+															"id": 507,
 															"name": "index",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -4811,7 +7466,7 @@
 															}
 														},
 														{
-															"id": 386,
+															"id": 508,
 															"name": "queue",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -4819,7 +7474,7 @@
 															"type": {
 																"type": "reference",
 																"name": "Queue",
-																"id": 362,
+																"id": 484,
 																"typeArguments": [
 																	{
 																		"type": "typeParameter",
@@ -4866,7 +7521,7 @@
 					}
 				},
 				{
-					"id": 387,
+					"id": 509,
 					"name": "iterator",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4875,7 +7530,7 @@
 					},
 					"signatures": [
 						{
-							"id": 388,
+							"id": 510,
 							"name": "iterator",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4926,33 +7581,33 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						365
+						487
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						364
+						486
 					]
 				},
 				{
 					"title": "Accessors",
 					"kind": 262144,
 					"children": [
-						368,
-						372,
-						370
+						490,
+						494,
+						492
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						377,
-						374,
-						379,
-						387
+						499,
+						496,
+						501,
+						509
 					]
 				}
 			],
@@ -4978,7 +7633,7 @@
 			]
 		},
 		{
-			"id": 389,
+			"id": 511,
 			"name": "Stack",
 			"kind": 128,
 			"kindString": "Class",
@@ -4990,7 +7645,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 390,
+					"id": 512,
 					"name": "T",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4999,7 +7654,7 @@
 			],
 			"children": [
 				{
-					"id": 392,
+					"id": 514,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -5008,14 +7663,14 @@
 					},
 					"signatures": [
 						{
-							"id": 393,
+							"id": 515,
 							"name": "new Stack",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 394,
+									"id": 516,
 									"name": "args",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5032,7 +7687,7 @@
 							"type": {
 								"type": "reference",
 								"name": "Stack",
-								"id": 389
+								"id": 511
 							}
 						}
 					],
@@ -5045,7 +7700,7 @@
 					]
 				},
 				{
-					"id": 391,
+					"id": 513,
 					"name": "_store",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5067,7 +7722,7 @@
 					}
 				},
 				{
-					"id": 395,
+					"id": 517,
 					"name": "height",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -5085,7 +7740,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 396,
+							"id": 518,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -5114,7 +7769,7 @@
 					]
 				},
 				{
-					"id": 402,
+					"id": 524,
 					"name": "peek",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5123,7 +7778,7 @@
 					},
 					"signatures": [
 						{
-							"id": 403,
+							"id": 525,
 							"name": "peek",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5161,7 +7816,7 @@
 					]
 				},
 				{
-					"id": 400,
+					"id": 522,
 					"name": "pop",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5170,7 +7825,7 @@
 					},
 					"signatures": [
 						{
-							"id": 401,
+							"id": 523,
 							"name": "pop",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5208,7 +7863,7 @@
 					]
 				},
 				{
-					"id": 397,
+					"id": 519,
 					"name": "push",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5217,7 +7872,7 @@
 					},
 					"signatures": [
 						{
-							"id": 398,
+							"id": 520,
 							"name": "push",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5233,7 +7888,7 @@
 							},
 							"parameters": [
 								{
-									"id": 399,
+									"id": 521,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5262,7 +7917,7 @@
 					]
 				},
 				{
-					"id": 404,
+					"id": 526,
 					"name": "search",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5271,7 +7926,7 @@
 					},
 					"signatures": [
 						{
-							"id": 405,
+							"id": 527,
 							"name": "search",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5287,7 +7942,7 @@
 							},
 							"parameters": [
 								{
-									"id": 406,
+									"id": 528,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5318,31 +7973,31 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						392
+						514
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						391
+						513
 					]
 				},
 				{
 					"title": "Accessors",
 					"kind": 262144,
 					"children": [
-						395
+						517
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						402,
-						400,
-						397,
-						404
+						524,
+						522,
+						519,
+						526
 					]
 				}
 			],
@@ -5355,7 +8010,7 @@
 			]
 		},
 		{
-			"id": 407,
+			"id": 366,
 			"name": "Cloneable",
 			"kind": 256,
 			"kindString": "Interface",
@@ -5367,7 +8022,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 408,
+					"id": 367,
 					"name": "T",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5376,7 +8031,7 @@
 			],
 			"children": [
 				{
-					"id": 409,
+					"id": 368,
 					"name": "clone",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5385,7 +8040,7 @@
 					},
 					"signatures": [
 						{
-							"id": 410,
+							"id": 369,
 							"name": "clone",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5413,7 +8068,7 @@
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						409
+						368
 					]
 				}
 			],
@@ -5422,6 +8077,13 @@
 					"fileName": "interfaces/cloneable.ts",
 					"line": 2,
 					"character": 26
+				}
+			],
+			"implementedBy": [
+				{
+					"type": "reference",
+					"name": "ArrayList",
+					"id": 370
 				}
 			]
 		},
@@ -6292,6 +8954,11 @@
 					"type": "reference",
 					"name": "AbstractList",
 					"id": 270
+				},
+				{
+					"type": "reference",
+					"name": "ArrayList",
+					"id": 370
 				}
 			]
 		},
@@ -6497,7 +9164,7 @@
 				{
 					"type": "reference",
 					"name": "Queue",
-					"id": 362
+					"id": 484
 				}
 			]
 		},
@@ -7508,8 +10175,17 @@
 								}
 							],
 							"type": {
-								"type": "typeParameter",
-								"name": "E"
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
 							}
 						}
 					],
@@ -7743,8 +10419,17 @@
 								}
 							],
 							"type": {
-								"type": "typeParameter",
-								"name": "E"
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
 							}
 						}
 					],
@@ -8056,6 +10741,11 @@
 					"type": "reference",
 					"name": "AbstractList",
 					"id": 270
+				},
+				{
+					"type": "reference",
+					"name": "ArrayList",
+					"id": 370
 				}
 			]
 		}
@@ -8067,17 +10757,18 @@
 			"children": [
 				126,
 				270,
+				370,
 				13,
 				36,
-				362,
-				389
+				484,
+				511
 			]
 		},
 		{
 			"title": "Interfaces",
 			"kind": 256,
 			"children": [
-				407,
+				366,
 				74,
 				1,
 				182

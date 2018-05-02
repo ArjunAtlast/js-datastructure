@@ -138,7 +138,7 @@
                 <div class="section-constructor">
                   {{#each this.signatures}}
                     <div class="section-signature">
-                      {{../name}}({{Params this}})
+                      {{this.name}}{{TypeParams ../../this}}({{Params this}})
                     </div>
                   {{/each}}
                 </div>
@@ -197,7 +197,6 @@
                 </h4>
                 {{!Each Method}}
                 {{#Method this.children}}
-
                   <a name="jsd{{this.id}}"></a>
                   <div class="section-method">
                     {{#each this.signatures}}
@@ -209,27 +208,6 @@
                       <div class="section-description">
                         - {{this.shortText}}
                       </div>
-
-                      {{#Inheritance ../this}}
-                        <div class="section-inheritance">
-                          <i class="material-icons">{{getIcon 'Inheritance'}}</i>
-                          <span class="label">
-                            Inherited from:
-                          </span>
-                          <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
-                        </div>
-                      {{/Inheritance}}
-
-                      {{#Implementation ../this}}
-                        <div class="section-implementation">
-                          <i class="material-icons">{{getIcon 'Implementation'}}</i>
-                          <span class="label">
-                            Implementation of:
-                          </span>
-                          <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
-                        </div>
-                      {{/Implementation}}
-
                       <div class="section-examples">
                         {{#Example this}}
                           <div class="section-example">
@@ -243,6 +221,26 @@
                     {{/Description}}
 
                     {{/each}}
+
+                    {{#Inheritance this}}
+                      <div class="section-inheritance">
+                        <i class="material-icons">{{getIcon 'Inheritance'}}</i>
+                        <span class="label">
+                          Inherited from:
+                        </span>
+                        <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
+                      </div>
+                    {{/Inheritance}}
+
+                    {{#Implementation this}}
+                      <div class="section-implementation">
+                        <i class="material-icons">{{getIcon 'Implementation'}}</i>
+                        <span class="label">
+                          Implementation of:
+                        </span>
+                        <a class="scrolly" href="#jsd{{this.id}}">{{this.name}}</a>
+                      </div>
+                    {{/Implementation}}
                   </div>
 
                 {{else}}

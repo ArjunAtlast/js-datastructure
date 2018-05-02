@@ -14,3 +14,5 @@ var abstract_collection_1 = require("./ds/abstract/abstract-collection");
 exports.AbstractCollection = abstract_collection_1.AbstractCollection;
 var abstract_list_1 = require("./ds/abstract/abstract-list");
 exports.AbstractList = abstract_list_1.AbstractList;
+var array_list_1 = require("./ds/lists/array-list");
+exports.ArrayList = array_list_1.ArrayList;

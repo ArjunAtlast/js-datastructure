@@ -249,10 +249,51 @@ describe("Checking Components..", () => {
       expect(l.toArray()).to.deep.equal([7, 8, 11, 16, 23, 27, 32, 41, 56, 98]);
     });
     it("subList", () => {
+      expect(l.subList(15,2)).to.be.an.instanceOf(index.AbstractList);
       expect(l.subList(2,6).toArray()).to.deep.equal([11, 16, 23, 27]);
+    });
+    it("removeRange", () => {
+      expect(l.removeRange(2,6)).to.deep.equal([11,16,23,27]);
+      expect(l.toArray()).to.deep.equal([7,8,32,41,56,98]);
     });
     it("listIterator", () => {
       expect(l.listIterator()).to.be.an.instanceOf(index.ListIterator);
+    });
+  });
+
+  describe("ArrayList", ()=> {
+    let al = new index.ArrayList(7,1,2,3,4,5);
+    it("constructor", () => {
+      expect(index.ArrayList).to.not.equal(undefined);
+      expect(al).to.be.an.instanceOf(index.ArrayList);
+      expect(new index.ArrayList(5)).to.be.an.instanceOf(index.ArrayList);
+      expect(new index.ArrayList()).to.be.an.instanceOf(index.ArrayList);
+    });
+    it("add", ()=> {
+      expect(al.add(6)).to.equal(true);
+      expect(al.add(2.5,2)).to.equal(true)
+      expect(al.toArray()).to.deep.equals([1,2,2.5,3,4,5,6]);
+      expect(al.add(7)).to.equal(false);
+    });
+    it("ensureCapacity, addAll", ()=> {
+      expect(al.addAll([7,8])).to.equal(false);
+      al.ensureCapacity(11);
+      expect(al.addAll([7,8,9,10,11])).to.equal(false);
+      expect(al.addAll([7,8,9,10],5)).to.equal(true);
+      expect(al.toArray()).to.deep.equals([1,2,2.5,3,4,7,8,9,10,5,6]);
+    });
+    it("replaceAll", () => {
+      al.replaceAll((x)=>(x*2));
+      expect(al.toArray()).to.deep.equals([2,4,5,6,8,14,16,18,20,10,12]);
+    });
+    it("clone", ()=>{
+      expect(al.clone()).to.deep.equal(al);
+      expect(al.clone()).to.not.equal(al);
+    });
+    it("trimToSize", ()=>{
+      al.ensureCapacity(25);
+      al.trimToSize();
+      expect(al.add(5)).to.equal(false);
     });
   });
 });

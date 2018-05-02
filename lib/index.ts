@@ -13,3 +13,4 @@ export {Stack} from "./ds/stack";
 export {Queue} from "./ds/queue";
 export {AbstractCollection} from "./ds/abstract/abstract-collection";
 export {AbstractList} from "./ds/abstract/abstract-list";
+export {ArrayList} from "./ds/lists/array-list";

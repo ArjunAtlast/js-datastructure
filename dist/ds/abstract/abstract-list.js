@@ -25,7 +25,7 @@ var AbstractList = /** @class */ (function (_super) {
         return _super.apply(this, args) || this;
     }
     AbstractList.prototype.add = function (item, index) {
-        if (index != undefined) {
+        if (index !== undefined) {
             return !!this._store.splice(index, 0, item);
         }
         else {
@@ -73,7 +73,7 @@ var AbstractList = /** @class */ (function (_super) {
     /**
     * Returns a list iterator over the elements in this list
     * @example
-    *   var listIterator = list.listIterator();
+    *   var listIterator = list.listIterator(); //starts at index 0
     */
     AbstractList.prototype.listIterator = function (index) {
         if (index === void 0) { index = 0; }
@@ -88,6 +88,16 @@ var AbstractList = /** @class */ (function (_super) {
     */
     AbstractList.prototype.removeAt = function (index) {
         return this._store.splice(index, 1)[0];
+    };
+    /**
+    * Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive.
+    * @example
+    *   //list contains [1,2,3,4,5,6]
+    *   console.log(list.removeRange(1,4)); //[1,5,6]
+    *   //Output: [2,3,4]
+    */
+    AbstractList.prototype.removeRange = function (fromIndex, toIndex) {
+        return this._store.splice(fromIndex, (toIndex - fromIndex));
     };
     /**
     * Replaces the element at the specified position in this list with the specified element
