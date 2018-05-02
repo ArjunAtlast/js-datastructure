@@ -12,7 +12,7 @@ NodeJS library with lot of Data Structures to help Back-End Developors.
 To install latest version run:
 
 ```
-  npm install js-ds
+  npm install @arjunatlast/jsds
 ```
 
 To install the latest development version locally
