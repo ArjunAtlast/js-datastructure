@@ -1,7 +1,10 @@
 import { AbstractList } from "../abstract/abstract-list";
 import { Cloneable } from "../../interfaces/cloneable";
-import { List } from "../../interfaces/list";
-export declare class ArrayList<E> extends AbstractList<E> implements List<E>, Cloneable<ArrayList<E>> {
+import { Serializable } from "../../interfaces/serializable";
+/**
+  Resizable-array implementation of the List interface.
+*/
+export declare class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList<E>>, Serializable {
     protected _capacity: number;
     /**
     * Constructs an empty list with an initial capacity of ten.
@@ -68,4 +71,13 @@ export declare class ArrayList<E> extends AbstractList<E> implements List<E>, Cl
     *   arrayList.trimToSize(); //new capacity is 5
     */
     trimToSize(): void;
+    /**
+    * Converts the arrayList into a JSON String
+    * @example
+    *   //arrayList contains [1,2,3,4]
+    *   console.log(arrayList.toString());
+    *   //Output
+    *   //[1,2,3,4]
+    */
+    toString(): string;
 }

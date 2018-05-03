@@ -11,6 +11,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var abstract_list_1 = require("../abstract/abstract-list");
+/**
+  Resizable-array implementation of the List interface.
+*/
 var ArrayList = /** @class */ (function (_super) {
     __extends(ArrayList, _super);
     function ArrayList(initialCapacity) {
@@ -71,6 +74,19 @@ var ArrayList = /** @class */ (function (_super) {
     */
     ArrayList.prototype.trimToSize = function () {
         this._capacity = this.size();
+    };
+    /**
+    * Converts the arrayList into a JSON String
+    * @example
+    *   //arrayList contains [1,2,3,4]
+    *   console.log(arrayList.toString());
+    *   //Output
+    *   //[1,2,3,4]
+    */
+    ArrayList.prototype.toString = function () {
+        return "[" + this._store.map(function (item) {
+            return item.toString();
+        }).join(",") + "]";
     };
     return ArrayList;
 }(abstract_list_1.AbstractList));

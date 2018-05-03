@@ -112,7 +112,7 @@ var AbstractList = /** @class */ (function (_super) {
     /**
     * Sorts this list according to the compareFn.
     * compareFn is a function which should return a number value (-ve, zero, or +ve).
-    * x is sorted as the lowest value if compareFn(x,y) is the lowest.
+    * x is considered smaller than y if the compareFn(x,y) is negetive
     * @example
     *   //list contains [1,8,6,2,7,3,9,11]
     *   list.sort(function(x,y) {

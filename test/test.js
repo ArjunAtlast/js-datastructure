@@ -29,7 +29,7 @@ describe("Checking Components..", () => {
 
   //Iterator
   describe("Iterator", () => {
-    var q = new index.Queue(1,2,3);
+    var q = new index.AbstractQueue(1,2,3);
     var itr = q.iterator();
     it("constructor", () => {
       expect(index.Iterator).to.not.equal(undefined);
@@ -40,7 +40,7 @@ describe("Checking Components..", () => {
     });
     it("remove", () => {
       itr.remove();
-      expect(q.front).to.equal(2);
+      expect(q.element()).to.equal(2);
     });
     it("forEachRemaining", () => {
       let a = [2,3];
@@ -57,35 +57,6 @@ describe("Checking Components..", () => {
       expect(itr.next()).to.equal(undefined);
     });
   });
-
-  //Queue
-  describe("Queue", () => {
-    var q = new index.Queue(1,2,3);
-    it("constructor", () => {
-      expect(index.Queue).to.not.equal(undefined);
-      expect(q).to.be.an.instanceOf(index.Queue);
-      expect(q.front).to.equal(1);
-      expect(q.rear).to.equal(3);
-      expect(q.length).to.equal(3);
-    });
-    it("enqueue", () => {
-      q.enqueue(5);
-      expect(q.rear).to.equal(5);
-    });
-    it("dequeue", () => {
-      expect(q.dequeue()).to.equal(1);
-    });
-    it("iterator", () => {
-      expect(q.iterator()).to.be.an.instanceOf(index.Iterator);
-    });
-    it("forEach", () => {
-      let a = [2,3,5];
-      q.forEach((item,index) => {
-        expect(item).to.equal(a[index]);
-      });
-    });
-  });
-
   //AbstractCollection
   describe("AbstractCollection", () => {
     var ac = new index.AbstractCollection(1,2,3);
@@ -158,6 +129,21 @@ describe("Checking Components..", () => {
       expect(ac.iterator()).to.be.an.instanceOf(index.Iterator);
     });
   });
+  //AbstractQueue
+  describe("AbstractQueue", () => {
+    var q = new index.AbstractQueue(1,2,3);
+    it("constructor", () => {
+      expect(index.AbstractQueue).to.not.equal(undefined);
+      expect(q).to.be.an.instanceOf(index.AbstractQueue);
+    });
+    it("element", ()=> {
+      expect(q.element()).to.equal(1);
+    });
+    it("poll", () => {
+      expect(q.poll()).to.equal(1);
+      expect(q.toArray()).to.deep.equal([2,3]);
+    });
+  });
   //ListIterator
   describe("ListIterator", () => {
     var l = new index.AbstractList(1,2,3);
@@ -201,6 +187,7 @@ describe("Checking Components..", () => {
       expect(itr.next()).to.equal(2.3);
     });
   });
+  //AbstractList
   describe("AbstractList", () => {
     let l = new index.AbstractList(1,2,3);
     it("constructor", () => {
@@ -260,7 +247,7 @@ describe("Checking Components..", () => {
       expect(l.listIterator()).to.be.an.instanceOf(index.ListIterator);
     });
   });
-
+  //ArrayList
   describe("ArrayList", ()=> {
     let al = new index.ArrayList(7,1,2,3,4,5);
     it("constructor", () => {
@@ -295,5 +282,29 @@ describe("Checking Components..", () => {
       al.trimToSize();
       expect(al.add(5)).to.equal(false);
     });
+    it("toString", ()=> {
+      expect(al.toString()).to.equal("[2,4,5,6,8,14,16,18,20,10,12]");
+    });
   });
+  //PriorityQueue
+  describe("PriorityQueue", ()=> {
+    let pq;
+    it("constructor", ()=> {
+      expect(index.PriorityQueue).to.not.equal(undefined);
+      pq = new index.PriorityQueue((x,y)=>(x-y),8,5,7,3);
+      expect(pq).to.be.an.instanceOf(index.PriorityQueue);
+      expect(pq.toArray()).to.deep.equal([3,5,7,8]);
+    });
+    it("add", ()=> {
+      expect(pq.add(6)).to.equal(true);
+      expect(pq.toArray()).to.deep.equal([3,5,6,7,8]);
+    });
+    it("addAll", ()=> {
+      expect(pq.addAll([9,4,6.5,2])).to.equal(true);
+      expect(pq.toArray()).to.deep.equal([2,3,4,5,6,6.5,7,8,9]);
+    });
+    it("toString", ()=> {
+      expect(pq.toString()).to.equal("[2,3,4,5,6,6.5,7,8,9]");
+    });
+  })
 });

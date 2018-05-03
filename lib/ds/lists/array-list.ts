@@ -1,11 +1,12 @@
 import { AbstractList } from "../abstract/abstract-list";
 import { Cloneable } from "../../interfaces/cloneable";
 import { List } from "../../interfaces/list";
+import { Serializable } from "../../interfaces/serializable";
 
 /**
   Resizable-array implementation of the List interface.
 */
-export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList<E>> {
+export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList<E>>, Serializable {
 
   protected _capacity: number;
 
@@ -99,5 +100,19 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
   */
   trimToSize():void {
     this._capacity = this.size();
+  }
+
+  /**
+  * Converts the arrayList into a JSON String
+  * @example
+  *   //arrayList contains [1,2,3,4]
+  *   console.log(arrayList.toString());
+  *   //Output
+  *   //[1,2,3,4]
+  */
+  toString(): string {
+    return "["+this._store.map((item:E) => {
+      return item.toString();
+    }).join(",")+"]";
   }
 }
