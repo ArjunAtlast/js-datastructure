@@ -31,7 +31,7 @@ export class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
     * Inserts all items of an array into this priority queue.
     * @example
     *   //queue containes [1,8,12] (compareFn designed for ascending order)
-    *   queue.add([6,10,15]); //[1,6,8,10,12,15]
+    *   queue.addAll([6,10,15]); //[1,6,8,10,12,15]
     */
     addAll(items: E[]):boolean {
       if(super.addAll(items)) {
@@ -44,9 +44,9 @@ export class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
     /**
     * Returns the compare function used to order the elements in this queue.
     * @example
-    *   queue.comparator; //returns a function
+    *   queue.comparator(); //returns a function
     */
-    get comparator():(x:E,y:E)=>number {
+    comparator():(x:E,y:E)=>number {
       return this._comparator;
     }
 

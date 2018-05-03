@@ -44,7 +44,7 @@ var PriorityQueue = /** @class */ (function (_super) {
     * Inserts all items of an array into this priority queue.
     * @example
     *   //queue containes [1,8,12] (compareFn designed for ascending order)
-    *   queue.add([6,10,15]); //[1,6,8,10,12,15]
+    *   queue.addAll([6,10,15]); //[1,6,8,10,12,15]
     */
     PriorityQueue.prototype.addAll = function (items) {
         if (_super.prototype.addAll.call(this, items)) {
@@ -54,18 +54,14 @@ var PriorityQueue = /** @class */ (function (_super) {
         else
             return false;
     };
-    Object.defineProperty(PriorityQueue.prototype, "comparator", {
-        /**
-        * Returns the compare function used to order the elements in this queue.
-        * @example
-        *   queue.comparator; //returns a function
-        */
-        get: function () {
-            return this._comparator;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /**
+    * Returns the compare function used to order the elements in this queue.
+    * @example
+    *   queue.comparator(); //returns a function
+    */
+    PriorityQueue.prototype.comparator = function () {
+        return this._comparator;
+    };
     /**
     * Converts the queue into a JSON String
     * @example

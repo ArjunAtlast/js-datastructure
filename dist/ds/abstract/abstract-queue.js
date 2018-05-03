@@ -11,6 +11,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var abstract_collection_1 = require("./abstract-collection");
+/**
+  Abstract implementation of Queue interface
+*/
 var AbstractQueue = /** @class */ (function (_super) {
     __extends(AbstractQueue, _super);
     function AbstractQueue() {

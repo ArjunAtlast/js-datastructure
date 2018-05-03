@@ -5,6 +5,8 @@ export {Collection} from "./interfaces/collection";
 export {Queue} from "./interfaces/queue";
 export {List} from "./interfaces/list";
 export {Serializable} from "./interfaces/serializable";
+export {Set} from "./interfaces/set";
+export {SortedSet} from "./interfaces/sorted-set";
 
 //classes
 export {Iterator} from "./classes/iterator";
@@ -15,5 +17,7 @@ export {Stack} from "./ds/stack";
 export {AbstractCollection} from "./ds/abstract/abstract-collection";
 export {AbstractQueue} from "./ds/abstract/abstract-queue";
 export {AbstractList} from "./ds/abstract/abstract-list";
+export {AbstractSet} from "./ds/abstract/abstract-set";
+export {AbstractSortedSet} from "./ds/abstract/abstract-sorted-set";
 export {ArrayList} from "./ds/lists/array-list";
 export {PriorityQueue} from "./ds/queues/priority-queue";

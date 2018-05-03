@@ -306,5 +306,85 @@ describe("Checking Components..", () => {
     it("toString", ()=> {
       expect(pq.toString()).to.equal("[2,3,4,5,6,6.5,7,8,9]");
     });
-  })
+  });
+  //AbstractSet
+  describe("AbstractSet", ()=> {
+    let s;
+    it("constructor", ()=> {
+      expect(index.AbstractSet).to.not.equal(undefined);
+      s = new index.AbstractSet(1,2,3,3,2,4,1);
+      expect(s).to.be.an.instanceOf(index.AbstractSet);
+      expect(s.toArray()).to.deep.equal([1,2,3,4]);
+    });
+    it("add", ()=>{
+      expect(s.add(4)).to.equal(false);
+      expect(s.add(5)).to.equal(true);
+      expect(s.toArray()).to.deep.equal([1,2,3,4,5]);
+    });
+    it("addAll", ()=>{
+      expect(s.addAll([3,4,5,6])).to.equal(true);
+      expect(s.toArray()).to.deep.equal([1,2,3,4,5,6])
+      expect(s.addAll([3,4])).to.equal(false);
+    });
+    let s2 = new index.AbstractSet(1,3,5,7,9);
+    it("union", ()=>{
+      expect(s.union(s2).toArray()).to.deep.equal([1,2,3,4,5,6,7,9]);
+      expect(s.union(new index.AbstractSet()).toArray()).to.deep.equal([1,2,3,4,5,6]);
+      expect(s.union(new index.AbstractSet(1,2,3,4,5,6,7,8,9,10)).toArray()).to.deep.equal([1,2,3,4,5,6,7,8,9,10]);
+    });
+    it("intersection", ()=>{
+      expect(s.intersection(s2).toArray()).to.deep.equal([1,3,5]);
+      expect(s.intersection(new index.AbstractSet()).toArray()).to.deep.equal([]);
+      expect(s.intersection(new index.AbstractSet(1,2,3,4,5,6,7,8,9,10)).toArray()).to.deep.equal([1,2,3,4,5,6]);
+    });
+    it("difference", ()=>{
+      expect(s.difference(s2).toArray()).to.deep.equal([2,4,6]);
+      expect(s.difference(new index.AbstractSet()).toArray()).to.deep.equal([1,2,3,4,5,6]);
+      expect(s.difference(new index.AbstractSet(1,2,3,4,5,6,7,8,9,10)).toArray()).to.deep.equal([]);
+    });
+    it("exclusion", ()=>{
+      expect(s.exclusion(s2).toArray()).to.deep.equal([2,4,6,7,9]);
+      expect(s.exclusion(new index.AbstractSet()).toArray()).to.deep.equal([1,2,3,4,5,6]);
+      expect(s.exclusion(new index.AbstractSet(1,2,3,4,5,6,7,8,9,10)).toArray()).to.deep.equal([7,8,9,10]);
+    });
+  });
+  //AbstractSortedSet
+  describe("AbstractSortedSet", ()=> {
+    let ss;
+    it("constructor", ()=> {
+      expect(index.AbstractSortedSet).to.not.equal(undefined);
+      ss = new index.AbstractSortedSet((x,y)=>(x-y),23,5,18,45,98,11);
+      expect(ss).to.be.an.instanceOf(index.AbstractSortedSet);
+      expect(ss.toArray()).to.deep.equal([5,11,18,23,45,98]);
+    });
+    it("add", ()=>{
+      expect(ss.add(15)).to.equal(true);
+      expect(ss.toArray()).to.deep.equal([5,11,15,18,23,45,98]);
+    });
+    it("addAll", ()=>{
+      expect(ss.addAll([15,12,19,22])).to.equal(true);
+      expect(ss.toArray()).to.deep.equal([5,11,12,15,18,19,22,23,45,98]);
+    });
+    it("first,last", ()=>{
+      expect(ss.first()).to.equal(5);
+      expect(ss.last()).to.equal(98);
+    });
+    it("headSet", ()=>{
+      expect(ss.headSet(15).toArray()).to.deep.equal([5,11,12]);
+      expect(ss.headSet(22.5).toArray()).to.deep.equal([5,11,12,15,18,19,22]);
+      expect(ss.headSet(-1).toArray()).to.deep.equal([]);
+    });
+    it("subSet", ()=>{
+      expect(ss.subSet(5,19).toArray()).to.deep.equal([5,11,12,15,18]);
+      expect(ss.subSet(12,35).toArray()).to.deep.equal([12,15,18,19,22,23]);
+      expect(ss.subSet(12,1).toArray()).to.deep.equal([]);
+      expect(ss.subSet(12,12).toArray()).to.deep.equal([]);
+    });
+    it("tailSet", ()=>{
+      expect(ss.tailSet(15).toArray()).to.deep.equal([18,19,22,23,45,98]);
+      expect(ss.tailSet(20).toArray()).to.deep.equal([22,23,45,98]);
+      expect(ss.tailSet(100).toArray()).to.deep.equal([]);
+      expect(ss.tailSet(98).toArray()).to.deep.equal([]);
+    });
+  });
 });

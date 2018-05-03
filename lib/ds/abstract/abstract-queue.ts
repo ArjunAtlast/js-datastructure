@@ -1,6 +1,9 @@
 import { AbstractCollection } from "./abstract-collection";
 import { Queue } from "../../interfaces/queue";
 
+/**
+  Abstract implementation of Queue interface
+*/
 export class AbstractQueue<E> extends AbstractCollection<E> implements Queue<E> {
   /**
   * Retrieves, but does not remove, the head of this queue

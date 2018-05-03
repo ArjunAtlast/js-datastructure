@@ -17,15 +17,15 @@ export declare class PriorityQueue<E> extends AbstractQueue<E> implements Serial
     * Inserts all items of an array into this priority queue.
     * @example
     *   //queue containes [1,8,12] (compareFn designed for ascending order)
-    *   queue.add([6,10,15]); //[1,6,8,10,12,15]
+    *   queue.addAll([6,10,15]); //[1,6,8,10,12,15]
     */
     addAll(items: E[]): boolean;
     /**
     * Returns the compare function used to order the elements in this queue.
     * @example
-    *   queue.comparator; //returns a function
+    *   queue.comparator(); //returns a function
     */
-    readonly comparator: (x: E, y: E) => number;
+    comparator(): (x: E, y: E) => number;
     /**
     * Converts the queue into a JSON String
     * @example
