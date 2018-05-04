@@ -54,7 +54,7 @@ export class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
     * Converts the queue into a JSON String
     * @example
     *   //queue contains [1,2,3,4]
-    *   console.log(queue.toString());
+    *   console.log(queue.toString((x)=>(x.toString())));
     *   //Output
     *   //[1,2,3,4]
     */
