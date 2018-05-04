@@ -7981,7 +7981,7 @@ x is considered smaller than y if the compareFn(x,y) is negetive
                             <span class="min-title">@example</span>
                             <pre><code class="js">
   //arrayList contains [1,2,3,4]
-  console.log(arrayList.toString());
+  console.log(arrayList.toString((x)&#x3D;&gt;(x.toString())));
   //Output
   //&quot;[1,2,3,4]&quot;
 
@@ -10596,7 +10596,7 @@ collection.removeIf(function(x) {
                             <span class="min-title">@example</span>
                             <pre><code class="js">
   //queue contains [1,2,3,4]
-  console.log(queue.toString());
+  console.log(queue.toString((x)&#x3D;&gt;(x.toString())));
   //Output
   //[1,2,3,4]
 

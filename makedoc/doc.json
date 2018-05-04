@@ -13295,7 +13295,7 @@
 								"tags": [
 									{
 										"tag": "example",
-										"text": "\n  //arrayList contains [1,2,3,4]\n  console.log(arrayList.toString());\n  //Output\n  //\"[1,2,3,4]\"\n"
+										"text": "\n  //arrayList contains [1,2,3,4]\n  console.log(arrayList.toString((x)=>(x.toString())));\n  //Output\n  //\"[1,2,3,4]\"\n"
 									}
 								]
 							},
@@ -16476,7 +16476,7 @@
 								"tags": [
 									{
 										"tag": "example",
-										"text": "\n  //queue contains [1,2,3,4]\n  console.log(queue.toString());\n  //Output\n  //[1,2,3,4]\n"
+										"text": "\n  //queue contains [1,2,3,4]\n  console.log(queue.toString((x)=>(x.toString())));\n  //Output\n  //[1,2,3,4]\n"
 									}
 								]
 							},
