@@ -83,16 +83,17 @@ var ArrayList = /** @class */ (function (_super) {
     *   //Output
     *   //"[1,2,3,4]"
     */
-    ArrayList.prototype.toString = function () {
+    ArrayList.prototype.toString = function (serializerFn) {
         return "[" + this._store.map(function (item) {
-            return item.toString();
+            return serializerFn(item);
         }).join(",") + "]";
     };
     /**
     * Return the Object from the JSON string
-    * //json = "[1,2,3,4]"
-    * arrayList = new ArrayList<number>().fromString(json,(x)=>(parseFloat(x)));
-    * //arrayList contains [1,2,3,4]
+    * @example
+    *   //json = "[1,2,3,4]"
+    *   arrayList = new ArrayList<number>().fromString(json,(x)=>(parseFloat(x)));
+    *   //arrayList contains [1,2,3,4]
     *
     */
     ArrayList.prototype.fromString = function (json, deserializerFn) {

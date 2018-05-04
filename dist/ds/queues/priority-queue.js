@@ -70,16 +70,17 @@ var PriorityQueue = /** @class */ (function (_super) {
     *   //Output
     *   //[1,2,3,4]
     */
-    PriorityQueue.prototype.toString = function () {
+    PriorityQueue.prototype.toString = function (serializerFn) {
         return "[" + this._store.map(function (item) {
-            return item.toString();
+            return serializerFn(item);
         }).join(",") + "]";
     };
     /**
     * Return the Object from the JSON string
-    * //json = "[1,2,3,4]"
-    * queue = new PriorityQueue<number>().fromString(json,(x)=>(parseFloat(x)));
-    * //queue contains [1,2,3,4]
+    * @example
+    *   //json = "[1,2,3,4]"
+    *   queue = new PriorityQueue<number>().fromString(json,(x)=>(parseFloat(x)));
+    *   //queue contains [1,2,3,4]
     *
     */
     PriorityQueue.prototype.fromString = function (json, deserializerFn) {

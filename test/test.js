@@ -283,7 +283,7 @@ describe("Checking Components..", () => {
       expect(al.add(5)).to.equal(false);
     });
     it("toString", ()=> {
-      expect(al.toString()).to.equal("[2,4,5,6,8,14,16,18,20,10,12]");
+      expect(al.toString((x)=>(x.toString()))).to.equal("[2,4,5,6,8,14,16,18,20,10,12]");
     });
     it("fromString", ()=> {
       let arl = new index.ArrayList().fromString("[1,2,3,4,5]", (x)=>(parseFloat(x)));
@@ -308,7 +308,7 @@ describe("Checking Components..", () => {
       expect(pq.toArray()).to.deep.equal([2,3,4,5,6,6.5,7,8,9]);
     });
     it("toString", ()=> {
-      expect(pq.toString()).to.equal("[2,3,4,5,6,6.5,7,8,9]");
+      expect(pq.toString((x)=>(x.toString()))).to.equal("[2,3,4,5,6,6.5,7,8,9]");
     });
     it("fromString", ()=> {
       let prq = new index.PriorityQueue().fromString("[1,2,3,4,5]", (x)=>(parseFloat(x)));

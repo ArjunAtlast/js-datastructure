@@ -110,20 +110,21 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
   *   //Output
   *   //"[1,2,3,4]"
   */
-  toString(): string {
+  toString(serializerFn:(item:E)=>string): string {
     return "["+this._store.map((item:E) => {
-      return item.toString();
+      return serializerFn(item);
     }).join(",")+"]";
   }
 
   /**
   * Return the Object from the JSON string
-  * //json = "[1,2,3,4]"
-  * arrayList = new ArrayList<number>().fromString(json,(x)=>(parseFloat(x)));
-  * //arrayList contains [1,2,3,4]
+  * @example
+  *   //json = "[1,2,3,4]"
+  *   arrayList = new ArrayList<number>().fromString(json,(x)=>(parseFloat(x)));
+  *   //arrayList contains [1,2,3,4]
   *
   */
-  fromString(json:string, deserializerFn:(itemJSON:string)=>E):ArrayList<E> {
+  fromString(json:string, deserializerFn:(itemJ:string)=>E):ArrayList<E> {
     let object:any[] = JSON.parse(json);
     let finalArr:E[] = object.map((x)=>(deserializerFn(JSON.stringify(x))));
     return new ArrayList<E>(finalArr.length, ...finalArr);
