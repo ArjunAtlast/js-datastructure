@@ -387,4 +387,96 @@ describe("Checking Components..", () => {
       expect(ss.tailSet(98).toArray()).to.deep.equal([]);
     });
   });
+
+  //AbstractMap
+  describe("AbstractMap", ()=>{
+    let am;
+    it("constructor", ()=>{
+      expect(index.AbstractMap).to.not.equal(undefined);
+      am = new index.AbstractMap({key:"a", value:1},{key:"b", value:2});
+      expect(am).to.be.an.instanceOf(index.AbstractMap);
+      expect(am.entrySet().toArray()).to.deep.equal([{key:"a", value:1},{key:"b", value:2}]);
+    });
+    it("clear, isEmpty", ()=>{
+      expect(am.isEmpty()).to.equal(false);
+      am.clear();
+      expect(am.isEmpty()).to.equal(true);
+    });
+    it("put, putIfAbsent", ()=>{
+      expect(am.put("a",1)).to.equal(undefined);
+      expect(am.put("b",null)).to.equal(undefined);
+      expect(am.put("a",12)).to.equal(1);
+      expect(am.entrySet().toArray()).to.deep.equal([{key:"a", value:12},{key:"b", value:null}]);
+      expect(am.putIfAbsent("c",15)).to.equal(undefined);
+      expect(am.putIfAbsent("a",25)).to.equal(12);
+      expect(am.entrySet().toArray()).to.deep.equal([{key:"a", value:12},{key:"b", value:null},{key:"c", value:15}]);
+    });
+    it("get, getOrDefault", ()=>{
+      expect(am.get("a")).to.equal(12);
+      expect(am.get("j")).to.equal(undefined);
+      expect(am.get("b")).to.equal(null);
+    });
+    it("entrySet, keySet, values", ()=>{
+      expect(am.entrySet().toArray()).to.deep.equal([{key:"a", value:12},{key:"b", value:null},{key:"c", value:15}]);
+      expect(am.keySet().toArray()).to.deep.equal(["a","b","c"]);
+      expect(am.values().toArray()).to.deep.equal([12,null,15]);
+    });
+    it("containsKey, containsValue", ()=>{
+      expect(am.containsKey("a")).to.equal(true);
+      expect(am.containsKey("f")).to.equal(false);
+      expect(am.containsValue(25)).to.equal(false);
+      expect(am.containsValue(12)).to.equal(true);
+      expect(am.containsValue(null)).to.equal(true);
+    });
+    it("compute, computeIfAbsent, computeIfPresent", ()=>{
+      expect(am.compute("a",(k,v,m)=>(v*2))).to.equal(12);
+      expect(am.values().toArray()).to.deep.equal([24,null,15]);
+
+      expect(am.computeIfPresent("c",(k,v,m)=>(v+2))).to.equal(15);
+      expect(am.values().toArray()).to.deep.equal([24,null,17]);
+      expect(am.computeIfPresent("b",(k,v,m)=>(v+2))).to.equal(null);
+      expect(am.values().toArray()).to.deep.equal([24,null,17]);
+
+      expect(am.computeIfAbsent("b",(k,v,m)=>(k.charCodeAt(0)))).to.equal(null);
+      expect(am.values().toArray()).to.deep.equal([24,98,17]);
+      expect(am.computeIfAbsent("a",(k,v,m)=>(k.charCodeAt(0)))).to.equal(24);
+      expect(am.values().toArray()).to.deep.equal([24,98,17]);
+    });
+    it("equals", ()=>{
+      let am2 = new index.AbstractMap({key:"a", value:24},{key:"b", value:98});
+      expect(am.equals(am)).to.equal(true);
+      expect(am.equals(am2)).to.equal(false);
+      expect(am.equals([])).to.equal(false);
+      am2.put("c",17);
+      expect(am.equals(am2)).to.equal(true);
+    });
+    it("forEach", ()=>{
+      am.forEach((key,value,map) => {
+        expect(value).to.equal(map.get(key));
+      });
+    });
+    it("putAll", ()=>{
+      let am2 = new index.AbstractMap({key:"a",value:22},{key:"d", value:17},{key:"e", value:null}, {key:"f", value:27});
+      am.putAll(am2);
+      expect(am.entrySet().toArray()).to.deep.equal([{key:"a", value:22},{key:"b", value:98},{key:"c", value:17},{key:"d", value: 17}, {key:"e", value:null}, {key:"f", value:27}]);
+    });
+    it("remove,removeIf", ()=>{
+      expect(am.remove("a")).to.equal(22);
+      expect(am.remove("ff")).to.equal(undefined);
+      expect(am.entrySet().toArray()).to.deep.equal([{key:"b", value:98},{key:"c", value:17},{key:"d", value: 17}, {key:"e", value:null}, {key:"f", value:27}]);
+      expect(am.removeIf("b", 88)).to.equal(false);
+      expect(am.removeIf("b", 98)).to.equal(true);
+      expect(am.values().toArray()).to.deep.equal([17,17,null,27]);
+    });
+    it("replace, replaceAll, isNull, size", ()=>{
+      expect(am.replace(28,15)).to.equal(false);
+      expect(am.replace(17,9)).to.equal(true);
+      expect(am.entrySet().toArray()).to.deep.equal([{key:"c", value:9},{key:"d", value: 9}, {key:"e", value:null}, {key:"f", value:27}]);
+      expect(am.size()).to.equal(4);
+      expect(am.isNull()).to.equal(false);
+      am.replaceAll((k,v,m)=>(null));
+      expect(am.isNull()).to.equal(true);
+    });
+
+  });
 });
