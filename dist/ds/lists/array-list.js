@@ -81,12 +81,24 @@ var ArrayList = /** @class */ (function (_super) {
     *   //arrayList contains [1,2,3,4]
     *   console.log(arrayList.toString());
     *   //Output
-    *   //[1,2,3,4]
+    *   //"[1,2,3,4]"
     */
     ArrayList.prototype.toString = function () {
         return "[" + this._store.map(function (item) {
             return item.toString();
         }).join(",") + "]";
+    };
+    /**
+    * Return the Object from the JSON string
+    * //json = "[1,2,3,4]"
+    * arrayList = new ArrayList<number>().fromString(json,(x)=>(parseFloat(x)));
+    * //arrayList contains [1,2,3,4]
+    *
+    */
+    ArrayList.prototype.fromString = function (json, deserializerFn) {
+        var object = JSON.parse(json);
+        var finalArr = object.map(function (x) { return (deserializerFn(JSON.stringify(x))); });
+        return new (ArrayList.bind.apply(ArrayList, [void 0, finalArr.length].concat(finalArr)))();
     };
     return ArrayList;
 }(abstract_list_1.AbstractList));

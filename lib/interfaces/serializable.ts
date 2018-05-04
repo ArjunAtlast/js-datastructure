@@ -6,4 +6,8 @@ export interface Serializable {
     Return this object's corresponding JSON String
   */
   toString():string;
+  /**
+  * Return the Object from the JSON string
+  */
+  fromString(json:string, deserializerFn:(itemJSON:string)=>any):Object;
 }

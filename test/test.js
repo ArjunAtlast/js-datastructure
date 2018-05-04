@@ -285,6 +285,10 @@ describe("Checking Components..", () => {
     it("toString", ()=> {
       expect(al.toString()).to.equal("[2,4,5,6,8,14,16,18,20,10,12]");
     });
+    it("fromString", ()=> {
+      let arl = new index.ArrayList().fromString("[1,2,3,4,5]", (x)=>(parseFloat(x)));
+      expect(arl.toArray()).to.deep.equal([1,2,3,4,5]);
+    });
   });
   //PriorityQueue
   describe("PriorityQueue", ()=> {
@@ -305,6 +309,10 @@ describe("Checking Components..", () => {
     });
     it("toString", ()=> {
       expect(pq.toString()).to.equal("[2,3,4,5,6,6.5,7,8,9]");
+    });
+    it("fromString", ()=> {
+      let prq = new index.PriorityQueue().fromString("[1,2,3,4,5]", (x)=>(parseFloat(x)));
+      expect(prq.toArray()).to.deep.equal([1,2,3,4,5]);
     });
   });
   //AbstractSet
@@ -477,6 +485,5 @@ describe("Checking Components..", () => {
       am.replaceAll((k,v,m)=>(null));
       expect(am.isNull()).to.equal(true);
     });
-
   });
 });

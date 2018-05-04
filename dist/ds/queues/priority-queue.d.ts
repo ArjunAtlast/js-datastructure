@@ -35,4 +35,12 @@ export declare class PriorityQueue<E> extends AbstractQueue<E> implements Serial
     *   //[1,2,3,4]
     */
     toString(): string;
+    /**
+    * Return the Object from the JSON string
+    * //json = "[1,2,3,4]"
+    * queue = new PriorityQueue<number>().fromString(json,(x)=>(parseFloat(x)));
+    * //queue contains [1,2,3,4]
+    *
+    */
+    fromString(json: string, deserializerFn: (itemJSON: string) => E): PriorityQueue<E>;
 }

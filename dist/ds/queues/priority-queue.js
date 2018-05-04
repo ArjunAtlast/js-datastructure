@@ -75,6 +75,18 @@ var PriorityQueue = /** @class */ (function (_super) {
             return item.toString();
         }).join(",") + "]";
     };
+    /**
+    * Return the Object from the JSON string
+    * //json = "[1,2,3,4]"
+    * queue = new PriorityQueue<number>().fromString(json,(x)=>(parseFloat(x)));
+    * //queue contains [1,2,3,4]
+    *
+    */
+    PriorityQueue.prototype.fromString = function (json, deserializerFn) {
+        var object = JSON.parse(json);
+        var finalArr = object.map(function (x) { return (deserializerFn(JSON.stringify(x))); });
+        return new (PriorityQueue.bind.apply(PriorityQueue, [void 0, this.comparator()].concat(finalArr)))();
+    };
     return PriorityQueue;
 }(abstract_queue_1.AbstractQueue));
 exports.PriorityQueue = PriorityQueue;
