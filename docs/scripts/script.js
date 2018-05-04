@@ -1,5 +1,3 @@
-hljs.initHighlightingOnLoad();
-
 $(document).ready(function(e){
   stickyNavbar("#navbar");
   $(".open-sidebar").click(toggleSidebar);

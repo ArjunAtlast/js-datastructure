@@ -26,14 +26,14 @@
 
         <div class="banner">
           <div class="banner-center">
-            <div class="version">v0.2.0</div>
+            <div class="version">v{{package.version}}</div>
             <div class="icon">JSDS</div>
             <div class="description">
-              NodeJS library with lot of Data Structures to help Back-End Developors
+              {{package.description}}
             </div>
             <div class="action-links">
               <a href="#get-started" class="action-link scrolly">Get Started</a>
-              <a href="https://github.com/ArjunAtlast/js-datastructure#readme" class="action-link">Github</a>
+              <a href="{{package.homepage}}" class="action-link">Github</a>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="getting-started">
           <a name="get-started">
             <h3 class="page-title">
-              <i class="material-icons">code</i>
+              <i class="material-icons">{{getIcon 'default'}}</i>
               Getting Started
             </h3>
           </a>
@@ -49,11 +49,11 @@
             <h3 class="sub-title">_Installation</h3>
             <div class="sub-content">
               <p>To install latest version:</p>
-              <pre class="jsds-code"><code>$ npm install @arjunatlast/jsds</code></pre>
+              <pre class="jsds-code"><code>$ npm install {{package.name}}</code></pre>
             </div>
             <div class="sub-content">
               <p>To install the latest development version locally:</p>
-              <pre class="jsds-code"><code>$ npm install git+https://github.com/ArjunAtlast/js-datastructure.git</code></pre>
+              <pre class="jsds-code"><code>$ npm install {{package.repository.url}}</code></pre>
             </div>
           </div>
 

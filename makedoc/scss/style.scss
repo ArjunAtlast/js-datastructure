@@ -1,7 +1,6 @@
 @import "variables.scss";
 
 html, body {
-  width: 100%;
   height: 100%;
   font-family: "Montserrat", sans-serif;
   color: $darkColor;
@@ -13,6 +12,12 @@ html, body {
   box-sizing: border-box;
 }
 
+@media screen and (max-width:479px) {
+  body {
+    font-size: 11px;
+  }
+}
+
 .placeholder {
   display: flex;
   padding: 32px;
@@ -22,7 +27,7 @@ html, body {
   background: lighten($primaryColor,45%);
   color: $darkColor;
   font-weight: 100;
-  font-size: 1.3rem;
+  font-size: 1.3em;
 }
 
 a:link, a:visited {
@@ -50,6 +55,7 @@ main {
     overflow: hidden;
     transition: width $animDuration $animEasing;
     &.open { width: 300px; }
+
     .simplebar-content { overflow-x: hidden !important;}
     .sidebar-dropdown-list {
       width: 300px;
@@ -61,10 +67,11 @@ main {
           color: $lightColor;
           text-decoration: none;
           background: $primaryColor;
-          font-size: 1.5rem;
+          font-size: 1.2em;
           font-weight: 300;
 
           .material-icons {
+            font-size: 18px;
             padding-right: 8px;
           }
         }
@@ -108,6 +115,110 @@ main {
     transition: width $animDuration $animEasing, padding $animDuration $animEasing;
     flex: 1;
     background: $lightColor;
+    overflow-x: hidden;
+
+    &.bg-banner {
+      background: $primaryColor;
+      background: linear-gradient(45deg, $primaryColor, $tintColor)
+    }
+
+    div.banner {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: calc(100% - 71px);
+      .banner-center {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        align-items: center;
+
+        .icon {
+          font-weight: 700;
+          font-size: 7em;
+          color: $lightColor;
+          position: relative;
+          &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 100%;
+            background: $lightColor;
+            width: 60%;
+            height: 10px;
+          }
+        }
+        .version {
+          font-weight: 100;
+          font-size: 3em;
+          color: $lightColor;
+        }
+        .description {
+          text-align: center;
+          font-weight: 500;
+          font-size: 1.5em;
+          color: $lightColor;
+          margin-top: 32px;
+        }
+        .action-links {
+          margin-top: 48px;
+          display: flex;
+          width: 60%;
+          justify-content: space-around;
+          .action-link {
+            display: block;
+            font-weight: 400;
+            font-size: 1.2em;
+            padding: 16px;
+            color: $lightColor;
+            text-transform: uppercase;
+            border: 1px solid $lightColor;
+            transition: all $animDuration $animEasing;
+            &:hover {
+              background: $lightColor;
+              color: $tintColor;
+            }
+          }
+        }
+      }
+    }
+
+    div.getting-started {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      background: $lightColor;
+      .page-title {
+        color: $primaryColor;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        font-weight: 300;
+        font-size: 2.3em;
+        .material-icons { margin-right: 8px;}
+      }
+      .content {
+        .sub-title {
+          padding: 12px 16px;
+          font-weight: 600;
+          text-transform: lowercase;
+          background: $darkColor;
+          color: $lightColor;
+          font-size: 1.6em;
+        }
+        .sub-content {
+          p { padding: 16px;}
+          pre.jsds-code {
+            background: lighten($primaryColor,45%);
+            padding: 32px 16px;
+            font-size: 1.5em;
+            width: 100%;
+            overflow-x: auto;
+          }
+        }
+      }
+    }
 
     #navbar {
       display: flex;
@@ -117,11 +228,69 @@ main {
       box-shadow: 0px 0px 0px rgba(0,0,0,0.33);
       transition: all $animDuration $animEasing;
       top: -100%;
+      z-index: 5000;
       &.locked {
         position: fixed;
         top: 0;
         //left: 0;
         box-shadow: 0px 0px 5px rgba(0,0,0,0.33);
+      }
+
+      &.flow {
+        background: transparent;
+        .navbar-brand {
+          color: $lightColor;
+          &::after { background: transparent};
+        }
+        &.locked {
+          background: $lightColor;
+          .navbar-brand {
+            color: $darkColor;
+            &::after { background: $primaryColor};
+          }
+          .nav-links .nav-link a {
+            &:hover, &.active{color: $primaryColor;}
+            &::after{background: $primaryColor;}
+          }
+        }
+        .nav-links .nav-link a {
+          &:hover, &.active{color: $lightColor;}
+          &::after{background: $lightColor;}
+        }
+
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        list-style-type: none;
+        li.nav-link {
+          a {
+            display: block;
+            position: relative;
+            font-weight: 400;
+            padding: 24px;
+            font-size: 0.8em;
+            color: $darkColor;
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 100%;
+              width: 0%;
+              height: 3px;
+              background: $primaryColor;
+              transition: width $animDuration $animEasing;
+            }
+            &:hover, &.active {
+              color: $primaryColor;
+              &::after {
+                width: 60%;
+              }
+            }
+          }
+        }
       }
 
       .navbar-action {
@@ -139,7 +308,7 @@ main {
       .navbar-brand {
         position: relative;
         padding: 16px;
-        font-size: 2rem;
+        font-size: 2em;
         font-weight: 700;
         color: $darkColor;
 
@@ -147,7 +316,7 @@ main {
           content: '';
           position: absolute;
           display: block;
-          width: 100%;
+          width: 60%;
           height: 5px;
           background: $primaryColor;
           top: calc(100% - 5px);
@@ -158,12 +327,13 @@ main {
 
     //Main Doc
     div.doc-main {
+      min-width: 300px;
       section.doc-section {
         h3.section-title {
           display: flex;
           align-items: center;
           font-weight: 300;
-          font-size: 1.7rem;
+          font-size: 1.7em;
           padding: 16px;
           border-bottom: 5px solid $primaryColor;
           .material-icons {
@@ -176,16 +346,17 @@ main {
           width: 100%;
           padding: 24px;
           padding-left: 48px;
-          font-size: 0.9rem;
+          font-size: 0.9em;
           background: lighten($primaryColor,45%);
         }
 
         .section-inheritance, .section-implementation, .section-extended-by, .section-implemented-by {
           display: flex;
+          flex-wrap: wrap;
           padding: 8px 16px;
           align-items: center;
           background: lighten($primaryColor,45%);
-          font-size: 0.8rem;
+          font-size: 0.8em;
           .material-icons {
             font-size: 18px;
             color: $tintColor;
@@ -215,7 +386,7 @@ main {
           .section-signature {
             padding: 16px 32px;
             background: lighten($primaryColor,40%);
-            font-size: 1.2rem;
+            font-size: 1.2em;
             font-weight: 500;
           }
           .section-examples {
@@ -238,14 +409,14 @@ main {
             display: flex;
             align-items: center;
             font-weight: 400;
-            font-size: 1.2rem;
+            font-size: 1.2em;
             padding: 16px 32px;
             .material-icons {
               color: $tintColor;
               padding-right: 8px;
             }
             big {
-              font-size: 1.3rem;
+              font-size: 1.3em;
               font-weight: 200;
             }
           }

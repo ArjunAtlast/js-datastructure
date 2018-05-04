@@ -1,5 +1,4 @@
 html, body {
-  width: 100%;
   height: 100%;
   font-family: "Montserrat", sans-serif;
   color: #050309; }
@@ -9,6 +8,9 @@ html, body {
   margin: 0;
   box-sizing: border-box; }
 
+@media screen and (max-width: 479px) {
+  body {
+    font-size: 11px; } }
 .placeholder {
   display: flex;
   padding: 32px;
@@ -18,7 +20,7 @@ html, body {
   background: #e8e1f5;
   color: #050309;
   font-weight: 100;
-  font-size: 1.3rem; }
+  font-size: 1.3em; }
 
 a:link, a:visited {
   color: #E91E63;
@@ -54,9 +56,10 @@ main {
         color: #fff;
         text-decoration: none;
         background: #673AB7;
-        font-size: 1.5rem;
+        font-size: 1.2em;
         font-weight: 300; }
         main #sidebar .sidebar-dropdown-list > .dropdown-list-item a.dropdown-list-item-title .material-icons {
+          font-size: 18px;
           padding-right: 8px; }
       main #sidebar .sidebar-dropdown-list > .dropdown-list-item > .sidebar-sublist {
         display: none; }
@@ -86,7 +89,91 @@ main {
     overflow-y: auto;
     transition: width 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91), padding 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91);
     flex: 1;
-    background: #fff; }
+    background: #fff;
+    overflow-x: hidden; }
+    main .wrapper.bg-banner {
+      background: #673AB7;
+      background: linear-gradient(45deg, #673AB7, #E91E63); }
+    main .wrapper div.banner {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: calc(100% - 71px); }
+      main .wrapper div.banner .banner-center {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        align-items: center; }
+        main .wrapper div.banner .banner-center .icon {
+          font-weight: 700;
+          font-size: 7em;
+          color: #fff;
+          position: relative; }
+          main .wrapper div.banner .banner-center .icon::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 100%;
+            background: #fff;
+            width: 60%;
+            height: 10px; }
+        main .wrapper div.banner .banner-center .version {
+          font-weight: 100;
+          font-size: 3em;
+          color: #fff; }
+        main .wrapper div.banner .banner-center .description {
+          text-align: center;
+          font-weight: 500;
+          font-size: 1.5em;
+          color: #fff;
+          margin-top: 32px; }
+        main .wrapper div.banner .banner-center .action-links {
+          margin-top: 48px;
+          display: flex;
+          width: 60%;
+          justify-content: space-around; }
+          main .wrapper div.banner .banner-center .action-links .action-link {
+            display: block;
+            font-weight: 400;
+            font-size: 1.2em;
+            padding: 16px;
+            color: #fff;
+            text-transform: uppercase;
+            border: 1px solid #fff;
+            transition: all 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91); }
+            main .wrapper div.banner .banner-center .action-links .action-link:hover {
+              background: #fff;
+              color: #E91E63; }
+    main .wrapper div.getting-started {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      background: #fff; }
+      main .wrapper div.getting-started .page-title {
+        color: #673AB7;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        font-weight: 300;
+        font-size: 2.3em; }
+        main .wrapper div.getting-started .page-title .material-icons {
+          margin-right: 8px; }
+      main .wrapper div.getting-started .content .sub-title {
+        padding: 12px 16px;
+        font-weight: 600;
+        text-transform: lowercase;
+        background: #050309;
+        color: #fff;
+        font-size: 1.6em; }
+      main .wrapper div.getting-started .content .sub-content p {
+        padding: 16px; }
+      main .wrapper div.getting-started .content .sub-content pre.jsds-code {
+        background: #e8e1f5;
+        padding: 32px 16px;
+        font-size: 1.5em;
+        width: 100%;
+        overflow-x: auto; }
     main .wrapper #navbar {
       display: flex;
       align-items: center;
@@ -94,11 +181,57 @@ main {
       background: #fff;
       box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.33);
       transition: all 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91);
-      top: -100%; }
+      top: -100%;
+      z-index: 5000; }
       main .wrapper #navbar.locked {
         position: fixed;
         top: 0;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.33); }
+      main .wrapper #navbar.flow {
+        background: transparent; }
+        main .wrapper #navbar.flow .navbar-brand {
+          color: #fff; }
+          main .wrapper #navbar.flow .navbar-brand::after {
+            background: transparent; }
+        main .wrapper #navbar.flow.locked {
+          background: #fff; }
+          main .wrapper #navbar.flow.locked .navbar-brand {
+            color: #050309; }
+            main .wrapper #navbar.flow.locked .navbar-brand::after {
+              background: #673AB7; }
+          main .wrapper #navbar.flow.locked .nav-links .nav-link a:hover, main .wrapper #navbar.flow.locked .nav-links .nav-link a.active {
+            color: #673AB7; }
+          main .wrapper #navbar.flow.locked .nav-links .nav-link a::after {
+            background: #673AB7; }
+        main .wrapper #navbar.flow .nav-links .nav-link a:hover, main .wrapper #navbar.flow .nav-links .nav-link a.active {
+          color: #fff; }
+        main .wrapper #navbar.flow .nav-links .nav-link a::after {
+          background: #fff; }
+      main .wrapper #navbar .nav-links {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        list-style-type: none; }
+        main .wrapper #navbar .nav-links li.nav-link a {
+          display: block;
+          position: relative;
+          font-weight: 400;
+          padding: 24px;
+          font-size: 0.8em;
+          color: #050309; }
+          main .wrapper #navbar .nav-links li.nav-link a::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 100%;
+            width: 0%;
+            height: 3px;
+            background: #673AB7;
+            transition: width 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91); }
+          main .wrapper #navbar .nav-links li.nav-link a:hover, main .wrapper #navbar .nav-links li.nav-link a.active {
+            color: #673AB7; }
+            main .wrapper #navbar .nav-links li.nav-link a:hover::after, main .wrapper #navbar .nav-links li.nav-link a.active::after {
+              width: 60%; }
       main .wrapper #navbar .navbar-action {
         padding: 16px; }
         main .wrapper #navbar .navbar-action.left {
@@ -116,87 +249,90 @@ main {
       main .wrapper #navbar .navbar-brand {
         position: relative;
         padding: 16px;
-        font-size: 2rem;
+        font-size: 2em;
         font-weight: 700;
         color: #050309; }
         main .wrapper #navbar .navbar-brand::after {
           content: '';
           position: absolute;
           display: block;
-          width: 100%;
+          width: 60%;
           height: 5px;
           background: #673AB7;
           top: calc(100% - 5px);
           left: 0; }
-    main .wrapper div.doc-main section.doc-section h3.section-title {
-      display: flex;
-      align-items: center;
-      font-weight: 300;
-      font-size: 1.7rem;
-      padding: 16px;
-      border-bottom: 5px solid #673AB7; }
-      main .wrapper div.doc-main section.doc-section h3.section-title .material-icons {
-        padding-right: 8px;
-        color: #673AB7; }
-    main .wrapper div.doc-main section.doc-section .section-description {
-      width: 100%;
-      padding: 24px;
-      padding-left: 48px;
-      font-size: 0.9rem;
-      background: #e8e1f5; }
-    main .wrapper div.doc-main section.doc-section .section-inheritance, main .wrapper div.doc-main section.doc-section .section-implementation, main .wrapper div.doc-main section.doc-section .section-extended-by, main .wrapper div.doc-main section.doc-section .section-implemented-by {
-      display: flex;
-      padding: 8px 16px;
-      align-items: center;
-      background: #e8e1f5;
-      font-size: 0.8rem; }
-      main .wrapper div.doc-main section.doc-section .section-inheritance .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by .material-icons {
-        font-size: 18px;
-        color: #E91E63;
-        margin-right: 4px; }
-      main .wrapper div.doc-main section.doc-section .section-inheritance .label, main .wrapper div.doc-main section.doc-section .section-implementation .label, main .wrapper div.doc-main section.doc-section .section-extended-by .label, main .wrapper div.doc-main section.doc-section .section-implemented-by .label {
-        font-weight: 300; }
-      main .wrapper div.doc-main section.doc-section .section-inheritance a, main .wrapper div.doc-main section.doc-section .section-implementation a, main .wrapper div.doc-main section.doc-section .section-extended-by a, main .wrapper div.doc-main section.doc-section .section-implemented-by a {
-        margin-left: 8px;
-        font-weight: 500;
-        color: #050309;
-        padding: 4px;
-        transition: color 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91);
-        margin-right: 8px; }
-        main .wrapper div.doc-main section.doc-section .section-inheritance a:hover, main .wrapper div.doc-main section.doc-section .section-implementation a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by a:hover {
-          color: #E91E63; }
-      main .wrapper div.doc-main section.doc-section .section-inheritance.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-inheritance.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-implemented-by .material-icons {
-        color: #009688; }
-      main .wrapper div.doc-main section.doc-section .section-inheritance.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-inheritance.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-implementation.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implementation.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-implemented-by a:hover {
-        color: #009688; }
-    main .wrapper div.doc-main section.doc-section .section-constructor, main .wrapper div.doc-main section.doc-section .section-methods .section-method, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor {
-      width: 100%; }
-      main .wrapper div.doc-main section.doc-section .section-constructor .section-signature, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-signature, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-signature {
-        padding: 16px 32px;
-        background: #daceef;
-        font-size: 1.2rem;
-        font-weight: 500; }
-      main .wrapper div.doc-main section.doc-section .section-constructor .section-examples .section-example, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-examples .section-example, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-examples .section-example {
-        margin: 0;
-        background: #050309;
-        padding: 16px 32px; }
-        main .wrapper div.doc-main section.doc-section .section-constructor .section-examples .section-example .min-title, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-examples .section-example .min-title, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-examples .section-example .min-title {
-          color: #E91E63;
-          font-weight: 500;
-          font-style: oblique; }
-    main .wrapper div.doc-main section.doc-section .section-methods, main .wrapper div.doc-main section.doc-section .section-accessors {
-      width: 100%; }
-      main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle {
+    main .wrapper div.doc-main {
+      min-width: 300px; }
+      main .wrapper div.doc-main section.doc-section h3.section-title {
         display: flex;
         align-items: center;
-        font-weight: 400;
-        font-size: 1.2rem;
-        padding: 16px 32px; }
-        main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle .material-icons, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle .material-icons {
+        font-weight: 300;
+        font-size: 1.7em;
+        padding: 16px;
+        border-bottom: 5px solid #673AB7; }
+        main .wrapper div.doc-main section.doc-section h3.section-title .material-icons {
+          padding-right: 8px;
+          color: #673AB7; }
+      main .wrapper div.doc-main section.doc-section .section-description {
+        width: 100%;
+        padding: 24px;
+        padding-left: 48px;
+        font-size: 0.9em;
+        background: #e8e1f5; }
+      main .wrapper div.doc-main section.doc-section .section-inheritance, main .wrapper div.doc-main section.doc-section .section-implementation, main .wrapper div.doc-main section.doc-section .section-extended-by, main .wrapper div.doc-main section.doc-section .section-implemented-by {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8px 16px;
+        align-items: center;
+        background: #e8e1f5;
+        font-size: 0.8em; }
+        main .wrapper div.doc-main section.doc-section .section-inheritance .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by .material-icons {
+          font-size: 18px;
           color: #E91E63;
-          padding-right: 8px; }
-        main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle big, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle big {
-          font-size: 1.3rem;
-          font-weight: 200; }
+          margin-right: 4px; }
+        main .wrapper div.doc-main section.doc-section .section-inheritance .label, main .wrapper div.doc-main section.doc-section .section-implementation .label, main .wrapper div.doc-main section.doc-section .section-extended-by .label, main .wrapper div.doc-main section.doc-section .section-implemented-by .label {
+          font-weight: 300; }
+        main .wrapper div.doc-main section.doc-section .section-inheritance a, main .wrapper div.doc-main section.doc-section .section-implementation a, main .wrapper div.doc-main section.doc-section .section-extended-by a, main .wrapper div.doc-main section.doc-section .section-implemented-by a {
+          margin-left: 8px;
+          font-weight: 500;
+          color: #050309;
+          padding: 4px;
+          transition: color 0.6s cubic-bezier(0.42, 0.21, 0.28, 0.91);
+          margin-right: 8px; }
+          main .wrapper div.doc-main section.doc-section .section-inheritance a:hover, main .wrapper div.doc-main section.doc-section .section-implementation a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by a:hover {
+            color: #E91E63; }
+        main .wrapper div.doc-main section.doc-section .section-inheritance.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-inheritance.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implementation.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-extended-by.section-implemented-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-extended-by .material-icons, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-implemented-by .material-icons {
+          color: #009688; }
+        main .wrapper div.doc-main section.doc-section .section-inheritance.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-inheritance.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-implementation.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implementation.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-extended-by.section-implemented-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-extended-by a:hover, main .wrapper div.doc-main section.doc-section .section-implemented-by.section-implemented-by a:hover {
+          color: #009688; }
+      main .wrapper div.doc-main section.doc-section .section-constructor, main .wrapper div.doc-main section.doc-section .section-methods .section-method, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor {
+        width: 100%; }
+        main .wrapper div.doc-main section.doc-section .section-constructor .section-signature, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-signature, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-signature {
+          padding: 16px 32px;
+          background: #daceef;
+          font-size: 1.2em;
+          font-weight: 500; }
+        main .wrapper div.doc-main section.doc-section .section-constructor .section-examples .section-example, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-examples .section-example, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-examples .section-example {
+          margin: 0;
+          background: #050309;
+          padding: 16px 32px; }
+          main .wrapper div.doc-main section.doc-section .section-constructor .section-examples .section-example .min-title, main .wrapper div.doc-main section.doc-section .section-methods .section-method .section-examples .section-example .min-title, main .wrapper div.doc-main section.doc-section .section-accessors .section-accessor .section-examples .section-example .min-title {
+            color: #E91E63;
+            font-weight: 500;
+            font-style: oblique; }
+      main .wrapper div.doc-main section.doc-section .section-methods, main .wrapper div.doc-main section.doc-section .section-accessors {
+        width: 100%; }
+        main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle {
+          display: flex;
+          align-items: center;
+          font-weight: 400;
+          font-size: 1.2em;
+          padding: 16px 32px; }
+          main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle .material-icons, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle .material-icons {
+            color: #E91E63;
+            padding-right: 8px; }
+          main .wrapper div.doc-main section.doc-section .section-methods .section-subtitle big, main .wrapper div.doc-main section.doc-section .section-accessors .section-subtitle big {
+            font-size: 1.3em;
+            font-weight: 200; }
 
 /*# sourceMappingURL=style.css.map */

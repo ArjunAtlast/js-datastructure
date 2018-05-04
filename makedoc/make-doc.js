@@ -1,6 +1,7 @@
 const fs = require('fs');
 const hbs = require('handlebars');
 const project = require('./doc.json');
+const package = require('../package.json');
 
 const kinds = {
   Global : 0,
@@ -271,6 +272,15 @@ fs.readFile("makedoc/pages/template.hbs","utf8", (err, data) => {
   // Compile the template with handlebars using our project
   // object as context key
   const result = hbs.compile(tmpl)({ project });
+  fs.writeFileSync('docs/doc.html', result);
+});
 
+fs.readFile("makedoc/pages/getting-started.hbs","utf8", (err, data) => {
+  if(err) console.error(err);
+  // The HTML template to use for our simple docs
+  const tmpl = data;
+  // Compile the template with handlebars using our project
+  // object as context key
+  const result = hbs.compile(tmpl)({ package });
   fs.writeFileSync('docs/index.html', result);
 });

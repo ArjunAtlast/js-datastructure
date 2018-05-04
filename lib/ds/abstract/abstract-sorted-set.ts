@@ -99,7 +99,7 @@ export class AbstractSortedSet<E> extends AbstractSet<E> implements SortedSet<E>
   */
   tailSet(fromItem:E):AbstractSortedSet<E> {
     let subArray = this._store.filter((x)=>{
-      return (this._comparator(x,fromItem) >0) && (this._comparator(x, this.last()) <= 0);
+      return (this._comparator(x,fromItem)>0) && (this._comparator(x, this.last()) <= 0);
     });
     return new AbstractSortedSet<E>(this.comparator(),...subArray);
   }
