@@ -20,7 +20,9 @@ function stickyNavbar(selector) {
 
 function toggleSidebar() {
   var $sidebar = $("#sidebar");
+  var $navbar = $("#navbar");
   $sidebar.toggleClass("open");
+  $navbar.toggleClass("compressed");
 }
 
 function toggleSublist(e) {

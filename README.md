@@ -20,3 +20,5 @@ To install the latest development version locally
 ```
 npm install git+https://github.com/ArjunAtlast/js-datastructure.git
 ```
+
+Read complete documentation at [JSDS](https://jsds.netlify.com/)

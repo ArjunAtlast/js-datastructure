@@ -54,11 +54,11 @@ main {
     width: 0;
     overflow: hidden;
     transition: width $animDuration $animEasing;
-    &.open { width: 300px; }
+    &.open { width: $sideBarWidth; }
 
     .simplebar-content { overflow-x: hidden !important;}
     .sidebar-dropdown-list {
-      width: 300px;
+      width: $sideBarWidth;
       &>.dropdown-list-item {
         a.dropdown-list-item-title {
           display: flex;
@@ -229,7 +229,9 @@ main {
       transition: all $animDuration $animEasing;
       top: -100%;
       z-index: 5000;
+
       &.locked {
+        &.compressed { width: calc(100% - #{$sideBarWidth})}
         position: fixed;
         top: 0;
         //left: 0;
