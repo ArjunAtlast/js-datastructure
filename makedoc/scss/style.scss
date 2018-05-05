@@ -59,6 +59,7 @@ main {
     .simplebar-content { overflow-x: hidden !important;}
     .sidebar-dropdown-list {
       width: $sideBarWidth;
+      padding-bottom: 100px;
       &>.dropdown-list-item {
         a.dropdown-list-item-title {
           display: flex;

@@ -48,7 +48,8 @@ main {
     main #sidebar .simplebar-content {
       overflow-x: hidden !important; }
     main #sidebar .sidebar-dropdown-list {
-      width: 300px; }
+      width: 300px;
+      padding-bottom: 100px; }
       main #sidebar .sidebar-dropdown-list > .dropdown-list-item a.dropdown-list-item-title {
         display: flex;
         align-items: center;
