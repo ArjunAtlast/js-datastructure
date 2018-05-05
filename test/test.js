@@ -486,4 +486,50 @@ describe("Checking Components..", () => {
       expect(am.isNull()).to.equal(true);
     });
   });
+  //SwappableList
+  describe("SwappableList", ()=>{
+    let sl;
+    it("constructor", ()=>{
+      expect(index.SwappableList).to.not.equal(undefined);
+      sl = new index.SwappableList(1,2,3,4,5,6,7,8);
+      expect(sl).to.be.an.instanceOf(index.SwappableList);
+    });
+    it("swap", ()=>{
+      expect(sl.swap(9,15)).to.equal(false);
+      expect(sl.swap(3,15)).to.equal(false);
+      expect(sl.swap(9,5)).to.equal(false);
+      expect(sl.swap(2,5)).to.equal(true);
+      expect(sl.toArray()).to.deep.equal([1,2,6,4,5,3,7,8]);
+    });
+    it("rise, fall", ()=>{
+      expect(sl.rise(9)).to.equal(false);
+      expect(sl.rise(0)).to.equal(false);
+      expect(sl.rise(3)).to.equal(true);
+      expect(sl.toArray()).to.deep.equal([1,2,4,6,5,3,7,8]);
+
+      expect(sl.fall(7)).to.equal(false);
+      expect(sl.fall(5)).to.equal(true);
+      expect(sl.toArray()).to.deep.equal([1,2,4,6,5,7,3,8]);
+    });
+    it("rotate", ()=>{
+      sl.rotate(-1);
+      expect(sl.toArray()).to.deep.equal([2,4,6,5,7,3,8,1]);
+      sl.rotate(0);
+      expect(sl.toArray()).to.deep.equal([1,2,4,6,5,7,3,8]);
+      sl.rotate(1);
+      expect(sl.toArray()).to.deep.equal([8,1,2,4,6,5,7,3]);
+    });
+    it("clone", ()=>{
+      expect(sl.clone()).to.deep.equal(sl);
+      expect(sl.clone()).to.not.equal(sl);
+    });
+    it("toString", ()=> {
+      expect(sl.toString((x)=>(x.toString()))).to.equal("[8,1,2,4,6,5,7,3]");
+    });
+    it("fromString", ()=> {
+      let spl = new index.SwappableList().fromString("[8,1,2,4,6,5,7,3]", (x)=>(parseFloat(x)));
+      expect(spl).to.deep.equal(sl);
+    });
+  });
+
 });

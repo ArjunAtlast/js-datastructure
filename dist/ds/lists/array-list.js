@@ -79,7 +79,7 @@ var ArrayList = /** @class */ (function (_super) {
     * Converts the arrayList into a JSON String
     * @example
     *   //arrayList contains [1,2,3,4]
-    *   console.log(arrayList.toString());
+    *   console.log(arrayList.toString((x)=>(x.toString())));
     *   //Output
     *   //"[1,2,3,4]"
     */

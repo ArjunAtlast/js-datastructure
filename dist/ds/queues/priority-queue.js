@@ -66,7 +66,7 @@ var PriorityQueue = /** @class */ (function (_super) {
     * Converts the queue into a JSON String
     * @example
     *   //queue contains [1,2,3,4]
-    *   console.log(queue.toString());
+    *   console.log(queue.toString((x)=>(x.toString())));
     *   //Output
     *   //[1,2,3,4]
     */
@@ -79,7 +79,7 @@ var PriorityQueue = /** @class */ (function (_super) {
     * Return the Object from the JSON string
     * @example
     *   //json = "[1,2,3,4]"
-    *   queue = new PriorityQueue<number>().fromString(json,(x)=>(parseFloat(x)));
+    *   queue = new PriorityQueue<number>((x,y)=>(x-y)).fromString(json,(x)=>(parseFloat(x)));
     *   //queue contains [1,2,3,4]
     *
     */

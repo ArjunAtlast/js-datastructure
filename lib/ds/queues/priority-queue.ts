@@ -68,7 +68,7 @@ export class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
     * Return the Object from the JSON string
     * @example
     *   //json = "[1,2,3,4]"
-    *   queue = new PriorityQueue<number>().fromString(json,(x)=>(parseFloat(x)));
+    *   queue = new PriorityQueue<number>((x,y)=>(x-y)).fromString(json,(x)=>(parseFloat(x)));
     *   //queue contains [1,2,3,4]
     *
     */

@@ -23,3 +23,4 @@ export {AbstractSortedSet} from "./ds/abstract/abstract-sorted-set";
 export {AbstractMap} from "./ds/abstract/abstract-map";
 export {ArrayList} from "./ds/lists/array-list";
 export {PriorityQueue} from "./ds/queues/priority-queue";
+export {SwappableList} from "./ds/lists/swappable-list";
