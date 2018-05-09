@@ -26,3 +26,7 @@ var priority_queue_1 = require("./ds/queues/priority-queue");
 exports.PriorityQueue = priority_queue_1.PriorityQueue;
 var swappable_list_1 = require("./ds/lists/swappable-list");
 exports.SwappableList = swappable_list_1.SwappableList;
+var array_map_1 = require("./ds/maps/array-map");
+exports.ArrayMap = array_map_1.ArrayMap;
+var dictionary_1 = require("./ds/maps/dictionary");
+exports.Dictionary = dictionary_1.Dictionary;

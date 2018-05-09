@@ -531,5 +531,66 @@ describe("Checking Components..", () => {
       expect(spl).to.deep.equal(sl);
     });
   });
+  //ArrayMap
+  describe("ArrayMap", ()=>{
+    let am;
+    it("constructor", ()=>{
+      expect(index.ArrayMap).to.not.equal(undefined);
+      am = new index.ArrayMap(5,{key:"a", value:1},{key:"b", value:2},{key:"c", value:3},{key:"d", value:4});
+      expect(am).to.be.an.instanceOf(index.ArrayMap);
+      expect(am.entrySet().toArray()).to.deep.equal([{key:"a", value:1},{key:"b", value:2},{key:"c", value:3},{key:"d", value:4}]);
+    });
+    it("put", ()=>{
+      expect(am.put("e",5)).to.equal(undefined);
+      expect(am.values().toArray()).to.deep.equal([1,2,3,4,5]);
+      expect(am.keySet().toArray()).to.deep.equal(["a","b","c","d","e"]);
+      expect(()=>{am.put("f",6)}).to.throw();
+    });
+    it("ensureCapacity", ()=>{
+      am.ensureCapacity(10);
+      expect(am.put("f",6)).to.equal(undefined);
+    });
+    it("clone", ()=>{
+      expect(am.clone()).to.deep.equal(am);
+      expect(am.clone()).to.not.equal(am);
+    });
+    it("trimToSize", ()=>{
+      am.trimToSize();
+      expect(()=>{am.put("g",7)}).to.throw();
+    });
+  });
+  //Dictionary
+  describe("Dictionary", ()=>{
+    let dict;
+    it("constructor", () => {
+      expect(index.Dictionary).to.not.equal(undefined);
+      dict = new index.Dictionary({key:"a", value:1},{key:"b", value:2},{key:"c", value:2},{key:"d", value:4});
+      expect(dict).to.be.an.instanceOf(index.Dictionary);
+      expect(dict.entrySet().toArray()).to.deep.equal([{key:"a", value:1},{key:"b", value:2},{key:"c", value:2},{key:"d", value:4}]);
+    });
+    it("count", () => {
+      expect(dict.count(2)).to.equal(2);
+      expect(dict.count(1)).to.equal(1);
+      expect(dict.count(4)).to.equal(1);
+      expect(dict.count(10)).to.equal(0);
+    });
+    it("getKeys", () => {
+      expect(dict.getKeys(2).toArray()).to.deep.equal(["b","c"]);
+      expect(dict.getKeys(1).toArray()).to.deep.equal(["a"]);
+      expect(dict.getKeys(4).toArray()).to.deep.equal(["d"]);
+      expect(dict.getKeys(10).toArray()).to.deep.equal([]);
+    });
+    it("clone", ()=>{
+      expect(dict.clone()).to.deep.equal(dict);
+      expect(dict.clone()).to.not.equal(dict);
+    });
+    it("toString", ()=>{
+      expect(dict.toString(x => x.toString())).to.equal(`{"a":1,"b":2,"c":2,"d":4}`);
+    });
+    it("fromString", ()=>{
+      let jsonS = `{"a":1,"b":2,"c":2,"d":4}`;
+      expect(dict.fromString(jsonS,x=>parseFloat(x))).to.deep.equal(dict);
+    });
+  });
 
 });

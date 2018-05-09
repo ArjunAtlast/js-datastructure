@@ -19,3 +19,5 @@ export { AbstractMap } from "./ds/abstract/abstract-map";
 export { ArrayList } from "./ds/lists/array-list";
 export { PriorityQueue } from "./ds/queues/priority-queue";
 export { SwappableList } from "./ds/lists/swappable-list";
+export { ArrayMap } from "./ds/maps/array-map";
+export { Dictionary } from "./ds/maps/dictionary";

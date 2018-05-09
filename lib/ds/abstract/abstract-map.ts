@@ -136,8 +136,8 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   //Output: one->1,two->2,three->3
   */
 	forEach(action: (key: K, value: V|null, map: AbstractMap<K, V>) => void): void {
-		this._keys.forEach((key) => {
-      let val = this.get(key);
+		this._keys.forEach((key, index) => {
+      let val = this._values.get(index)
       if(val===undefined) val = null;
       action(key, val, this);
     });

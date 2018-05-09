@@ -137,8 +137,8 @@ var AbstractMap = /** @class */ (function () {
     */
     AbstractMap.prototype.forEach = function (action) {
         var _this = this;
-        this._keys.forEach(function (key) {
-            var val = _this.get(key);
+        this._keys.forEach(function (key, index) {
+            var val = _this._values.get(index);
             if (val === undefined)
                 val = null;
             action(key, val, _this);
