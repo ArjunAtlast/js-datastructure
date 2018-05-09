@@ -5443,6 +5443,18 @@
 					"character": 24
 				}
 			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"name": "ArrayMap",
+					"id": 1269
+				},
+				{
+					"type": "reference",
+					"name": "Dictionary",
+					"id": 1384
+				}
+			],
 			"implementedTypes": [
 				{
 					"type": "reference",
@@ -6889,7 +6901,7 @@
 				{
 					"type": "reference",
 					"name": "PriorityQueue",
-					"id": 1269
+					"id": 1507
 				}
 			],
 			"implementedTypes": [
@@ -13536,6 +13548,5547 @@
 			]
 		},
 		{
+			"id": 1269,
+			"name": "ArrayMap",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true
+			},
+			"typeParameter": [
+				{
+					"id": 1270,
+					"name": "K",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {}
+				},
+				{
+					"id": 1271,
+					"name": "V",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {}
+				}
+			],
+			"children": [
+				{
+					"id": 1273,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Constructs an empty list with an initial capacity of ten.\nConstructs an empty list with the specified initial capacity.\nConstructs a list containing the items."
+					},
+					"signatures": [
+						{
+							"id": 1274,
+							"name": "new ArrayMap",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Constructs an empty list with an initial capacity of ten."
+							},
+							"type": {
+								"type": "reference",
+								"name": "ArrayMap",
+								"id": 1269
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractMap.__constructor",
+								"id": 604
+							}
+						},
+						{
+							"id": 1275,
+							"name": "new ArrayMap",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Constructs an empty list with the specified initial capacity."
+							},
+							"parameters": [
+								{
+									"id": 1276,
+									"name": "initialCapacity",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ArrayMap",
+								"id": 1269
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractMap.__constructor",
+								"id": 604
+							}
+						},
+						{
+							"id": 1277,
+							"name": "new ArrayMap",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Constructs a list containing the items."
+							},
+							"parameters": [
+								{
+									"id": 1278,
+									"name": "initialCapacity",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								},
+								{
+									"id": 1279,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "MapEntry",
+										"id": 430,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "typeParameter",
+												"name": "V"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ArrayMap",
+								"id": 1269
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractMap.__constructor",
+								"id": 604
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 7,
+							"character": 34
+						},
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 11,
+							"character": 15
+						},
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 15,
+							"character": 37
+						},
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 19,
+							"character": 63
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "AbstractMap.__constructor",
+						"id": 604
+					}
+				},
+				{
+					"id": 1272,
+					"name": "_capacity",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 7,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "instrinct",
+						"name": "number"
+					},
+					"defaultValue": "10"
+				},
+				{
+					"id": 1292,
+					"name": "_keys",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 7,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "AbstractSet",
+						"id": 531,
+						"typeArguments": [
+							{
+								"type": "typeParameter",
+								"name": "K"
+							}
+						]
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap._keys",
+						"id": 603
+					}
+				},
+				{
+					"id": 1291,
+					"name": "_values",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 6,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "AbstractList",
+						"id": 270,
+						"typeArguments": [
+							{
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "V"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									}
+								]
+							}
+						]
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap._values",
+						"id": 602
+					}
+				},
+				{
+					"id": 1293,
+					"name": "clear",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1294,
+							"name": "clear",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes all of the mappings from this map.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n//map: [{\"1\":1},{\"2\":2},{\"3\":3}]\nmap.clear();\n//now : []\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.clear",
+								"id": 607
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.clear",
+								"id": 439
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 21,
+							"character": 6
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.clear",
+						"id": 607
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.clear",
+						"id": 438
+					}
+				},
+				{
+					"id": 1287,
+					"name": "clone",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1288,
+							"name": "clone",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a shallow copy of this ArrayMap instance.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  let newArrayMap = arrayMap.clone();\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "ArrayMap",
+								"id": 1269,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "K"
+									},
+									{
+										"type": "typeParameter",
+										"name": "V"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Cloneable.clone",
+								"id": 1003
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 58,
+							"character": 7
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "Cloneable.clone",
+						"id": 1002
+					}
+				},
+				{
+					"id": 1295,
+					"name": "compute",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1296,
+							"name": "compute",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Attempts to compute a mapping for the specified key and its current mapped value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //in map key k1 is mapped to 12\n  map.compute(k1, (key,value,map)=>(value+11)); //returns 12\n  //now the value changes to 12+11 -> 23\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1297,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								},
+								{
+									"id": 1298,
+									"name": "remappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1299,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1300,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1301,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "K"
+															}
+														},
+														{
+															"id": 1302,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "undefined"
+																	}
+																]
+															}
+														},
+														{
+															"id": 1303,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "AbstractMap",
+																"id": 599,
+																"typeArguments": [
+																	{
+																		"type": "typeParameter",
+																		"name": "K"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "typeParameter",
+																"name": "V"
+															},
+															{
+																"type": "instrinct",
+																"name": "null"
+															}
+														]
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 32,
+													"character": 29
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "V"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.compute",
+								"id": 609
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 32,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.compute",
+						"id": 609
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.compute",
+						"id": 440
+					}
+				},
+				{
+					"id": 1304,
+					"name": "computeIfAbsent",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1305,
+							"name": "computeIfAbsent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Attempts to compute a mapping for the specified key and its current mapped value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //in map key k1 is mapped to 12\n  map.computeIfAbsent(k1, (key,value,map)=>(23)); //returns 12\n  //value does not change\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1306,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								},
+								{
+									"id": 1307,
+									"name": "remappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1308,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1309,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1310,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "K"
+															}
+														},
+														{
+															"id": 1311,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "undefined"
+																	}
+																]
+															}
+														},
+														{
+															"id": 1312,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "AbstractMap",
+																"id": 599,
+																"typeArguments": [
+																	{
+																		"type": "typeParameter",
+																		"name": "K"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "typeParameter",
+																"name": "V"
+															},
+															{
+																"type": "instrinct",
+																"name": "null"
+															}
+														]
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 46,
+													"character": 37
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "V"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.computeIfAbsent",
+								"id": 618
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 46,
+							"character": 16
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.computeIfAbsent",
+						"id": 618
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.computeIfAbsent",
+						"id": 449
+					}
+				},
+				{
+					"id": 1313,
+					"name": "computeIfPresent",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1314,
+							"name": "computeIfPresent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Attempts to compute a mapping for the specified key and its current mapped value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //in map key k1 is mapped to null\n  map.computeIfAbsent(k1, (key,value,map)=>(value+11)); //returns null\n  //value does not change\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1315,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								},
+								{
+									"id": 1316,
+									"name": "remappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1317,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1318,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1319,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "K"
+															}
+														},
+														{
+															"id": 1320,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "V"
+															}
+														},
+														{
+															"id": 1321,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Map",
+																"id": 435,
+																"typeArguments": [
+																	{
+																		"type": "typeParameter",
+																		"name": "K"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "typeParameter",
+														"name": "V"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 62,
+													"character": 38
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "V"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.computeIfPresent",
+								"id": 627
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 62,
+							"character": 17
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.computeIfPresent",
+						"id": 627
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.computeIfPresent",
+						"id": 458
+					}
+				},
+				{
+					"id": 1322,
+					"name": "containsKey",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1323,
+							"name": "containsKey",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this map contains a mapping for the specified key.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2}]\n  map.conainsKey(k1); //returns true\n  map.containsKey(k5); //returns false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1324,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.containsKey",
+								"id": 636
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.containsKey",
+								"id": 468
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 78,
+							"character": 12
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.containsKey",
+						"id": 636
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.containsKey",
+						"id": 467
+					}
+				},
+				{
+					"id": 1325,
+					"name": "containsValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1326,
+							"name": "containsValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this map maps one or more keys to the specified value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2}]\n  map.conainsValue(1); //returns true\n  map.containsValue(5); //returns false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1327,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "V"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.containsValue",
+								"id": 639
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.containsValue",
+								"id": 471
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 89,
+							"character": 14
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.containsValue",
+						"id": 639
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.containsValue",
+						"id": 470
+					}
+				},
+				{
+					"id": 1284,
+					"name": "ensureCapacity",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1285,
+							"name": "ensureCapacity",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Increases the capacity of this ArrayMap instance, if necessary, to ensure that it can hold at least the number of elements specified by the minimum capacity argument.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //arrayMap has a capacity 10\n  arrayMap.ensureCapacity(15);\n  //new capacity is 15\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1286,
+									"name": "minCapacity",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 49,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 1328,
+					"name": "entrySet",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1329,
+							"name": "entrySet",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a Set view of the mappings contained in this map.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2}]\n  map.entrySet(); //returns Set [{key:k1, value:1},{key:k2, value:2}]\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "AbstractSet",
+								"id": 531,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "MapEntry",
+										"id": 430,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "typeParameter",
+												"name": "V"
+											}
+										]
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.entrySet",
+								"id": 642
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.entrySet",
+								"id": 474
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 99,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.entrySet",
+						"id": 642
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.entrySet",
+						"id": 473
+					}
+				},
+				{
+					"id": 1330,
+					"name": "equals",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1331,
+							"name": "equals",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Compares the specified map with this map for equality.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map1 : [{k1:1},{k2:2},{k3:null}]\n  //map2 : [{k1:1},{k3:4}]\n  map1.equals(map2) //returns false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1332,
+									"name": "map",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Map",
+										"id": 435,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "typeParameter",
+												"name": "V"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.equals",
+								"id": 644
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.equals",
+								"id": 476
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 116,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.equals",
+						"id": 644
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.equals",
+						"id": 475
+					}
+				},
+				{
+					"id": 1333,
+					"name": "forEach",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1334,
+							"name": "forEach",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.forEach((key, value, map)=>{\n     console.log(key+\"->\"+value+\",\");\n  });\n  //Output: one->1,two->2,three->3\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1335,
+									"name": "action",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1336,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1337,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1338,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "K"
+															}
+														},
+														{
+															"id": 1339,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	}
+																]
+															}
+														},
+														{
+															"id": 1340,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "AbstractMap",
+																"id": 599,
+																"typeArguments": [
+																	{
+																		"type": "typeParameter",
+																		"name": "K"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "instrinct",
+														"name": "void"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 138,
+													"character": 16
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.forEach",
+								"id": 647
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 138,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.forEach",
+						"id": 647
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.forEach",
+						"id": 478
+					}
+				},
+				{
+					"id": 1341,
+					"name": "get",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1342,
+							"name": "get",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the value to which the specified key is mapped. undefined if there is no mapping.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2},{k3:null}]\n  map.get(k1); //returns 1\n  map.get(k3); //returns null\n  map.get(k4); //returns undefined\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1343,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "V"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.get",
+								"id": 655
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.get",
+								"id": 487
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 154,
+							"character": 4
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.get",
+						"id": 655
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.get",
+						"id": 486
+					}
+				},
+				{
+					"id": 1344,
+					"name": "getOrDefault",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1345,
+							"name": "getOrDefault",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key or if key is mapped to null.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2},{k3:null}]\n  map.getOrDefault(k1,5); //returns 1\n  map.getOrDefault(k3,12); //returns 12\n  map.getOrDefault(k4,16); //returns 16\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1346,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								},
+								{
+									"id": 1347,
+									"name": "defaultValue",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "V"
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "V"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.getOrDefault",
+								"id": 658
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.getOrDefault",
+								"id": 490
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 168,
+							"character": 13
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.getOrDefault",
+						"id": 658
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.getOrDefault",
+						"id": 489
+					}
+				},
+				{
+					"id": 1348,
+					"name": "isEmpty",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1349,
+							"name": "isEmpty",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this map contains no key-value mappings.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2},{k3:null}]\n  map.isEmpty(); //false\n  //map : [{k1:null},{k2:null},{k3:null}]\n  map.isEmpty(); //false\n  //map : []\n  map.isEmpty(); //true\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.isEmpty",
+								"id": 662
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.isEmpty",
+								"id": 494
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 182,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.isEmpty",
+						"id": 662
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.isEmpty",
+						"id": 493
+					}
+				},
+				{
+					"id": 1350,
+					"name": "isNull",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1351,
+							"name": "isNull",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this map contains mappings to only null values or if  the map is empty.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2},{k3:null}]\n  map.isNull(); //false\n  //map : [{k1:null},{k2:null},{k3:null}]\n  map.isNull(); //true\n  //map : []\n  map.isNull(); //true\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.isNull",
+								"id": 664
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 196,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.isNull",
+						"id": 664
+					}
+				},
+				{
+					"id": 1352,
+					"name": "keySet",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1353,
+							"name": "keySet",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a Set view of the keys contained in this map.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.keySet(); //[\"one\",\"two\",\"three\"]\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "AbstractSet",
+								"id": 531,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "K"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.keySet",
+								"id": 666
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.keySet",
+								"id": 496
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 206,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.keySet",
+						"id": 666
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.keySet",
+						"id": 495
+					}
+				},
+				{
+					"id": 1280,
+					"name": "put",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1281,
+							"name": "put",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Associates the specified value with the specified key in this map.Returns the old value associated with the key or  undefined.\n(Throws an Error if ArrayMap is at maximum capacity)",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n//map : [{\"one\":1},{\"two\":2},{\"three\":3}]\nmap.put(\"one\",22); //return 1\n//now map : [{\"one\":22},{\"two\":2},{\"three\":3}]\nmap.put(\"four\",4);//return undefined\n//now map : [{\"one\":22},{\"two\":2},{\"three\":3},{\"four\":4}]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1282,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								},
+								{
+									"id": 1283,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "V"
+											},
+											{
+												"type": "instrinct",
+												"name": "null"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "V"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractMap.put",
+								"id": 668
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 35,
+							"character": 5
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "AbstractMap.put",
+						"id": 668
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.put",
+						"id": 497
+					}
+				},
+				{
+					"id": 1354,
+					"name": "putAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1355,
+							"name": "putAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Copies all of the mappings from the specified map to this map.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map1: [{k1:v1},{k2:v2},{k3:v3}], map2: [{k2:v4},{k4:v6},{k6:v8}]\n  map1.putAll(map2);\n  //now map1: [{k1:v1},{k2:v4},{k3:v3},{k4:v6},{k6:v8}]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1356,
+									"name": "map",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Map",
+										"id": 435,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "K"
+											},
+											{
+												"type": "typeParameter",
+												"name": "V"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.putAll",
+								"id": 672
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.putAll",
+								"id": 502
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 239,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.putAll",
+						"id": 672
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.putAll",
+						"id": 501
+					}
+				},
+				{
+					"id": 1357,
+					"name": "putIfAbsent",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1358,
+							"name": "putIfAbsent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns undefined, else returns the current value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.putIfAbsent(\"four\",4); //return undefined (adds {\"four\":4} to the map)\n  map.putIfAbsent(\"one\",23); //return 1 (map unchanged)\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1359,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								},
+								{
+									"id": 1360,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "V"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "V"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.putIfAbsent",
+								"id": 675
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.putIfAbsent",
+								"id": 505
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 251,
+							"character": 12
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.putIfAbsent",
+						"id": 675
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.putIfAbsent",
+						"id": 504
+					}
+				},
+				{
+					"id": 1361,
+					"name": "remove",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1362,
+							"name": "remove",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes the mapping for a key from this map if it is present.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.remove(\"one\"); //return 1\n  //now map : [{\"two\":2},{\"three\":3}]\n  map.remove(\"four\"); //return undefined (map unchanged)\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1363,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "V"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.remove",
+								"id": 679
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.remove",
+								"id": 509
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 265,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.remove",
+						"id": 679
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.remove",
+						"id": 508
+					}
+				},
+				{
+					"id": 1364,
+					"name": "removeIf",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1365,
+							"name": "removeIf",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes the entry for the specified key only if it is currently mapped to the specified value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.removeIf(\"one\", 1); //return true\n  //now map : [{\"two\":2},{\"three\":3}]\n  map.removeIf(\"two\",5); //return false (map unchanged)\n  map.removeIf(\"four\",4); //return false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1366,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "K"
+									}
+								},
+								{
+									"id": 1367,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "V"
+											},
+											{
+												"type": "instrinct",
+												"name": "null"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.removeIf",
+								"id": 682
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.removeIf",
+								"id": 512
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 283,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.removeIf",
+						"id": 682
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.removeIf",
+						"id": 511
+					}
+				},
+				{
+					"id": 1368,
+					"name": "replace",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1369,
+							"name": "replace",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Replace all entries with specified value with the new value. Returns true if map was changed.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]\n  map.replace(5,2) //returns true;\n  //now map : [{k1:1},{k2:2},{k3:3},{k4:2},{k5:1}]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1370,
+									"name": "oldValue",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "V"
+									}
+								},
+								{
+									"id": 1371,
+									"name": "newValue",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "V"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.replace",
+								"id": 686
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 295,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.replace",
+						"id": 686
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.replace",
+						"id": 515
+					}
+				},
+				{
+					"id": 1372,
+					"name": "replaceAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1373,
+							"name": "replaceAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]\n  map.replaceAll((k,v,m)=>(v*2)); //replace with its double\n  //map : [{k1:2},{k2:10},{k3:6},{k4:10},{k5:2}]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1374,
+									"name": "remappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1375,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1376,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1377,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "K"
+															}
+														},
+														{
+															"id": 1378,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	}
+																]
+															}
+														},
+														{
+															"id": 1379,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "AbstractMap",
+																"id": 599,
+																"typeArguments": [
+																	{
+																		"type": "typeParameter",
+																		"name": "K"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "V"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "typeParameter",
+																"name": "V"
+															},
+															{
+																"type": "instrinct",
+																"name": "null"
+															}
+														]
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 312,
+													"character": 24
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.replaceAll",
+								"id": 690
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 312,
+							"character": 11
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.replaceAll",
+						"id": 690
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.replaceAll",
+						"id": 519
+					}
+				},
+				{
+					"id": 1380,
+					"name": "size",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1381,
+							"name": "size",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the number of key-value mappings in this map.(key->null mappings are counted)",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]\n  map.size(); //return 5\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.size",
+								"id": 698
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.size",
+								"id": 528
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 324,
+							"character": 5
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.size",
+						"id": 698
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.size",
+						"id": 527
+					}
+				},
+				{
+					"id": 1289,
+					"name": "trimToSize",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1290,
+							"name": "trimToSize",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Trims the capacity of this ArrayMap instance to be the list's current size.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //arrayMap contains [{\"one\":1},{\"two\":2},{\"three\":3}] and capacity is 10\n  arrayMap.trimToSize(); //new capacity is 3\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/array-map.ts",
+							"line": 68,
+							"character": 12
+						}
+					]
+				},
+				{
+					"id": 1382,
+					"name": "values",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1383,
+							"name": "values",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a List view of the values contained in this map.\n//map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]\nmap.values(); //return list : [1,5,3,5,1]"
+							},
+							"type": {
+								"type": "reference",
+								"name": "AbstractList",
+								"id": 270,
+								"typeArguments": [
+									{
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "V"
+											},
+											{
+												"type": "instrinct",
+												"name": "null"
+											}
+										]
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.values",
+								"id": 700
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.values",
+								"id": 530
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 333,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.values",
+						"id": 700
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.values",
+						"id": 529
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						1273
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						1272,
+						1292,
+						1291
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						1293,
+						1287,
+						1295,
+						1304,
+						1313,
+						1322,
+						1325,
+						1284,
+						1328,
+						1330,
+						1333,
+						1341,
+						1344,
+						1348,
+						1350,
+						1352,
+						1280,
+						1354,
+						1357,
+						1361,
+						1364,
+						1368,
+						1372,
+						1380,
+						1289,
+						1382
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "ds/maps/array-map.ts",
+					"line": 6,
+					"character": 21
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "AbstractMap",
+					"id": 599,
+					"typeArguments": [
+						{
+							"type": "typeParameter",
+							"name": "K"
+						},
+						{
+							"type": "typeParameter",
+							"name": "V"
+						}
+					]
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "Map",
+					"id": 435,
+					"typeArguments": [
+						{
+							"type": "typeParameter",
+							"name": "K"
+						},
+						{
+							"type": "typeParameter",
+							"name": "V"
+						}
+					]
+				},
+				{
+					"type": "reference",
+					"name": "Cloneable",
+					"id": 1000,
+					"typeArguments": [
+						{
+							"type": "reference",
+							"name": "ArrayMap",
+							"id": 1269,
+							"typeArguments": [
+								{
+									"type": "typeParameter",
+									"name": "K"
+								},
+								{
+									"type": "typeParameter",
+									"name": "V"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1384,
+			"name": "Dictionary",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true
+			},
+			"comment": {
+				"shortText": "A Map whose keys are always of string type."
+			},
+			"typeParameter": [
+				{
+					"id": 1385,
+					"name": "E",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {}
+				}
+			],
+			"children": [
+				{
+					"id": 1409,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1410,
+							"name": "new Dictionary",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 1411,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "reference",
+										"isArray": true,
+										"name": "MapEntry",
+										"id": 430,
+										"typeArguments": [
+											{
+												"type": "instrinct",
+												"name": "string"
+											},
+											{
+												"type": "typeParameter",
+												"name": "E"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Dictionary",
+								"id": 1384
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.__constructor",
+								"id": 604
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 7,
+							"character": 34
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.__constructor",
+						"id": 604
+					}
+				},
+				{
+					"id": 1408,
+					"name": "_keys",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 7,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "AbstractSet",
+						"id": 531,
+						"typeArguments": [
+							{
+								"type": "instrinct",
+								"name": "string"
+							}
+						]
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap._keys",
+						"id": 603
+					}
+				},
+				{
+					"id": 1407,
+					"name": "_values",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 6,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "AbstractList",
+						"id": 270,
+						"typeArguments": [
+							{
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									}
+								]
+							}
+						]
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap._values",
+						"id": 602
+					}
+				},
+				{
+					"id": 1412,
+					"name": "clear",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1413,
+							"name": "clear",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes all of the mappings from this map.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n//map: [{\"1\":1},{\"2\":2},{\"3\":3}]\nmap.clear();\n//now : []\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.clear",
+								"id": 607
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.clear",
+								"id": 439
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 21,
+							"character": 6
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.clear",
+						"id": 607
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.clear",
+						"id": 438
+					}
+				},
+				{
+					"id": 1392,
+					"name": "clone",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1393,
+							"name": "clone",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a shallow copy of this Dictionary instance.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  let newDict = dict.clone();\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "Dictionary",
+								"id": 1384,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Cloneable.clone",
+								"id": 1003
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/dictionary.ts",
+							"line": 51,
+							"character": 7
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "Cloneable.clone",
+						"id": 1002
+					}
+				},
+				{
+					"id": 1414,
+					"name": "compute",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1415,
+							"name": "compute",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Attempts to compute a mapping for the specified key and its current mapped value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //in map key k1 is mapped to 12\n  map.compute(k1, (key,value,map)=>(value+11)); //returns 12\n  //now the value changes to 12+11 -> 23\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1416,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 1417,
+									"name": "remappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1418,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1419,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1420,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 1421,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "undefined"
+																	}
+																]
+															}
+														},
+														{
+															"id": 1422,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "AbstractMap",
+																"id": 599,
+																"typeArguments": [
+																	{
+																		"type": "instrinct",
+																		"name": "string"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "typeParameter",
+																"name": "E"
+															},
+															{
+																"type": "instrinct",
+																"name": "null"
+															}
+														]
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 32,
+													"character": 29
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.compute",
+								"id": 609
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 32,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.compute",
+						"id": 609
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.compute",
+						"id": 440
+					}
+				},
+				{
+					"id": 1423,
+					"name": "computeIfAbsent",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1424,
+							"name": "computeIfAbsent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Attempts to compute a mapping for the specified key and its current mapped value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //in map key k1 is mapped to 12\n  map.computeIfAbsent(k1, (key,value,map)=>(23)); //returns 12\n  //value does not change\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1425,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 1426,
+									"name": "remappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1427,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1428,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1429,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 1430,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "undefined"
+																	}
+																]
+															}
+														},
+														{
+															"id": 1431,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "AbstractMap",
+																"id": 599,
+																"typeArguments": [
+																	{
+																		"type": "instrinct",
+																		"name": "string"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "typeParameter",
+																"name": "E"
+															},
+															{
+																"type": "instrinct",
+																"name": "null"
+															}
+														]
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 46,
+													"character": 37
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.computeIfAbsent",
+								"id": 618
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 46,
+							"character": 16
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.computeIfAbsent",
+						"id": 618
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.computeIfAbsent",
+						"id": 449
+					}
+				},
+				{
+					"id": 1432,
+					"name": "computeIfPresent",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1433,
+							"name": "computeIfPresent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Attempts to compute a mapping for the specified key and its current mapped value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //in map key k1 is mapped to null\n  map.computeIfAbsent(k1, (key,value,map)=>(value+11)); //returns null\n  //value does not change\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1434,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 1435,
+									"name": "remappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1436,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1437,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1438,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 1439,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "typeParameter",
+																"name": "E"
+															}
+														},
+														{
+															"id": 1440,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Map",
+																"id": 435,
+																"typeArguments": [
+																	{
+																		"type": "instrinct",
+																		"name": "string"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "typeParameter",
+														"name": "E"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 62,
+													"character": 38
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.computeIfPresent",
+								"id": 627
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 62,
+							"character": 17
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.computeIfPresent",
+						"id": 627
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.computeIfPresent",
+						"id": 458
+					}
+				},
+				{
+					"id": 1441,
+					"name": "containsKey",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1442,
+							"name": "containsKey",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this map contains a mapping for the specified key.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2}]\n  map.conainsKey(k1); //returns true\n  map.containsKey(k5); //returns false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1443,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.containsKey",
+								"id": 636
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 78,
+							"character": 12
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.containsKey",
+						"id": 636
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.containsKey",
+						"id": 467
+					}
+				},
+				{
+					"id": 1444,
+					"name": "containsValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1445,
+							"name": "containsValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this map maps one or more keys to the specified value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2}]\n  map.conainsValue(1); //returns true\n  map.containsValue(5); //returns false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1446,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.containsValue",
+								"id": 639
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.containsValue",
+								"id": 471
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 89,
+							"character": 14
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.containsValue",
+						"id": 639
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.containsValue",
+						"id": 470
+					}
+				},
+				{
+					"id": 1386,
+					"name": "count",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1387,
+							"name": "count",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the number occurances of an item in the dictionary",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //dict contains [{'a':1},{'b':2},{'c':3},{'d':2},{'f':1},{'e':2},{'g':4}]\n  dict.count(2) // returns 3\n  dict.count(7) // return 0\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1388,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/dictionary.ts",
+							"line": 20,
+							"character": 7
+						}
+					]
+				},
+				{
+					"id": 1447,
+					"name": "entrySet",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1448,
+							"name": "entrySet",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a Set view of the mappings contained in this map.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2}]\n  map.entrySet(); //returns Set [{key:k1, value:1},{key:k2, value:2}]\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "AbstractSet",
+								"id": 531,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "MapEntry",
+										"id": 430,
+										"typeArguments": [
+											{
+												"type": "instrinct",
+												"name": "string"
+											},
+											{
+												"type": "typeParameter",
+												"name": "E"
+											}
+										]
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.entrySet",
+								"id": 642
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.entrySet",
+								"id": 474
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 99,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.entrySet",
+						"id": 642
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.entrySet",
+						"id": 473
+					}
+				},
+				{
+					"id": 1449,
+					"name": "equals",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1450,
+							"name": "equals",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Compares the specified map with this map for equality.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map1 : [{k1:1},{k2:2},{k3:null}]\n  //map2 : [{k1:1},{k3:4}]\n  map1.equals(map2) //returns false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1451,
+									"name": "map",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Map",
+										"id": 435,
+										"typeArguments": [
+											{
+												"type": "instrinct",
+												"name": "string"
+											},
+											{
+												"type": "typeParameter",
+												"name": "E"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.equals",
+								"id": 644
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.equals",
+								"id": 476
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 116,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.equals",
+						"id": 644
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.equals",
+						"id": 475
+					}
+				},
+				{
+					"id": 1452,
+					"name": "forEach",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1453,
+							"name": "forEach",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.forEach((key, value, map)=>{\n     console.log(key+\"->\"+value+\",\");\n  });\n  //Output: one->1,two->2,three->3\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1454,
+									"name": "action",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1455,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1456,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1457,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 1458,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	}
+																]
+															}
+														},
+														{
+															"id": 1459,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "AbstractMap",
+																"id": 599,
+																"typeArguments": [
+																	{
+																		"type": "instrinct",
+																		"name": "string"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "instrinct",
+														"name": "void"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 138,
+													"character": 16
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.forEach",
+								"id": 647
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 138,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.forEach",
+						"id": 647
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.forEach",
+						"id": 478
+					}
+				},
+				{
+					"id": 1400,
+					"name": "fromString",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1401,
+							"name": "fromString",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Return the Object from the JSON string",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //json = '{\"a\":1,\"b\":2,\"c\":3}'\n  dict = new Dictionary<number>().fromString(json,(x)=>(parseFloat(x)));\n  //dict contains [{'a':1},{'b':2},{'c':3}]\n\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1402,
+									"name": "json",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 1403,
+									"name": "deserializerFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1404,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1405,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1406,
+															"name": "itemJSON",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "typeParameter",
+																"name": "E"
+															},
+															{
+																"type": "instrinct",
+																"name": "null"
+															}
+														]
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/maps/dictionary.ts",
+													"line": 79,
+													"character": 42
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Dictionary",
+								"id": 1384,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/dictionary.ts",
+							"line": 79,
+							"character": 12
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "Serializable.fromString",
+						"id": 1011
+					}
+				},
+				{
+					"id": 1460,
+					"name": "get",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1461,
+							"name": "get",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the value to which the specified key is mapped. undefined if there is no mapping.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2},{k3:null}]\n  map.get(k1); //returns 1\n  map.get(k3); //returns null\n  map.get(k4); //returns undefined\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1462,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.get",
+								"id": 655
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 154,
+							"character": 4
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.get",
+						"id": 655
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.get",
+						"id": 486
+					}
+				},
+				{
+					"id": 1389,
+					"name": "getKeys",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1390,
+							"name": "getKeys",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a set of keys associated with a given item",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //dict contains [{'a':1},{'b':2},{'c':3},{'d':2},{'f':1},{'e':2},{'g':4}]\n  dict.getKeys(2) //return a set containing ['b','d','e']\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1391,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Set",
+								"id": 366,
+								"typeArguments": [
+									{
+										"type": "instrinct",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/dictionary.ts",
+							"line": 36,
+							"character": 9
+						}
+					]
+				},
+				{
+					"id": 1463,
+					"name": "getOrDefault",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1464,
+							"name": "getOrDefault",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key or if key is mapped to null.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2},{k3:null}]\n  map.getOrDefault(k1,5); //returns 1\n  map.getOrDefault(k3,12); //returns 12\n  map.getOrDefault(k4,16); //returns 16\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1465,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 1466,
+									"name": "defaultValue",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "E"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.getOrDefault",
+								"id": 658
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 168,
+							"character": 13
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.getOrDefault",
+						"id": 658
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.getOrDefault",
+						"id": 489
+					}
+				},
+				{
+					"id": 1467,
+					"name": "isEmpty",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1468,
+							"name": "isEmpty",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this map contains no key-value mappings.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2},{k3:null}]\n  map.isEmpty(); //false\n  //map : [{k1:null},{k2:null},{k3:null}]\n  map.isEmpty(); //false\n  //map : []\n  map.isEmpty(); //true\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.isEmpty",
+								"id": 662
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.isEmpty",
+								"id": 494
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 182,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.isEmpty",
+						"id": 662
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.isEmpty",
+						"id": 493
+					}
+				},
+				{
+					"id": 1469,
+					"name": "isNull",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1470,
+							"name": "isNull",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns true if this map contains mappings to only null values or if  the map is empty.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:2},{k3:null}]\n  map.isNull(); //false\n  //map : [{k1:null},{k2:null},{k3:null}]\n  map.isNull(); //true\n  //map : []\n  map.isNull(); //true\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.isNull",
+								"id": 664
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 196,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.isNull",
+						"id": 664
+					}
+				},
+				{
+					"id": 1471,
+					"name": "keySet",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1472,
+							"name": "keySet",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a Set view of the keys contained in this map.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.keySet(); //[\"one\",\"two\",\"three\"]\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "AbstractSet",
+								"id": 531,
+								"typeArguments": [
+									{
+										"type": "instrinct",
+										"name": "string"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.keySet",
+								"id": 666
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.keySet",
+								"id": 496
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 206,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.keySet",
+						"id": 666
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.keySet",
+						"id": 495
+					}
+				},
+				{
+					"id": 1473,
+					"name": "put",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1474,
+							"name": "put",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Associates the specified value with the specified key in this map.Returns the old value associated with the key or  undefined.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n//map : [{\"one\":1},{\"two\":2},{\"three\":3}]\nmap.put(\"one\",22); //return 1\n//now map : [{\"one\":22},{\"two\":2},{\"three\":3}]\nmap.put(\"four\",4);//return undefined\n//now map : [{\"one\":22},{\"two\":2},{\"three\":3},{\"four\":4}]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1475,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 1476,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "E"
+											},
+											{
+												"type": "instrinct",
+												"name": "null"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.put",
+								"id": 668
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 219,
+							"character": 4
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.put",
+						"id": 668
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.put",
+						"id": 497
+					}
+				},
+				{
+					"id": 1477,
+					"name": "putAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1478,
+							"name": "putAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Copies all of the mappings from the specified map to this map.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map1: [{k1:v1},{k2:v2},{k3:v3}], map2: [{k2:v4},{k4:v6},{k6:v8}]\n  map1.putAll(map2);\n  //now map1: [{k1:v1},{k2:v4},{k3:v3},{k4:v6},{k6:v8}]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1479,
+									"name": "map",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Map",
+										"id": 435,
+										"typeArguments": [
+											{
+												"type": "instrinct",
+												"name": "string"
+											},
+											{
+												"type": "typeParameter",
+												"name": "E"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.putAll",
+								"id": 672
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.putAll",
+								"id": 502
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 239,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.putAll",
+						"id": 672
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.putAll",
+						"id": 501
+					}
+				},
+				{
+					"id": 1480,
+					"name": "putIfAbsent",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1481,
+							"name": "putIfAbsent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns undefined, else returns the current value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.putIfAbsent(\"four\",4); //return undefined (adds {\"four\":4} to the map)\n  map.putIfAbsent(\"one\",23); //return 1 (map unchanged)\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1482,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 1483,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.putIfAbsent",
+								"id": 675
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 251,
+							"character": 12
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.putIfAbsent",
+						"id": 675
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.putIfAbsent",
+						"id": 504
+					}
+				},
+				{
+					"id": 1484,
+					"name": "remove",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1485,
+							"name": "remove",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes the mapping for a key from this map if it is present.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.remove(\"one\"); //return 1\n  //now map : [{\"two\":2},{\"three\":3}]\n  map.remove(\"four\"); //return undefined (map unchanged)\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1486,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "E"
+									},
+									{
+										"type": "instrinct",
+										"name": "undefined"
+									},
+									{
+										"type": "instrinct",
+										"name": "null"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.remove",
+								"id": 679
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 265,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.remove",
+						"id": 679
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.remove",
+						"id": 508
+					}
+				},
+				{
+					"id": 1487,
+					"name": "removeIf",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1488,
+							"name": "removeIf",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Removes the entry for the specified key only if it is currently mapped to the specified value.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{\"one\":1},{\"two\":2},{\"three\":3}]\n  map.removeIf(\"one\", 1); //return true\n  //now map : [{\"two\":2},{\"three\":3}]\n  map.removeIf(\"two\",5); //return false (map unchanged)\n  map.removeIf(\"four\",4); //return false\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1489,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "instrinct",
+										"name": "string"
+									}
+								},
+								{
+									"id": 1490,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "E"
+											},
+											{
+												"type": "instrinct",
+												"name": "null"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.removeIf",
+								"id": 682
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 283,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.removeIf",
+						"id": 682
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.removeIf",
+						"id": 511
+					}
+				},
+				{
+					"id": 1491,
+					"name": "replace",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1492,
+							"name": "replace",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Replace all entries with specified value with the new value. Returns true if map was changed.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]\n  map.replace(5,2) //returns true;\n  //now map : [{k1:1},{k2:2},{k3:3},{k4:2},{k5:1}]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1493,
+									"name": "oldValue",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								},
+								{
+									"id": 1494,
+									"name": "newValue",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.replace",
+								"id": 686
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 295,
+							"character": 8
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.replace",
+						"id": 686
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.replace",
+						"id": 515
+					}
+				},
+				{
+					"id": 1495,
+					"name": "replaceAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1496,
+							"name": "replaceAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]\n  map.replaceAll((k,v,m)=>(v*2)); //replace with its double\n  //map : [{k1:2},{k2:10},{k3:6},{k4:10},{k5:2}]\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1497,
+									"name": "remappingFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1498,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1499,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1500,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "instrinct",
+																"name": "string"
+															}
+														},
+														{
+															"id": 1501,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	}
+																]
+															}
+														},
+														{
+															"id": 1502,
+															"name": "map",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "AbstractMap",
+																"id": 599,
+																"typeArguments": [
+																	{
+																		"type": "instrinct",
+																		"name": "string"
+																	},
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "typeParameter",
+																"name": "E"
+															},
+															{
+																"type": "instrinct",
+																"name": "null"
+															}
+														]
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/abstract/abstract-map.ts",
+													"line": 312,
+													"character": 24
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.replaceAll",
+								"id": 690
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 312,
+							"character": 11
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.replaceAll",
+						"id": 690
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.replaceAll",
+						"id": 519
+					}
+				},
+				{
+					"id": 1503,
+					"name": "size",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1504,
+							"name": "size",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the number of key-value mappings in this map.(key->null mappings are counted)",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]\n  map.size(); //return 5\n"
+									}
+								]
+							},
+							"type": {
+								"type": "instrinct",
+								"name": "number"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.size",
+								"id": 698
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.size",
+								"id": 528
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 324,
+							"character": 5
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.size",
+						"id": 698
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.size",
+						"id": 527
+					}
+				},
+				{
+					"id": 1394,
+					"name": "toString",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1395,
+							"name": "toString",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Converts the dictionary into a JSON String",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //dictionary contains [{'a':1},{'b':2},{'c':3}]\n  console.log(arrayList.toString((x)=>(x.toString())));\n  //Output\n  //'{\"a\":1,\"b\":2,\"c\":3}'\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1396,
+									"name": "serializerFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 1397,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 1398,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 1399,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "E"
+																	},
+																	{
+																		"type": "instrinct",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "instrinct",
+														"name": "string"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "ds/maps/dictionary.ts",
+													"line": 63,
+													"character": 24
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/maps/dictionary.ts",
+							"line": 63,
+							"character": 10
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "Serializable.toString",
+						"id": 1005
+					}
+				},
+				{
+					"id": 1505,
+					"name": "values",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1506,
+							"name": "values",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns a List view of the values contained in this map.\n//map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]\nmap.values(); //return list : [1,5,3,5,1]"
+							},
+							"type": {
+								"type": "reference",
+								"name": "AbstractList",
+								"id": 270,
+								"typeArguments": [
+									{
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "E"
+											},
+											{
+												"type": "instrinct",
+												"name": "null"
+											}
+										]
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractMap.values",
+								"id": 700
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Map.values",
+								"id": 530
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/abstract/abstract-map.ts",
+							"line": 333,
+							"character": 7
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "AbstractMap.values",
+						"id": 700
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Map.values",
+						"id": 529
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						1409
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						1408,
+						1407
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						1412,
+						1392,
+						1414,
+						1423,
+						1432,
+						1441,
+						1444,
+						1386,
+						1447,
+						1449,
+						1452,
+						1400,
+						1460,
+						1389,
+						1463,
+						1467,
+						1469,
+						1471,
+						1473,
+						1477,
+						1480,
+						1484,
+						1487,
+						1491,
+						1495,
+						1503,
+						1394,
+						1505
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "ds/maps/dictionary.ts",
+					"line": 11,
+					"character": 23
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "AbstractMap",
+					"id": 599,
+					"typeArguments": [
+						{
+							"type": "instrinct",
+							"name": "string"
+						},
+						{
+							"type": "typeParameter",
+							"name": "E"
+						}
+					]
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "Map",
+					"id": 435,
+					"typeArguments": [
+						{
+							"type": "instrinct",
+							"name": "string"
+						},
+						{
+							"type": "typeParameter",
+							"name": "E"
+						}
+					]
+				},
+				{
+					"type": "reference",
+					"name": "Cloneable",
+					"id": 1000,
+					"typeArguments": [
+						{
+							"type": "reference",
+							"name": "Dictionary",
+							"id": 1384,
+							"typeArguments": [
+								{
+									"type": "typeParameter",
+									"name": "E"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "reference",
+					"name": "Serializable",
+					"id": 1004
+				}
+			]
+		},
+		{
 			"id": 13,
 			"name": "Iterator",
 			"kind": 128,
@@ -14745,7 +20298,7 @@
 			]
 		},
 		{
-			"id": 1269,
+			"id": 1507,
 			"name": "PriorityQueue",
 			"kind": 128,
 			"kindString": "Class",
@@ -14757,7 +20310,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 1270,
+					"id": 1508,
 					"name": "E",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -14766,7 +20319,7 @@
 			],
 			"children": [
 				{
-					"id": 1276,
+					"id": 1514,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -14775,14 +20328,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1277,
+							"id": 1515,
 							"name": "new PriorityQueue",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1278,
+									"id": 1516,
 									"name": "compareFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -14790,21 +20343,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 1279,
+											"id": 1517,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 1280,
+													"id": 1518,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 1281,
+															"id": 1519,
 															"name": "x",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -14815,7 +20368,7 @@
 															}
 														},
 														{
-															"id": 1282,
+															"id": 1520,
 															"name": "y",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -14843,7 +20396,7 @@
 									}
 								},
 								{
-									"id": 1283,
+									"id": 1521,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -14860,7 +20413,7 @@
 							"type": {
 								"type": "reference",
 								"name": "PriorityQueue",
-								"id": 1269
+								"id": 1507
 							},
 							"overwrites": {
 								"type": "reference",
@@ -14883,7 +20436,7 @@
 					}
 				},
 				{
-					"id": 1271,
+					"id": 1509,
 					"name": "_comparator",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14901,21 +20454,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 1272,
+							"id": 1510,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 1273,
+									"id": 1511,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1274,
+											"id": 1512,
 											"name": "x",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -14926,7 +20479,7 @@
 											}
 										},
 										{
-											"id": 1275,
+											"id": 1513,
 											"name": "y",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -14954,7 +20507,7 @@
 					}
 				},
 				{
-					"id": 1313,
+					"id": 1551,
 					"name": "_store",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14982,7 +20535,7 @@
 					}
 				},
 				{
-					"id": 1284,
+					"id": 1522,
 					"name": "add",
 					"kind": 2048,
 					"kindString": "Method",
@@ -14991,7 +20544,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1285,
+							"id": 1523,
 							"name": "add",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15007,7 +20560,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1286,
+									"id": 1524,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -15053,7 +20606,7 @@
 					}
 				},
 				{
-					"id": 1287,
+					"id": 1525,
 					"name": "addAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15062,7 +20615,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1288,
+							"id": 1526,
 							"name": "addAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15078,7 +20631,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1289,
+									"id": 1527,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -15125,7 +20678,7 @@
 					}
 				},
 				{
-					"id": 1314,
+					"id": 1552,
 					"name": "clear",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15134,7 +20687,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1315,
+							"id": 1553,
 							"name": "clear",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15183,7 +20736,7 @@
 					}
 				},
 				{
-					"id": 1290,
+					"id": 1528,
 					"name": "comparator",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15192,7 +20745,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1291,
+							"id": 1529,
 							"name": "comparator",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15209,21 +20762,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 1292,
+									"id": 1530,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"signatures": [
 										{
-											"id": 1293,
+											"id": 1531,
 											"name": "__call",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 1294,
+													"id": 1532,
 													"name": "x",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -15234,7 +20787,7 @@
 													}
 												},
 												{
-													"id": 1295,
+													"id": 1533,
 													"name": "y",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -15271,7 +20824,7 @@
 					]
 				},
 				{
-					"id": 1316,
+					"id": 1554,
 					"name": "contains",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15280,7 +20833,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1317,
+							"id": 1555,
 							"name": "contains",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15296,7 +20849,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1318,
+									"id": 1556,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -15342,7 +20895,7 @@
 					}
 				},
 				{
-					"id": 1319,
+					"id": 1557,
 					"name": "containsAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15351,7 +20904,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1320,
+							"id": 1558,
 							"name": "containsAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15367,7 +20920,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1321,
+									"id": 1559,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -15414,7 +20967,7 @@
 					}
 				},
 				{
-					"id": 1309,
+					"id": 1547,
 					"name": "element",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15423,7 +20976,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1310,
+							"id": 1548,
 							"name": "element",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15481,7 +21034,7 @@
 					}
 				},
 				{
-					"id": 1322,
+					"id": 1560,
 					"name": "equals",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15490,7 +21043,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1323,
+							"id": 1561,
 							"name": "equals",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15506,7 +21059,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1324,
+									"id": 1562,
 									"name": "collection",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -15559,7 +21112,7 @@
 					}
 				},
 				{
-					"id": 1348,
+					"id": 1586,
 					"name": "forEach",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15568,7 +21121,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1349,
+							"id": 1587,
 							"name": "forEach",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15584,7 +21137,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1350,
+									"id": 1588,
 									"name": "action",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -15592,21 +21145,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 1351,
+											"id": 1589,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 1352,
+													"id": 1590,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 1353,
+															"id": 1591,
 															"name": "item",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -15617,7 +21170,7 @@
 															}
 														},
 														{
-															"id": 1354,
+															"id": 1592,
 															"name": "index",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -15628,7 +21181,7 @@
 															}
 														},
 														{
-															"id": 1355,
+															"id": 1593,
 															"name": "collection",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -15693,7 +21246,7 @@
 					}
 				},
 				{
-					"id": 1302,
+					"id": 1540,
 					"name": "fromString",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15702,7 +21255,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1303,
+							"id": 1541,
 							"name": "fromString",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15718,7 +21271,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1304,
+									"id": 1542,
 									"name": "json",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -15729,7 +21282,7 @@
 									}
 								},
 								{
-									"id": 1305,
+									"id": 1543,
 									"name": "deserializerFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -15737,21 +21290,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 1306,
+											"id": 1544,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 1307,
+													"id": 1545,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 1308,
+															"id": 1546,
 															"name": "itemJSON",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -15782,7 +21335,7 @@
 							"type": {
 								"type": "reference",
 								"name": "PriorityQueue",
-								"id": 1269,
+								"id": 1507,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -15806,7 +21359,7 @@
 					}
 				},
 				{
-					"id": 1325,
+					"id": 1563,
 					"name": "isEmpty",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15815,7 +21368,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1326,
+							"id": 1564,
 							"name": "isEmpty",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15864,7 +21417,7 @@
 					}
 				},
 				{
-					"id": 1356,
+					"id": 1594,
 					"name": "iterator",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15873,7 +21426,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1357,
+							"id": 1595,
 							"name": "iterator",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15929,7 +21482,7 @@
 					}
 				},
 				{
-					"id": 1311,
+					"id": 1549,
 					"name": "poll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -15938,7 +21491,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1312,
+							"id": 1550,
 							"name": "poll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15996,7 +21549,7 @@
 					}
 				},
 				{
-					"id": 1327,
+					"id": 1565,
 					"name": "remove",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16005,7 +21558,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1328,
+							"id": 1566,
 							"name": "remove",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16021,7 +21574,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1329,
+									"id": 1567,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16067,7 +21620,7 @@
 					}
 				},
 				{
-					"id": 1330,
+					"id": 1568,
 					"name": "removeAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16076,7 +21629,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1331,
+							"id": 1569,
 							"name": "removeAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16092,7 +21645,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1332,
+									"id": 1570,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16139,7 +21692,7 @@
 					}
 				},
 				{
-					"id": 1333,
+					"id": 1571,
 					"name": "removeIf",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16148,7 +21701,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1334,
+							"id": 1572,
 							"name": "removeIf",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16164,7 +21717,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1335,
+									"id": 1573,
 									"name": "filterFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16172,21 +21725,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 1336,
+											"id": 1574,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 1337,
+													"id": 1575,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 1338,
+															"id": 1576,
 															"name": "item",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -16197,7 +21750,7 @@
 															}
 														},
 														{
-															"id": 1339,
+															"id": 1577,
 															"name": "index",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -16208,7 +21761,7 @@
 															}
 														},
 														{
-															"id": 1340,
+															"id": 1578,
 															"name": "collection",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -16273,7 +21826,7 @@
 					}
 				},
 				{
-					"id": 1341,
+					"id": 1579,
 					"name": "retainAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16282,7 +21835,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1342,
+							"id": 1580,
 							"name": "retainAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16298,7 +21851,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1343,
+									"id": 1581,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16345,7 +21898,7 @@
 					}
 				},
 				{
-					"id": 1344,
+					"id": 1582,
 					"name": "size",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16354,7 +21907,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1345,
+							"id": 1583,
 							"name": "size",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16403,7 +21956,7 @@
 					}
 				},
 				{
-					"id": 1346,
+					"id": 1584,
 					"name": "toArray",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16412,7 +21965,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1347,
+							"id": 1585,
 							"name": "toArray",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16462,7 +22015,7 @@
 					}
 				},
 				{
-					"id": 1296,
+					"id": 1534,
 					"name": "toString",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16471,7 +22024,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1297,
+							"id": 1535,
 							"name": "toString",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16487,7 +22040,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1298,
+									"id": 1536,
 									"name": "serializerFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16495,21 +22048,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 1299,
+											"id": 1537,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 1300,
+													"id": 1538,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 1301,
+															"id": 1539,
 															"name": "item",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -16562,41 +22115,41 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						1276
+						1514
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						1271,
-						1313
+						1509,
+						1551
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						1284,
-						1287,
-						1314,
-						1290,
-						1316,
-						1319,
-						1309,
-						1322,
-						1348,
-						1302,
-						1325,
-						1356,
-						1311,
-						1327,
-						1330,
-						1333,
-						1341,
-						1344,
-						1346,
-						1296
+						1522,
+						1525,
+						1552,
+						1528,
+						1554,
+						1557,
+						1547,
+						1560,
+						1586,
+						1540,
+						1563,
+						1594,
+						1549,
+						1565,
+						1568,
+						1571,
+						1579,
+						1582,
+						1584,
+						1534
 					]
 				}
 			],
@@ -16651,7 +22204,7 @@
 			]
 		},
 		{
-			"id": 1358,
+			"id": 1596,
 			"name": "Stack",
 			"kind": 128,
 			"kindString": "Class",
@@ -16663,7 +22216,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 1359,
+					"id": 1597,
 					"name": "T",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -16672,7 +22225,7 @@
 			],
 			"children": [
 				{
-					"id": 1361,
+					"id": 1599,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -16681,14 +22234,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1362,
+							"id": 1600,
 							"name": "new Stack",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1363,
+									"id": 1601,
 									"name": "args",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16705,7 +22258,7 @@
 							"type": {
 								"type": "reference",
 								"name": "Stack",
-								"id": 1358
+								"id": 1596
 							}
 						}
 					],
@@ -16718,7 +22271,7 @@
 					]
 				},
 				{
-					"id": 1360,
+					"id": 1598,
 					"name": "_store",
 					"kind": 1024,
 					"kindString": "Property",
@@ -16740,7 +22293,7 @@
 					}
 				},
 				{
-					"id": 1364,
+					"id": 1602,
 					"name": "height",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -16758,7 +22311,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 1365,
+							"id": 1603,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -16787,7 +22340,7 @@
 					]
 				},
 				{
-					"id": 1371,
+					"id": 1609,
 					"name": "peek",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16796,7 +22349,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1372,
+							"id": 1610,
 							"name": "peek",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16834,7 +22387,7 @@
 					]
 				},
 				{
-					"id": 1369,
+					"id": 1607,
 					"name": "pop",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16843,7 +22396,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1370,
+							"id": 1608,
 							"name": "pop",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16881,7 +22434,7 @@
 					]
 				},
 				{
-					"id": 1366,
+					"id": 1604,
 					"name": "push",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16890,7 +22443,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1367,
+							"id": 1605,
 							"name": "push",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16906,7 +22459,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1368,
+									"id": 1606,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16935,7 +22488,7 @@
 					]
 				},
 				{
-					"id": 1373,
+					"id": 1611,
 					"name": "search",
 					"kind": 2048,
 					"kindString": "Method",
@@ -16944,7 +22497,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1374,
+							"id": 1612,
 							"name": "search",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16960,7 +22513,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1375,
+									"id": 1613,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16991,31 +22544,31 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						1361
+						1599
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						1360
+						1598
 					]
 				},
 				{
 					"title": "Accessors",
 					"kind": 262144,
 					"children": [
-						1364
+						1602
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						1371,
-						1369,
-						1366,
-						1373
+						1609,
+						1607,
+						1604,
+						1611
 					]
 				}
 			],
@@ -19853,6 +25406,16 @@
 				},
 				{
 					"type": "reference",
+					"name": "ArrayMap",
+					"id": 1269
+				},
+				{
+					"type": "reference",
+					"name": "Dictionary",
+					"id": 1384
+				},
+				{
+					"type": "reference",
 					"name": "SwappableList",
 					"id": 1145
 				}
@@ -20759,7 +26322,7 @@
 				{
 					"type": "reference",
 					"name": "PriorityQueue",
-					"id": 1269
+					"id": 1507
 				},
 				{
 					"type": "reference",
@@ -24245,6 +29808,16 @@
 					"type": "reference",
 					"name": "AbstractMap",
 					"id": 599
+				},
+				{
+					"type": "reference",
+					"name": "ArrayMap",
+					"id": 1269
+				},
+				{
+					"type": "reference",
+					"name": "Dictionary",
+					"id": 1384
 				}
 			]
 		},
@@ -25415,7 +30988,7 @@
 				{
 					"type": "reference",
 					"name": "PriorityQueue",
-					"id": 1269
+					"id": 1507
 				}
 			]
 		},
@@ -25636,8 +31209,13 @@
 				},
 				{
 					"type": "reference",
+					"name": "Dictionary",
+					"id": 1384
+				},
+				{
+					"type": "reference",
 					"name": "PriorityQueue",
-					"id": 1269
+					"id": 1507
 				},
 				{
 					"type": "reference",
@@ -28506,10 +34084,12 @@
 				531,
 				902,
 				1018,
+				1269,
+				1384,
 				13,
 				36,
-				1269,
-				1358,
+				1507,
+				1596,
 				1145
 			]
 		},
