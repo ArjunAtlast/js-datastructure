@@ -6,6 +6,7 @@
     <title>JS-Datastructures</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/hljs_custom.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -49,11 +50,35 @@
             <h3 class="sub-title">_Installation</h3>
             <div class="sub-content">
               <p>To install latest version:</p>
-              <pre class="jsds-code"><code>$ npm install @arjunatlast/jsds</code></pre>
+              <pre class="jsds-code"><code class="nohighlight">$ npm install @arjunatlast/jsds</code></pre>
             </div>
             <div class="sub-content">
               <p>To install the latest development version locally:</p>
-              <pre class="jsds-code"><code>$ npm install git+https://github.com/ArjunAtlast/js-datastructure.git</code></pre>
+              <pre class="jsds-code"><code class="nohighlight">$ npm install git+https://github.com/ArjunAtlast/js-datastructure.git</code></pre>
+            </div>
+          </div>
+
+          <div class="content">
+            <h3 class="sub-title">_Usage</h3>
+            <div class="sub-content">
+              <p>To use any datastructure in typescript project.</p>
+              <div class="section-code">
+                <pre><code class="ts">
+import { ArrayList } from "@arjunatlast/jsds";
+
+var al = new ArrayList&lt;number&gt;();
+                </code></pre>
+              </div>
+            </div>
+            <div class="sub-content">
+              <p>To use any datastructure in es6 project.</p>
+              <div class="section-code">
+                <pre><code class="js">
+  var ArrayList = require("@arjunatlast/jsds").ArrayList;
+
+  var al = new ArrayList();
+                </code></pre>
+              </div>
             </div>
           </div>
 
@@ -63,6 +88,10 @@
     </main>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript">
+      hljs.initHighlightingOnLoad();
+    </script>
     <script type="text/javascript" src="scripts/script.js"></script>
   </body>
 </html>

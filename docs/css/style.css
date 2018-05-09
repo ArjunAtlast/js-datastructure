@@ -149,7 +149,6 @@ main {
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 100%;
       background: #fff; }
       main .wrapper div.getting-started .page-title {
         color: #673AB7;
@@ -169,6 +168,9 @@ main {
         font-size: 1.6em; }
       main .wrapper div.getting-started .content .sub-content p {
         padding: 16px; }
+      main .wrapper div.getting-started .content .sub-content .section-code {
+        background: #050309;
+        padding: 16px 32px; }
       main .wrapper div.getting-started .content .sub-content pre.jsds-code {
         background: #e8e1f5;
         padding: 32px 16px;
