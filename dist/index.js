@@ -30,3 +30,5 @@ var array_map_1 = require("./ds/maps/array-map");
 exports.ArrayMap = array_map_1.ArrayMap;
 var dictionary_1 = require("./ds/maps/dictionary");
 exports.Dictionary = dictionary_1.Dictionary;
+var history_list_1 = require("./ds/lists/history-list");
+exports.HistoryList = history_list_1.HistoryList;

@@ -592,5 +592,23 @@ describe("Checking Components..", () => {
       expect(dict.fromString(jsonS,x=>parseFloat(x))).to.deep.equal(dict);
     });
   });
+  //HistoryList
+  describe("HistoryList", ()=>{
+    let hl;
+    it("constructor", ()=>{
+      expect(index.HistoryList).to.not.equal(undefined);
+      hl = new index.HistoryList(5,1,2,3,4,5,6);
+      expect(hl).to.be.an.instanceOf(index.HistoryList);
+      expect(hl.toArray()).to.deep.equal([1,2,3,4,5]);
+    });
+    it("add", ()=>{
+      expect(hl.add(6)).to.equal(true);
+      expect(hl.toArray()).to.deep.equal([2,3,4,5,6]);
+    });
+    it("addAll", ()=>{
+      expect(hl.addAll([7,8])).to.equal(true);
+      expect(hl.toArray()).to.deep.equal([4,5,6,7,8]);
+    });
+  });
 
 });

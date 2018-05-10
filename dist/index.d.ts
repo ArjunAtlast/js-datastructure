@@ -21,3 +21,4 @@ export { PriorityQueue } from "./ds/queues/priority-queue";
 export { SwappableList } from "./ds/lists/swappable-list";
 export { ArrayMap } from "./ds/maps/array-map";
 export { Dictionary } from "./ds/maps/dictionary";
+export { HistoryList } from "./ds/lists/history-list";
