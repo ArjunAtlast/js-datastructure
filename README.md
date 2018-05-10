@@ -21,4 +21,28 @@ To install the latest development version locally
 npm install git+https://github.com/ArjunAtlast/js-datastructure.git
 ```
 
-Read complete documentation at [JSDS](https://jsds.netlify.com/)
+## Usage
+
+### In Typescript
+
+```typescript
+  import {ArrayList} from "@arjunatlast/jsds";
+
+  ...
+
+  var al = new ArrayList<number>();
+```
+
+### CommonJS
+
+```javascript
+  var ArrayList = require("@arjunatlast/jsds");
+
+  ...
+
+  var al = new ArrayList();
+```
+
+## Documentation
+
+Read complete documentation at [jsds.netlify.com](https://jsds.netlify.com/)
