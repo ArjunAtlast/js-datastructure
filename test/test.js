@@ -185,6 +185,11 @@ describe("Checking Components..", () => {
       expect(itr.previous()).to.equal(2.5);
       itr.set(2.3);
       expect(itr.next()).to.equal(2.3);
+      itr.add(2.6);
+      expect(itr.next()).to.equal(2.6);
+      itr.remove();
+      itr.set(2.9);
+      expect(itr.previous()).to.equal(2.3);
     });
   });
   //AbstractList
@@ -423,6 +428,9 @@ describe("Checking Components..", () => {
       expect(am.get("a")).to.equal(12);
       expect(am.get("j")).to.equal(undefined);
       expect(am.get("b")).to.equal(null);
+      expect(am.getOrDefault("b",45)).to.equal(45);
+      expect(am.getOrDefault("j",45)).to.equal(45);
+      expect(am.getOrDefault("a",45)).to.equal(12);
     });
     it("entrySet, keySet, values", ()=>{
       expect(am.entrySet().toArray()).to.deep.equal([{key:"a", value:12},{key:"b", value:null},{key:"c", value:15}]);
@@ -439,15 +447,21 @@ describe("Checking Components..", () => {
     it("compute, computeIfAbsent, computeIfPresent", ()=>{
       expect(am.compute("a",(k,v,m)=>(v*2))).to.equal(12);
       expect(am.values().toArray()).to.deep.equal([24,null,15]);
+      expect(am.compute("a",(k,v,m)=>(null))).to.equal(24);
+      expect(am.values().toArray()).to.deep.equal([24,null,15]);
 
       expect(am.computeIfPresent("c",(k,v,m)=>(v+2))).to.equal(15);
       expect(am.values().toArray()).to.deep.equal([24,null,17]);
       expect(am.computeIfPresent("b",(k,v,m)=>(v+2))).to.equal(null);
       expect(am.values().toArray()).to.deep.equal([24,null,17]);
+      expect(am.computeIfPresent("c",(k,v,m)=>(null))).to.equal(17);
+      expect(am.values().toArray()).to.deep.equal([24,null,17]);
 
       expect(am.computeIfAbsent("b",(k,v,m)=>(k.charCodeAt(0)))).to.equal(null);
       expect(am.values().toArray()).to.deep.equal([24,98,17]);
       expect(am.computeIfAbsent("a",(k,v,m)=>(k.charCodeAt(0)))).to.equal(24);
+      expect(am.values().toArray()).to.deep.equal([24,98,17]);
+      expect(am.computeIfAbsent("dd",(k,v,m)=>(null))).to.equal(undefined);
       expect(am.values().toArray()).to.deep.equal([24,98,17]);
     });
     it("equals", ()=>{
@@ -518,6 +532,9 @@ describe("Checking Components..", () => {
       expect(sl.toArray()).to.deep.equal([1,2,4,6,5,7,3,8]);
       sl.rotate(1);
       expect(sl.toArray()).to.deep.equal([8,1,2,4,6,5,7,3]);
+      let s2 = new index.SwappableList();
+      s2.rotate(-1);
+      s2.rotate(1);
     });
     it("clone", ()=>{
       expect(sl.clone()).to.deep.equal(sl);
@@ -604,10 +621,14 @@ describe("Checking Components..", () => {
     it("add", ()=>{
       expect(hl.add(6)).to.equal(true);
       expect(hl.toArray()).to.deep.equal([2,3,4,5,6]);
+      expect(hl.add(7,3)).to.equal(true);
+      expect(hl.toArray()).to.deep.equal([3,4,5,6,7]);
     });
     it("addAll", ()=>{
-      expect(hl.addAll([7,8])).to.equal(true);
-      expect(hl.toArray()).to.deep.equal([4,5,6,7,8]);
+      expect(hl.addAll([8,9])).to.equal(true);
+      expect(hl.toArray()).to.deep.equal([5,6,7,8,9]);
+      expect(hl.addAll([10,11],3)).to.equal(true);
+      expect(hl.toArray()).to.deep.equal([7,8,9,10,11]);
     });
   });
 

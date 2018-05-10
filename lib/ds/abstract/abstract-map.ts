@@ -100,7 +100,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
     let enSet = new AbstractSet<MapEntry<K,V>>();
 		this._keys.forEach((k:K, index, set)=>{
       let val = this.get(k);
-      if(val===undefined) val = null;
+      val = (val===undefined || val === null)? null: val;
       let entry:MapEntry<K,V> = { key: k, value: val};
       enSet.add(entry);
     });
@@ -138,7 +138,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
 	forEach(action: (key: K, value: V|null, map: AbstractMap<K, V>) => void): void {
 		this._keys.forEach((key, index) => {
       let val = this._values.get(index)
-      if(val===undefined) val = null;
+      val = (val===undefined || val === null)? null: val;
       action(key, val, this);
     });
 	}
@@ -225,7 +225,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
       }
       return oldValue;
     }
-    if(!(this._keys.add(key) && this._values.add(value))) this._keys.remove(key);
+    (this._keys.add(key) && this._values.add(value));
     return undefined;
 	}
 

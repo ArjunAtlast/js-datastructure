@@ -6,14 +6,11 @@ import { ArrayList } from "./array-list";
 export class HistoryList<E> extends ArrayList<E> {
   /**
   * Appends the specified element to the end of this list
-  */
-  add(item:E):boolean
-  /**
-  * Inserts the specified element to this list
   * @example
   *   //list contains [1,2,3,4,5,6] -capacity 6
   *   list.add(7); //[2,3,4,5,6,7]
   */
+  add(item:E):boolean
   add(item:E, index:number=undefined):boolean {
     if(this.size() >= this._capacity) {
       this.removeAt(0);
@@ -24,14 +21,11 @@ export class HistoryList<E> extends ArrayList<E> {
 
   /**
   * Appends all of the elements in the specified array to the end of this list
-  */
-  addAll(items:E[]):boolean
-  /**
-  * Inserts all of the elements in the specified array into this list.
   * @example
   *   //list contains [1,2,3,4,5] - capacity 6
   *   list.addAll([6,7]); //[2,3,4,5,6,7]
   */
+  addAll(items:E[]):boolean
   addAll(items:E[], index:number = undefined):boolean {
     if(this.size()+items.length > this._capacity) {
       let needSpace = this.size()+items.length - this._capacity;

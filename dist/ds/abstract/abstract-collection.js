@@ -1,17 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var iterator_1 = require("../../classes/iterator");
+const iterator_1 = require("../../classes/iterator");
 /**
  An abstract implementation of Collection interface
 */
-var AbstractCollection = /** @class */ (function () {
-    function AbstractCollection() {
-        var items = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            items[_i] = arguments[_i];
-        }
+class AbstractCollection {
+    constructor(...items) {
         this._store = [];
-        this._store = items.slice();
+        this._store = [...items];
     }
     /**
     * Add an item to this collection
@@ -20,9 +16,9 @@ var AbstractCollection = /** @class */ (function () {
     *   collection.add(5);
     *   //now collection contains [1,2,3,4,5]
     */
-    AbstractCollection.prototype.add = function (item) {
+    add(item) {
         return !!this._store.push(item);
-    };
+    }
     /**
     * Add all items of an array to this collection
     * @example
@@ -30,14 +26,13 @@ var AbstractCollection = /** @class */ (function () {
     *   collection.addAll([6,7]);
     *   //now collection contains [1,2,3,4,5,6,7]
     */
-    AbstractCollection.prototype.addAll = function (items) {
-        var _this = this;
-        var flag = true;
-        items.forEach(function (item) {
-            flag = _this.add(item) || flag;
+    addAll(items) {
+        let flag = true;
+        items.forEach((item) => {
+            flag = this.add(item) || flag;
         });
         return flag;
-    };
+    }
     /**
     * Removes all the elements
     * @example
@@ -45,9 +40,9 @@ var AbstractCollection = /** @class */ (function () {
     *   collection.clear();
     *   //now collection contains []
     */
-    AbstractCollection.prototype.clear = function () {
+    clear() {
         this._store = [];
-    };
+    }
     /**
     * Returns true if this collection contains the specified element.
     * @example
@@ -55,11 +50,11 @@ var AbstractCollection = /** @class */ (function () {
     *   console.log(collection.contains(3));
     *   //Output: true
     */
-    AbstractCollection.prototype.contains = function (item) {
-        return this._store.some(function (ele) {
+    contains(item) {
+        return this._store.some((ele) => {
             return ele === item;
         });
-    };
+    }
     /**
     * Returns true if this collection contains all of the elements in the specified array.
     * @example
@@ -67,14 +62,13 @@ var AbstractCollection = /** @class */ (function () {
     *   console.log(collection.contains([1,2,4]));
     *   //Output: false
     */
-    AbstractCollection.prototype.containsAll = function (items) {
-        for (var _i = 0, items_1 = items; _i < items_1.length; _i++) {
-            var item = items_1[_i];
+    containsAll(items) {
+        for (let item of items) {
             if (!this.contains(item))
                 return false;
         }
         return !!items.length;
-    };
+    }
     /**
     * Compares the specified object with this collection for equality.
     * @example
@@ -82,8 +76,7 @@ var AbstractCollection = /** @class */ (function () {
     *   console.log(collection1.equals(collection2));
     *   //Output: true
     */
-    AbstractCollection.prototype.equals = function (collection) {
-        var _this = this;
+    equals(collection) {
         //Comparing types of both collection
         if (collection.constructor !== this.constructor)
             return false;
@@ -91,10 +84,10 @@ var AbstractCollection = /** @class */ (function () {
         if (collection.size() !== this.size())
             return false;
         //Compare each item;
-        return collection.toArray().every(function (item, index) {
-            return (_this._store[index] === item);
+        return collection.toArray().every((item, index) => {
+            return (this._store[index] === item);
         });
-    };
+    }
     /**
     * Returns true if this collection contains no elements.
     * @example
@@ -102,9 +95,9 @@ var AbstractCollection = /** @class */ (function () {
     *   console.log(collection.isEmpty());
     *   //Output: false
     */
-    AbstractCollection.prototype.isEmpty = function () {
+    isEmpty() {
         return !this._store.length;
-    };
+    }
     /**
     * Removes a single instance of the specified element from this collection, if it is present
     * @example
@@ -112,10 +105,10 @@ var AbstractCollection = /** @class */ (function () {
     *   collection.remove(3);
     *   //now collection contains [1,2]
     */
-    AbstractCollection.prototype.remove = function (item) {
-        var i = this._store.indexOf(item);
+    remove(item) {
+        let i = this._store.indexOf(item);
         return (i != -1) && !!this._store.splice(i, 1);
-    };
+    }
     /**
     * Removes all of this collection's elements that are also contained in the specified array.
     * @example
@@ -123,14 +116,13 @@ var AbstractCollection = /** @class */ (function () {
     *   collection.removeAll([1,3,5,7]);
     *   //now collection contains [2,4]
     */
-    AbstractCollection.prototype.removeAll = function (items) {
-        var _this = this;
-        var flag = false;
-        items.forEach(function (item) {
-            flag = (_this.contains(item) && _this.remove(item)) || flag;
+    removeAll(items) {
+        let flag = false;
+        items.forEach((item) => {
+            flag = (this.contains(item) && this.remove(item)) || flag;
         });
         return flag;
-    };
+    }
     /**
     * Removes all of the elements of this collection that satisfy the given filter function.
     * @example
@@ -140,16 +132,15 @@ var AbstractCollection = /** @class */ (function () {
     * }); //removing even numbers
     * //now collection contains [1,3,5,7,9]
     */
-    AbstractCollection.prototype.removeIf = function (filterFn) {
-        var _this = this;
-        var flag = false;
-        this._store = this._store.filter(function (item, index) {
-            var fl = filterFn(item, index, _this);
+    removeIf(filterFn) {
+        let flag = false;
+        this._store = this._store.filter((item, index) => {
+            let fl = filterFn(item, index, this);
             flag = flag || fl;
             return !fl;
         });
         return flag;
-    };
+    }
     /**
     * Retains only the elements in this collection that are contained in the specified array.
     * @example
@@ -157,9 +148,9 @@ var AbstractCollection = /** @class */ (function () {
     *   collection.retainAll([1,3,5,7]);
     *   //now collection contains [1,3]
     */
-    AbstractCollection.prototype.retainAll = function (items) {
-        return this.removeIf(function (item) { return (items.indexOf(item) == -1); });
-    };
+    retainAll(items) {
+        return this.removeIf((item) => (items.indexOf(item) == -1));
+    }
     /**
     * Returns the number of elements in this collection.
     * @example
@@ -167,9 +158,9 @@ var AbstractCollection = /** @class */ (function () {
     *   console.log(collection.size());
     *   //Output: 4
     */
-    AbstractCollection.prototype.size = function () {
+    size() {
         return this._store.length;
-    };
+    }
     /**
     * Returns an array containing all of the elements in this collection
     * @example
@@ -177,9 +168,9 @@ var AbstractCollection = /** @class */ (function () {
     *   console.log(collection.toArray());
     *   //Output: [1,2,3,4]
     */
-    AbstractCollection.prototype.toArray = function () {
-        return this._store.slice();
-    };
+    toArray() {
+        return [...this._store];
+    }
     /**
     * Performs an action for each item in this collection.
     * @example
@@ -189,20 +180,18 @@ var AbstractCollection = /** @class */ (function () {
     *   });
     *   //Output: 4 8 12 16
     */
-    AbstractCollection.prototype.forEach = function (action) {
-        var _this = this;
-        this._store.forEach(function (item, index) {
-            action(item, index, _this);
+    forEach(action) {
+        this._store.forEach((item, index) => {
+            action(item, index, this);
         });
-    };
+    }
     /**
     * Returns an iterator for the collection
     * @example
     *   var iterator = collection.iterator(); //returns an Iterator for the collection
     */
-    AbstractCollection.prototype.iterator = function () {
+    iterator() {
         return new iterator_1.Iterator(this._store);
-    };
-    return AbstractCollection;
-}());
+    }
+}
 exports.AbstractCollection = AbstractCollection;

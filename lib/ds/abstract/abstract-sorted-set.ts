@@ -32,11 +32,7 @@ export class AbstractSortedSet<E> extends AbstractSet<E> implements SortedSet<E>
   *   set.addAll([6,10,15]); //[1,6,8,10,12,15]
   */
   addAll(items:E[]):boolean {
-    if(super.addAll(items)) {
-      this._store.sort(this._comparator);
-      return true;
-    }
-    else return false;
+      return super.addAll(items) && !!this._store.sort(this._comparator);
   }
 
   /**
