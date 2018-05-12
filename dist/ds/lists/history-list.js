@@ -22,5 +22,14 @@ class HistoryList extends array_list_1.ArrayList {
         else
             return super.addAll(items);
     }
+    /**
+    * Returns the recent (last) n items from the list
+    * @example
+    *   //list contains [1,2,3,4,5]
+    *   list.recent(3); //[3,4,5]
+    */
+    recent(n) {
+        return this._store.slice(this.size() - n, this.size());
+    }
 }
 exports.HistoryList = HistoryList;

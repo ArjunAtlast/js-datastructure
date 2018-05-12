@@ -151,4 +151,14 @@ export class AbstractList<E> extends AbstractCollection<E> implements List<E>{
   subList(fromIndex:number, toIndex:number):AbstractList<E> {
     return new AbstractList<E>(...this._store.slice(fromIndex, toIndex));
   }
+
+  /**
+  * Reverse the list.
+  * @example
+  *   //list contains [1,2,3,4,5]
+  *   list.reverse() //now list contains [5,4,3,2,1]
+  */
+  reverse():void {
+    this._store.reverse();
+  }
 }

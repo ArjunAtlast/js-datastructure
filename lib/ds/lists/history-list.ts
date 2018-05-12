@@ -11,7 +11,7 @@ export class HistoryList<E> extends ArrayList<E> {
   *   list.add(7); //[2,3,4,5,6,7]
   */
   add(item:E):boolean
-  add(item:E, index:number=undefined):boolean {
+  add(item:E, index=undefined):boolean {
     if(this.size() >= this._capacity) {
       this.removeAt(0);
       return this.add(item);
@@ -26,12 +26,22 @@ export class HistoryList<E> extends ArrayList<E> {
   *   list.addAll([6,7]); //[2,3,4,5,6,7]
   */
   addAll(items:E[]):boolean
-  addAll(items:E[], index:number = undefined):boolean {
+  addAll(items:E[], index=undefined):boolean {
     if(this.size()+items.length > this._capacity) {
       let needSpace = this.size()+items.length - this._capacity;
       this._store.splice(0,needSpace);
       return this.addAll(items);
     }
     else return super.addAll(items);
+  }
+
+  /**
+  * Returns the recent (last) n items from the list
+  * @example
+  *   //list contains [1,2,3,4,5]
+  *   list.recent(3); //[3,4,5]
+  */
+  recent(n:number) {
+    return this._store.slice(Math.max(this.size()-n, 0), this.size());
   }
 }

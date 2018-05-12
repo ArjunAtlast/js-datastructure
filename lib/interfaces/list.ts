@@ -53,4 +53,8 @@ export interface List<E> extends Collection<E> {
     Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
   */
   subList(fromIndex:number, toIndex:number):List<E>;
+  /**
+  * Reverse the list
+  */
+  reverse():void;
 }

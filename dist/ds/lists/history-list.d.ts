@@ -17,4 +17,11 @@ export declare class HistoryList<E> extends ArrayList<E> {
     *   list.addAll([6,7]); //[2,3,4,5,6,7]
     */
     addAll(items: E[]): boolean;
+    /**
+    * Returns the recent (last) n items from the list
+    * @example
+    *   //list contains [1,2,3,4,5]
+    *   list.recent(3); //[3,4,5]
+    */
+    recent(n: number): E[];
 }

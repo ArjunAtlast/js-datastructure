@@ -251,6 +251,10 @@ describe("Checking Components..", () => {
     it("listIterator", () => {
       expect(l.listIterator()).to.be.an.instanceOf(index.ListIterator);
     });
+    it("reverse", () => {
+      l.reverse();
+      expect(l.toArray()).to.deep.equal([98, 56, 41, 32, 8, 7]);
+    });
   });
   //ArrayList
   describe("ArrayList", ()=> {
@@ -629,6 +633,10 @@ describe("Checking Components..", () => {
       expect(hl.toArray()).to.deep.equal([5,6,7,8,9]);
       expect(hl.addAll([10,11],3)).to.equal(true);
       expect(hl.toArray()).to.deep.equal([7,8,9,10,11]);
+    });
+    it("recent", ()=>{
+      expect(hl.recent(4)).to.deep.equal([8,9,10,11]);
+      expect(hl.recent(11)).to.deep.equal([7,8,9,10,11]);
     });
   });
 
