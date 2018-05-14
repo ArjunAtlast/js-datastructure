@@ -44,4 +44,15 @@ export class HistoryList<E> extends ArrayList<E> {
   recent(n:number) {
     return this._store.slice(Math.max(this.size()-n, 0), this.size());
   }
+
+  /**
+  * Clear old items in the history list retaining the last n elements.
+  * @example
+  *   //list contains [1,2,3,4,5]
+  *   list.clearUntil(2); //return [1,2,3]
+  *   //now list contain [4,5]
+  */
+  clearUntill(n:number):E[] {
+    return this._store.splice(0,this.size()-n);
+  }
 }

@@ -29,7 +29,17 @@ class HistoryList extends array_list_1.ArrayList {
     *   list.recent(3); //[3,4,5]
     */
     recent(n) {
-        return this._store.slice(this.size() - n, this.size());
+        return this._store.slice(Math.max(this.size() - n, 0), this.size());
+    }
+    /**
+    * Clear old items in the history list retaining the last n elements.
+    * @example
+    *   //list contains [1,2,3,4,5]
+    *   list.clearUntil(2); //return [1,2,3]
+    *   //now list contain [4,5]
+    */
+    clearUntill(n) {
+        return this._store.splice(0, this.size() - n);
     }
 }
 exports.HistoryList = HistoryList;

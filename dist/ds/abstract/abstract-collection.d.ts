@@ -3,7 +3,7 @@ import { Iterator } from "../../classes/iterator";
 /**
  An abstract implementation of Collection interface
 */
-export declare abstract class AbstractCollection<T> implements Collection<T> {
+export declare class AbstractCollection<T> implements Collection<T> {
     protected _store: T[];
     constructor(...items: T[]);
     /**

@@ -24,4 +24,12 @@ export declare class HistoryList<E> extends ArrayList<E> {
     *   list.recent(3); //[3,4,5]
     */
     recent(n: number): E[];
+    /**
+    * Clear old items in the history list retaining the last n elements.
+    * @example
+    *   //list contains [1,2,3,4,5]
+    *   list.clearUntil(2); //return [1,2,3]
+    *   //now list contain [4,5]
+    */
+    clearUntill(n: number): E[];
 }

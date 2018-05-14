@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var graph_1 = require("./interfaces/graph");
+exports.Vertex = graph_1.Vertex;
+exports.Edge = graph_1.Edge;
 //classes
 var iterator_1 = require("./classes/iterator");
 exports.Iterator = iterator_1.Iterator;
@@ -20,6 +23,8 @@ var abstract_sorted_set_1 = require("./ds/abstract/abstract-sorted-set");
 exports.AbstractSortedSet = abstract_sorted_set_1.AbstractSortedSet;
 var abstract_map_1 = require("./ds/abstract/abstract-map");
 exports.AbstractMap = abstract_map_1.AbstractMap;
+var abstract_graph_1 = require("./ds/abstract/abstract-graph");
+exports.AbstractGraph = abstract_graph_1.AbstractGraph;
 var array_list_1 = require("./ds/lists/array-list");
 exports.ArrayList = array_list_1.ArrayList;
 var priority_queue_1 = require("./ds/queues/priority-queue");

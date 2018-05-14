@@ -638,6 +638,53 @@ describe("Checking Components..", () => {
       expect(hl.recent(4)).to.deep.equal([8,9,10,11]);
       expect(hl.recent(11)).to.deep.equal([7,8,9,10,11]);
     });
+    it("clearUntill", ()=>{
+      hl.clearUntill(3);
+      expect(hl.toArray()).to.deep.equal([9,10,11]);
+    });
+  });
+  //AbstractGraph
+  describe("AbstractGraph, Edge, Vertex", ()=>{
+    let ag;
+    it("constructor", ()=>{
+      expect(index.AbstractGraph).to.not.equal(undefined);
+      expect(index.Vertex).to.not.equal(undefined);
+      expect(index.Edge).to.not.equal(undefined);
+      ag = new index.AbstractGraph();
+      expect(ag).to.be.an.instanceOf(index.AbstractGraph);
+      expect(new index.Vertex(2)).to.be.an.instanceOf(index.Vertex);
+      expect(new index.Edge(new index.Vertex(1), new index.Vertex(2))).to.be.an.instanceOf(index.Edge);
+    });
+    it("add, addVertex, vertexSet", () => {
+      ag.add(25);
+      expect(ag.vertexSet().toArray()).to.deep.equal([{label: 25}]);
+    });
+    it("addAll, addVertices", ()=>{
+      ag.addAll([26,27,28]);
+      expect(ag.vertexSet().toArray().map(x=>x.label)).to.deep.equal([25,26,27,28]);
+    });
+    it("createEdge, addEdge", ()=>{
+      ag.createEdge(29,30);
+      let v = ag.vertexSet().toArray()[4];
+      expect(ag.vertexSet().toArray().map(x=>x.label)).to.deep.equal([25,26,27,28,29,30]);
+      expect(ag.edgeSet().toArray()).to.deep.equal([{start:{label:29},end:{label:30}}]);
+      expect(ag.adjacentEdges(v).toArray()).to.deep.equal([{start:{label:29},end:{label:30}}]);
+      expect(ag.edgeSet().toArray()[0].start).to.equal(v);
+    });
+    it("remove, removeVertex, removeEdge", ()=>{
+      expect(ag.remove(30)).to.equal(true);
+      expect(ag.remove(65)).to.equal(false);
+      expect(ag.removeVertex(new index.Vertex(26))).to.equal(false);
+      expect(ag.vertexSet().toArray().map(x=>x.label)).to.deep.equal([25,26,27,28,29]);
+      let vers = ag.vertexSet().toArray();
+      expect(ag.removeEdge(new index.Edge(vers[0],vers[1]))).to.equal(false);
+      expect(ag.removeEdge(new index.Edge(new index.Vertex(20), vers[1]))).to.equal(false);
+      expect(ag.edgeSet().toArray()).to.deep.equal([]);
+    });
+    it("adjacentEdges", ()=>{
+      expect(ag.adjacentEdges(new index.Vertex(30))).to.equal(undefined);
+      expect(ag.adjacentEdges(ag.vertexSet().toArray()[4]).toArray()).to.deep.equal([]);
+    });
   });
 
 });
