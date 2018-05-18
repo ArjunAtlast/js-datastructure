@@ -85,7 +85,7 @@ hbs.registerHelper('Constructor', function(modules, options){
 * Method helper
 */
 hbs.registerHelper('Method', function(modules, options){
-  var methods = modules.filter((x) => (x.kind == kinds.Method));
+  var methods = modules.filter((x) => (x.kind == kinds.Method && !x.flags.isProtected));
   ret = (methods.length>0)? methods.map((x) => (options.fn(x))).join(""):options.inverse(this);
   return ret;
 });

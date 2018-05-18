@@ -3,3 +3,4 @@ docs/
 makedoc/
 .sass-cache/
 coverage/
+test/

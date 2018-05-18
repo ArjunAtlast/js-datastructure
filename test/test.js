@@ -686,5 +686,55 @@ describe("Checking Components..", () => {
       expect(ag.adjacentEdges(ag.vertexSet().toArray()[4]).toArray()).to.deep.equal([]);
     });
   });
+  //BinarySearchTree
+  describe("BinarySearchTree", () => {
+    let bst;
+    it("constructor", () => {
+      expect(index.BinarySearchTree).to.not.equal(undefined);
+      bst = new index.BinarySearchTree((x,y)=>(x-y));
+      expect(bst).to.be.an.instanceOf(index.BinarySearchTree);
+    });
+    it("insert, insertMultiple", () => {
+      expect(bst.insert(10)).to.equal(true);
+      expect(bst.inorder().toArray()).to.deep.equal([10]);
+      bst.insertMultiple(5,9,15,20,3,1);
+      expect(bst.inorder().toArray()).to.deep.equal([1,3,5,9,10,15,20]);
+    });
+    it("search", () => {
+      expect(bst.search(9)).to.equal(9);
+      expect(bst.search(13)).to.equal(null);
+    });
+    it("delete", () => {
+      expect(bst.delete(9)).to.equal(true);
+      expect(bst.inorder().toArray()).to.deep.equal([1,3,5,10,15,20]);
+      expect(bst.delete(3)).to.equal(true);
+      expect(bst.inorder().toArray()).to.deep.equal([1,5,10,15,20]);
+      expect(bst.delete(15)).to.equal(true);
+      expect(bst.inorder().toArray()).to.deep.equal([1,5,10,20]);
+      expect(bst.delete(10)).to.equal(true);
+      expect(bst.inorder().toArray()).to.deep.equal([1,5,20]);
+      bst.insertMultiple(2,3,25,23,21)
+      expect(bst.inorder().toArray()).to.deep.equal([1,2,3,5,20,21,23,25]);
+      expect(bst.delete(5)).to.equal(true);
+      expect(bst.inorder().toArray()).to.deep.equal([1,2,3,20,21,23,25]);
+      expect(bst.delete(20)).to.equal(true);
+      expect(bst.inorder().toArray()).to.deep.equal([1,2,3,21,23,25]);
+      expect(bst.delete(125)).to.equal(false);
+      let nbst = new index.BinarySearchTree((x,y)=>(x-y),22);
+      expect(nbst.delete(22)).to.equal(true);
+    });
+    it("inorder, preorder, postorder", ()=> {
+      expect(bst.inorder().toArray()).to.deep.equal([1,2,3,21,23,25]);
+      expect(bst.preorder().toArray()).to.deep.equal([3,1,2,21,25,23]);
+      expect(bst.postorder().toArray()).to.deep.equal([2,1,23,25,21,3]);
+      let nbst = new index.BinarySearchTree((x,y)=>(x-y));
+      expect(nbst.inorder().toArray()).to.deep.equal([]);
+      expect(nbst.preorder().toArray()).to.deep.equal([]);
+      expect(nbst.postorder().toArray()).to.deep.equal([]);
+    });
+    it("comparator", () => {
+      expect(bst.comparator()).to.be.an.instanceOf(Function);
+    });
+  });
 
 });
