@@ -13,7 +13,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "Abstract Implementation of binary tree. (Note: Cannot be used to create objects.)"
+				"shortText": "Abstract Implementation of binary tree. (Note: This class cannot be used to initialize objects.)"
 			},
 			"typeParameter": [
 				{
@@ -18201,7 +18201,7 @@
 					}
 				},
 				{
-					"id": 1956,
+					"id": 1965,
 					"name": "_root",
 					"kind": 1024,
 					"kindString": "Property",
@@ -18243,7 +18243,95 @@
 					}
 				},
 				{
-					"id": 1950,
+					"id": 1932,
+					"name": "comparator",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1933,
+							"name": "comparator",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the compare function used to order the elements in this BST.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  bst.comparator(); //returns a function\n"
+									}
+								]
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 1934,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 1935,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 1936,
+													"name": "x",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "typeParameter",
+														"name": "E"
+													}
+												},
+												{
+													"id": 1937,
+													"name": "y",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "typeParameter",
+														"name": "E"
+													}
+												}
+											],
+											"type": {
+												"type": "instrinct",
+												"name": "number"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "ds/trees/binary-search-tree.ts",
+											"line": 64,
+											"character": 15
+										}
+									]
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/trees/binary-search-tree.ts",
+							"line": 64,
+							"character": 12
+						}
+					]
+				},
+				{
+					"id": 1959,
 					"name": "deepestLeft",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18253,14 +18341,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1951,
+							"id": 1960,
 							"name": "deepestLeft",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1952,
+									"id": 1961,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18294,13 +18382,13 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 137,
+							"line": 157,
 							"character": 23
 						}
 					]
 				},
 				{
-					"id": 1953,
+					"id": 1962,
 					"name": "deepestRight",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18310,14 +18398,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1954,
+							"id": 1963,
 							"name": "deepestRight",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1955,
+									"id": 1964,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18351,13 +18439,13 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 141,
+							"line": 161,
 							"character": 24
 						}
 					]
 				},
 				{
-					"id": 1923,
+					"id": 1926,
 					"name": "delete",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18366,7 +18454,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1924,
+							"id": 1927,
 							"name": "delete",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -18376,13 +18464,13 @@
 								"tags": [
 									{
 										"tag": "example",
-										"text": "\n  //bt:BinarySearchTree<E> : inorder -> 1,5,8,9,11\n  bt.delete(5);  //inorder -> 1,8,9,10,11\n"
+										"text": "\n  //bst:BinarySearchTree<number> : inorder -> 1,5,8,9,11\n  bst.delete(5);  //inorder -> 1,8,9,10,11\n"
 									}
 								]
 							},
 							"parameters": [
 								{
-									"id": 1925,
+									"id": 1928,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18412,7 +18500,7 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 35,
+							"line": 46,
 							"character": 8
 						}
 					],
@@ -18428,7 +18516,7 @@
 					}
 				},
 				{
-					"id": 1933,
+					"id": 1942,
 					"name": "deleteItem",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18438,14 +18526,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1934,
+							"id": 1943,
 							"name": "deleteItem",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1935,
+									"id": 1944,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18456,7 +18544,7 @@
 									}
 								},
 								{
-									"id": 1936,
+									"id": 1945,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18492,13 +18580,13 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 61,
+							"line": 83,
 							"character": 22
 						}
 					]
 				},
 				{
-					"id": 1957,
+					"id": 1966,
 					"name": "inorder",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18507,7 +18595,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1958,
+							"id": 1967,
 							"name": "inorder",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -18523,7 +18611,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1959,
+									"id": 1968,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18579,7 +18667,7 @@
 					}
 				},
 				{
-					"id": 1947,
+					"id": 1956,
 					"name": "inorderPredecessor",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18589,14 +18677,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1948,
+							"id": 1957,
 							"name": "inorderPredecessor",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1949,
+									"id": 1958,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18630,13 +18718,13 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 133,
+							"line": 153,
 							"character": 30
 						}
 					]
 				},
 				{
-					"id": 1944,
+					"id": 1953,
 					"name": "inorderSuccessor",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18646,14 +18734,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1945,
+							"id": 1954,
 							"name": "inorderSuccessor",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1946,
+									"id": 1955,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18687,7 +18775,7 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 129,
+							"line": 149,
 							"character": 28
 						}
 					]
@@ -18712,7 +18800,7 @@
 								"tags": [
 									{
 										"tag": "example",
-										"text": "\n  //bt:BinarySearchTree<E> : inorder -> 1,5,8,9,11\n  bt.insert(10);  //inorder -> 1,5,8,9,10,11\n\n"
+										"text": "\n  //bst:BinarySearchTree<number> : inorder -> 1,5,8,9,11\n  bst.insert(10);  //inorder -> 1,5,8,9,10,11\n"
 									}
 								]
 							},
@@ -18748,7 +18836,7 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 21,
+							"line": 20,
 							"character": 8
 						}
 					],
@@ -18764,7 +18852,7 @@
 					}
 				},
 				{
-					"id": 1929,
+					"id": 1938,
 					"name": "insertItem",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18774,14 +18862,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1930,
+							"id": 1939,
 							"name": "insertItem",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1931,
+									"id": 1940,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18792,7 +18880,7 @@
 									}
 								},
 								{
-									"id": 1932,
+									"id": 1941,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18819,13 +18907,67 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 49,
+							"line": 71,
 							"character": 22
 						}
 					]
 				},
 				{
-					"id": 1963,
+					"id": 1923,
+					"name": "insertMultiple",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 1924,
+							"name": "insertMultiple",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Insert multiple items to the BST.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  //bst:BinarySearchTree<number> : inorder -> 1,5,8,9,11\n  bst.insertMultiple(10,21,3,15);  //inorder -> 1,3,5,8,9,10,11,15,21\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 1925,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "typeParameter",
+										"isArray": true,
+										"name": "E"
+									}
+								}
+							],
+							"type": {
+								"type": "instrinct",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ds/trees/binary-search-tree.ts",
+							"line": 34,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 1972,
 					"name": "postorder",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18834,7 +18976,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1964,
+							"id": 1973,
 							"name": "postorder",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -18850,7 +18992,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1965,
+									"id": 1974,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18906,7 +19048,7 @@
 					}
 				},
 				{
-					"id": 1960,
+					"id": 1969,
 					"name": "preorder",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18915,7 +19057,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1961,
+							"id": 1970,
 							"name": "preorder",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -18931,7 +19073,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1962,
+									"id": 1971,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -18987,7 +19129,7 @@
 					}
 				},
 				{
-					"id": 1937,
+					"id": 1946,
 					"name": "remove",
 					"kind": 2048,
 					"kindString": "Method",
@@ -18997,14 +19139,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1938,
+							"id": 1947,
 							"name": "remove",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1939,
+									"id": 1948,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -19024,20 +19166,20 @@
 							],
 							"type": {
 								"type": "instrinct",
-								"name": "boolean"
+								"name": "void"
 							}
 						}
 					],
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 91,
+							"line": 115,
 							"character": 18
 						}
 					]
 				},
 				{
-					"id": 1926,
+					"id": 1929,
 					"name": "search",
 					"kind": 2048,
 					"kindString": "Method",
@@ -19046,17 +19188,23 @@
 					},
 					"signatures": [
 						{
-							"id": 1927,
+							"id": 1930,
 							"name": "search",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Search an item in the tree. Returns the item if found else returns null."
+								"shortText": "Search an item in the tree. Returns the item if found else returns null.",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\n  bst.search(25);\n"
+									}
+								]
 							},
 							"parameters": [
 								{
-									"id": 1928,
+									"id": 1931,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -19085,13 +19233,13 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 42,
+							"line": 55,
 							"character": 8
 						}
 					]
 				},
 				{
-					"id": 1940,
+					"id": 1949,
 					"name": "searchItem",
 					"kind": 2048,
 					"kindString": "Method",
@@ -19101,14 +19249,14 @@
 					},
 					"signatures": [
 						{
-							"id": 1941,
+							"id": 1950,
 							"name": "searchItem",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 1942,
+									"id": 1951,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -19119,7 +19267,7 @@
 									}
 								},
 								{
-									"id": 1943,
+									"id": 1952,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -19164,7 +19312,7 @@
 					"sources": [
 						{
 							"fileName": "ds/trees/binary-search-tree.ts",
-							"line": 114,
+							"line": 134,
 							"character": 22
 						}
 					]
@@ -19183,27 +19331,29 @@
 					"kind": 1024,
 					"children": [
 						1901,
-						1956
+						1965
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						1950,
-						1953,
-						1923,
-						1933,
-						1957,
-						1947,
-						1944,
-						1920,
-						1929,
-						1963,
-						1960,
-						1937,
+						1932,
+						1959,
+						1962,
 						1926,
-						1940
+						1942,
+						1966,
+						1956,
+						1953,
+						1920,
+						1938,
+						1923,
+						1972,
+						1969,
+						1946,
+						1929,
+						1949
 					]
 				}
 			],

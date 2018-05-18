@@ -1355,13 +1355,19 @@
                     </a>
                   </li>
                   <li class="dropdown-sublist-item">
-                    <a class="item-type-method scrolly" href="#jsd1923">
+                    <a class="item-type-method scrolly" href="#jsd1932">
+                      _.comparator
+                      <i class="material-icons">play_circle_outline</i>
+                    </a>
+                  </li>
+                  <li class="dropdown-sublist-item">
+                    <a class="item-type-method scrolly" href="#jsd1926">
                       _.delete
                       <i class="material-icons">play_circle_outline</i>
                     </a>
                   </li>
                   <li class="dropdown-sublist-item">
-                    <a class="item-type-method scrolly" href="#jsd1957">
+                    <a class="item-type-method scrolly" href="#jsd1966">
                       _.inorder
                       <i class="material-icons">play_circle_outline</i>
                     </a>
@@ -1373,19 +1379,25 @@
                     </a>
                   </li>
                   <li class="dropdown-sublist-item">
-                    <a class="item-type-method scrolly" href="#jsd1963">
+                    <a class="item-type-method scrolly" href="#jsd1923">
+                      _.insertMultiple
+                      <i class="material-icons">play_circle_outline</i>
+                    </a>
+                  </li>
+                  <li class="dropdown-sublist-item">
+                    <a class="item-type-method scrolly" href="#jsd1972">
                       _.postorder
                       <i class="material-icons">play_circle_outline</i>
                     </a>
                   </li>
                   <li class="dropdown-sublist-item">
-                    <a class="item-type-method scrolly" href="#jsd1960">
+                    <a class="item-type-method scrolly" href="#jsd1969">
                       _.preorder
                       <i class="material-icons">play_circle_outline</i>
                     </a>
                   </li>
                   <li class="dropdown-sublist-item">
-                    <a class="item-type-method scrolly" href="#jsd1926">
+                    <a class="item-type-method scrolly" href="#jsd1929">
                       _.search
                       <i class="material-icons">play_circle_outline</i>
                     </a>
@@ -3414,7 +3426,7 @@
               </a>
 
                 <div class="section-description">
-                  - Abstract Implementation of binary tree. (Note: Cannot be used to create objects.)
+                  - Abstract Implementation of binary tree. (Note: This class cannot be used to initialize objects.)
                 </div>
 
 
@@ -10935,7 +10947,30 @@ map.values(); //return list : [1,5,3,5,1]
                   <i class="material-icons">play_circle_outline</i>
                   <big>"BinarySearchTree"</big> Methods
                 </h4>
-                  <a name="jsd1923"></a>
+                  <a name="jsd1932"></a>
+                  <div class="section-method">
+                    <div class="section-signature">
+                      _.comparator()
+                    </div>
+
+                      <div class="section-description">
+                        - Returns the compare function used to order the elements in this BST.
+                      </div>
+                      <div class="section-examples">
+                          <div class="section-example">
+                            <span class="min-title">@example</span>
+                            <pre><code class="js">
+  bst.comparator(); //returns a function
+
+                              </code></pre>
+                          </div>
+                      </div>
+
+
+
+                  </div>
+
+                  <a name="jsd1926"></a>
                   <div class="section-method">
                     <div class="section-signature">
                       _.delete(item)
@@ -10948,8 +10983,8 @@ map.values(); //return list : [1,5,3,5,1]
                           <div class="section-example">
                             <span class="min-title">@example</span>
                             <pre><code class="js">
-  //bt:BinarySearchTree&lt;E&gt; : inorder -&gt; 1,5,8,9,11
-  bt.delete(5);  //inorder -&gt; 1,8,9,10,11
+  //bst:BinarySearchTree&lt;number&gt; : inorder -&gt; 1,5,8,9,11
+  bst.delete(5);  //inorder -&gt; 1,8,9,10,11
 
                               </code></pre>
                           </div>
@@ -10966,7 +11001,7 @@ map.values(); //return list : [1,5,3,5,1]
                       </div>
                   </div>
 
-                  <a name="jsd1957"></a>
+                  <a name="jsd1966"></a>
                   <div class="section-method">
                     <div class="section-signature">
                       _.inorder(node)
@@ -11017,9 +11052,8 @@ map.values(); //return list : [1,5,3,5,1]
                           <div class="section-example">
                             <span class="min-title">@example</span>
                             <pre><code class="js">
-  //bt:BinarySearchTree&lt;E&gt; : inorder -&gt; 1,5,8,9,11
-  bt.insert(10);  //inorder -&gt; 1,5,8,9,10,11
-
+  //bst:BinarySearchTree&lt;number&gt; : inorder -&gt; 1,5,8,9,11
+  bst.insert(10);  //inorder -&gt; 1,5,8,9,10,11
 
                               </code></pre>
                           </div>
@@ -11036,7 +11070,31 @@ map.values(); //return list : [1,5,3,5,1]
                       </div>
                   </div>
 
-                  <a name="jsd1963"></a>
+                  <a name="jsd1923"></a>
+                  <div class="section-method">
+                    <div class="section-signature">
+                      _.insertMultiple(...items[ ])
+                    </div>
+
+                      <div class="section-description">
+                        - Insert multiple items to the BST.
+                      </div>
+                      <div class="section-examples">
+                          <div class="section-example">
+                            <span class="min-title">@example</span>
+                            <pre><code class="js">
+  //bst:BinarySearchTree&lt;number&gt; : inorder -&gt; 1,5,8,9,11
+  bst.insertMultiple(10,21,3,15);  //inorder -&gt; 1,3,5,8,9,10,11,15,21
+
+                              </code></pre>
+                          </div>
+                      </div>
+
+
+
+                  </div>
+
+                  <a name="jsd1972"></a>
                   <div class="section-method">
                     <div class="section-signature">
                       _.postorder(node)
@@ -11074,7 +11132,7 @@ map.values(); //return list : [1,5,3,5,1]
                       </div>
                   </div>
 
-                  <a name="jsd1960"></a>
+                  <a name="jsd1969"></a>
                   <div class="section-method">
                     <div class="section-signature">
                       _.preorder(node)
@@ -11112,7 +11170,7 @@ map.values(); //return list : [1,5,3,5,1]
                       </div>
                   </div>
 
-                  <a name="jsd1926"></a>
+                  <a name="jsd1929"></a>
                   <div class="section-method">
                     <div class="section-signature">
                       _.search(item)
@@ -11122,6 +11180,13 @@ map.values(); //return list : [1,5,3,5,1]
                         - Search an item in the tree. Returns the item if found else returns null.
                       </div>
                       <div class="section-examples">
+                          <div class="section-example">
+                            <span class="min-title">@example</span>
+                            <pre><code class="js">
+  bst.search(25);
+
+                              </code></pre>
+                          </div>
                       </div>
 
 
