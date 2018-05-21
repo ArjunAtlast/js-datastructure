@@ -64,4 +64,18 @@ export class Stack<T> {
   search(item:T):number {
     return this._store.lastIndexOf(item);
   }
+
+  /**
+  * Returns true if stack is empty.
+  * * @example
+  *   //stack contains [1]
+  *   console.log(stack.isEmpty());
+  *   //Output: false
+  *   stack.pop();
+  *   console.log(stack.isEmpty());
+  *   //Output: true
+  */
+  isEmpty():boolean {
+    return this._store.length == 0;
+  }
 }

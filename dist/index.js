@@ -41,3 +41,5 @@ var history_list_1 = require("./ds/lists/history-list");
 exports.HistoryList = history_list_1.HistoryList;
 var binary_search_tree_1 = require("./ds/trees/binary-search-tree");
 exports.BinarySearchTree = binary_search_tree_1.BinarySearchTree;
+var d_graph_1 = require("./ds/graphs/d-graph");
+exports.DGraph = d_graph_1.DGraph;

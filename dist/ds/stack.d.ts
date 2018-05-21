@@ -45,4 +45,15 @@ export declare class Stack<T> {
     *   //Output: 4
     */
     search(item: T): number;
+    /**
+    * Returns true if stack is empty.
+    * * @example
+    *   //stack contains [1]
+    *   console.log(stack.isEmpty());
+    *   //Output: false
+    *   stack.pop();
+    *   console.log(stack.isEmpty());
+    *   //Output: true
+    */
+    isEmpty(): boolean;
 }

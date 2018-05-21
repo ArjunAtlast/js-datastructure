@@ -34,3 +34,4 @@ export {ArrayMap} from "./ds/maps/array-map";
 export {Dictionary} from "./ds/maps/dictionary";
 export {HistoryList} from "./ds/lists/history-list";
 export {BinarySearchTree} from "./ds/trees/binary-search-tree";
+export {DGraph} from "./ds/graphs/d-graph";

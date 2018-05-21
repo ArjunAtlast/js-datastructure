@@ -139,12 +139,23 @@ class AbstractGraph {
     * Returns the set of edges starting from specified vertex.
     * @example
     *   //g:Graph<number>, v:Vertex<number>
-    *   g.ajacentEdges(v);
+    *   g.adjacentEdges(v);
     */
     adjacentEdges(vertex) {
         if (!this._vertices.contains(vertex))
             return undefined;
         return this._adjList.get(vertex);
+    }
+    /**
+    * Returns the set of vertices adjacent to the specified vertex.
+    * @example
+    *   //g:Graph<number>, v:Vertex<number>
+    *   g.adjacentVertices(v);
+    */
+    adjacentVertices(vertex) {
+        if (!this._vertices.contains(vertex))
+            return undefined;
+        return new abstract_set_1.AbstractSet(...this._adjList.get(vertex).toArray().map(x => x.end));
     }
 }
 exports.AbstractGraph = AbstractGraph;

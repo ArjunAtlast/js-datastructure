@@ -67,4 +67,8 @@ export interface Graph<E> {
     * Returns the set of edges starting from specified vertex.
     */
     adjacentEdges(vertex: Vertex<E>): Set<Edge<E>> | undefined;
+    /**
+    * Returns the set of vertices adjacent to the specified vertex.
+    */
+    adjacentVertices(vertex: Vertex<E>): Set<Vertex<E>> | undefined;
 }

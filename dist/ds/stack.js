@@ -58,5 +58,18 @@ class Stack {
     search(item) {
         return this._store.lastIndexOf(item);
     }
+    /**
+    * Returns true if stack is empty.
+    * * @example
+    *   //stack contains [1]
+    *   console.log(stack.isEmpty());
+    *   //Output: false
+    *   stack.pop();
+    *   console.log(stack.isEmpty());
+    *   //Output: true
+    */
+    isEmpty() {
+        return this._store.length == 0;
+    }
 }
 exports.Stack = Stack;

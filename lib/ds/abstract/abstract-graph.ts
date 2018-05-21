@@ -155,10 +155,20 @@ export class AbstractGraph<E> implements Graph<E> {
   * Returns the set of edges starting from specified vertex.
   * @example
   *   //g:Graph<number>, v:Vertex<number>
-  *   g.ajacentEdges(v);
+  *   g.adjacentEdges(v);
   */
   adjacentEdges(vertex:Vertex<E>): Set<Edge<E>>|undefined {
     if(!this._vertices.contains(vertex)) return undefined;
     return this._adjList.get(vertex)!;
+  }
+  /**
+  * Returns the set of vertices adjacent to the specified vertex.
+  * @example
+  *   //g:Graph<number>, v:Vertex<number>
+  *   g.adjacentVertices(v);
+  */
+  adjacentVertices(vertex:Vertex<E>):Set<Vertex<E>>|undefined {
+    if(!this._vertices.contains(vertex)) return undefined;
+    return new AbstractSet<Vertex<E>>(...this._adjList.get(vertex)!.toArray().map(x=>x.end));
   }
 }
