@@ -24,7 +24,10 @@ describe("Checking Components..", () => {
     });
     it("search", () => {
       expect(s.search(2)).to.equal(1);
-    })
+    });
+    it("isEmpty", () => {
+      expect(s.isEmpty()).to.equal(false);
+    });
   });
 
   //Iterator
@@ -685,6 +688,14 @@ describe("Checking Components..", () => {
       expect(ag.adjacentEdges(new index.Vertex(30))).to.equal(undefined);
       expect(ag.adjacentEdges(ag.vertexSet().toArray()[4]).toArray()).to.deep.equal([]);
     });
+    it("adjacentVertices", ()=>{
+      let vs = ag.vertexSet().toArray();
+      ag.addEdge(new index.Edge(vs[0], vs[2]));
+      ag.addEdge(new index.Edge(vs[0], vs[3]));
+      ag.addEdge(new index.Edge(vs[0], vs[1]));
+      expect(ag.adjacentVertices(new index.Vertex(30))).to.equal(undefined);
+      expect(ag.adjacentVertices(vs[0]).toArray()).to.deep.equal([vs[2],vs[3],vs[1]]);
+    });
   });
   //BinarySearchTree
   describe("BinarySearchTree", () => {
@@ -734,6 +745,30 @@ describe("Checking Components..", () => {
     });
     it("comparator", () => {
       expect(bst.comparator()).to.be.an.instanceOf(Function);
+    });
+  });
+  //Dgraph
+  describe("DGraph", ()=>{
+    let dg;
+    it("constructor", ()=>{
+      expect(index.DGraph).to.not.equal(undefined);
+      dg = new index.DGraph();
+      expect(dg).to.be.an.instanceOf(index.DGraph);
+      let v = [new index.Vertex(1),new index.Vertex(2), new index.Vertex(3), new index.Vertex(4)];
+      dg.addVertices(v);
+      dg.addEdge(new index.Edge(v[0],v[1]));
+      dg.addEdge(new index.Edge(v[0],v[2]));
+      dg.addEdge(new index.Edge(v[1],v[2]));
+      dg.addEdge(new index.Edge(v[2],v[3]));
+    });
+
+    it("dfs", ()=>{
+      expect(dg.dfs().toArray()).to.deep.equal([1,3,4,2]);
+      expect(new index.DGraph().dfs().isEmpty()).to.equal(true);
+    });
+    it("bfs", ()=>{
+      expect(dg.bfs().toArray()).to.deep.equal([1,2,3,4]);
+      expect(new index.DGraph().bfs().isEmpty()).to.equal(true);
     });
   });
 
