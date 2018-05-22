@@ -771,5 +771,110 @@ describe("Checking Components..", () => {
       expect(new index.DGraph().bfs().isEmpty()).to.equal(true);
     });
   });
-
+  //EntryTable
+  describe("EntryTable", () => {
+    let et;
+    it("constructor", () => {
+      expect(index.EntryTable).to.not.equal(undefined);
+      et = new index.EntryTable();
+      expect(et).to.be.an.instanceOf(index.EntryTable);
+    });
+    it("add", () => {
+      let r = new index.ArrayMap(5);
+      r.put(1,'01');
+      r.put(2,'02');
+      r.put(3,'3');
+      expect(et.add(0,r)).to.equal(true);
+      expect(et.add(0,r)).to.equal(false);
+    });
+    it("set", () => {
+      expect(et.set(0,3,'03')).to.equal('3');
+      expect(et.set(0,4,'04')).to.equal(undefined);
+      expect(et.set(1,1,'11')).to.equal(undefined);
+    });
+    it("get", () => {
+      expect(et.get(1,1)).to.equal('11');
+      expect(et.get(1,3)).to.equal(undefined);
+      expect(et.get(2,3)).to.equal(undefined);
+    });
+    it("fetch", () => {
+      expect(et.fetch(0).entrySet().toArray()).to.deep.equal([{key:1,value:'01'},{key:2,value:'02'},{key:3,value:'03'},{key:4,value:'04'}]);
+      expect(et.fetch(5)).to.equal(undefined);
+    });
+    it("extract", () => {
+      expect(et.extract(1).entrySet().toArray()).to.deep.equal([{key:0,value:'01'},{key:1,value:'11'}]);
+      expect(et.extract(2).entrySet().toArray()).to.deep.equal([{key:0,value:'02'},{key:1,value:undefined}]);
+      expect(et.extract(5).entrySet().toArray()).to.deep.equal([{key:0,value:undefined},{key:1,value:undefined}]);
+    });
+    it("delete, deleteIf, indexes", () => {
+      expect(et.delete(5)).to.equal(undefined);
+      expect(et.indexes().toArray()).to.deep.equal([0,1]);
+      et.deleteIf((k,m) => {return m.get(2) === undefined});
+      let r = new index.ArrayMap(5);
+      r.put(1,'21');
+      r.put(2,'22');
+      et.add(2,r);
+      expect(et.indexes().toArray()).to.deep.equal([0,2]);
+    });
+    it("drop, attributes", () => {
+      expect(et.attributes().toArray()).to.deep.equal([1,2,3,4]);
+      et.drop(2);
+      expect(et.attributes().toArray()).to.deep.equal([1,3,4]);
+    });
+    it("remove", ()=>{
+      expect(et.remove(0,1)).to.equal('01');
+      expect(et.remove(0,6)).to.equal(undefined);
+    });
+    it("select", ()=>{
+      let r = new index.ArrayMap(5);
+      r.put(1,'31');
+      r.put(2,'32');
+      r.put(3,'33');
+      et.add(3,r);
+      let se = et.select((k, m) => (!!m.get(3)));
+      expect(se.indexes().containsAll([0,3])).to.equal(true);
+      expect(se.attributes().containsAll([1,2,3,4])).to.equal(true);
+    });
+    it("project", ()=>{
+      let pe = et.project((k, m) => (!!m.get(0)));
+      expect(pe.indexes().toArray()).to.deep.equal([0,3]);
+      expect(pe.attributes().containsAll([3,4])).to.equal(true);
+    });
+  });
+  //DataTable
+  describe("DataTable", () => {
+    let dt;
+    it("constructor", () => {
+      expect(index.DataTable).to.not.equal(undefined);
+      dt = new index.DataTable();
+      expect(dt).to.be.an.instanceOf(index.DataTable);
+    });
+    it("insert, num_rows", () => {
+      let r = new index.ArrayMap(5);
+      r.put("1",'31');
+      r.put("2",'32');
+      r.put("3",'33');
+      expect(dt.insert(r)).to.equal(true);
+      expect(dt.fetch(0).entrySet().toArray()).to.deep.equal([{key:"1", value:"31"},{key:"2", value:"32"},{key:"3", value:"33"}]);
+    });
+    it("limit, limitLast, subTable", () => {
+      let r = new index.ArrayMap(5);
+      r.put("1",'11');
+      r.put("2",'12');
+      r.put("3",'13');
+      expect(dt.insert(r)).to.equal(true);
+      expect(dt.limit(1).num_rows()).to.equal(1);
+      expect(dt.limitLast(1).fetch(0).entrySet().toArray()).to.deep.equal([{key:"1",value:"11"},{key:"2",value:"12"},{key:"3",value:"13"}]);
+      expect(dt.subTable(0,1).fetch(0).entrySet().toArray()).to.deep.equal([{key:"1",value:"31"},{key:"2",value:"32"},{key:"3",value:"33"}]);
+    });
+    it("project", ()=>{
+      let r = new index.ArrayMap(5);
+      r.put("1",'21');
+      r.put("3",'23');
+      expect(dt.insert(r)).to.equal(true);
+      let pe = dt.project((k, m) => (["2","3"].indexOf(k)!=-1));
+      expect(pe.indexes().toArray()).to.deep.equal([0,1,2]);
+      expect(pe.attributes().containsAll(["2","3"])).to.equal(true);
+    });
+  })
 });

@@ -5,7 +5,7 @@ const array_list_1 = require("../lists/array-list");
 const stack_1 = require("../stack");
 const abstract_queue_1 = require("../abstract/abstract-queue");
 /**
-* A directed graph.
+* A directed graph data structure.
 */
 class DGraph extends abstract_graph_1.AbstractGraph {
     constructor() {

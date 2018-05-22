@@ -3,11 +3,11 @@ import {AbstractList} from "./abstract-list";
 import {AbstractSet} from "./abstract-set";
 
 export class AbstractMap<K, V> implements Map<K, V> {
-  protected _values: AbstractList<V|null>;
+  protected _values: AbstractList<V>;
   protected _keys: AbstractSet<K>;
 
   constructor(...items:MapEntry<K,V>[]){
-    this._values = new AbstractList<V|null>(...items.map((x)=>(x.value)));
+    this._values = new AbstractList<V>(...items.map((x)=>(x.value)));
     this._keys = new AbstractSet<K>(...items.map((x)=>(x.key)));
   }
 
@@ -29,7 +29,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.compute(k1, (key,value,map)=>(value+11)); //returns 12
   *   //now the value changes to 12+11 -> 23
   */
-	compute(key: K, remappingFn: (key: K, value: V|null|undefined, map: AbstractMap<K, V>) => V|null):V|null|undefined {
+	compute(key: K, remappingFn: (key: K, value: V|undefined, map: this) => V):V|undefined {
     let oldValue = this.get(key);
     let newValue = remappingFn(key,oldValue,this);
     if(newValue!=null) this.put(key, newValue);
@@ -43,7 +43,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.computeIfAbsent(k1, (key,value,map)=>(23)); //returns 12
   *   //value does not change
   */
-	computeIfAbsent(key: K, remappingFn: (key: K, value: V|null|undefined, map: AbstractMap<K, V>) => V|null):V|null|undefined {
+	computeIfAbsent(key: K, remappingFn: (key: K, value: V|undefined, map: this) => V):V|undefined {
     let oldValue = this.get(key);
     if(oldValue === null || oldValue === undefined){
       let newValue = remappingFn(key,oldValue,this);
@@ -59,7 +59,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.computeIfAbsent(k1, (key,value,map)=>(value+11)); //returns null
   *   //value does not change
   */
-	computeIfPresent(key: K, remappingFn: (key: K, value: V, map: Map<K, V>) => V):V|null|undefined {
+	computeIfPresent(key: K, remappingFn: (key: K, value: V, map: this) => V):V|undefined {
     let oldValue = this.get(key);
     if(oldValue !== null && oldValue !== undefined){
       let newValue = remappingFn(key,<V>oldValue,this);
@@ -99,8 +99,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
 	entrySet(): AbstractSet<MapEntry<K, V>> {
     let enSet = new AbstractSet<MapEntry<K,V>>();
 		this._keys.forEach((k:K, index, set)=>{
-      let val = this.get(k);
-      val = (val===undefined || val === null)? null: val;
+      let val = this.get(k)!;
       let entry:MapEntry<K,V> = { key: k, value: val};
       enSet.add(entry);
     });
@@ -135,10 +134,9 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   });
   *   //Output: one->1,two->2,three->3
   */
-	forEach(action: (key: K, value: V|null, map: AbstractMap<K, V>) => void): void {
+	forEach(action: (key: K, value: V, map: this) => void): void {
 		this._keys.forEach((key, index) => {
-      let val = this._values.get(index)
-      val = (val===undefined || val === null)? null: val;
+      let val = this._values.get(index)!;
       action(key, val, this);
     });
 	}
@@ -151,7 +149,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.get(k3); //returns null
   *   map.get(k4); //returns undefined
   */
-	get(key: K): V|null|undefined {
+	get(key: K): V|undefined {
 		let index = this._keys.toArray().indexOf(key);
     if(index == -1) return undefined;
     return this._values.get(index);
@@ -216,7 +214,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   * map.put("four",4);//return undefined
   * //now map : [{"one":22},{"two":2},{"three":3},{"four":4}]
   */
-	put(key: K, value: V|null): V|undefined|null {
+	put(key: K, value: V): V|undefined {
 		if(this.containsKey(key)) {
       let oldValue = this.get(key);
       if(oldValue !== value) {
@@ -248,7 +246,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.putIfAbsent("four",4); //return undefined (adds {"four":4} to the map)
   *   map.putIfAbsent("one",23); //return 1 (map unchanged)
   */
-	putIfAbsent(key: K, value: V): V|undefined|null {
+	putIfAbsent(key: K, value: V): V|undefined {
     let oldValue = this.get(key);
 		if(!oldValue) return this.put(key, value);
     else return oldValue;
@@ -262,7 +260,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   //now map : [{"two":2},{"three":3}]
   *   map.remove("four"); //return undefined (map unchanged)
   */
-	remove(key: K): V|undefined|null {
+	remove(key: K): V|undefined {
 		if(this.containsKey(key)){
       let index = this._keys.toArray().indexOf(key);
       this._keys.remove(key);
@@ -280,7 +278,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.removeIf("two",5); //return false (map unchanged)
   *   map.removeIf("four",4); //return false
   */
-	removeIf(key: K, value: V|null): boolean {
+	removeIf(key: K, value: V): boolean {
 		if(this.get(key) === value) return (this.remove(key)!==undefined);
     return false;
 	}
@@ -309,7 +307,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.replaceAll((k,v,m)=>(v*2)); //replace with its double
   *   //map : [{k1:2},{k2:10},{k3:6},{k4:10},{k5:2}]
   */
-	replaceAll(remappingFn: (key: K, value: V|null, map: AbstractMap<K, V>) => V|null): void {
+	replaceAll(remappingFn: (key: K, value: V, map: this) => V): void {
 		this.forEach((key, value, map)=>{
       this.put(key, remappingFn(key, value, map));
     });
@@ -330,7 +328,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   * //map : [{k1:1},{k2:5},{k3:3},{k4:5},{k5:1}]
   * map.values(); //return list : [1,5,3,5,1]
   */
-	values(): AbstractList<V|null> {
-		return new AbstractList<V|null>(...this._values.toArray());
+	values(): AbstractList<V> {
+		return new AbstractList<V>(...this._values.toArray());
 	}
 }

@@ -32,7 +32,7 @@ export class ArrayMap<K,V> extends AbstractMap<K,V> implements Cloneable<ArrayMa
   * map.put("four",4);//return undefined
   * //now map : [{"one":22},{"two":2},{"three":3},{"four":4}]
   */
-  put(key:K, value:V|null):V|null|undefined {
+  put(key:K, value:V):V|undefined {
     if(this.size()>=this._capacity){
       throw new Error(`Couldn't put item ${key}=>${value}ArrayMap Overflow`);
     }

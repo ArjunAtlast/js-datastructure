@@ -94,7 +94,6 @@ class AbstractMap {
         let enSet = new abstract_set_1.AbstractSet();
         this._keys.forEach((k, index, set) => {
             let val = this.get(k);
-            val = (val === undefined || val === null) ? null : val;
             let entry = { key: k, value: val };
             enSet.add(entry);
         });
@@ -131,7 +130,6 @@ class AbstractMap {
     forEach(action) {
         this._keys.forEach((key, index) => {
             let val = this._values.get(index);
-            val = (val === undefined || val === null) ? null : val;
             action(key, val, this);
         });
     }

@@ -25,7 +25,7 @@ export declare class ArrayMap<K, V> extends AbstractMap<K, V> implements Cloneab
     * map.put("four",4);//return undefined
     * //now map : [{"one":22},{"two":2},{"three":3},{"four":4}]
     */
-    put(key: K, value: V | null): V | null | undefined;
+    put(key: K, value: V): V | undefined;
     /**
     * Increases the capacity of this ArrayMap instance, if necessary, to ensure that it can hold at least the number of elements specified by the minimum capacity argument.
     * @example

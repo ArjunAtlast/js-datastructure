@@ -2,7 +2,7 @@ import { AbstractGraph } from "../abstract/abstract-graph";
 import { List } from "../../interfaces/list";
 import { Vertex } from "../../interfaces/graph";
 /**
-* A directed graph.
+* A directed graph data structure.
 */
 export declare class DGraph<E> extends AbstractGraph<E> {
     constructor();
