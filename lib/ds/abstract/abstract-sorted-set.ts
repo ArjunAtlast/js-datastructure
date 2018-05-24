@@ -70,11 +70,11 @@ export class AbstractSortedSet<E> extends AbstractSet<E> implements SortedSet<E>
   *   //set contains [1,2,3,4,5,6,7,8,9,10]
   *   set.subSet(4,9) //returns set : [4,5,6,7,8]
   */
-  subSet(fromItem:E, toItem:E):AbstractSortedSet<E> {
+  subSet(fromItem:E, toItem:E):this {
     let subArray = this._store.filter((x)=>{
       return (this._comparator(x,fromItem) >=0) && (this._comparator(x, toItem) < 0);
     });
-    return new AbstractSortedSet<E>(this.comparator(),...subArray);
+    return new (<any>this.constructor)(this.comparator(),...subArray);
   }
 
   /**
@@ -83,7 +83,7 @@ export class AbstractSortedSet<E> extends AbstractSet<E> implements SortedSet<E>
   *   //set : [1,2,3,5,7,9]
   *   set.headSet(6) //returns set : [1,2,3,5]
   */
-  headSet(toItem:E):AbstractSortedSet<E> {
+  headSet(toItem:E):this {
     return this.subSet(this.first(), toItem);
   }
 
@@ -93,11 +93,11 @@ export class AbstractSortedSet<E> extends AbstractSet<E> implements SortedSet<E>
   *   //set : [1,2,3,5,7,9]
   *   set.tailSet(4) //returns set : [5,7,9]
   */
-  tailSet(fromItem:E):AbstractSortedSet<E> {
+  tailSet(fromItem:E):this {
     let subArray = this._store.filter((x)=>{
       return (this._comparator(x,fromItem)>0) && (this._comparator(x, this.last()) <= 0);
     });
-    return new AbstractSortedSet<E>(this.comparator(),...subArray);
+    return new (<any>this.constructor)(this.comparator(),...subArray);
   }
 
 

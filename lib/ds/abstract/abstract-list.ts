@@ -148,8 +148,8 @@ export class AbstractList<E> extends AbstractCollection<E> implements List<E>{
   *   //list contains [1,8,6,2,7,3,9,11]
   *   list.subList(2,7); // returns a list containing [6, 2, 7, 3, 9]
   */
-  subList(fromIndex:number, toIndex:number):AbstractList<E> {
-    return new AbstractList<E>(...this._store.slice(fromIndex, toIndex));
+  subList(fromIndex:number, toIndex:number):this{
+    return new (<any>this.constructor)(...this._store.slice(fromIndex, toIndex));
   }
 
   /**

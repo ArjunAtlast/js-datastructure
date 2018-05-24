@@ -55,8 +55,8 @@ export class ArrayMap<K,V> extends AbstractMap<K,V> implements Cloneable<ArrayMa
   * @example
   *   let newArrayMap = arrayMap.clone();
   */
-  clone(): ArrayMap<K,V> {
-    return new ArrayMap<K,V>(this._capacity, ...this.entrySet().toArray());
+  clone(): this {
+    return new (<any>this.constructor)(this._capacity, ...this.entrySet().toArray());
   }
 
   /**

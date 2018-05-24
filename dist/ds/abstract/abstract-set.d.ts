@@ -27,26 +27,26 @@ export declare class AbstractSet<E> extends AbstractCollection<E> implements Set
     *   //set1 : [1,2,3,4] and set2 : [4,5,6,7]
     *   set1.union(set2); //returns a new set : [1,2,3,4,5,6,7]
     */
-    union(set: AbstractSet<E>): AbstractSet<E>;
+    union(set: Set<E>): AbstractSet<E>;
     /**
     * Returns a new set created by intersection of this set and the set specified
     * @example
     *   //set1 : [1,2,3,4,5] and set2 : [4,5,6,7]
     *   set1.intersection(set2); //returns a new set : [4,5]
     */
-    intersection(set: AbstractSet<E>): AbstractSet<E>;
+    intersection(set: this): this;
     /**
     * Returns a new set created by subtracting the specified set from this set.
     * @example
     *   //set1 : [1,2,3,4,5] and set2 : [4,5,6,7]
     *   set1.difference(set2); //returns a new set : [1,2,3]
     */
-    difference(set: AbstractSet<E>): AbstractSet<E>;
+    difference(set: this): this;
     /**
     * Returns a new set created by exclusion of this set and the set specified.
     * @example
     *   //set1 : [1,2,3,4,5] and set2 : [4,5,6,7]
     *   set1.difference(set2); //returns a new set : [1,2,3,6,7]
     */
-    exclusion(set: AbstractSet<E>): AbstractSet<E>;
+    exclusion(set: this): this;
 }

@@ -3,6 +3,9 @@ import { Map } from "../../interfaces/map";
 import { Set } from "../../interfaces/set";
 import { AbstractSet } from "../abstract/abstract-set";
 
+/**
+  Entry Table is mapping from a set of row and column keys to a value.
+*/
 export class EntryTable<R, C, V> extends AbstractTable<R, C, V> {
   constructor() {
     super();
@@ -13,8 +16,8 @@ export class EntryTable<R, C, V> extends AbstractTable<R, C, V> {
   * @example
   *   t.select((rowKey,row)=>(key>2)); //selects and returns all rows with associated key > 2
   */
-  select(filterFn: (rowKey: R, row: Map<C, V>) => boolean): EntryTable<R, C, V> {
-    let et = new EntryTable<R,C,V>();
+  select(filterFn: (rowKey: R, row: Map<C, V>) => boolean): this {
+    let et = new (<any>this.constructor)();
     this._store.forEach((key, value) => {
       if(filterFn(key,value)) et.add(key, value);
     });
@@ -26,8 +29,8 @@ export class EntryTable<R, C, V> extends AbstractTable<R, C, V> {
   * @example
   *   t.project((columnKey, col) => ([1,3].indexOf(columnKey)!=-1)); //project only columns 1 and 3
   */
-  project(filterFn: (columnKey: C, col: Map<R, V|undefined>) => boolean): EntryTable<R, C, V> {
-    let et = new EntryTable<R,C,V>();
+  project(filterFn: (columnKey: C, col: Map<R, V|undefined>) => boolean): this {
+    let et = new (<any>this.constructor)();
     this.attributes().forEach((columnKey) => {
       let col = this.extract(columnKey);
       if(filterFn(columnKey, col)) {

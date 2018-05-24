@@ -64,7 +64,7 @@ class SwappableList extends abstract_list_1.AbstractList {
     *   let newList = swappableList.clone();
     */
     clone() {
-        return new SwappableList(...this._store);
+        return new this.constructor(...this._store);
     }
     /**
     * Converts the list into a JSON String

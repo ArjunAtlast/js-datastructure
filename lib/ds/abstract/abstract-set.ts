@@ -41,7 +41,7 @@ export class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
   *   //set1 : [1,2,3,4] and set2 : [4,5,6,7]
   *   set1.union(set2); //returns a new set : [1,2,3,4,5,6,7]
   */
-	union(set: AbstractSet<E>): AbstractSet<E> {
+	union(set: Set<E>): AbstractSet<E> {
 		let unionArray = this.toArray().concat(set.toArray());
     return new AbstractSet<E>(...unionArray);
 	}
@@ -52,9 +52,9 @@ export class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
   *   //set1 : [1,2,3,4,5] and set2 : [4,5,6,7]
   *   set1.intersection(set2); //returns a new set : [4,5]
   */
-	intersection(set: AbstractSet<E>): AbstractSet<E> {
+	intersection(set: this): this {
 		let intersectionArray = set.toArray().filter((item)=>(this.contains(item)));
-    return new AbstractSet<E>(...intersectionArray);
+    return new (<any>this.constructor)(...intersectionArray);
 	}
 
   /**
@@ -63,9 +63,9 @@ export class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
   *   //set1 : [1,2,3,4,5] and set2 : [4,5,6,7]
   *   set1.difference(set2); //returns a new set : [1,2,3]
   */
-	difference(set: AbstractSet<E>): AbstractSet<E> {
+	difference(set: this): this {
 		let diffArray = this.toArray().filter((item)=>(!set.contains(item)));
-    return new AbstractSet<E>(...diffArray);
+    return new (<any>this.constructor)(...diffArray);
 	}
 
   /**
@@ -74,8 +74,8 @@ export class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
   *   //set1 : [1,2,3,4,5] and set2 : [4,5,6,7]
   *   set1.difference(set2); //returns a new set : [1,2,3,6,7]
   */
-	exclusion(set: AbstractSet<E>): AbstractSet<E> {
+	exclusion(set: this): this {
     let exclusionArray = this.union(set).difference(this.intersection(set)).toArray();
-    return new AbstractSet<E>(...exclusionArray);
+    return new (<any>this.constructor)(...exclusionArray);
 	}
 }

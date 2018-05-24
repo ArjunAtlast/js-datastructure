@@ -39,7 +39,7 @@ export declare class SwappableList<E> extends AbstractList<E> implements Cloneab
     * @example
     *   let newList = swappableList.clone();
     */
-    clone(): SwappableList<E>;
+    clone(): this;
     /**
     * Converts the list into a JSON String
     * @example

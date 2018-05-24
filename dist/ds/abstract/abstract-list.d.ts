@@ -101,7 +101,7 @@ export declare class AbstractList<E> extends AbstractCollection<E> implements Li
     *   //list contains [1,8,6,2,7,3,9,11]
     *   list.subList(2,7); // returns a list containing [6, 2, 7, 3, 9]
     */
-    subList(fromIndex: number, toIndex: number): AbstractList<E>;
+    subList(fromIndex: number, toIndex: number): this;
     /**
     * Reverse the list.
     * @example

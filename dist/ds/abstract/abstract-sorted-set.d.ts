@@ -43,19 +43,19 @@ export declare class AbstractSortedSet<E> extends AbstractSet<E> implements Sort
     *   //set contains [1,2,3,4,5,6,7,8,9,10]
     *   set.subSet(4,9) //returns set : [4,5,6,7,8]
     */
-    subSet(fromItem: E, toItem: E): AbstractSortedSet<E>;
+    subSet(fromItem: E, toItem: E): this;
     /**
     * Returns a view of the portion of this set whose elements are strictly less than toElement.
     * @example
     *   //set : [1,2,3,5,7,9]
     *   set.headSet(6) //returns set : [1,2,3,5]
     */
-    headSet(toItem: E): AbstractSortedSet<E>;
+    headSet(toItem: E): this;
     /**
     * Returns a view of the portion of this set whose elements are greater than or equal to fromElement.
     * @example
     *   //set : [1,2,3,5,7,9]
     *   set.tailSet(4) //returns set : [5,7,9]
     */
-    tailSet(fromItem: E): AbstractSortedSet<E>;
+    tailSet(fromItem: E): this;
 }

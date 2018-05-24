@@ -44,5 +44,5 @@ export declare class Dictionary<E> extends AbstractMap<string, E> implements Clo
     *   //dict contains [{'a':1},{'b':2},{'c':3}]
     *
     */
-    fromString(json: string, deserializerFn: (itemJSON: string) => E): Dictionary<E>;
+    fromString(json: string, deserializerFn: (itemJSON: string) => E): this;
 }

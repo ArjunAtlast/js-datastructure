@@ -54,7 +54,7 @@ class AbstractSet extends abstract_collection_1.AbstractCollection {
     */
     intersection(set) {
         let intersectionArray = set.toArray().filter((item) => (this.contains(item)));
-        return new AbstractSet(...intersectionArray);
+        return new this.constructor(...intersectionArray);
     }
     /**
     * Returns a new set created by subtracting the specified set from this set.
@@ -64,7 +64,7 @@ class AbstractSet extends abstract_collection_1.AbstractCollection {
     */
     difference(set) {
         let diffArray = this.toArray().filter((item) => (!set.contains(item)));
-        return new AbstractSet(...diffArray);
+        return new this.constructor(...diffArray);
     }
     /**
     * Returns a new set created by exclusion of this set and the set specified.
@@ -74,7 +74,7 @@ class AbstractSet extends abstract_collection_1.AbstractCollection {
     */
     exclusion(set) {
         let exclusionArray = this.union(set).difference(this.intersection(set)).toArray();
-        return new AbstractSet(...exclusionArray);
+        return new this.constructor(...exclusionArray);
     }
 }
 exports.AbstractSet = AbstractSet;

@@ -67,8 +67,8 @@ export class SwappableList<E> extends AbstractList<E> implements Cloneable<Swapp
   * @example
   *   let newList = swappableList.clone();
   */
-  clone(): SwappableList<E> {
-    return new SwappableList<E>(...this._store);
+  clone(): this {
+    return new (<any>this.constructor)(...this._store);
   }
 
   /**

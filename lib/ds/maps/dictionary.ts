@@ -76,9 +76,9 @@ export class Dictionary<E> extends AbstractMap<string, E> implements Cloneable<D
   *   //dict contains [{'a':1},{'b':2},{'c':3}]
   *
   */
-  fromString(json: string, deserializerFn: (itemJSON: string) => E):Dictionary<E> {
+  fromString(json: string, deserializerFn: (itemJSON: string) => E):this {
     let jsonObject = JSON.parse(json);
-    let dict = new Dictionary<E>();
+    let dict = new (<any>this.constructor)();
     for(let k in jsonObject) {
       dict.put(k, deserializerFn(JSON.stringify(jsonObject[k])));
     }

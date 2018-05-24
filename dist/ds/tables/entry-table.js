@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const abstract_table_1 = require("../abstract/abstract-table");
 const abstract_set_1 = require("../abstract/abstract-set");
+/**
+  Entry Table is mapping from a set of row and column keys to a value.
+*/
 class EntryTable extends abstract_table_1.AbstractTable {
     constructor() {
         super();
@@ -12,7 +15,7 @@ class EntryTable extends abstract_table_1.AbstractTable {
     *   t.select((rowKey,row)=>(key>2)); //selects and returns all rows with associated key > 2
     */
     select(filterFn) {
-        let et = new EntryTable();
+        let et = new this.constructor();
         this._store.forEach((key, value) => {
             if (filterFn(key, value))
                 et.add(key, value);
@@ -25,7 +28,7 @@ class EntryTable extends abstract_table_1.AbstractTable {
     *   t.project((columnKey, col) => ([1,3].indexOf(columnKey)!=-1)); //project only columns 1 and 3
     */
     project(filterFn) {
-        let et = new EntryTable();
+        let et = new this.constructor();
         this.attributes().forEach((columnKey) => {
             let col = this.extract(columnKey);
             if (filterFn(columnKey, col)) {

@@ -72,7 +72,7 @@ class Dictionary extends abstract_map_1.AbstractMap {
     */
     fromString(json, deserializerFn) {
         let jsonObject = JSON.parse(json);
-        let dict = new Dictionary();
+        let dict = new this.constructor();
         for (let k in jsonObject) {
             dict.put(k, deserializerFn(JSON.stringify(jsonObject[k])));
         }

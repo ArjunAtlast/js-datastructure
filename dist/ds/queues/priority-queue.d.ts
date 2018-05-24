@@ -43,5 +43,5 @@ export declare class PriorityQueue<E> extends AbstractQueue<E> implements Serial
     *   //queue contains [1,2,3,4]
     *
     */
-    fromString(json: string, deserializerFn: (itemJSON: string) => E): PriorityQueue<E>;
+    fromString(json: string, deserializerFn: (itemJSON: string) => E): this;
 }

@@ -39,7 +39,7 @@ export declare class ArrayMap<K, V> extends AbstractMap<K, V> implements Cloneab
     * @example
     *   let newArrayMap = arrayMap.clone();
     */
-    clone(): ArrayMap<K, V>;
+    clone(): this;
     /**
     * Trims the capacity of this ArrayMap instance to be the list's current size.
     * @example

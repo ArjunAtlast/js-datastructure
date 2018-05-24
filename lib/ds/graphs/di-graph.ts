@@ -8,7 +8,7 @@ import { AbstractQueue } from "../abstract/abstract-queue";
 /**
 * A directed graph data structure.
 */
-export class DGraph<E> extends AbstractGraph<E> {
+export class DiGraph<E> extends AbstractGraph<E> {
 
   constructor() {
     super();

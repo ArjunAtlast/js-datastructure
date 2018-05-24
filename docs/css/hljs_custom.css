@@ -11,8 +11,8 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 .hljs-comment,
 .hljs-quote {
   color: rgba(255, 255, 255, 0.3);
-  font-style: italic;
-  font-weight: 200; }
+  font-weight: 200;
+  font-family: courier; }
 
 .hljs-keyword,
 .hljs-selector-tag {

@@ -88,8 +88,8 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
   * @example
   *   let newArrayList = arrayList.clone();
   */
-	clone(): ArrayList<E> {
-		return new ArrayList<E>(this._capacity, ...this._store);
+	clone(): this {
+		return new (<any>this.constructor)(this._capacity, ...this._store);
 	}
 
   /**
@@ -124,9 +124,9 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
   *   //arrayList contains [1,2,3,4]
   *
   */
-  fromString(json:string, deserializerFn:(itemJ:string)=>E):ArrayList<E> {
+  fromString(json:string, deserializerFn:(itemJ:string)=>E):this {
     let object:any[] = JSON.parse(json);
     let finalArr:E[] = object.map((x)=>(deserializerFn(JSON.stringify(x))));
-    return new ArrayList<E>(finalArr.length, ...finalArr);
+    return new (<any>this.constructor)(finalArr.length, ...finalArr);
   }
 }

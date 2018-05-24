@@ -63,7 +63,7 @@ export declare class ArrayList<E> extends AbstractList<E> implements Cloneable<A
     * @example
     *   let newArrayList = arrayList.clone();
     */
-    clone(): ArrayList<E>;
+    clone(): this;
     /**
     * Trims the capacity of this ArrayList instance to be the list's current size.
     * @example
@@ -88,5 +88,5 @@ export declare class ArrayList<E> extends AbstractList<E> implements Cloneable<A
     *   //arrayList contains [1,2,3,4]
     *
     */
-    fromString(json: string, deserializerFn: (itemJ: string) => E): ArrayList<E>;
+    fromString(json: string, deserializerFn: (itemJ: string) => E): this;
 }

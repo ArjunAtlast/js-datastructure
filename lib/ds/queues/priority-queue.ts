@@ -64,10 +64,10 @@ export class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
     *   //queue contains [1,2,3,4]
     *
     */
-    fromString(json:string, deserializerFn:(itemJSON:string)=>E):PriorityQueue<E> {
+    fromString(json:string, deserializerFn:(itemJSON:string)=>E):this {
       let object:any[] = JSON.parse(json);
       let finalArr:E[] = object.map((x)=>(deserializerFn(JSON.stringify(x))));
-      return new PriorityQueue<E>(this.comparator(), ...finalArr);
+      return new (<any>this.constructor)(this.comparator(), ...finalArr);
     }
 
 }

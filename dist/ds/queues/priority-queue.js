@@ -60,7 +60,7 @@ class PriorityQueue extends abstract_queue_1.AbstractQueue {
     fromString(json, deserializerFn) {
         let object = JSON.parse(json);
         let finalArr = object.map((x) => (deserializerFn(JSON.stringify(x))));
-        return new PriorityQueue(this.comparator(), ...finalArr);
+        return new this.constructor(this.comparator(), ...finalArr);
     }
 }
 exports.PriorityQueue = PriorityQueue;

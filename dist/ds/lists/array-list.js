@@ -47,7 +47,7 @@ class ArrayList extends abstract_list_1.AbstractList {
     *   let newArrayList = arrayList.clone();
     */
     clone() {
-        return new ArrayList(this._capacity, ...this._store);
+        return new this.constructor(this._capacity, ...this._store);
     }
     /**
     * Trims the capacity of this ArrayList instance to be the list's current size.
@@ -82,7 +82,7 @@ class ArrayList extends abstract_list_1.AbstractList {
     fromString(json, deserializerFn) {
         let object = JSON.parse(json);
         let finalArr = object.map((x) => (deserializerFn(JSON.stringify(x))));
-        return new ArrayList(finalArr.length, ...finalArr);
+        return new this.constructor(finalArr.length, ...finalArr);
     }
 }
 exports.ArrayList = ArrayList;

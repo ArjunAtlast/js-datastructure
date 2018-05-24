@@ -39,7 +39,7 @@ class ArrayMap extends abstract_map_1.AbstractMap {
     *   let newArrayMap = arrayMap.clone();
     */
     clone() {
-        return new ArrayMap(this._capacity, ...this.entrySet().toArray());
+        return new this.constructor(this._capacity, ...this.entrySet().toArray());
     }
     /**
     * Trims the capacity of this ArrayMap instance to be the list's current size.

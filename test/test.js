@@ -747,13 +747,13 @@ describe("Checking Components..", () => {
       expect(bst.comparator()).to.be.an.instanceOf(Function);
     });
   });
-  //Dgraph
-  describe("DGraph", ()=>{
+  //DiGraph
+  describe("DiGraph", ()=>{
     let dg;
     it("constructor", ()=>{
-      expect(index.DGraph).to.not.equal(undefined);
-      dg = new index.DGraph();
-      expect(dg).to.be.an.instanceOf(index.DGraph);
+      expect(index.DiGraph).to.not.equal(undefined);
+      dg = new index.DiGraph();
+      expect(dg).to.be.an.instanceOf(index.DiGraph);
       let v = [new index.Vertex(1),new index.Vertex(2), new index.Vertex(3), new index.Vertex(4)];
       dg.addVertices(v);
       dg.addEdge(new index.Edge(v[0],v[1]));
@@ -764,11 +764,11 @@ describe("Checking Components..", () => {
 
     it("dfs", ()=>{
       expect(dg.dfs().toArray()).to.deep.equal([1,3,4,2]);
-      expect(new index.DGraph().dfs().isEmpty()).to.equal(true);
+      expect(new index.DiGraph().dfs().isEmpty()).to.equal(true);
     });
     it("bfs", ()=>{
       expect(dg.bfs().toArray()).to.deep.equal([1,2,3,4]);
-      expect(new index.DGraph().bfs().isEmpty()).to.equal(true);
+      expect(new index.DiGraph().bfs().isEmpty()).to.equal(true);
     });
   });
   //EntryTable
@@ -876,5 +876,197 @@ describe("Checking Components..", () => {
       expect(pe.indexes().toArray()).to.deep.equal([0,1,2]);
       expect(pe.attributes().containsAll(["2","3"])).to.equal(true);
     });
-  })
+  });
+  //ArrayMatrix
+  describe("ArrayMatrix, ArrayMatrixRow, ArrayMatrixColumn", () => {
+    let am;
+    it("constructor", () => {
+      expect(index.ArrayMatrix).to.not.equal(undefined);
+      am = new index.ArrayMatrix(3,3,0);
+      expect(new index.ArrayMatrix(6,2)).to.be.an.instanceOf(index.ArrayMatrix);
+      expect(am).to.be.an.instanceOf(index.ArrayMatrix);
+    });
+    it("get, toArray", () => {
+      expect(am.get(10,6)).to.equal(undefined);
+      expect(am.get(2,6)).to.equal(undefined);
+      expect(am.toArray()[0]).to.deep.equal([0,0,0]);
+    });
+    it("transpose, put", () => {
+      expect(()=>{am.put(10,6,5)}).to.throw();
+      am.put(0,0,1);
+      am.put(0,1,2);
+      am.put(0,2,3);
+      expect(am.transpose().toArray()).to.deep.equal([[1,0,0],[2,0,0],[3,0,0]]);
+    });
+    it("subMatrix", () => {
+      let sm = am.subMatrix([1],[2])
+      expect(sm.toArray()).to.deep.equal([[1,2],[0,0]]);
+    });
+    it("clone", ()=>{
+      expect(am.clone()).to.deep.equal(am);
+      expect(am.clone()).to.not.equal(am);
+    });
+    it("equals", () => {
+      expect(am.clone().equals(am)).to.equal(true);
+      let sm = am.subMatrix([1],[2]);
+      expect(am.equals(sm)).to.equal(false);
+      sm = am.clone();
+      sm.put(1,2,12);
+      expect(am.equals(sm)).to.equal(false);
+    });
+    it("row", () => {
+      expect(()=>{am.row(6)}).to.throw();
+      let amr = am.row(1);
+      expect(amr).to.be.an.instanceOf(index.ArrayMatrixRow);
+      expect(amr.matrix).to.equal(am);
+      expect(amr.index).to.equal(1);
+      let nam = am.clone();
+      expect(()=>{amr.change(nam.row(0))}).to.throw();
+      amr.change(am.row(0));
+      expect(am.toArray()).to.deep.equal([[1,2,3],[1,2,3],[0,0,0]]);
+      expect(()=>{amr.interchange(nam.row(0))}).to.throw();
+      amr.interchange(am.row(2));
+      expect(am.toArray()).to.deep.equal([[1,2,3],[0,0,0],[1,2,3]]);
+      expect(amr.toArray()).to.deep.equal([0,0,0]);
+    });
+    it("column", () => {
+      expect(()=>{am.col(6)}).to.throw();
+      let amc = am.col(1);
+      expect(amc).to.be.an.instanceOf(index.ArrayMatrixColumn);
+      expect(amc.matrix).to.equal(am);
+      expect(amc.index).to.equal(1);
+      let nam = am.clone();
+      expect(()=>{amc.change(nam.row(0))}).to.throw();
+      amc.change(am.col(0));
+      expect(am.toArray()).to.deep.equal([[1,1,3],[0,0,0],[1,1,3]]);
+      expect(()=>{amc.interchange(nam.col(0))}).to.throw();
+      amc.interchange(am.col(2));
+      expect(am.toArray()).to.deep.equal([[1,3,1],[0,0,0],[1,3,1]]);
+      expect(amc.toArray()).to.deep.equal([3,0,3]);
+    });
+  });
+  //NumberMatrixRow
+  describe("NumberMatrix, NumberMatrixRow, NumberMatrixColumn", () => {
+    let nm,nm2;
+    it("constructor", () => {
+      expect(index.ArrayMatrix).to.not.equal(undefined);
+      nm = index.NumberMatrix.fromArray([[1,2,3],[2,3,4]]);
+      expect(new index.NumberMatrix(2,3)).to.be.an.instanceOf(index.NumberMatrix);
+      expect(index.NumberMatrix.zero(2,2)).to.be.an.instanceOf(index.NumberMatrix);
+      expect(index.NumberMatrix.allOnes(4,2)).to.be.an.instanceOf(index.NumberMatrix);
+      expect(nm).to.be.an.instanceOf(index.NumberMatrix);
+      expect(nm.subMatrix([1], [2])).to.be.an.instanceOf(index.NumberMatrix);
+    });
+    it("multiply", ()=>{
+      let nm2 = index.NumberMatrix.fromArray([[1,1],[2,2],[3,3]]);
+      let c = index.NumberMatrix.multiply(nm,nm2);
+      expect(()=>{index.NumberMatrix.multiply(nm,new index.NumberMatrix(5,6))}).to.throw();
+      expect(c).to.be.an.instanceOf(index.NumberMatrix);
+      expect(c.toArray()).to.deep.equal([[14,14],[20,20]]);
+    });
+    it("generate", ()=> {
+      nm2 = index.NumberMatrix.generate(2,3,(i,j)=>(i*10+j));
+      expect(nm2).to.be.an.instanceOf(index.NumberMatrix);
+      expect(nm2.toArray()).to.deep.equal([[0,1,2],[10,11,12]]);
+    });
+    it("add", () => {
+      expect(()=>{nm.add(new index.NumberMatrix(3,3))}).to.throw();
+      expect(nm.add(nm2).toArray()).to.deep.equal([[1,3,5],[12,14,16]]);
+    });
+    it("subtract", () => {
+      expect(()=>{nm.subtract(new index.NumberMatrix(3,3))}).to.throw();
+      expect(nm.subtract(nm2).toArray()).to.deep.equal([[1,2,3],[2,3,4]]);
+    });
+    it("scalarMultiply", () => {
+      expect(nm.scalarMultiply(2).toArray()).to.deep.equal([[2,4,6],[4,6,8]])
+    });
+    it("row", () => {
+      let nmr = nm.row(0);
+      expect(nmr).to.be.an.instanceOf(index.NumberMatrixRow);
+      expect(()=>{nm.row(2)}).to.throw();
+      expect(nm.row(-1).index).to.equal(1);
+      expect(nmr.matrix).to.equal(nm);
+      expect(()=>{nmr.add(nm2.row(1))}).to.throw();
+      nmr.add(nm.row(1));
+      expect(nm.toArray()).to.deep.equal([[6,10,14],[4,6,8]]);
+      expect(()=>{nmr.multiply(0)}).to.throw();
+      nmr.multiply(2);
+      expect(nm.toArray()).to.deep.equal([[12,20,28],[4,6,8]]);
+    });
+    it("col", () => {
+      let nmc = nm.col(1);
+      expect(nmc).to.be.an.instanceOf(index.NumberMatrixColumn);
+      expect(()=>{nm.col(3)}).to.throw();
+      expect(nm.col(-1).index).to.equal(1);
+      expect(nmc.matrix).to.equal(nm);
+      expect(()=>{nmc.add(nm2.row(1))}).to.throw();
+      nmc.add(nm.col(2));
+      expect(nm.toArray()).to.deep.equal([[12,48,28],[4,14,8]]);
+      expect(()=>{nmc.multiply(0)}).to.throw();
+      nmc.multiply(3);
+      expect(nm.toArray()).to.deep.equal([[12,144,28],[4,42,8]]);
+    });
+  });
+  //SquareMatrix
+  describe("SquareMatrix", ()=>{
+    let sq;
+    it("constructor", () => {
+      expect(index.SquareMatrix).to.not.equal(undefined);
+      sq = new index.SquareMatrix(3);
+      expect(sq).to.be.an.instanceOf(index.SquareMatrix);
+      expect(index.SquareMatrix.identity(5)).to.be.an.instanceOf(index.SquareMatrix);
+    });
+    it("cast", () => {
+      sq = index.SquareMatrix.cast(index.NumberMatrix.generate(3,3,(i,j)=>(i*10+j)));
+      expect(sq).to.be.an.instanceOf(index.SquareMatrix);
+      expect(()=>{index.SquareMatrix.cast(new index.NumberMatrix(3,5))}).to.throw();
+    });
+    it("order", () => {
+      expect(sq.order()).to.equal(3);
+    });
+    it("isSymmetric, isSkewSymmetric", () => {
+      let sk = index.SquareMatrix.cast(index.NumberMatrix.generate(3,3,(i,j)=>(i-j)));
+      let id = index.SquareMatrix.identity(4);
+      expect(sq.isSymmetric()).to.equal(false);
+      expect(id.isSymmetric()).to.equal(true);
+      expect(sk.isSymmetric()).to.equal(false);
+      expect(index.SquareMatrix.identity(1).isSymmetric()).to.equal(true);
+
+      expect(sq.isSkewSymmetric()).to.equal(false);
+      expect(id.isSkewSymmetric()).to.equal(false);
+      expect(sk.isSkewSymmetric()).to.equal(true);
+      expect(index.SquareMatrix.identity(1).isSkewSymmetric()).to.equal(false);
+    });
+    it("minor, cofactor", () => {
+      expect(sq.minor(0,0)).to.equal(-10);
+      expect(sq.cofactor(1,0)).to.equal(20);
+    });
+    it("determinant", () => {
+      expect(()=>(new index.SquareMatrix(0).determinant())).to.throw();
+      expect(sq.determinant()).to.equal(0);
+      expect(index.SquareMatrix.identity(5).determinant()).to.equal(1);
+      let sk = index.SquareMatrix.cast(index.NumberMatrix.generate(3,3,(i,j)=>(i-j)));
+      expect(sk.determinant()).to.equal(0);
+    });
+    it("minorMatrix, cofactorMatrix", () => {
+      let id = index.SquareMatrix.identity(3);
+      sq = index.SquareMatrix.cast(index.NumberMatrix.fromArray([[3,0,2],[2,0,-2],[0,1,1]]));
+      expect(id.minorMatrix().equals(id)).to.equal(true);
+      expect(sq.minorMatrix().toArray()).to.deep.equal([[2,2,2],[-2,3,3],[0,-10,0]]);
+      expect(id.cofactorMatrix().equals(id)).to.equal(true);
+      expect(sq.cofactorMatrix().toArray()).to.deep.equal([[2,-2,2],[2,3,-3],[0,10,0]]);
+    });
+    it("adjoint", () => {
+      expect(sq.adjoint().toArray()).to.deep.equal([[2,2,0],[-2,3,10],[2,-3,0]]);
+    });
+    it("inverse", () => {
+      let sk = index.SquareMatrix.cast(index.NumberMatrix.generate(3,3,(i,j)=>(i-j)));
+      expect(sq.inverse().toArray()).to.deep.equal([[0.2,0.2,0],[-0.2,0.3,1],[0.2,-0.3,0]]);
+      expect(index.NumberMatrix.multiply(sq, sq.inverse()).equals(index.SquareMatrix.identity(3))).to.equal(true);
+      expect(sk.inverse()).to.equal(null);
+    });
+    it("trace", () => {
+      expect(sq.trace()).to.equal(4);
+    });
+  });
 });

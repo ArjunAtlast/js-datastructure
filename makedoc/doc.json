@@ -22009,6 +22009,9 @@
 			"flags": {
 				"isExported": true
 			},
+			"comment": {
+				"shortText": "An entry table with enumerable rowKeys (number) and string columnKeys."
+			},
 			"typeParameter": [
 				{
 					"id": 2131,
@@ -22054,7 +22057,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 6,
+							"line": 9,
 							"character": 65
 						}
 					],
@@ -22250,7 +22253,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 58,
+							"line": 61,
 							"character": 12
 						}
 					],
@@ -22436,7 +22439,7 @@
 											"sources": [
 												{
 													"fileName": "ds/tables/entry-table.ts",
-													"line": 47,
+													"line": 50,
 													"character": 20
 												}
 											]
@@ -22463,7 +22466,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 47,
+							"line": 50,
 							"character": 10
 						}
 					],
@@ -22852,7 +22855,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 71,
+							"line": 74,
 							"character": 9
 						}
 					],
@@ -22919,7 +22922,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/data-table.ts",
-							"line": 22,
+							"line": 25,
 							"character": 8
 						}
 					]
@@ -22977,7 +22980,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/data-table.ts",
-							"line": 71,
+							"line": 74,
 							"character": 7
 						}
 					]
@@ -23035,7 +23038,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/data-table.ts",
-							"line": 84,
+							"line": 87,
 							"character": 11
 						}
 					]
@@ -23073,7 +23076,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/data-table.ts",
-							"line": 31,
+							"line": 34,
 							"character": 10
 						}
 					]
@@ -23177,7 +23180,7 @@
 											"sources": [
 												{
 													"fileName": "ds/tables/data-table.ts",
-													"line": 53,
+													"line": 56,
 													"character": 19
 												}
 											]
@@ -23206,7 +23209,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/data-table.ts",
-							"line": 53,
+							"line": 56,
 							"character": 9
 						}
 					],
@@ -23397,7 +23400,7 @@
 											"sources": [
 												{
 													"fileName": "ds/tables/data-table.ts",
-													"line": 40,
+													"line": 43,
 													"character": 18
 												}
 											]
@@ -23426,7 +23429,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/data-table.ts",
-							"line": 40,
+							"line": 43,
 							"character": 8
 						}
 					],
@@ -23602,7 +23605,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/data-table.ts",
-							"line": 97,
+							"line": 100,
 							"character": 10
 						}
 					]
@@ -23651,7 +23654,7 @@
 			"sources": [
 				{
 					"fileName": "ds/tables/data-table.ts",
-					"line": 5,
+					"line": 8,
 					"character": 22
 				}
 			],
@@ -26501,6 +26504,9 @@
 			"flags": {
 				"isExported": true
 			},
+			"comment": {
+				"shortText": "Entry Table is mapping from a set of row and column keys to a value."
+			},
 			"typeParameter": [
 				{
 					"id": 2070,
@@ -26555,7 +26561,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 6,
+							"line": 9,
 							"character": 65
 						}
 					],
@@ -26741,7 +26747,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 58,
+							"line": 61,
 							"character": 12
 						}
 					]
@@ -26927,7 +26933,7 @@
 											"sources": [
 												{
 													"fileName": "ds/tables/entry-table.ts",
-													"line": 47,
+													"line": 50,
 													"character": 20
 												}
 											]
@@ -26949,7 +26955,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 47,
+							"line": 50,
 							"character": 10
 						}
 					],
@@ -27348,7 +27354,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 71,
+							"line": 74,
 							"character": 9
 						}
 					]
@@ -27452,7 +27458,7 @@
 											"sources": [
 												{
 													"fileName": "ds/tables/entry-table.ts",
-													"line": 29,
+													"line": 32,
 													"character": 19
 												}
 											]
@@ -27489,7 +27495,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 29,
+							"line": 32,
 							"character": 9
 						}
 					],
@@ -27685,7 +27691,7 @@
 											"sources": [
 												{
 													"fileName": "ds/tables/entry-table.ts",
-													"line": 16,
+													"line": 19,
 													"character": 18
 												}
 											]
@@ -27722,7 +27728,7 @@
 					"sources": [
 						{
 							"fileName": "ds/tables/entry-table.ts",
-							"line": 16,
+							"line": 19,
 							"character": 8
 						}
 					],
@@ -27878,7 +27884,7 @@
 			"sources": [
 				{
 					"fileName": "ds/tables/entry-table.ts",
-					"line": 6,
+					"line": 9,
 					"character": 23
 				}
 			],

@@ -12,7 +12,7 @@ export {Graph, Vertex, Edge} from "./interfaces/graph";
 export {Tree} from "./interfaces/tree";
 export {BinaryTree} from "./interfaces/binary-tree";
 export {Table} from "./interfaces/table";
-
+export {Matrix, MatrixRow, MatrixColumn} from "./interfaces/matrix";
 //classes
 export {Iterator} from "./classes/iterator";
 export {ListIterator} from "./classes/list-iterator";
@@ -36,6 +36,9 @@ export {ArrayMap} from "./ds/maps/array-map";
 export {Dictionary} from "./ds/maps/dictionary";
 export {HistoryList} from "./ds/lists/history-list";
 export {BinarySearchTree} from "./ds/trees/binary-search-tree";
-export {DGraph} from "./ds/graphs/d-graph";
+export {DiGraph} from "./ds/graphs/di-graph";
 export {EntryTable} from "./ds/tables/entry-table";
 export {DataTable} from "./ds/tables/data-table";
+export {ArrayMatrix, ArrayMatrixRow, ArrayMatrixColumn} from "./ds/matrices/array-matrix";
+export {NumberMatrix, NumberMatrixRow, NumberMatrixColumn} from "./ds/matrices/number-matrix";
+export {SquareMatrix} from "./ds/matrices/square-matrix";

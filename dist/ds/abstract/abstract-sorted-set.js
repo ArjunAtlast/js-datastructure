@@ -66,7 +66,7 @@ class AbstractSortedSet extends abstract_set_1.AbstractSet {
         let subArray = this._store.filter((x) => {
             return (this._comparator(x, fromItem) >= 0) && (this._comparator(x, toItem) < 0);
         });
-        return new AbstractSortedSet(this.comparator(), ...subArray);
+        return new this.constructor(this.comparator(), ...subArray);
     }
     /**
     * Returns a view of the portion of this set whose elements are strictly less than toElement.
@@ -87,7 +87,7 @@ class AbstractSortedSet extends abstract_set_1.AbstractSet {
         let subArray = this._store.filter((x) => {
             return (this._comparator(x, fromItem) > 0) && (this._comparator(x, this.last()) <= 0);
         });
-        return new AbstractSortedSet(this.comparator(), ...subArray);
+        return new this.constructor(this.comparator(), ...subArray);
     }
 }
 exports.AbstractSortedSet = AbstractSortedSet;

@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const entry_table_1 = require("./entry-table");
+/**
+* An entry table with enumerable rowKeys (number) and string columnKeys.
+*/
 class DataTable extends entry_table_1.EntryTable {
     /**
     * Insert a new row at the end of this table.
@@ -30,43 +33,12 @@ class DataTable extends entry_table_1.EntryTable {
         return this._store.size();
     }
     /**
-    * Return a subset of rows in this table based on the filter function.
-    * @example
-    *   t.select((rowKey,row)=>(key>2)); //selects and returns all rows with associated key > 2
-    */
-    select(filterFn) {
-        let dt = new DataTable();
-        this._store.forEach((key, value) => {
-            if (filterFn(key, value))
-                dt.insert(value);
-        });
-        return dt;
-    }
-    /**
-    * Return a subset of columns in this table based on the filter function.
-    * @example
-    *   t.project((columnKey, col) => (['a','c'].indexOf(columnKey)!=-1)); //project only columns 'a' and 'c'
-    */
-    project(filterFn) {
-        let dt = new DataTable();
-        this.attributes().forEach((columnKey) => {
-            let col = this.extract(columnKey);
-            if (filterFn(columnKey, col)) {
-                col.forEach((rowKey, value) => {
-                    if (value)
-                        dt.set(rowKey, columnKey, value);
-                });
-            }
-        });
-        return dt;
-    }
-    /**
     * Returns the first n rows in the table.
     * @example
     *   t.limit(5); //return first 5 rows of the table.
     */
     limit(n) {
-        let dt = new DataTable();
+        let dt = new this.constructor();
         this._store.forEach((key, value) => {
             if (key < n)
                 dt.insert(value);
@@ -79,7 +51,7 @@ class DataTable extends entry_table_1.EntryTable {
     *   t.limitLast(5); //return last 5 rows
     */
     limitLast(n) {
-        let dt = new DataTable();
+        let dt = new this.constructor();
         this._store.forEach((key, value) => {
             if (key >= this.num_rows() - n)
                 dt.insert(value);

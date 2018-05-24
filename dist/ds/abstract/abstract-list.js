@@ -113,7 +113,7 @@ class AbstractList extends abstract_collection_1.AbstractCollection {
     *   list.subList(2,7); // returns a list containing [6, 2, 7, 3, 9]
     */
     subList(fromIndex, toIndex) {
-        return new AbstractList(...this._store.slice(fromIndex, toIndex));
+        return new this.constructor(...this._store.slice(fromIndex, toIndex));
     }
     /**
     * Reverse the list.

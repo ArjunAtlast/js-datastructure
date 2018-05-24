@@ -1,6 +1,8 @@
 import { EntryTable } from "./entry-table";
 import { AbstractMap } from "../abstract/abstract-map";
-import { Map } from "../../interfaces/map";
+/**
+* An entry table with enumerable rowKeys (number) and string columnKeys.
+*/
 export declare class DataTable<V> extends EntryTable<number, string, V> {
     /**
     * Insert a new row at the end of this table.
@@ -26,33 +28,21 @@ export declare class DataTable<V> extends EntryTable<number, string, V> {
     */
     num_rows(): number;
     /**
-    * Return a subset of rows in this table based on the filter function.
-    * @example
-    *   t.select((rowKey,row)=>(key>2)); //selects and returns all rows with associated key > 2
-    */
-    select(filterFn: (rowKey: number, row: Map<string, V>) => boolean): DataTable<V>;
-    /**
-    * Return a subset of columns in this table based on the filter function.
-    * @example
-    *   t.project((columnKey, col) => (['a','c'].indexOf(columnKey)!=-1)); //project only columns 'a' and 'c'
-    */
-    project(filterFn: (columnKey: string, col: Map<number, V | undefined>) => boolean): DataTable<V>;
-    /**
     * Returns the first n rows in the table.
     * @example
     *   t.limit(5); //return first 5 rows of the table.
     */
-    limit(n: number): DataTable<V>;
+    limit(n: number): this;
     /**
     * Returns the last n rows of this table.
     * @example
     *   t.limitLast(5); //return last 5 rows
     */
-    limitLast(n: number): DataTable<V>;
+    limitLast(n: number): this;
     /**
     * Return a subset of rows beginning at the fromIndex inclusive and ending at toIndex exclusive.
     * @example
     *   t.subTable(2,6); //returns table with rows 2,3,4,5
     */
-    subTable(fromIndex: number, toIndex: number): DataTable<V>;
+    subTable(fromIndex: number, toIndex: number): this;
 }
