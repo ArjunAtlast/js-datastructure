@@ -40,7 +40,7 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
   */
   add(item:E, index:number):boolean
   add(item:E, index?:number):boolean {
-    if(this.size()<this._capacity) return index? super.add(item, index):super.add(item);
+    if(this.size()<this._capacity) return (index !== undefined)? super.add(item, index):super.add(item);
     else return false;
   }
 

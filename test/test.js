@@ -257,6 +257,7 @@ describe("Checking Components..", () => {
     it("reverse", () => {
       l.reverse();
       expect(l.toArray()).to.deep.equal([98, 56, 41, 32, 8, 7]);
+      expect(l.toArray()).to.deep.equal([98, 56, 41, 32, 8, 7]);
     });
   });
   //ArrayList

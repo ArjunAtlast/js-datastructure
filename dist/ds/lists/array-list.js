@@ -11,7 +11,7 @@ class ArrayList extends abstract_list_1.AbstractList {
     }
     add(item, index) {
         if (this.size() < this._capacity)
-            return index ? super.add(item, index) : super.add(item);
+            return (index !== undefined) ? super.add(item, index) : super.add(item);
         else
             return false;
     }
