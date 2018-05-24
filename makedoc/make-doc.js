@@ -173,7 +173,7 @@ hbs.registerHelper('Params', function(item){
   if(item.parameters && item.parameters.length>0) {
     let params = item.parameters.map((x)=>{
       let r = (x.flags.isRest)?`...${x.name}`:x.name;
-      if(x.type.isArray) r = r + "[ ]";
+      if(x.type && x.type.isArray) r = r + "[ ]";
       return r;
     }).join(",");
     ret = params;
