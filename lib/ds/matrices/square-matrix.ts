@@ -1,5 +1,8 @@
 import { NumberMatrix } from "./number-matrix";
 
+/**
+* A NumberMatrix with equal number of rows and columns.
+*/
 export class SquareMatrix extends NumberMatrix {
 
   constructor(order:number)
@@ -138,7 +141,7 @@ export class SquareMatrix extends NumberMatrix {
   /**
   * Return the inverse of this matrix if any. If not it returns null.
   */
-  inverse():this|null {
+  inverse():this {
     let det = this.determinant();
     if(det === 0) return null;
     else {

@@ -38455,6 +38455,9 @@
 			"flags": {
 				"isExported": true
 			},
+			"comment": {
+				"shortText": "A NumberMatrix with equal number of rows and columns."
+			},
 			"children": [
 				{
 					"id": 2247,
@@ -38540,17 +38543,17 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 3,
+							"line": 6,
 							"character": 48
 						},
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 5,
+							"line": 8,
 							"character": 27
 						},
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 6,
+							"line": 9,
 							"character": 48
 						}
 					],
@@ -38668,7 +38671,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 134,
+							"line": 137,
 							"character": 9
 						}
 					]
@@ -38778,7 +38781,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 80,
+							"line": 83,
 							"character": 10
 						}
 					]
@@ -38806,7 +38809,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 121,
+							"line": 124,
 							"character": 16
 						}
 					]
@@ -38910,7 +38913,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 87,
+							"line": 90,
 							"character": 13
 						}
 					]
@@ -39160,7 +39163,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 141,
+							"line": 144,
 							"character": 9
 						}
 					]
@@ -39192,7 +39195,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 65,
+							"line": 68,
 							"character": 17
 						}
 					]
@@ -39224,7 +39227,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 57,
+							"line": 60,
 							"character": 13
 						}
 					]
@@ -39280,7 +39283,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 73,
+							"line": 76,
 							"character": 7
 						}
 					]
@@ -39308,7 +39311,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 108,
+							"line": 111,
 							"character": 13
 						}
 					]
@@ -39340,7 +39343,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 50,
+							"line": 53,
 							"character": 7
 						}
 					]
@@ -39776,7 +39779,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 152,
+							"line": 155,
 							"character": 7
 						}
 					]
@@ -40010,7 +40013,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 31,
+							"line": 34,
 							"character": 13
 						}
 					]
@@ -40262,7 +40265,7 @@
 					"sources": [
 						{
 							"fileName": "ds/matrices/square-matrix.ts",
-							"line": 20,
+							"line": 23,
 							"character": 17
 						}
 					]
@@ -40475,7 +40478,7 @@
 			"sources": [
 				{
 					"fileName": "ds/matrices/square-matrix.ts",
-					"line": 3,
+					"line": 6,
 					"character": 25
 				}
 			],
