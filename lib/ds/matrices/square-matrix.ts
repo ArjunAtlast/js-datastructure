@@ -141,7 +141,7 @@ export class SquareMatrix extends NumberMatrix {
   /**
   * Return the inverse of this matrix if any. If not it returns null.
   */
-  inverse():this {
+  inverse():this|null {
     let det = this.determinant();
     if(det === 0) return null;
     else {
