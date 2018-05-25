@@ -127,6 +127,6 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
   fromString(json:string, deserializerFn:(itemJ:string)=>E):this {
     let object:any[] = JSON.parse(json);
     let finalArr:E[] = object.map((x)=>(deserializerFn(JSON.stringify(x))));
-    return new (<any>this.constructor)(finalArr.length, ...finalArr);
+    return new (<any>this.constructor)(Math.max(this._capacity, finalArr.length), ...finalArr);
   }
 }
