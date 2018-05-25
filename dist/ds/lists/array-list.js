@@ -82,7 +82,7 @@ class ArrayList extends abstract_list_1.AbstractList {
     fromString(json, deserializerFn) {
         let object = JSON.parse(json);
         let finalArr = object.map((x) => (deserializerFn(JSON.stringify(x))));
-        return new this.constructor(finalArr.length, ...finalArr);
+        return new this.constructor(Math.max(this._capacity, finalArr.length), ...finalArr);
     }
 }
 exports.ArrayList = ArrayList;
