@@ -20,6 +20,17 @@ class AbstractBinaryTree {
         this._root = label ? new BinaryTreeNode(label) : null;
     }
     /**
+    * Returns the height of this binary tree.
+    * @example
+    *   bt.height();// returns a number.
+    */
+    height(node = this._root) {
+        if (node === null)
+            return -1;
+        else
+            return Math.max(this.height(node.left), this.height(node.right)) + 1;
+    }
+    /**
     * Returns the list of items obtained after inorder traversal of the tree starting from the specified node (default root).
     * @example
     *   //bt:BinaryTree<number>
@@ -27,7 +38,7 @@ class AbstractBinaryTree {
     */
     inorder(node = this._root) {
         let curList = new abstract_list_1.AbstractList();
-        if (node == null)
+        if (node === null)
             return curList;
         node.left && curList.addAll(this.inorder(node.left).toArray());
         curList.add(node.label);

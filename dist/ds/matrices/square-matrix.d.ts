@@ -1,4 +1,7 @@
 import { NumberMatrix } from "./number-matrix";
+/**
+* A NumberMatrix with equal number of rows and columns.
+*/
 export declare class SquareMatrix extends NumberMatrix {
     constructor(order: number);
     constructor(order: number, defaultValue: number);

@@ -706,11 +706,12 @@ describe("Checking Components..", () => {
       bst = new index.BinarySearchTree((x,y)=>(x-y));
       expect(bst).to.be.an.instanceOf(index.BinarySearchTree);
     });
-    it("insert, insertMultiple", () => {
+    it("insert, insertMultiple, height", () => {
       expect(bst.insert(10)).to.equal(true);
       expect(bst.inorder().toArray()).to.deep.equal([10]);
       bst.insertMultiple(5,9,15,20,3,1);
       expect(bst.inorder().toArray()).to.deep.equal([1,3,5,9,10,15,20]);
+      expect(bst.height()).to.equal(3);
     });
     it("search", () => {
       expect(bst.search(9)).to.equal(9);
@@ -1070,4 +1071,64 @@ describe("Checking Components..", () => {
       expect(sq.trace()).to.equal(4);
     });
   });
+  //Rope
+  describe('Rope, RopeNode', () => {
+    let rope;
+    let str = "In computer programming, a rope, or cord, is a data structure composed of smaller strings that is used to efficiently store and manipulate a very long string.";
+    it("constructor, toString", () => {
+      expect(index.Rope).to.not.equal(undefined);
+      rope = new index.Rope(str, 5);
+      expect(rope).to.be.an.instanceOf(index.Rope);
+      expect(new index.Rope()).to.be.an.instanceOf(index.Rope);
+      expect(new index.Rope("string")).to.be.an.instanceOf(index.Rope);
+      expect(new index.Rope("",5)).to.be.an.instanceOf(index.Rope);
+      expect(rope.toString()).to.equal(str);
+    });
+    it("length", () => {
+      expect(rope.length).to.equal(str.length);
+      expect(new index.Rope("hello").length).to.equal(5);
+    });
+    it("get", () => {
+      expect(rope.get(31)).to.equal(str[31]);
+      expect(rope.get(10001)).to.equal(str[10001]);
+      expect(rope.get(100)).to.equal(str[100]);
+    });
+    it("split", () => {
+      expect(rope.split(90).toString()).to.equal(str.substring(90));
+      str = str.substring(0,90);
+      expect(rope.split(200).toString()).to.equal("");
+      let rn = new index.RopeNode(new index.RopeNode("hello"));
+      expect(index.Rope.fromNode(rn).length).to.equal(5);
+      expect(index.Rope.fromNode(rn).split(3).toString()).to.equal("lo");
+    });
+    it("insert", () => {
+      let r1 = new index.Rope("Hello World", 4);
+      let r2 = new index.Rope(" Brave New");
+      r1.insert(r2, 5);
+      r1.insert("and Wonderful ", 16);
+      expect(r1.insert("hekk", 50)).to.equal(false);
+      expect(r1.toString()).to.equal("Hello Brave New and Wonderful World");
+      r1.insertNode(r2.getRoot());
+      expect(r1.toString()).to.equal("Hello Brave New and Wonderful World Brave New");
+    });
+    it("delete", () => {
+      expect(rope.delete("hello")).to.equal(false);
+      expect(rope.delete(50,10).toString()).to.equal(str.substring(50,60));
+      str = str.substring(0,50) + str.substring(60);
+    });
+    it("report", () => {
+      expect(rope.report(10,20).toString()).to.equal(str.substring(10,30));
+      expect(rope.report(76,3).toString()).to.equal(str.substring(76,79));
+      expect(rope.report(85,3).toString()).to.equal("");
+    });
+    it("balance", () => {
+      rope.balance();
+      expect(rope.toString()).to.equal(str);
+      let rpNode = new index.RopeNode(new index.RopeNode("hi"), new index.RopeNode(new index.RopeNode("_how"), new index.RopeNode(new index.RopeNode("_are"), new index.RopeNode("_you"))));
+      let rp = new index.Rope(rpNode);
+      expect(rp.toString()).to.equal("hi_how_are_you");
+      rp.balance();
+      expect(rp.toString()).to.equal("hi_how_are_you");
+    });
+  })
 });

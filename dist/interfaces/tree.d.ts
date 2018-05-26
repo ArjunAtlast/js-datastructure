@@ -10,4 +10,8 @@ export interface Tree<E> {
     * Delete an item from the tree.
     */
     delete(item: E): boolean;
+    /**
+    * Returns the height of the tree.
+    */
+    height(): number;
 }

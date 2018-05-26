@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const number_matrix_1 = require("./number-matrix");
+/**
+* A NumberMatrix with equal number of rows and columns.
+*/
 class SquareMatrix extends number_matrix_1.NumberMatrix {
     constructor(order, defaultValue = 0) {
         super(order, order, defaultValue);

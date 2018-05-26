@@ -42,3 +42,4 @@ export {DataTable} from "./ds/tables/data-table";
 export {ArrayMatrix, ArrayMatrixRow, ArrayMatrixColumn} from "./ds/matrices/array-matrix";
 export {NumberMatrix, NumberMatrixRow, NumberMatrixColumn} from "./ds/matrices/number-matrix";
 export {SquareMatrix} from "./ds/matrices/square-matrix";
+export {Rope, RopeNode} from "./ds/trees/rope";

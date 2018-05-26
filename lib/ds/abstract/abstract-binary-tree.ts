@@ -40,6 +40,16 @@ export abstract class AbstractBinaryTree<E> implements BinaryTree<E> {
   abstract delete(item: E): boolean;
 
   /**
+  * Returns the height of this binary tree.
+  * @example
+  *   bt.height();// returns a number.
+  */
+  height(node:BinaryTreeNode<E> = this._root!):number {
+    if(node === null) return -1;
+    else return Math.max(this.height(node.left!), this.height(node.right!))+1;
+  }
+
+  /**
   * Returns the list of items obtained after inorder traversal of the tree starting from the specified node (default root).
   * @example
   *   //bt:BinaryTree<number>
@@ -47,7 +57,7 @@ export abstract class AbstractBinaryTree<E> implements BinaryTree<E> {
   */
   inorder(node:BinaryTreeNode<E> = this._root!): List<E> {
     let curList = new AbstractList<E>();
-    if(node == null) return curList;
+    if(node === null) return curList;
     node.left && curList.addAll(this.inorder(node.left).toArray());
     curList.add(node.label);
     node.right && curList.addAll(this.inorder(node.right).toArray());

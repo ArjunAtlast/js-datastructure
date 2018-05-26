@@ -14,6 +14,10 @@ export interface BinaryTree<E> extends Tree<E> {
   */
   delete(item:E):boolean;
   /**
+  * Returns the height of this binary tree.
+  */
+  height():number;
+  /**
   * Returns the list of items obtained after inorder traversal of the tree.
   */
   inorder():List<E>;

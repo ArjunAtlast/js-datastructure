@@ -59,3 +59,6 @@ exports.NumberMatrixRow = number_matrix_1.NumberMatrixRow;
 exports.NumberMatrixColumn = number_matrix_1.NumberMatrixColumn;
 var square_matrix_1 = require("./ds/matrices/square-matrix");
 exports.SquareMatrix = square_matrix_1.SquareMatrix;
+var rope_1 = require("./ds/trees/rope");
+exports.Rope = rope_1.Rope;
+exports.RopeNode = rope_1.RopeNode;

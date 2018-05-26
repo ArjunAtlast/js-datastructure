@@ -25,6 +25,12 @@ export declare abstract class AbstractBinaryTree<E> implements BinaryTree<E> {
     */
     abstract delete(item: E): boolean;
     /**
+    * Returns the height of this binary tree.
+    * @example
+    *   bt.height();// returns a number.
+    */
+    height(node?: BinaryTreeNode<E>): number;
+    /**
     * Returns the list of items obtained after inorder traversal of the tree starting from the specified node (default root).
     * @example
     *   //bt:BinaryTree<number>
