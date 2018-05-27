@@ -45,7 +45,7 @@ class Dictionary extends abstract_map_1.AbstractMap {
     *   let newDict = dict.clone();
     */
     clone() {
-        return new Dictionary(...this.entrySet().toArray());
+        return new this.constructor(...this.entrySet().toArray());
     }
     /**
     * Converts the dictionary into a JSON String

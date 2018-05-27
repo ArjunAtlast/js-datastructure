@@ -62,3 +62,6 @@ exports.SquareMatrix = square_matrix_1.SquareMatrix;
 var rope_1 = require("./ds/trees/rope");
 exports.Rope = rope_1.Rope;
 exports.RopeNode = rope_1.RopeNode;
+var parameter_map_1 = require("./ds/maps/parameter-map");
+exports.ParameterMap = parameter_map_1.ParameterMap;
+exports.Parameter = parameter_map_1.Parameter;

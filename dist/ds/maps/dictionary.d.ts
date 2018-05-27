@@ -26,7 +26,7 @@ export declare class Dictionary<E> extends AbstractMap<string, E> implements Clo
     * @example
     *   let newDict = dict.clone();
     */
-    clone(): Dictionary<E>;
+    clone(): this;
     /**
     * Converts the dictionary into a JSON String
     * @example

@@ -1131,4 +1131,35 @@ describe("Checking Components..", () => {
       expect(rp.toString()).to.equal("hi_how_are_you");
     });
   })
+  //ParameterMap
+  describe("ParameterMap, Parameter", () => {
+    let pm;
+    it("constructor", () => {
+      expect(index.ParameterMap).to.not.equal(undefined);
+      expect(index.Parameter).to.not.equal(undefined);
+      pm = index.ParameterMap.shape();
+      expect(new index.ParameterMap()).to.be.an.instanceOf(index.ParameterMap);
+      expect(pm).to.be.an.instanceOf(index.ParameterMap);
+      expect(new index.Parameter(Number, 55, (v,d) => (v+d.unit), {unit:"px"})).to.be.an.instanceOf(index.Parameter);
+      expect(()=>{new index.Parameter(Number, "hello")}).to.throw();
+    });
+    it("getter, setter", () => {
+      expect(pm.get("width").value).to.equal(0);
+      pm.get("width").value = 100;
+      expect(pm.get("width").value).to.equal(100);
+      expect(()=>{pm.get("height").value = "Hello"}).to.throw();
+      expect(pm.get("fill").type).to.equal(String);
+    });
+    it("data, convert", () => {
+      let parm = new index.Parameter(Number, 55, (v,d) => (v+d.unit), {unit:"px"});
+      expect(parm.convert()).to.equal("55px");
+      expect(parm.getData("unit")).to.equal("px");
+      parm.putData("unit","em");
+      expect(parm.convert()).to.equal("55em");
+    });
+    it("reset, resetAll", () => {
+      pm.resetAll();
+      expect(pm.get("width").convert()).to.equal("0");
+    })
+  });
 });

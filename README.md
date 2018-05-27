@@ -36,7 +36,7 @@ npm install git+https://github.com/ArjunAtlast/js-datastructure.git
 ### CommonJS
 
 ```javascript
-  var ArrayList = require("@arjunatlast/jsds");
+  var ArrayList = require("@arjunatlast/jsds").ArrayList;
 
   ...
 

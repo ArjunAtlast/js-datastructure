@@ -48,8 +48,8 @@ export class Dictionary<E> extends AbstractMap<string, E> implements Cloneable<D
   * @example
   *   let newDict = dict.clone();
   */
-  clone(): Dictionary<E> {
-    return new Dictionary<E>(...this.entrySet().toArray());
+  clone(): this {
+    return new (<any>this.constructor)(...this.entrySet().toArray());
   }
 
   /**
