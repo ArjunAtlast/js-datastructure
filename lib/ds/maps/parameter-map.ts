@@ -13,26 +13,6 @@ export class ParameterMap extends Dictionary<Parameter> {
     this._values.forEach(item => item.reset());
   }
 
-  /**
-  * Returns a pre-built ParameterMap with parameters width, height, fill, stroke, pos-x etc.
-  * @example
-  *   let rect = ParameterMap.shape();
-  */
-  static shape():ParameterMap {
-    let pMap = new ParameterMap();
-    pMap.put("width", new Parameter(Number, 0));
-    pMap.put("height", new Parameter(Number, 0));
-    pMap.put("fill", new Parameter(String, "#FFFFFF"));
-    pMap.put("stroke", new Parameter(String, "#000000"));
-    pMap.put("stroke-width", new Parameter(Number, 1));
-    pMap.put("stroke-alignment", new Parameter(String, "center"));
-    pMap.put("stroke-cap", new Parameter(String, "square"));
-    pMap.put("stroke-corner", new Parameter(String, "square"));
-    pMap.put("pos-x", new Parameter(Number, 0));
-    pMap.put("pos-y", new Parameter(Number, 0));
-    return pMap;
-  }
-
 }
 
 /**
