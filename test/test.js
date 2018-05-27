@@ -1137,18 +1137,18 @@ describe("Checking Components..", () => {
     it("constructor", () => {
       expect(index.ParameterMap).to.not.equal(undefined);
       expect(index.Parameter).to.not.equal(undefined);
-      pm = index.ParameterMap.shape();
-      expect(new index.ParameterMap()).to.be.an.instanceOf(index.ParameterMap);
+      pm = new index.ParameterMap();
       expect(pm).to.be.an.instanceOf(index.ParameterMap);
       expect(new index.Parameter(Number, 55, (v,d) => (v+d.unit), {unit:"px"})).to.be.an.instanceOf(index.Parameter);
-      expect(()=>{new index.Parameter(Number, "hello")}).to.throw();
+      pm.put("width", new index.Parameter("number",0));
+      pm.put("height", new index.Parameter("number",0));
+      pm.put("fill", new index.Parameter("string","#ffffff"));
     });
     it("getter, setter", () => {
-      expect(pm.get("width").value).to.equal(0);
-      pm.get("width").value = 100;
-      expect(pm.get("width").value).to.equal(100);
-      expect(()=>{pm.get("height").value = "Hello"}).to.throw();
-      expect(pm.get("fill").type).to.equal(String);
+      pm.setValue("width", 100)
+      expect(pm.getValue("width")).to.equal(100);
+      expect(pm.get("fill").type).to.equal("string");
+      expect(pm.getString("hell")).to.equal("");
     });
     it("data, convert", () => {
       let parm = new index.Parameter(Number, 55, (v,d) => (v+d.unit), {unit:"px"});
@@ -1159,7 +1159,7 @@ describe("Checking Components..", () => {
     });
     it("reset, resetAll", () => {
       pm.resetAll();
-      expect(pm.get("width").convert()).to.equal("0");
+      expect(pm.getString("width")).to.equal("0");
     })
   });
 });

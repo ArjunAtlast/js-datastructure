@@ -12,23 +12,25 @@ class ParameterMap extends dictionary_1.Dictionary {
         this._values.forEach(item => item.reset());
     }
     /**
-    * Returns a pre-built ParameterMap with parameters width, height, fill, stroke, pos-x etc.
-    * @example
-    *   let rect = ParameterMap.shape();
+    * Return the value of the parameter associated with this key.
     */
-    static shape() {
-        let pMap = new ParameterMap();
-        pMap.put("width", new Parameter(Number, 0));
-        pMap.put("height", new Parameter(Number, 0));
-        pMap.put("fill", new Parameter(String, "#FFFFFF"));
-        pMap.put("stroke", new Parameter(String, "#000000"));
-        pMap.put("stroke-width", new Parameter(Number, 1));
-        pMap.put("stroke-alignment", new Parameter(String, "center"));
-        pMap.put("stroke-cap", new Parameter(String, "square"));
-        pMap.put("stroke-corner", new Parameter(String, "square"));
-        pMap.put("pos-x", new Parameter(Number, 0));
-        pMap.put("pos-y", new Parameter(Number, 0));
-        return pMap;
+    getValue(key) {
+        let param;
+        return (param = this.get(key)) && param.value;
+    }
+    /**
+    * Change the value of the parameter associated with this key.
+    */
+    setValue(key, val) {
+        let param;
+        (param = this.get(key)) && (param.value = val);
+    }
+    /**
+    * Return the string value of the parameter associated with this key.
+    */
+    getString(key) {
+        let param;
+        return (param = this.get(key)) ? param.convert() : "";
     }
 }
 exports.ParameterMap = ParameterMap;
@@ -38,13 +40,8 @@ exports.ParameterMap = ParameterMap;
 */
 class Parameter {
     constructor(type, value, convertFn = Parameter.TO_STRING, data = {}) {
-        if (value.constructor === type) {
-            this._value = value;
-            this._defaultValue = value;
-        }
-        else {
-            throw new Error(`Parameter type mismatch. The value ${value} is not of type ${type}`);
-        }
+        this._value = value;
+        this._defaultValue = value;
         this._type = type;
         this._convert = convertFn;
         this._data = data;
@@ -59,12 +56,7 @@ class Parameter {
     * Change the value of this parameter.
     */
     set value(value) {
-        if (value.constructor === this._type) {
-            this._value = value;
-        }
-        else {
-            throw new Error(`Parameter type mismatch. The value ${value} is not of type ${this._type}`);
-        }
+        this._value = value;
     }
     /**
     * Return the type of this parameter.
