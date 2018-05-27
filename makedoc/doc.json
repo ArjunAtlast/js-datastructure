@@ -36701,7 +36701,7 @@
 			]
 		},
 		{
-			"id": 2886,
+			"id": 2884,
 			"name": "Parameter",
 			"kind": 128,
 			"kindString": "Class",
@@ -36713,7 +36713,7 @@
 			},
 			"children": [
 				{
-					"id": 2900,
+					"id": 2898,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -36722,87 +36722,87 @@
 					},
 					"signatures": [
 						{
-							"id": 2901,
+							"id": 2899,
 							"name": "new Parameter",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
+								{
+									"id": 2900,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 2901,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "ds/maps/parameter-map.ts",
+													"line": 34,
+													"character": 19
+												}
+											]
+										}
+									}
+								},
 								{
 									"id": 2902,
-									"name": "type",
+									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 2903,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "ds/maps/parameter-map.ts",
-													"line": 54,
-													"character": 19
-												}
-											]
-										}
+										"type": "instrinct",
+										"name": "any"
 									}
-								},
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Parameter",
+								"id": 2884
+							}
+						},
+						{
+							"id": 2903,
+							"name": "new Parameter",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
 								{
 									"id": 2904,
-									"name": "value",
+									"name": "type",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
-										"type": "instrinct",
-										"name": "any"
+										"type": "reflection",
+										"declaration": {
+											"id": 2905,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "ds/maps/parameter-map.ts",
+													"line": 35,
+													"character": 19
+												}
+											]
+										}
 									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "Parameter",
-								"id": 2886
-							}
-						},
-						{
-							"id": 2905,
-							"name": "new Parameter",
-							"kind": 16384,
-							"kindString": "Constructor signature",
-							"flags": {},
-							"parameters": [
+								},
 								{
 									"id": 2906,
-									"name": "type",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 2907,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "ds/maps/parameter-map.ts",
-													"line": 55,
-													"character": 19
-												}
-											]
-										}
-									}
-								},
-								{
-									"id": 2908,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -36813,7 +36813,7 @@
 									}
 								},
 								{
-									"id": 2909,
+									"id": 2907,
 									"name": "convertFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -36821,21 +36821,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2910,
+											"id": 2908,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2911,
+													"id": 2909,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2912,
+															"id": 2910,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -36846,7 +36846,7 @@
 															}
 														},
 														{
-															"id": 2913,
+															"id": 2911,
 															"name": "data",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -36866,7 +36866,7 @@
 											"sources": [
 												{
 													"fileName": "ds/maps/parameter-map.ts",
-													"line": 55,
+													"line": 35,
 													"character": 68
 												}
 											]
@@ -36877,18 +36877,18 @@
 							"type": {
 								"type": "reference",
 								"name": "Parameter",
-								"id": 2886
+								"id": 2884
 							}
 						},
 						{
-							"id": 2914,
+							"id": 2912,
 							"name": "new Parameter",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 2915,
+									"id": 2913,
 									"name": "type",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -36896,7 +36896,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2916,
+											"id": 2914,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -36904,7 +36904,7 @@
 											"sources": [
 												{
 													"fileName": "ds/maps/parameter-map.ts",
-													"line": 56,
+													"line": 36,
 													"character": 19
 												}
 											]
@@ -36912,7 +36912,7 @@
 									}
 								},
 								{
-									"id": 2917,
+									"id": 2915,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -36923,7 +36923,7 @@
 									}
 								},
 								{
-									"id": 2918,
+									"id": 2916,
 									"name": "convertFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -36931,21 +36931,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2919,
+											"id": 2917,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2920,
+													"id": 2918,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2921,
+															"id": 2919,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -36956,7 +36956,7 @@
 															}
 														},
 														{
-															"id": 2922,
+															"id": 2920,
 															"name": "data",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -36976,7 +36976,7 @@
 											"sources": [
 												{
 													"fileName": "ds/maps/parameter-map.ts",
-													"line": 56,
+													"line": 36,
 													"character": 68
 												}
 											]
@@ -36984,7 +36984,7 @@
 									}
 								},
 								{
-									"id": 2923,
+									"id": 2921,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -36998,35 +36998,35 @@
 							"type": {
 								"type": "reference",
 								"name": "Parameter",
-								"id": 2886
+								"id": 2884
 							}
 						}
 					],
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 52,
+							"line": 32,
 							"character": 82
 						},
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 54,
+							"line": 34,
 							"character": 57
 						},
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 55,
+							"line": 35,
 							"character": 100
 						},
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 56,
+							"line": 36,
 							"character": 110
 						}
 					]
 				},
 				{
-					"id": 2891,
+					"id": 2889,
 					"name": "_convert",
 					"kind": 1024,
 					"kindString": "Property",
@@ -37037,28 +37037,28 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 46,
+							"line": 26,
 							"character": 20
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2892,
+							"id": 2890,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 2893,
+									"id": 2891,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 2894,
+											"id": 2892,
 											"name": "value",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -37069,7 +37069,7 @@
 											}
 										},
 										{
-											"id": 2895,
+											"id": 2893,
 											"name": "data",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -37089,7 +37089,7 @@
 							"sources": [
 								{
 									"fileName": "ds/maps/parameter-map.ts",
-									"line": 46,
+									"line": 26,
 									"character": 21
 								}
 							]
@@ -37097,7 +37097,7 @@
 					}
 				},
 				{
-					"id": 2896,
+					"id": 2894,
 					"name": "_data",
 					"kind": 1024,
 					"kindString": "Property",
@@ -37108,7 +37108,7 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 47,
+							"line": 27,
 							"character": 17
 						}
 					],
@@ -37118,7 +37118,7 @@
 					}
 				},
 				{
-					"id": 2890,
+					"id": 2888,
 					"name": "_defaultValue",
 					"kind": 1024,
 					"kindString": "Property",
@@ -37129,7 +37129,7 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 45,
+							"line": 25,
 							"character": 25
 						}
 					],
@@ -37139,7 +37139,7 @@
 					}
 				},
 				{
-					"id": 2887,
+					"id": 2885,
 					"name": "_type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -37150,14 +37150,14 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 43,
+							"line": 23,
 							"character": 17
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2888,
+							"id": 2886,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
@@ -37165,7 +37165,7 @@
 							"sources": [
 								{
 									"fileName": "ds/maps/parameter-map.ts",
-									"line": 43,
+									"line": 23,
 									"character": 18
 								}
 							]
@@ -37173,7 +37173,7 @@
 					}
 				},
 				{
-					"id": 2889,
+					"id": 2887,
 					"name": "_value",
 					"kind": 1024,
 					"kindString": "Property",
@@ -37184,7 +37184,7 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 44,
+							"line": 24,
 							"character": 18
 						}
 					],
@@ -37194,7 +37194,7 @@
 					}
 				},
 				{
-					"id": 2928,
+					"id": 2926,
 					"name": "type",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -37206,7 +37206,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 2929,
+							"id": 2927,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -37217,7 +37217,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 2930,
+									"id": 2928,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -37225,7 +37225,7 @@
 									"sources": [
 										{
 											"fileName": "ds/maps/parameter-map.ts",
-											"line": 92,
+											"line": 72,
 											"character": 13
 										}
 									]
@@ -37236,13 +37236,13 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 92,
+							"line": 72,
 							"character": 10
 						}
 					]
 				},
 				{
-					"id": 2924,
+					"id": 2922,
 					"name": "value",
 					"kind": 262144,
 					"kindString": "Accessor",
@@ -37254,7 +37254,7 @@
 					},
 					"getSignature": [
 						{
-							"id": 2925,
+							"id": 2923,
 							"name": "__get",
 							"kind": 524288,
 							"kindString": "Get signature",
@@ -37270,7 +37270,7 @@
 					],
 					"setSignature": [
 						{
-							"id": 2926,
+							"id": 2924,
 							"name": "__set",
 							"kind": 1048576,
 							"kindString": "Set signature",
@@ -37280,7 +37280,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2927,
+									"id": 2925,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -37300,18 +37300,18 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 73,
+							"line": 53,
 							"character": 11
 						},
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 80,
+							"line": 60,
 							"character": 11
 						}
 					]
 				},
 				{
-					"id": 2940,
+					"id": 2938,
 					"name": "convert",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37320,7 +37320,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2941,
+							"id": 2939,
 							"name": "convert",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -37337,13 +37337,13 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 120,
+							"line": 100,
 							"character": 9
 						}
 					]
 				},
 				{
-					"id": 2933,
+					"id": 2931,
 					"name": "getData",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37352,7 +37352,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2934,
+							"id": 2932,
 							"name": "getData",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -37362,7 +37362,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2935,
+									"id": 2933,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -37382,13 +37382,13 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 106,
+							"line": 86,
 							"character": 9
 						}
 					]
 				},
 				{
-					"id": 2936,
+					"id": 2934,
 					"name": "putData",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37397,7 +37397,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2937,
+							"id": 2935,
 							"name": "putData",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -37407,7 +37407,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2938,
+									"id": 2936,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -37418,7 +37418,7 @@
 									}
 								},
 								{
-									"id": 2939,
+									"id": 2937,
 									"name": "val",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -37438,13 +37438,13 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 113,
+							"line": 93,
 							"character": 9
 						}
 					]
 				},
 				{
-					"id": 2931,
+					"id": 2929,
 					"name": "reset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37453,7 +37453,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2932,
+							"id": 2930,
 							"name": "reset",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -37470,13 +37470,13 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 99,
+							"line": 79,
 							"character": 7
 						}
 					]
 				},
 				{
-					"id": 2897,
+					"id": 2895,
 					"name": "TO_STRING",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37486,14 +37486,14 @@
 					},
 					"signatures": [
 						{
-							"id": 2898,
+							"id": 2896,
 							"name": "TO_STRING",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 2899,
+									"id": 2897,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -37513,7 +37513,7 @@
 					"sources": [
 						{
 							"fileName": "ds/maps/parameter-map.ts",
-							"line": 52,
+							"line": 32,
 							"character": 27
 						}
 					]
@@ -37524,44 +37524,44 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						2900
+						2898
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2891,
-						2896,
-						2890,
-						2887,
-						2889
+						2889,
+						2894,
+						2888,
+						2885,
+						2887
 					]
 				},
 				{
 					"title": "Accessors",
 					"kind": 262144,
 					"children": [
-						2928,
-						2924
+						2926,
+						2922
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						2940,
-						2933,
-						2936,
+						2938,
 						2931,
-						2897
+						2934,
+						2929,
+						2895
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "ds/maps/parameter-map.ts",
-					"line": 42,
+					"line": 22,
 					"character": 22
 				}
 			]
@@ -37579,7 +37579,7 @@
 			},
 			"children": [
 				{
-					"id": 2788,
+					"id": 2786,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -37588,14 +37588,14 @@
 					},
 					"signatures": [
 						{
-							"id": 2789,
+							"id": 2787,
 							"name": "new ParameterMap",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 2790,
+									"id": 2788,
 									"name": "items",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -37615,7 +37615,7 @@
 											{
 												"type": "reference",
 												"name": "Parameter",
-												"id": 2886
+												"id": 2884
 											}
 										]
 									}
@@ -37647,7 +37647,7 @@
 					}
 				},
 				{
-					"id": 2787,
+					"id": 2785,
 					"name": "_keys",
 					"kind": 1024,
 					"kindString": "Property",
@@ -37680,7 +37680,7 @@
 					}
 				},
 				{
-					"id": 2786,
+					"id": 2784,
 					"name": "_values",
 					"kind": 1024,
 					"kindString": "Property",
@@ -37703,7 +37703,7 @@
 							{
 								"type": "reference",
 								"name": "Parameter",
-								"id": 2886
+								"id": 2884
 							}
 						]
 					},
@@ -37714,7 +37714,7 @@
 					}
 				},
 				{
-					"id": 2791,
+					"id": 2789,
 					"name": "clear",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37723,7 +37723,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2792,
+							"id": 2790,
 							"name": "clear",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -37772,7 +37772,7 @@
 					}
 				},
 				{
-					"id": 2771,
+					"id": 2769,
 					"name": "clone",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37781,7 +37781,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2772,
+							"id": 2770,
 							"name": "clone",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -37826,7 +37826,7 @@
 					}
 				},
 				{
-					"id": 2793,
+					"id": 2791,
 					"name": "compute",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37835,7 +37835,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2794,
+							"id": 2792,
 							"name": "compute",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -37851,7 +37851,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2795,
+									"id": 2793,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -37862,7 +37862,7 @@
 									}
 								},
 								{
-									"id": 2796,
+									"id": 2794,
 									"name": "remappingFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -37870,21 +37870,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2797,
+											"id": 2795,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2798,
+													"id": 2796,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2799,
+															"id": 2797,
 															"name": "key",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -37895,7 +37895,7 @@
 															}
 														},
 														{
-															"id": 2800,
+															"id": 2798,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -37906,7 +37906,7 @@
 																	{
 																		"type": "reference",
 																		"name": "Parameter",
-																		"id": 2886
+																		"id": 2884
 																	},
 																	{
 																		"type": "instrinct",
@@ -37916,7 +37916,7 @@
 															}
 														},
 														{
-															"id": 2801,
+															"id": 2799,
 															"name": "map",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -37926,7 +37926,7 @@
 													"type": {
 														"type": "reference",
 														"name": "Parameter",
-														"id": 2886
+														"id": 2884
 													}
 												}
 											],
@@ -37947,7 +37947,7 @@
 									{
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									},
 									{
 										"type": "instrinct",
@@ -37981,7 +37981,7 @@
 					}
 				},
 				{
-					"id": 2802,
+					"id": 2800,
 					"name": "computeIfAbsent",
 					"kind": 2048,
 					"kindString": "Method",
@@ -37990,7 +37990,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2803,
+							"id": 2801,
 							"name": "computeIfAbsent",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38006,7 +38006,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2804,
+									"id": 2802,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38017,7 +38017,7 @@
 									}
 								},
 								{
-									"id": 2805,
+									"id": 2803,
 									"name": "remappingFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38025,21 +38025,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2806,
+											"id": 2804,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2807,
+													"id": 2805,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2808,
+															"id": 2806,
 															"name": "key",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38050,7 +38050,7 @@
 															}
 														},
 														{
-															"id": 2809,
+															"id": 2807,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38061,7 +38061,7 @@
 																	{
 																		"type": "reference",
 																		"name": "Parameter",
-																		"id": 2886
+																		"id": 2884
 																	},
 																	{
 																		"type": "instrinct",
@@ -38071,7 +38071,7 @@
 															}
 														},
 														{
-															"id": 2810,
+															"id": 2808,
 															"name": "map",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38081,7 +38081,7 @@
 													"type": {
 														"type": "reference",
 														"name": "Parameter",
-														"id": 2886
+														"id": 2884
 													}
 												}
 											],
@@ -38102,7 +38102,7 @@
 									{
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									},
 									{
 										"type": "instrinct",
@@ -38136,7 +38136,7 @@
 					}
 				},
 				{
-					"id": 2811,
+					"id": 2809,
 					"name": "computeIfPresent",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38145,7 +38145,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2812,
+							"id": 2810,
 							"name": "computeIfPresent",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38161,7 +38161,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2813,
+									"id": 2811,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38172,7 +38172,7 @@
 									}
 								},
 								{
-									"id": 2814,
+									"id": 2812,
 									"name": "remappingFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38180,21 +38180,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2815,
+											"id": 2813,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2816,
+													"id": 2814,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2817,
+															"id": 2815,
 															"name": "key",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38205,7 +38205,7 @@
 															}
 														},
 														{
-															"id": 2818,
+															"id": 2816,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38213,11 +38213,11 @@
 															"type": {
 																"type": "reference",
 																"name": "Parameter",
-																"id": 2886
+																"id": 2884
 															}
 														},
 														{
-															"id": 2819,
+															"id": 2817,
 															"name": "map",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38227,7 +38227,7 @@
 													"type": {
 														"type": "reference",
 														"name": "Parameter",
-														"id": 2886
+														"id": 2884
 													}
 												}
 											],
@@ -38248,7 +38248,7 @@
 									{
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									},
 									{
 										"type": "instrinct",
@@ -38282,7 +38282,7 @@
 					}
 				},
 				{
-					"id": 2820,
+					"id": 2818,
 					"name": "containsKey",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38291,7 +38291,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2821,
+							"id": 2819,
 							"name": "containsKey",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38307,7 +38307,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2822,
+									"id": 2820,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38348,7 +38348,7 @@
 					}
 				},
 				{
-					"id": 2823,
+					"id": 2821,
 					"name": "containsValue",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38357,7 +38357,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2824,
+							"id": 2822,
 							"name": "containsValue",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38373,7 +38373,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2825,
+									"id": 2823,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38381,7 +38381,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								}
 							],
@@ -38415,7 +38415,7 @@
 					}
 				},
 				{
-					"id": 2765,
+					"id": 2763,
 					"name": "count",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38424,7 +38424,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2766,
+							"id": 2764,
 							"name": "count",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38440,7 +38440,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2767,
+									"id": 2765,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38448,7 +38448,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								}
 							],
@@ -38477,7 +38477,7 @@
 					}
 				},
 				{
-					"id": 2826,
+					"id": 2824,
 					"name": "entrySet",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38486,7 +38486,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2827,
+							"id": 2825,
 							"name": "entrySet",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38517,7 +38517,7 @@
 											{
 												"type": "reference",
 												"name": "Parameter",
-												"id": 2886
+												"id": 2884
 											}
 										]
 									}
@@ -38554,7 +38554,7 @@
 					}
 				},
 				{
-					"id": 2828,
+					"id": 2826,
 					"name": "equals",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38563,7 +38563,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2829,
+							"id": 2827,
 							"name": "equals",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38579,7 +38579,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2830,
+									"id": 2828,
 									"name": "map",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38596,7 +38596,7 @@
 											{
 												"type": "reference",
 												"name": "Parameter",
-												"id": 2886
+												"id": 2884
 											}
 										]
 									}
@@ -38637,7 +38637,7 @@
 					}
 				},
 				{
-					"id": 2831,
+					"id": 2829,
 					"name": "forEach",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38646,7 +38646,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2832,
+							"id": 2830,
 							"name": "forEach",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38662,7 +38662,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2833,
+									"id": 2831,
 									"name": "action",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38670,21 +38670,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2834,
+											"id": 2832,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2835,
+													"id": 2833,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2836,
+															"id": 2834,
 															"name": "key",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38695,7 +38695,7 @@
 															}
 														},
 														{
-															"id": 2837,
+															"id": 2835,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38703,11 +38703,11 @@
 															"type": {
 																"type": "reference",
 																"name": "Parameter",
-																"id": 2886
+																"id": 2884
 															}
 														},
 														{
-															"id": 2838,
+															"id": 2836,
 															"name": "map",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38761,7 +38761,7 @@
 					}
 				},
 				{
-					"id": 2779,
+					"id": 2777,
 					"name": "fromString",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38770,7 +38770,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2780,
+							"id": 2778,
 							"name": "fromString",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38786,7 +38786,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2781,
+									"id": 2779,
 									"name": "json",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38797,7 +38797,7 @@
 									}
 								},
 								{
-									"id": 2782,
+									"id": 2780,
 									"name": "deserializerFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38805,21 +38805,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2783,
+											"id": 2781,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2784,
+													"id": 2782,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2785,
+															"id": 2783,
 															"name": "itemJSON",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -38833,7 +38833,7 @@
 													"type": {
 														"type": "reference",
 														"name": "Parameter",
-														"id": 2886
+														"id": 2884
 													}
 												}
 											],
@@ -38874,7 +38874,7 @@
 					}
 				},
 				{
-					"id": 2839,
+					"id": 2837,
 					"name": "get",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38883,7 +38883,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2840,
+							"id": 2838,
 							"name": "get",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38899,7 +38899,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2841,
+									"id": 2839,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38916,7 +38916,7 @@
 									{
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									},
 									{
 										"type": "instrinct",
@@ -38950,7 +38950,7 @@
 					}
 				},
 				{
-					"id": 2768,
+					"id": 2766,
 					"name": "getKeys",
 					"kind": 2048,
 					"kindString": "Method",
@@ -38959,7 +38959,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2769,
+							"id": 2767,
 							"name": "getKeys",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -38975,7 +38975,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2770,
+									"id": 2768,
 									"name": "item",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -38983,7 +38983,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								}
 							],
@@ -39019,7 +39019,7 @@
 					}
 				},
 				{
-					"id": 2842,
+					"id": 2840,
 					"name": "getOrDefault",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39028,7 +39028,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2843,
+							"id": 2841,
 							"name": "getOrDefault",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39044,7 +39044,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2844,
+									"id": 2842,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39055,7 +39055,7 @@
 									}
 								},
 								{
-									"id": 2845,
+									"id": 2843,
 									"name": "defaultValue",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39063,14 +39063,14 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "Parameter",
-								"id": 2886
+								"id": 2884
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -39098,7 +39098,7 @@
 					}
 				},
 				{
-					"id": 2846,
+					"id": 2844,
 					"name": "isEmpty",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39107,7 +39107,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2847,
+							"id": 2845,
 							"name": "isEmpty",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39156,7 +39156,7 @@
 					}
 				},
 				{
-					"id": 2848,
+					"id": 2846,
 					"name": "isNull",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39165,7 +39165,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2849,
+							"id": 2847,
 							"name": "isNull",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39204,7 +39204,7 @@
 					}
 				},
 				{
-					"id": 2850,
+					"id": 2848,
 					"name": "keySet",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39213,7 +39213,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2851,
+							"id": 2849,
 							"name": "keySet",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39269,7 +39269,7 @@
 					}
 				},
 				{
-					"id": 2852,
+					"id": 2850,
 					"name": "put",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39278,7 +39278,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2853,
+							"id": 2851,
 							"name": "put",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39294,7 +39294,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2854,
+									"id": 2852,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39305,7 +39305,7 @@
 									}
 								},
 								{
-									"id": 2855,
+									"id": 2853,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39313,7 +39313,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								}
 							],
@@ -39323,7 +39323,7 @@
 									{
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									},
 									{
 										"type": "instrinct",
@@ -39357,7 +39357,7 @@
 					}
 				},
 				{
-					"id": 2856,
+					"id": 2854,
 					"name": "putAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39366,7 +39366,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2857,
+							"id": 2855,
 							"name": "putAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39382,7 +39382,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2858,
+									"id": 2856,
 									"name": "map",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39399,7 +39399,7 @@
 											{
 												"type": "reference",
 												"name": "Parameter",
-												"id": 2886
+												"id": 2884
 											}
 										]
 									}
@@ -39440,7 +39440,7 @@
 					}
 				},
 				{
-					"id": 2859,
+					"id": 2857,
 					"name": "putIfAbsent",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39449,7 +39449,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2860,
+							"id": 2858,
 							"name": "putIfAbsent",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39465,7 +39465,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2861,
+									"id": 2859,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39476,7 +39476,7 @@
 									}
 								},
 								{
-									"id": 2862,
+									"id": 2860,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39484,7 +39484,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								}
 							],
@@ -39494,7 +39494,7 @@
 									{
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									},
 									{
 										"type": "instrinct",
@@ -39528,7 +39528,7 @@
 					}
 				},
 				{
-					"id": 2863,
+					"id": 2861,
 					"name": "remove",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39537,7 +39537,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2864,
+							"id": 2862,
 							"name": "remove",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39553,7 +39553,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2865,
+									"id": 2863,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39570,7 +39570,7 @@
 									{
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									},
 									{
 										"type": "instrinct",
@@ -39604,7 +39604,7 @@
 					}
 				},
 				{
-					"id": 2866,
+					"id": 2864,
 					"name": "removeIf",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39613,7 +39613,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2867,
+							"id": 2865,
 							"name": "removeIf",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39629,7 +39629,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2868,
+									"id": 2866,
 									"name": "key",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39640,7 +39640,7 @@
 									}
 								},
 								{
-									"id": 2869,
+									"id": 2867,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39648,7 +39648,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								}
 							],
@@ -39682,7 +39682,7 @@
 					}
 				},
 				{
-					"id": 2870,
+					"id": 2868,
 					"name": "replace",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39691,7 +39691,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2871,
+							"id": 2869,
 							"name": "replace",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39707,7 +39707,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2872,
+									"id": 2870,
 									"name": "oldValue",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39715,11 +39715,11 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								},
 								{
-									"id": 2873,
+									"id": 2871,
 									"name": "newValue",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39727,7 +39727,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								}
 							],
@@ -39761,7 +39761,7 @@
 					}
 				},
 				{
-					"id": 2874,
+					"id": 2872,
 					"name": "replaceAll",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39770,7 +39770,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2875,
+							"id": 2873,
 							"name": "replaceAll",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39786,7 +39786,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2876,
+									"id": 2874,
 									"name": "remappingFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -39794,21 +39794,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2877,
+											"id": 2875,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2878,
+													"id": 2876,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2879,
+															"id": 2877,
 															"name": "key",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -39819,7 +39819,7 @@
 															}
 														},
 														{
-															"id": 2880,
+															"id": 2878,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -39827,11 +39827,11 @@
 															"type": {
 																"type": "reference",
 																"name": "Parameter",
-																"id": 2886
+																"id": 2884
 															}
 														},
 														{
-															"id": 2881,
+															"id": 2879,
 															"name": "map",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -39841,7 +39841,7 @@
 													"type": {
 														"type": "reference",
 														"name": "Parameter",
-														"id": 2886
+														"id": 2884
 													}
 												}
 											],
@@ -39918,7 +39918,7 @@
 					]
 				},
 				{
-					"id": 2882,
+					"id": 2880,
 					"name": "size",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39927,7 +39927,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2883,
+							"id": 2881,
 							"name": "size",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -39976,7 +39976,7 @@
 					}
 				},
 				{
-					"id": 2773,
+					"id": 2771,
 					"name": "toString",
 					"kind": 2048,
 					"kindString": "Method",
@@ -39985,7 +39985,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2774,
+							"id": 2772,
 							"name": "toString",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -40001,7 +40001,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2775,
+									"id": 2773,
 									"name": "serializerFn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -40009,21 +40009,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2776,
+											"id": 2774,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 2777,
+													"id": 2775,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 2778,
+															"id": 2776,
 															"name": "item",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -40034,7 +40034,7 @@
 																	{
 																		"type": "reference",
 																		"name": "Parameter",
-																		"id": 2886
+																		"id": 2884
 																	},
 																	{
 																		"type": "instrinct",
@@ -40091,7 +40091,7 @@
 					}
 				},
 				{
-					"id": 2884,
+					"id": 2882,
 					"name": "values",
 					"kind": 2048,
 					"kindString": "Method",
@@ -40100,7 +40100,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2885,
+							"id": 2883,
 							"name": "values",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -40116,7 +40116,7 @@
 									{
 										"type": "reference",
 										"name": "Parameter",
-										"id": 2886
+										"id": 2884
 									}
 								]
 							},
@@ -40149,46 +40149,6 @@
 						"name": "Map.values",
 						"id": 595
 					}
-				},
-				{
-					"id": 2763,
-					"name": "shape",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true,
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 2764,
-							"name": "shape",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"shortText": "Returns a pre-built ParameterMap with parameters width, height, fill, stroke, pos-x etc.",
-								"tags": [
-									{
-										"tag": "example",
-										"text": "\n  let rect = ParameterMap.shape();\n"
-									}
-								]
-							},
-							"type": {
-								"type": "reference",
-								"name": "ParameterMap",
-								"id": 2760
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "ds/maps/parameter-map.ts",
-							"line": 21,
-							"character": 14
-						}
-					]
 				}
 			],
 			"groups": [
@@ -40196,51 +40156,50 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						2788
+						2786
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2787,
-						2786
+						2785,
+						2784
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
+						2789,
+						2769,
 						2791,
-						2771,
-						2793,
-						2802,
-						2811,
-						2820,
-						2823,
-						2765,
+						2800,
+						2809,
+						2818,
+						2821,
+						2763,
+						2824,
 						2826,
-						2828,
-						2831,
-						2779,
-						2839,
-						2768,
-						2842,
+						2829,
+						2777,
+						2837,
+						2766,
+						2840,
+						2844,
 						2846,
 						2848,
 						2850,
-						2852,
-						2856,
-						2859,
-						2863,
-						2866,
-						2870,
-						2874,
+						2854,
+						2857,
+						2861,
+						2864,
+						2868,
+						2872,
 						2761,
-						2882,
-						2773,
-						2884,
-						2763
+						2880,
+						2771,
+						2882
 					]
 				}
 			],
@@ -40260,7 +40219,7 @@
 						{
 							"type": "reference",
 							"name": "Parameter",
-							"id": 2886
+							"id": 2884
 						}
 					]
 				}
@@ -40278,7 +40237,7 @@
 						{
 							"type": "reference",
 							"name": "Parameter",
-							"id": 2886
+							"id": 2884
 						}
 					]
 				},
@@ -40295,7 +40254,7 @@
 								{
 									"type": "reference",
 									"name": "Parameter",
-									"id": 2886
+									"id": 2884
 								}
 							]
 						}
@@ -61222,7 +61181,7 @@
 				2417,
 				2524,
 				2492,
-				2886,
+				2884,
 				2760,
 				2027,
 				2661,
