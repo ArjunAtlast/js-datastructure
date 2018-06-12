@@ -31,6 +31,12 @@ class ArrayList extends abstract_list_1.AbstractList {
     ensureCapacity(minCapacity) {
         this._capacity = Math.max(this._capacity, Math.floor(minCapacity));
     }
+    filter(filterFn, capacity = this._capacity) {
+        let filteredArr = this._store.filter((item, index) => {
+            return filterFn(item, index, this);
+        });
+        return new this.constructor(Math.max(filteredArr.length), ...filteredArr);
+    }
     /**
     * Replaces each element of this list with the result of applying the mapping function
     * @example

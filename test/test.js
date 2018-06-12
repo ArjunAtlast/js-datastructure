@@ -282,6 +282,9 @@ describe("Checking Components..", () => {
       expect(al.addAll([7,8,9,10],5)).to.equal(true);
       expect(al.toArray()).to.deep.equal([1,2,2.5,3,4,7,8,9,10,5,6]);
     });
+    it("filter", () => {
+      expect(al.filter(x => (x<5), 2).toArray()).to.deep.equal([1,2,2.5,3,4]);
+    });
     it("subList", () => {
       expect(al.subList(2,5).toArray()).to.deep.equal([2.5,3,4]);
     });

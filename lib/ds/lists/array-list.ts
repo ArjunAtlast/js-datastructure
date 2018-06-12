@@ -71,6 +71,29 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
   ensureCapacity(minCapacity:number):void {
     this._capacity = Math.max(this._capacity, Math.floor(minCapacity));
   }
+  
+  /**
+   * Returns a new ArrayList after filtering the items based on the filterFn 
+   * @example
+   * //arryList [1,2,3,4,5]
+   * arrayList.filter(x => (x < 4)); //returns an ArrayList [1,2,3]
+   */
+  filter(filterFn:(item:E, index?:number, list?:ArrayList<E>) => boolean):this
+    /**
+   * Returns a new ArrayList after filtering the items based on the filterFn with the given initial capacity
+   * @example
+   * //arryList [1,2,3,4,5]
+   * arrayList.filter(x => (x < 4), 5); //returns an ArrayList [1,2,3] with capacity 5
+   */
+  filter(filterFn:(item:E, index?:number, list?:ArrayList<E>) => boolean, capacity:number):this
+  filter(filterFn:(item:E, index?:number, list?:ArrayList<E>) => boolean, capacity:number=this._capacity):this {
+    let filteredArr = this._store.filter(
+      (item, index) => {
+        return filterFn(item, index, this);
+      }
+    );
+    return new (<any>this.constructor)(Math.max(filteredArr.length), ...filteredArr);
+  }
 
   /**
   * Replaces each element of this list with the result of applying the mapping function
