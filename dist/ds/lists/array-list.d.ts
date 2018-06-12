@@ -59,6 +59,13 @@ export declare class ArrayList<E> extends AbstractList<E> implements Cloneable<A
     */
     replaceAll(mappingFn: (item: E) => E): void;
     /**
+    * Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
+    * @example
+    *   //list contains [1,8,6,2,7,3,9,11]
+    *   list.subList(2,7); // returns a list containing [6, 2, 7, 3, 9]
+    */
+    subList(fromIndex: number, toIndex: number): this;
+    /**
     * Returns a shallow copy of this ArrayList instance.
     * @example
     *   let newArrayList = arrayList.clone();

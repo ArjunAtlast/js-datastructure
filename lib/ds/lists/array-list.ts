@@ -83,6 +83,16 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
     this._store = this._store.map((item:E)=>(mappingFn(item)));
   }
 
+    /**
+    * Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
+    * @example
+    *   //list contains [1,8,6,2,7,3,9,11]
+    *   list.subList(2,7); // returns a list containing [6, 2, 7, 3, 9]
+    */
+  subList(fromIndex:number, toIndex:number):this{
+    return new (<any>this.constructor)(this._capacity, ...this._store.slice(fromIndex, toIndex));
+  }
+
   /**
   * Returns a shallow copy of this ArrayList instance.
   * @example

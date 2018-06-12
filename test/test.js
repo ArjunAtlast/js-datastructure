@@ -272,7 +272,7 @@ describe("Checking Components..", () => {
     it("add", ()=> {
       expect(al.add(6)).to.equal(true);
       expect(al.add(2.5,2)).to.equal(true)
-      expect(al.toArray()).to.deep.equals([1,2,2.5,3,4,5,6]);
+      expect(al.toArray()).to.deep.equal([1,2,2.5,3,4,5,6]);
       expect(al.add(7)).to.equal(false);
     });
     it("ensureCapacity, addAll", ()=> {
@@ -280,11 +280,14 @@ describe("Checking Components..", () => {
       al.ensureCapacity(11);
       expect(al.addAll([7,8,9,10,11])).to.equal(false);
       expect(al.addAll([7,8,9,10],5)).to.equal(true);
-      expect(al.toArray()).to.deep.equals([1,2,2.5,3,4,7,8,9,10,5,6]);
+      expect(al.toArray()).to.deep.equal([1,2,2.5,3,4,7,8,9,10,5,6]);
+    });
+    it("subList", () => {
+      expect(al.subList(2,5).toArray()).to.deep.equal([2.5,3,4]);
     });
     it("replaceAll", () => {
       al.replaceAll((x)=>(x*2));
-      expect(al.toArray()).to.deep.equals([2,4,5,6,8,14,16,18,20,10,12]);
+      expect(al.toArray()).to.deep.equal([2,4,5,6,8,14,16,18,20,10,12]);
     });
     it("clone", ()=>{
       expect(al.clone()).to.deep.equal(al);
