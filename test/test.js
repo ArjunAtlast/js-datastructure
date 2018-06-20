@@ -1175,4 +1175,52 @@ describe("Checking Components..", () => {
       expect(pm.getString("width")).to.equal("0");
     })
   });
+  //Tuple
+  describe("Tuple", () => {
+    let t = new index.Tuple(1, 2);
+
+    it('x,y', () => {
+      expect(t.x).to.equal(1);
+      expect(t.y).to.equal(2);
+    });
+
+    it('contains, containsAll', () => {
+      expect(t.contains(1)).to.equal(true);
+      expect(t.contains(5)).to.equal(false);
+      expect(t.containsAll([1,2])).to.equal(true);
+      expect(t.containsAll([1,2,3])).to.equal(false);
+    });
+
+    it('size', () => {
+      expect(t.size()).to.equal(2);
+    })
+
+  });
+
+  //Relation
+  describe("Relation", () => {
+    let s1 = new index.AbstractSet(1,2,3,4);
+    let s2 = new index.AbstractSet("abc", "length", "hello", "john", "wow");
+    
+    let r1;
+    let r2;
+
+    it("constructor", () => {
+      expect(index.Relation).to.not.equal(undefined);
+      r1 = new index.Relation(s1, s2, (x,y) => (x == y.length));
+      r2 = new index.Relation(s1, s1, (x,y) => (y == 2*x));
+      expect(r1).to.be.an.instanceof(index.Relation);
+      expect(r2).to.be.an.instanceof(index.Relation);
+    });
+
+    it('set', () => {
+      expect(r2.set.toArray().map(i => i._store)).to.deep.equal([[1,2],[2,4]]);
+    });
+
+    it('matrix', () => {
+      expect(r2.matrix.toArray()).to.deep.equal([[0,1,0,0],[0,0,0,1],[0,0,0,0],[0,0,0,0]]);
+    });
+
+  });
+
 });

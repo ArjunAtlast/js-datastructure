@@ -13,9 +13,12 @@ export {Tree} from "./interfaces/tree";
 export {BinaryTree} from "./interfaces/binary-tree";
 export {Table} from "./interfaces/table";
 export {Matrix, MatrixRow, MatrixColumn} from "./interfaces/matrix";
+export {ImmutableCollection} from "./interfaces/immutable-collection";
+export {ImmutableList} from "./interfaces/immutable-list";
 //classes
 export {Iterator} from "./classes/iterator";
 export {ListIterator} from "./classes/list-iterator";
+export {Relation} from "./classes/relation";
 
 //datastructures
 export {Stack} from "./ds/stack";
@@ -28,6 +31,7 @@ export {AbstractMap} from "./ds/abstract/abstract-map";
 export {AbstractGraph} from "./ds/abstract/abstract-graph";
 export {AbstractBinaryTree} from "./ds/abstract/abstract-binary-tree";
 export {AbstractTable} from "./ds/abstract/abstract-table";
+export {AbstractImmutableCollection} from "./ds/abstract/abstract-immutable-collection";
 
 export {ArrayList} from "./ds/lists/array-list";
 export {PriorityQueue} from "./ds/queues/priority-queue";
@@ -44,3 +48,4 @@ export {NumberMatrix, NumberMatrixRow, NumberMatrixColumn} from "./ds/matrices/n
 export {SquareMatrix} from "./ds/matrices/square-matrix";
 export {Rope, RopeNode} from "./ds/trees/rope";
 export {ParameterMap, Parameter} from "./ds/maps/parameter-map";
+export {Tuple} from "./ds/tuple";
