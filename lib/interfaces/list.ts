@@ -38,6 +38,10 @@ export interface List<E> extends Collection<E> {
   */
   listIterator(index:number):ListIterator<E>;
   /**
+   * Returns the median of the list
+  */
+  median(): E | undefined;
+  /**
     Removes the element at the specified position in this list.
   */
   removeAt(index:number):E|undefined;
@@ -48,13 +52,13 @@ export interface List<E> extends Collection<E> {
   /**
     Sorts this list according to the compareFn
   */
-  sort(compareFn:(x:E,y:E)=>number):void;
+  sort(compareFn:(x:E,y:E)=>number):this;
   /**
     Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
   */
-  subList(fromIndex:number, toIndex:number):List<E>;
+  subList(fromIndex:number, toIndex:number):this;
   /**
   * Reverse the list
   */
-  reverse():void;
+  reverse():this;
 }
