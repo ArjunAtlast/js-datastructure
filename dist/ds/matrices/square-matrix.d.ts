@@ -58,7 +58,7 @@ export declare class SquareMatrix extends NumberMatrix {
     /**
     * Return the inverse of this matrix if any. If not it returns null.
     */
-    inverse(): this | null;
+    inverse(): this;
     /**
     * Returns the trace of this square matrix. (Trace is the sum of diagonal values of a square matrix.)
     */
