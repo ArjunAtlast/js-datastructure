@@ -27,17 +27,14 @@ export class EntryTable<R, C, V> extends AbstractTable<R, C, V> {
   /**
   * Return a subset of columns in this table based on the filter function.
   * @example
-  *   t.project((columnKey, col) => ([1,3].indexOf(columnKey)!=-1)); //project only columns 1 and 3
+  *   t.project([1,3]); //project only columns 1 and 3
   */
-  project(filterFn: (columnKey: C, col: Map<R, V|undefined>) => boolean): this {
+  project(columns: Set<C>): this {
     let et = new (<any>this.constructor)();
-    this.attributes().forEach((columnKey) => {
-      let col = this.extract(columnKey);
-      if(filterFn(columnKey, col)) {
-        col.forEach((rowKey, value)=>{
-          if(value) et.set(rowKey, columnKey, value);
-        });
-      }
+    this._store.forEach((k,v) => {
+      //find submap for each map associated with row key
+      et.add(k, v.subMap((k) => ( columns.contains(k) )));
+      
     });
     return et;
   }

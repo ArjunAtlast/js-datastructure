@@ -2,9 +2,10 @@ import { Table } from "../../interfaces/table";
 import { Map } from "../../interfaces/map";
 import { AbstractMap } from "./abstract-map";
 import { ArrayMap } from "../maps/array-map";
+import { Set } from "../../interfaces/set";
 
 export abstract class AbstractTable<R,C,V> implements Table<R,C,V> {
-  protected _store:AbstractMap<R, AbstractMap<C,V>> ;
+  protected _store:ArrayMap<R, ArrayMap<C,V>> ;
 
   constructor() {
     this._store = new ArrayMap<R, ArrayMap<C,V>>(Infinity);
@@ -25,7 +26,7 @@ export abstract class AbstractTable<R,C,V> implements Table<R,C,V> {
   *     |  0  | 01  | 02  | 03  |
   *     +-----+-----+-----+-----+
   */
-  add(rowKey:R, row:AbstractMap<C,V>):boolean {
+  add(rowKey:R, row:ArrayMap<C,V>):boolean {
     return !this._store.putIfAbsent(rowKey, row);
   }
   /**
@@ -81,9 +82,9 @@ export abstract class AbstractTable<R,C,V> implements Table<R,C,V> {
   */
   abstract select(filterFn:(key:R, row:Map<C,V>)=>boolean):Table<R,C,V>;
   /**
-  * Return a subset of columns in this table based on the filter function.
+  * Return a subset of columns in this table.
   */
-  abstract project(filterFn:(key:C, row:Map<R,V|undefined>)=>boolean):Table<R,C,V>;
+  abstract project(columns: Set<C>):Table<R,C,V>;
   /**
   * Delete an entire row from this table.
   * @example

@@ -257,7 +257,9 @@ describe("Checking Components..", () => {
     it("reverse", () => {
       l.reverse();
       expect(l.toArray()).to.deep.equal([98, 56, 41, 32, 8, 7]);
-      expect(l.toArray()).to.deep.equal([98, 56, 41, 32, 8, 7]);
+    });
+    it("median", () => {
+      expect(l.median()).to.deep.equal(32);
     });
   });
   //ArrayList
@@ -589,6 +591,11 @@ describe("Checking Components..", () => {
       am.trimToSize();
       expect(()=>{am.put("g",7)}).to.throw();
     });
+    it("subMap", () => {
+      let sm = am.subMap((k,v) => (v < 4));
+      expect(sm.values().toArray()).to.deep.equal([1,2,3]);
+      expect(sm.keySet().toArray()).to.deep.equal(["a","b","c"]);
+    });
   });
   //Dictionary
   describe("Dictionary", ()=>{
@@ -844,9 +851,9 @@ describe("Checking Components..", () => {
       expect(se.attributes().containsAll([1,2,3,4])).to.equal(true);
     });
     it("project", ()=>{
-      let pe = et.project((k, m) => (!!m.get(0)));
-      expect(pe.indexes().toArray()).to.deep.equal([0,3]);
-      expect(pe.attributes().containsAll([3,4])).to.equal(true);
+      let pe = et.project(new index.AbstractSet(1,2));
+      expect(pe.indexes().toArray()).to.deep.equal([0,2,3]);
+      expect(pe.attributes().toArray()).to.deep.equal([1,2]);
     });
   });
   //DataTable
@@ -880,7 +887,7 @@ describe("Checking Components..", () => {
       r.put("1",'21');
       r.put("3",'23');
       expect(dt.insert(r)).to.equal(true);
-      let pe = dt.project((k, m) => (["2","3"].indexOf(k)!=-1));
+      let pe = dt.project(new index.AbstractSet("2","3"));
       expect(pe.indexes().toArray()).to.deep.equal([0,1,2]);
       expect(pe.attributes().containsAll(["2","3"])).to.equal(true);
     });

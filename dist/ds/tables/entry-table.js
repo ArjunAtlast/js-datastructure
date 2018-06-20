@@ -25,18 +25,13 @@ class EntryTable extends abstract_table_1.AbstractTable {
     /**
     * Return a subset of columns in this table based on the filter function.
     * @example
-    *   t.project((columnKey, col) => ([1,3].indexOf(columnKey)!=-1)); //project only columns 1 and 3
+    *   t.project([1,3]); //project only columns 1 and 3
     */
-    project(filterFn) {
+    project(columns) {
         let et = new this.constructor();
-        this.attributes().forEach((columnKey) => {
-            let col = this.extract(columnKey);
-            if (filterFn(columnKey, col)) {
-                col.forEach((rowKey, value) => {
-                    if (value)
-                        et.set(rowKey, columnKey, value);
-                });
-            }
+        this._store.forEach((k, v) => {
+            //find submap for each map associated with row key
+            et.add(k, v.subMap((k) => (columns.contains(k))));
         });
         return et;
     }

@@ -1,6 +1,5 @@
 import { EntryTable } from "./entry-table";
-import { AbstractMap } from "../abstract/abstract-map";
-import { Map } from "../../interfaces/map";
+import { ArrayMap } from "../maps/array-map";
 
 /**
 * An entry table with enumerable rowKeys (number) and string columnKeys.
@@ -22,7 +21,7 @@ export class DataTable<V> extends EntryTable<number,string,V> {
   *     |  0  | 0a  | 0b  | 0c  |
   *     +-----+-----+-----+-----+
   */
-  insert(row:AbstractMap<string,V>):boolean {
+  insert(row:ArrayMap<string,V>):boolean {
     return !this._store.putIfAbsent(this.num_rows(), row);
   }
 

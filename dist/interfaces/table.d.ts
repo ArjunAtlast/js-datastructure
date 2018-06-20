@@ -1,4 +1,5 @@
 import { Map } from "./map";
+import { Set } from "./set";
 export interface Table<R, C, V> {
     /**
     * Add a row to this table.
@@ -27,7 +28,7 @@ export interface Table<R, C, V> {
     /**
     * Return a subset of columns in this table based on the filter function.
     */
-    project(filterFn: (key: C, row: Map<R, V | undefined>) => boolean): Table<R, C, V>;
+    project(columns: Set<C>): Table<R, C, V>;
     /**
     * Delete an entire row from this table.
     */

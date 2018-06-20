@@ -1,8 +1,10 @@
 import { Table } from "../../interfaces/table";
 import { Map } from "../../interfaces/map";
 import { AbstractMap } from "./abstract-map";
+import { ArrayMap } from "../maps/array-map";
+import { Set } from "../../interfaces/set";
 export declare abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
-    protected _store: AbstractMap<R, AbstractMap<C, V>>;
+    protected _store: ArrayMap<R, ArrayMap<C, V>>;
     constructor();
     /**
     * Add a row to this table only if row curresponding to given key is absent.
@@ -20,7 +22,7 @@ export declare abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
     *     |  0  | 01  | 02  | 03  |
     *     +-----+-----+-----+-----+
     */
-    add(rowKey: R, row: AbstractMap<C, V>): boolean;
+    add(rowKey: R, row: ArrayMap<C, V>): boolean;
     /**
     * Replaces the value at the specified position in this table with the specified value.
     * @example
@@ -59,9 +61,9 @@ export declare abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
     */
     abstract select(filterFn: (key: R, row: Map<C, V>) => boolean): Table<R, C, V>;
     /**
-    * Return a subset of columns in this table based on the filter function.
+    * Return a subset of columns in this table.
     */
-    abstract project(filterFn: (key: C, row: Map<R, V | undefined>) => boolean): Table<R, C, V>;
+    abstract project(columns: Set<C>): Table<R, C, V>;
     /**
     * Delete an entire row from this table.
     * @example

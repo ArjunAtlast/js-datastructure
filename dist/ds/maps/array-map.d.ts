@@ -47,4 +47,11 @@ export declare class ArrayMap<K, V> extends AbstractMap<K, V> implements Cloneab
     *   arrayMap.trimToSize(); //new capacity is 3
     */
     trimToSize(): void;
+    /**
+     * Returns a sub map of the current map based on the selection function
+     * @example
+     *  //arrayMap contains [{"one":1},{"two":2},{"three":3}]
+     *  arrayMap.subMap((k,v) => (v<=2)); //returns [{"one":1},{"two":2}]
+    */
+    subMap(selectionFn: (key: K, value: V, map: this) => boolean): any;
 }

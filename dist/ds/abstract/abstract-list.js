@@ -63,6 +63,16 @@ class AbstractList extends abstract_collection_1.AbstractCollection {
         return new list_iterator_1.ListIterator(this._store, index);
     }
     /**
+     * Returns the median of this list. If the list is empty returns undefined.
+     * In case of two medians the later one is preferred.
+     * @example
+     *  //list contains [1, 2, 3, 4]
+     * list.median(); //returns 3
+     */
+    median() {
+        return this.get(Math.floor(this.size() / 2));
+    }
+    /**
     * Removes the element at the specified position in this list.
     * @example
     *   //list contains [1,2,3]
@@ -105,6 +115,7 @@ class AbstractList extends abstract_collection_1.AbstractCollection {
     */
     sort(compareFn) {
         this._store.sort(compareFn);
+        return this;
     }
     /**
     * Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
@@ -123,6 +134,7 @@ class AbstractList extends abstract_collection_1.AbstractCollection {
     */
     reverse() {
         this._store.reverse();
+        return this;
     }
 }
 exports.AbstractList = AbstractList;

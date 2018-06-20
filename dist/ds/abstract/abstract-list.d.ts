@@ -60,6 +60,14 @@ export declare class AbstractList<E> extends AbstractCollection<E> implements Li
     */
     listIterator(index?: number): ListIterator<E>;
     /**
+     * Returns the median of this list. If the list is empty returns undefined.
+     * In case of two medians the later one is preferred.
+     * @example
+     *  //list contains [1, 2, 3, 4]
+     * list.median(); //returns 3
+     */
+    median(): E | undefined;
+    /**
     * Removes the element at the specified position in this list.
     * @example
     *   //list contains [1,2,3]
@@ -94,7 +102,7 @@ export declare class AbstractList<E> extends AbstractCollection<E> implements Li
     *   }); // [1, 2, 3, 6, 7, 8, 9, 11]
     *
     */
-    sort(compareFn: (x: E, y: E) => number): void;
+    sort(compareFn: (x: E, y: E) => number): this;
     /**
     * Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
     * @example
@@ -108,5 +116,5 @@ export declare class AbstractList<E> extends AbstractCollection<E> implements Li
     *   //list contains [1,2,3,4,5]
     *   list.reverse() //now list contains [5,4,3,2,1]
     */
-    reverse(): void;
+    reverse(): this;
 }

@@ -68,4 +68,21 @@ export class ArrayMap<K,V> extends AbstractMap<K,V> implements Cloneable<ArrayMa
   trimToSize():void {
     this._capacity = this.size();
   }
+
+  /**
+   * Returns a sub map of the current map based on the selection function
+   * @example
+   *  //arrayMap contains [{"one":1},{"two":2},{"three":3}]
+   *  arrayMap.subMap((k,v) => (v<=2)); //returns [{"one":1},{"two":2}]
+  */
+  subMap(selectionFn:(key: K, value: V, map: this) => boolean) {
+    let sMap = new (<any>this.constructor)(this._capacity);
+
+    this.forEach((k,v,m) => {
+      if(selectionFn(k,v,m)) sMap.put(k,v);
+    });
+
+    return sMap;
+  }
+
 }
