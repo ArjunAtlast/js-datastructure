@@ -47,5 +47,4 @@ export {ArrayMatrix, ArrayMatrixRow, ArrayMatrixColumn} from "./ds/matrices/arra
 export {NumberMatrix, NumberMatrixRow, NumberMatrixColumn} from "./ds/matrices/number-matrix";
 export {SquareMatrix} from "./ds/matrices/square-matrix";
 export {Rope, RopeNode} from "./ds/trees/rope";
-export {ParameterMap, Parameter} from "./ds/maps/parameter-map";
 export {Tuple} from "./ds/tuple";
