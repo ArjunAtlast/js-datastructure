@@ -47,11 +47,11 @@ export declare class Rope extends AbstractBinaryTree<string> {
     /**
     * Return the character at position specified by index.
     */
-    get(index: number): string | undefined;
+    get(index: number): string;
     /**
     * Return the character at position specified by index, beginning from the specified node.
     */
-    get(index: number, node: RopeNode): string | undefined;
+    get(index: number, node: RopeNode): string;
     /**
     * Split this rope at the given position. Returns the right child after splitting.
     */

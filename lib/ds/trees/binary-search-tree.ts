@@ -52,7 +52,7 @@ export class BinarySearchTree<E> extends AbstractBinaryTree<E> {
   * @example
   *   bst.search(25);
   */
-  search(item: E): E|null {
+  search(item: E): E {
     return this.searchItem(item, this._root);
   }
 
@@ -80,7 +80,7 @@ export class BinarySearchTree<E> extends AbstractBinaryTree<E> {
     return true;
   }
 
-  protected deleteItem(item:E, node:BinaryTreeNode<E>|null):boolean {
+  protected deleteItem(item:E, node:BinaryTreeNode<E>):boolean {
     if(node === null) return false;
     else {
       if(node.label === item) {
@@ -131,7 +131,7 @@ export class BinarySearchTree<E> extends AbstractBinaryTree<E> {
     }
   }
 
-  protected searchItem(item:E, node:BinaryTreeNode<E>|null):E|null {
+  protected searchItem(item:E, node:BinaryTreeNode<E>):E {
     if(node === null) return null;
     else {
       if(node.label === item) return item;

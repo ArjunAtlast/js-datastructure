@@ -39,7 +39,7 @@ describe("Checking Components..", () => {
       expect(itr).to.be.an.instanceOf(index.Iterator);
     });
     it("next", () => {
-      expect(itr.next()).to.equal(1);
+      expect(itr.next().value).to.equal(1);
     });
     it("remove", () => {
       itr.remove();
@@ -53,11 +53,18 @@ describe("Checking Components..", () => {
     });
     it("hasNext", () => {
       expect(itr.hasNext()).to.equal(true);
-      expect(itr.next()).to.equal(2);
+      expect(itr.next().value).to.equal(2);
       expect(itr.hasNext()).to.equal(true);
-      expect(itr.next()).to.equal(3);
+      expect(itr.next().value).to.equal(3);
       expect(itr.hasNext()).to.equal(false);
-      expect(itr.next()).to.equal(undefined);
+      expect(itr.next().done).to.equal(true);
+    });
+    it("for..of", () => {
+      let index = 0;
+      for(let i of itr) {
+        expect(i).to.equal(q.toArray()[index]);
+        index++;
+      }
     });
   });
   //AbstractCollection
@@ -131,6 +138,13 @@ describe("Checking Components..", () => {
     it("iterator", () => {
       expect(ac.iterator()).to.be.an.instanceOf(index.Iterator);
     });
+    it("for..of", () => {
+      let index = 0;
+      for(let i of ac) {
+        expect(i).to.equal(ac.toArray()[index]);
+        index++;
+      }
+    })
   });
   //AbstractQueue
   describe("AbstractQueue", () => {
@@ -145,54 +159,6 @@ describe("Checking Components..", () => {
     it("poll", () => {
       expect(q.poll()).to.equal(1);
       expect(q.toArray()).to.deep.equal([2,3]);
-    });
-  });
-  //ListIterator
-  describe("ListIterator", () => {
-    var l = new index.AbstractList(1,2,3);
-    var itr = l.listIterator();
-    it("constructor", () => {
-      expect(index.ListIterator).to.not.equal(undefined);
-      expect(itr).to.be.an.instanceOf(index.ListIterator);
-    });
-    it("next", () => {
-      expect(itr.next()).to.equal(1);
-    });
-    it("add", () => {
-      itr.add(1.5);
-      expect(itr.next()).to.equal(1.5);
-    });
-    it("remove", () => {
-      itr.remove();
-      expect(l.get(1)).to.equal(2);
-    });
-    it("previous, hasPrevious", () => {
-      expect(itr.hasPrevious()).to.equal(true);
-      expect(itr.previous()).to.equal(1);
-      expect(itr.hasPrevious()).to.equal(false);
-      expect(itr.previous()).to.equal(undefined);
-    });
-    it("nextIndex, previousIndex", () => {
-      expect(itr.previousIndex()).to.equal(-1);
-      itr.next()
-      expect(itr.previousIndex()).to.equal(0);
-      expect(itr.nextIndex()).to.equal(1);
-      itr.next();
-      expect(itr.nextIndex()).to.equal(2);
-      itr.next();
-      expect(itr.nextIndex()).to.equal(-1);
-      expect(itr.next()).to.equal(undefined);
-    });
-    it("set", () => {
-      itr.set(2.5);
-      expect(itr.previous()).to.equal(2.5);
-      itr.set(2.3);
-      expect(itr.next()).to.equal(2.3);
-      itr.add(2.6);
-      expect(itr.next()).to.equal(2.6);
-      itr.remove();
-      itr.set(2.9);
-      expect(itr.previous()).to.equal(2.3);
     });
   });
   //AbstractList
@@ -250,9 +216,6 @@ describe("Checking Components..", () => {
     it("removeRange", () => {
       expect(l.removeRange(2,6)).to.deep.equal([11,16,23,27]);
       expect(l.toArray()).to.deep.equal([7,8,32,41,56,98]);
-    });
-    it("listIterator", () => {
-      expect(l.listIterator()).to.be.an.instanceOf(index.ListIterator);
     });
     it("reverse", () => {
       l.reverse();

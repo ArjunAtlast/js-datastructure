@@ -119,12 +119,12 @@ export class Rope extends AbstractBinaryTree<string> {
   /**
   * Return the character at position specified by index.
   */
-  get(index:number):string|undefined
+  get(index:number):string
   /**
   * Return the character at position specified by index, beginning from the specified node.
   */
-  get(index:number, node:RopeNode):string|undefined
-  get(index:number, node:RopeNode = this._root):string|undefined {
+  get(index:number, node:RopeNode):string
+  get(index:number, node:RopeNode = this._root):string {
     if(node.weight <= index) {
       if(node.right == null) return undefined;
       else return this.get(index - node.weight, node.right);

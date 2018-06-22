@@ -1,6 +1,5 @@
 import { AbstractMap } from "../abstract/abstract-map";
 import { Cloneable } from "../../interfaces/cloneable";
-import { Serializable } from "../../interfaces/serializable";
 import { MapEntry } from "../../interfaces/map";
 
 export class ArrayMap<K,V> extends AbstractMap<K,V> implements Cloneable<ArrayMap<K,V>> {
@@ -32,7 +31,7 @@ export class ArrayMap<K,V> extends AbstractMap<K,V> implements Cloneable<ArrayMa
   * map.put("four",4);//return undefined
   * //now map : [{"one":22},{"two":2},{"three":3},{"four":4}]
   */
-  put(key:K, value:V):V|undefined {
+  put(key:K, value:V):V {
     if(this.size()>=this._capacity){
       throw new Error(`Couldn't put item ${key}=>${value}ArrayMap Overflow`);
     }

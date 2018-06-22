@@ -92,7 +92,7 @@ export class ArrayList<E> extends AbstractList<E> implements Cloneable<ArrayList
         return filterFn(item, index, this);
       }
     );
-    return new (<any>this.constructor)(Math.max(filteredArr.length), ...filteredArr);
+    return new (<any>this.constructor)(Math.max(filteredArr.length, capacity), ...filteredArr);
   }
 
   /**

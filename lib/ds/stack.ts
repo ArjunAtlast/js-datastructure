@@ -39,7 +39,7 @@ export class Stack<T> {
   *   //Output: 7
   *   //now stack contains [1,2,3,4,5,6]
   */
-  pop():T|undefined {
+  pop():T {
     return this._store.pop();
   }
 
@@ -50,7 +50,7 @@ export class Stack<T> {
   *   console.log(stack.peek());
   *   //Output: 6 (stack does not change)
   */
-  peek():T|undefined {
+  peek():T {
     return this._store[this._store.length-1];
   }
 

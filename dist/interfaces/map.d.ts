@@ -18,15 +18,15 @@ export interface Map<K, V> {
     /**
     * Attempts to compute a mapping for the specified key and its current mapped value.
     */
-    compute(key: K, remappingFn: (key: K, value: V | undefined, map: Map<K, V>) => V | null): V | undefined;
+    compute(key: K, remappingFn: (key: K, value: V, map: Map<K, V>) => V): V;
     /**
     * If the specified key is not already associated with a value (or is mapped to null), attempts to compute its value using the given mapping function and enters it into this map.
     */
-    computeIfAbsent(key: K, remappingFn: (key: K, value: V | undefined, map: Map<K, V>) => V | null): V | undefined;
+    computeIfAbsent(key: K, remappingFn: (key: K, value: V, map: Map<K, V>) => V): V;
     /**
     * If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.
     */
-    computeIfPresent(key: K, remappingFn: (key: K, value: V, map: Map<K, V>) => V): V | undefined;
+    computeIfPresent(key: K, remappingFn: (key: K, value: V, map: Map<K, V>) => V): V;
     /**
     * Returns true if this map contains a mapping for the specified key.
     */
@@ -66,7 +66,7 @@ export interface Map<K, V> {
     /**
     * Associates the specified value with the specified key in this map.Returns the old value associated with the key or  undefined.
     */
-    put(key: K, value: V): V | undefined;
+    put(key: K, value: V): V;
     /**
     * Copies all of the mappings from the specified map to this map.
     */
@@ -74,11 +74,11 @@ export interface Map<K, V> {
     /**
     * If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns undefined, else returns the current value.
     */
-    putIfAbsent(key: K, value: V): V | undefined;
+    putIfAbsent(key: K, value: V): V;
     /**
     * Removes the mapping for a key from this map if it is present
     */
-    remove(key: K): V | undefined;
+    remove(key: K): V;
     /**
     * Removes the entry for the specified key only if it is currently mapped to the specified value.
     */

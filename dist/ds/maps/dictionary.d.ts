@@ -35,7 +35,7 @@ export declare class Dictionary<E> extends AbstractMap<string, E> implements Clo
     *   //Output
     *   //'{"a":1,"b":2,"c":3}'
     */
-    toString(serializerFn: (item: E | null) => string): string;
+    toString(serializerFn: (item: E) => string): string;
     /**
     * Return the Object from the JSON string
     * @example

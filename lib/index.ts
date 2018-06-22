@@ -17,11 +17,11 @@ export {ImmutableCollection} from "./interfaces/immutable-collection";
 export {ImmutableList} from "./interfaces/immutable-list";
 //classes
 export {Iterator} from "./classes/iterator";
-export {ListIterator} from "./classes/list-iterator";
 export {Relation} from "./classes/relation";
 
 //datastructures
 export {Stack} from "./ds/stack";
+export {AbstractIterable} from "./ds/abstract/abstract-iterable";
 export {AbstractCollection} from "./ds/abstract/abstract-collection";
 export {AbstractQueue} from "./ds/abstract/abstract-queue";
 export {AbstractList} from "./ds/abstract/abstract-list";

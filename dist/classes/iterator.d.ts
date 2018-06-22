@@ -1,5 +1,5 @@
-/** Used to iterate over Iterable objects*/
-export declare class Iterator<E> {
+/** Used to iterate over Iterable objects */
+export declare class Iterator<E> implements IterableIterator<E> {
     protected _target: E[];
     protected _index: number;
     constructor(target: E[]);
@@ -29,7 +29,7 @@ export declare class Iterator<E> {
     *   console.log((item = iterator.next());
     *   //Output 25
     */
-    next(): E | undefined;
+    next(): IteratorResult<E>;
     /**
     * Removes from the underlying Iterable the last element returned by this iterator.
     * @example
@@ -39,4 +39,8 @@ export declare class Iterator<E> {
     *   // now target contains [1,83,48]
     */
     remove(): void;
+    /**
+     * Return the iterator
+     */
+    [Symbol.iterator](): IterableIterator<E>;
 }

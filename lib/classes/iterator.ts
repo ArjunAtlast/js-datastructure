@@ -1,7 +1,5 @@
-import { Iterable } from "../interfaces/iterable";
-
-/** Used to iterate over Iterable objects*/
-export class Iterator<E> {
+/** Used to iterate over Iterable objects */
+export class Iterator<E> implements IterableIterator<E> {
   protected _target:E[];
   protected _index: number = 0;
 
@@ -45,8 +43,8 @@ export class Iterator<E> {
   *   console.log((item = iterator.next());
   *   //Output 25
   */
-  next():E|undefined {
-    return this.hasNext()?this._target[this._index++]:undefined;
+  next(): IteratorResult<E> {
+    return this.hasNext()?{ value: this._target[this._index++], done: false }:{value: null, done: true };
   }
 
   /**
@@ -59,6 +57,13 @@ export class Iterator<E> {
   */
   remove():void {
     this._target.splice(--this._index,1);
+  }
+
+  /**
+   * Return the iterator
+   */
+  [Symbol.iterator](): IterableIterator<E> {
+    return this;
   }
 
 }

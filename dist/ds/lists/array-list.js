@@ -35,7 +35,7 @@ class ArrayList extends abstract_list_1.AbstractList {
         let filteredArr = this._store.filter((item, index) => {
             return filterFn(item, index, this);
         });
-        return new this.constructor(Math.max(filteredArr.length), ...filteredArr);
+        return new this.constructor(Math.max(filteredArr.length, capacity), ...filteredArr);
     }
     /**
     * Replaces each element of this list with the result of applying the mapping function

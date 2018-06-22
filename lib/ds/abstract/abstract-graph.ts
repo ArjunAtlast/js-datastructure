@@ -73,8 +73,8 @@ export class AbstractGraph<E> implements Graph<E> {
     let it:Iterator<Vertex<E>> = this._vertices.iterator();
     while(it.hasNext()){
       let v = it.next();
-      if(v!.label === label) {
-        return this.removeVertex(v!);
+      if(v.value.label === label) {
+        return this.removeVertex(v.value);
       }
     }
     return false;
@@ -157,7 +157,7 @@ export class AbstractGraph<E> implements Graph<E> {
   *   //g:Graph<number>, v:Vertex<number>
   *   g.adjacentEdges(v);
   */
-  adjacentEdges(vertex:Vertex<E>): Set<Edge<E>>|undefined {
+  adjacentEdges(vertex:Vertex<E>): Set<Edge<E>> {
     if(!this._vertices.contains(vertex)) return undefined;
     return this._adjList.get(vertex)!;
   }
@@ -167,7 +167,7 @@ export class AbstractGraph<E> implements Graph<E> {
   *   //g:Graph<number>, v:Vertex<number>
   *   g.adjacentVertices(v);
   */
-  adjacentVertices(vertex:Vertex<E>):Set<Vertex<E>>|undefined {
+  adjacentVertices(vertex:Vertex<E>):Set<Vertex<E>> {
     if(!this._vertices.contains(vertex)) return undefined;
     return new AbstractSet<Vertex<E>>(...this._adjList.get(vertex)!.toArray().map(x=>x.end));
   }

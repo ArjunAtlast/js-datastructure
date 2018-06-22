@@ -8,19 +8,19 @@ export interface Table<R, C, V> {
     /**
     * Replaces the value at the specified position in this table with the specified value.
     */
-    set(rowKey: R, columnKey: C, value: V): V | undefined;
+    set(rowKey: R, columnKey: C, value: V): V;
     /**
     * Read an entry from this table.
     */
-    get(rowKey: R, columnKey: C): V | undefined;
+    get(rowKey: R, columnKey: C): V;
     /**
     * Read an entire row of this table.
     */
-    fetch(rowKey: R): Map<C, V> | undefined;
+    fetch(rowKey: R): Map<C, V>;
     /**
     * Read an entire column of this table.
     */
-    extract(columnKey: C): Map<R, V | undefined>;
+    extract(columnKey: C): Map<R, V>;
     /**
     * Return a subset of rows in this table based on the filter function.
     */
@@ -32,7 +32,7 @@ export interface Table<R, C, V> {
     /**
     * Delete an entire row from this table.
     */
-    delete(rowKey: R): Map<C, V> | undefined;
+    delete(rowKey: R): Map<C, V>;
     /**
     * Delete an entire row from this table based on filter function.
     */
@@ -44,5 +44,5 @@ export interface Table<R, C, V> {
     /**
     * Remove an entry from this table.
     */
-    remove(rowKey: R, columnKey: C): V | undefined;
+    remove(rowKey: R, columnKey: C): V;
 }

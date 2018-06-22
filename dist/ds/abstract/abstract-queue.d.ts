@@ -11,7 +11,7 @@ export declare class AbstractQueue<E> extends AbstractCollection<E> implements Q
     *   console.log(queue.element());
     *   //Output: 1
     */
-    element(): E | undefined;
+    element(): E;
     /**
     * Retrieves and removes the head of this queue.
     * @example
@@ -19,5 +19,5 @@ export declare class AbstractQueue<E> extends AbstractCollection<E> implements Q
     *   console.log(queue.element());
     *   //Output: 1 and queue now has elements [2,3,4]
     */
-    poll(): E | undefined;
+    poll(): E;
 }

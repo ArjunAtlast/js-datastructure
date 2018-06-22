@@ -1,13 +1,17 @@
 import { Collection } from "../../interfaces/collection";
 import { Iterator } from "../../classes/iterator";
+import { AbstractIterable } from "./abstract-iterable";
 
 /**
  An abstract implementation of Collection interface
 */
-export class AbstractCollection<T> implements Collection<T>{
+export class AbstractCollection<T> extends AbstractIterable<T> implements Collection<T>{
+  [index:number]:T;
+
   protected _store:T[] = [];
 
   constructor(...items:T[]) {
+    super();
     this._store = [...items];
   }
 
@@ -209,4 +213,5 @@ export class AbstractCollection<T> implements Collection<T>{
   iterator():Iterator<T> {
     return new Iterator<T>(this._store);
   }
+
 }

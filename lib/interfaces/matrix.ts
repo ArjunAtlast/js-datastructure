@@ -2,7 +2,7 @@ export interface Matrix<E> {
   /**
   * Read the item at the specified position in this matrix.
   */
-  get(rowIndex:number, columnIndex:number):E|undefined;
+  get(rowIndex:number, columnIndex:number):E;
 
   /**
   * Insert an item at the specified position in this matrix.

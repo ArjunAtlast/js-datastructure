@@ -90,7 +90,7 @@ export abstract class AbstractTable<R,C,V> implements Table<R,C,V> {
   * @example
   *   t.delete(0); //calling this function makes the table empty.
   */
-  delete(rowKey:R):Map<C,V>|undefined {
+  delete(rowKey:R):Map<C,V> {
     return this._store.remove(rowKey);
   }
   /**
@@ -118,7 +118,7 @@ export abstract class AbstractTable<R,C,V> implements Table<R,C,V> {
   * @example
   *   t.remove(0,3); //returns '03' and removes it from the table
   */
-  remove(rowKey:R, columnKey:C):V|undefined {
+  remove(rowKey:R, columnKey:C):V {
     let row;
     return (row = this._store.get(rowKey)) && row.remove(columnKey);
   }

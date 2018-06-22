@@ -92,12 +92,12 @@ export declare class AbstractGraph<E> implements Graph<E> {
     *   //g:Graph<number>, v:Vertex<number>
     *   g.adjacentEdges(v);
     */
-    adjacentEdges(vertex: Vertex<E>): Set<Edge<E>> | undefined;
+    adjacentEdges(vertex: Vertex<E>): Set<Edge<E>>;
     /**
     * Returns the set of vertices adjacent to the specified vertex.
     * @example
     *   //g:Graph<number>, v:Vertex<number>
     *   g.adjacentVertices(v);
     */
-    adjacentVertices(vertex: Vertex<E>): Set<Vertex<E>> | undefined;
+    adjacentVertices(vertex: Vertex<E>): Set<Vertex<E>>;
 }

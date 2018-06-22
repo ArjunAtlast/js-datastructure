@@ -1,6 +1,5 @@
 import {AbstractCollection} from "./abstract-collection";
 import { List } from "../../interfaces/list";
-import {ListIterator} from "../../classes/list-iterator";
 
 /**
  An abstract implementation of List interface
@@ -83,15 +82,6 @@ export class AbstractList<E> extends AbstractCollection<E> implements List<E>{
   */
   lastIndexOf(item: E):number {
     return this._store.lastIndexOf(item);
-  }
-
-  /**
-  * Returns a list iterator over the elements in this list
-  * @example
-  *   var listIterator = list.listIterator(); //starts at index 0
-  */
-  listIterator(index:number=0):ListIterator<E> {
-    return new ListIterator(this._store, index);
   }
 
   /**

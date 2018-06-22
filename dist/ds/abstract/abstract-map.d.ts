@@ -20,7 +20,7 @@ export declare class AbstractMap<K, V> implements Map<K, V> {
     *   map.compute(k1, (key,value,map)=>(value+11)); //returns 12
     *   //now the value changes to 12+11 -> 23
     */
-    compute(key: K, remappingFn: (key: K, value: V | undefined, map: this) => V): V | undefined;
+    compute(key: K, remappingFn: (key: K, value: V, map: this) => V): V;
     /**
     * Attempts to compute a mapping for the specified key and its current mapped value.
     * @example
@@ -28,7 +28,7 @@ export declare class AbstractMap<K, V> implements Map<K, V> {
     *   map.computeIfAbsent(k1, (key,value,map)=>(23)); //returns 12
     *   //value does not change
     */
-    computeIfAbsent(key: K, remappingFn: (key: K, value: V | undefined, map: this) => V): V | undefined;
+    computeIfAbsent(key: K, remappingFn: (key: K, value: V, map: this) => V): V;
     /**
     * Attempts to compute a mapping for the specified key and its current mapped value.
     * @example
@@ -36,7 +36,7 @@ export declare class AbstractMap<K, V> implements Map<K, V> {
     *   map.computeIfAbsent(k1, (key,value,map)=>(value+11)); //returns null
     *   //value does not change
     */
-    computeIfPresent(key: K, remappingFn: (key: K, value: V, map: this) => V): V | undefined;
+    computeIfPresent(key: K, remappingFn: (key: K, value: V, map: this) => V): V;
     /**
     * Returns true if this map contains a mapping for the specified key.
     * @example
@@ -134,7 +134,7 @@ export declare class AbstractMap<K, V> implements Map<K, V> {
     * map.put("four",4);//return undefined
     * //now map : [{"one":22},{"two":2},{"three":3},{"four":4}]
     */
-    put(key: K, value: V): V | undefined;
+    put(key: K, value: V): V;
     /**
     * Copies all of the mappings from the specified map to this map.
     * @example
@@ -150,7 +150,7 @@ export declare class AbstractMap<K, V> implements Map<K, V> {
     *   map.putIfAbsent("four",4); //return undefined (adds {"four":4} to the map)
     *   map.putIfAbsent("one",23); //return 1 (map unchanged)
     */
-    putIfAbsent(key: K, value: V): V | undefined;
+    putIfAbsent(key: K, value: V): V;
     /**
     * Removes the mapping for a key from this map if it is present.
     * @example
@@ -159,7 +159,7 @@ export declare class AbstractMap<K, V> implements Map<K, V> {
     *   //now map : [{"two":2},{"three":3}]
     *   map.remove("four"); //return undefined (map unchanged)
     */
-    remove(key: K): V | undefined;
+    remove(key: K): V;
     /**
     * Removes the entry for the specified key only if it is currently mapped to the specified value.
     * @example

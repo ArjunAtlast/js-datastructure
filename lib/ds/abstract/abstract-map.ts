@@ -29,7 +29,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.compute(k1, (key,value,map)=>(value+11)); //returns 12
   *   //now the value changes to 12+11 -> 23
   */
-	compute(key: K, remappingFn: (key: K, value: V|undefined, map: this) => V):V|undefined {
+	compute(key: K, remappingFn: (key: K, value: V, map: this) => V):V {
     let oldValue = this.get(key);
     let newValue = remappingFn(key,oldValue,this);
     if(newValue!=null) this.put(key, newValue);
@@ -43,7 +43,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.computeIfAbsent(k1, (key,value,map)=>(23)); //returns 12
   *   //value does not change
   */
-	computeIfAbsent(key: K, remappingFn: (key: K, value: V|undefined, map: this) => V):V|undefined {
+	computeIfAbsent(key: K, remappingFn: (key: K, value: V, map: this) => V):V {
     let oldValue = this.get(key);
     if(oldValue === null || oldValue === undefined){
       let newValue = remappingFn(key,oldValue,this);
@@ -59,7 +59,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.computeIfAbsent(k1, (key,value,map)=>(value+11)); //returns null
   *   //value does not change
   */
-	computeIfPresent(key: K, remappingFn: (key: K, value: V, map: this) => V):V|undefined {
+	computeIfPresent(key: K, remappingFn: (key: K, value: V, map: this) => V):V {
     let oldValue = this.get(key);
     if(oldValue !== null && oldValue !== undefined){
       let newValue = remappingFn(key,<V>oldValue,this);
@@ -214,7 +214,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   * map.put("four",4);//return undefined
   * //now map : [{"one":22},{"two":2},{"three":3},{"four":4}]
   */
-	put(key: K, value: V): V|undefined {
+	put(key: K, value: V): V {
 		if(this.containsKey(key)) {
       let oldValue = this.get(key);
       if(oldValue !== value) {
@@ -246,7 +246,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   map.putIfAbsent("four",4); //return undefined (adds {"four":4} to the map)
   *   map.putIfAbsent("one",23); //return 1 (map unchanged)
   */
-	putIfAbsent(key: K, value: V): V|undefined {
+	putIfAbsent(key: K, value: V): V {
     let oldValue = this.get(key);
 		if(!oldValue) return this.put(key, value);
     else return oldValue;
@@ -260,7 +260,7 @@ export class AbstractMap<K, V> implements Map<K, V> {
   *   //now map : [{"two":2},{"three":3}]
   *   map.remove("four"); //return undefined (map unchanged)
   */
-	remove(key: K): V|undefined {
+	remove(key: K): V {
 		if(this.containsKey(key)){
       let index = this._keys.toArray().indexOf(key);
       this._keys.remove(key);

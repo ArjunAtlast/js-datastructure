@@ -28,7 +28,7 @@ export declare class Stack<T> {
     *   //Output: 7
     *   //now stack contains [1,2,3,4,5,6]
     */
-    pop(): T | undefined;
+    pop(): T;
     /**
     * Return top of the stack (does not pop)
     * @example
@@ -36,7 +36,7 @@ export declare class Stack<T> {
     *   console.log(stack.peek());
     *   //Output: 6 (stack does not change)
     */
-    peek(): T | undefined;
+    peek(): T;
     /**
     * Return first index (from top of the stack) of an item in stack
     * @example

@@ -12,7 +12,7 @@ export class AbstractQueue<E> extends AbstractCollection<E> implements Queue<E> 
   *   console.log(queue.element());
   *   //Output: 1
   */
-  element(): E | undefined {
+  element(): E  {
 		return this._store[0];
 	}
 
@@ -23,7 +23,7 @@ export class AbstractQueue<E> extends AbstractCollection<E> implements Queue<E> 
   *   console.log(queue.element());
   *   //Output: 1 and queue now has elements [2,3,4]
   */
-	poll(): E | undefined {
+	poll(): E  {
 		return this._store.splice(0, 1)[0];
 	}
 }

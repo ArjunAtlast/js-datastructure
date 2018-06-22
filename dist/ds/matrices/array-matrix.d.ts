@@ -15,7 +15,7 @@ export declare class ArrayMatrix<E> implements Matrix<E>, Cloneable<ArrayMatrix<
     *   //  [3 4 5]
     *   matrix.get(1,1); //3
     */
-    get(rowIndex: number, columnIndex: number): E | undefined;
+    get(rowIndex: number, columnIndex: number): E;
     /**
     * Insert an item at the specified position in this matrix.
     * @example

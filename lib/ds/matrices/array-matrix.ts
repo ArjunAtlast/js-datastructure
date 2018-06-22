@@ -24,7 +24,7 @@ export class ArrayMatrix<E> implements Matrix<E>,Cloneable<ArrayMatrix<E>> {
   *   //  [3 4 5]
   *   matrix.get(1,1); //3
   */
-  get(rowIndex:number, columnIndex:number):E|undefined {
+  get(rowIndex:number, columnIndex:number):E {
     return this._store[rowIndex] && this._store[rowIndex][columnIndex];
   }
 

@@ -69,7 +69,7 @@ export declare abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
     * @example
     *   t.delete(0); //calling this function makes the table empty.
     */
-    delete(rowKey: R): Map<C, V> | undefined;
+    delete(rowKey: R): Map<C, V>;
     /**
     * Delete an entire row from this table based on filter function.
     */
@@ -91,5 +91,5 @@ export declare abstract class AbstractTable<R, C, V> implements Table<R, C, V> {
     * @example
     *   t.remove(0,3); //returns '03' and removes it from the table
     */
-    remove(rowKey: R, columnKey: C): V | undefined;
+    remove(rowKey: R, columnKey: C): V;
 }

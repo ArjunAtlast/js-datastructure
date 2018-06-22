@@ -1,11 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const iterator_1 = require("../../classes/iterator");
+const abstract_iterable_1 = require("./abstract-iterable");
 /**
  An abstract implementation of Collection interface
 */
-class AbstractCollection {
+class AbstractCollection extends abstract_iterable_1.AbstractIterable {
     constructor(...items) {
+        super();
         this._store = [];
         this._store = [...items];
     }

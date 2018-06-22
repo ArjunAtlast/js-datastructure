@@ -5,8 +5,8 @@ import { List } from "../../interfaces/list";
 */
 export declare class BinaryTreeNode<E> {
     label: E;
-    left: BinaryTreeNode<E> | null;
-    right: BinaryTreeNode<E> | null;
+    left: BinaryTreeNode<E>;
+    right: BinaryTreeNode<E>;
     constructor(label: E);
     constructor(label: E, left: BinaryTreeNode<E>, right: BinaryTreeNode<E>);
 }
@@ -14,7 +14,7 @@ export declare class BinaryTreeNode<E> {
 * Abstract Implementation of binary tree. (Note: This class cannot be used to initialize objects.)
 */
 export declare abstract class AbstractBinaryTree<E> implements BinaryTree<E> {
-    protected _root: BinaryTreeNode<E> | null;
+    protected _root: BinaryTreeNode<E>;
     constructor(label?: E);
     /**
     * Insert a new item to the binary tree.

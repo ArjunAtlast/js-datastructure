@@ -1,5 +1,4 @@
 import {Collection} from "./collection";
-import {ListIterator} from "../classes/list-iterator";
 
 /**
   Sub interface of Collection. List has much more functionalities than a collection.
@@ -34,21 +33,17 @@ export interface List<E> extends Collection<E> {
   */
   lastIndexOf(item: E):number;
   /**
-    Returns a list iterator over the elements in this list starting from the 'index'
-  */
-  listIterator(index:number):ListIterator<E>;
-  /**
    * Returns the median of the list
   */
-  median(): E | undefined;
+  median(): E;
   /**
     Removes the element at the specified position in this list.
   */
-  removeAt(index:number):E|undefined;
+  removeAt(index:number):E;
   /**
     Replaces the element at the specified position in this list with the specified element
   */
-  set(index:number, item:E):E|undefined;
+  set(index:number, item:E):E;
   /**
     Sorts this list according to the compareFn
   */

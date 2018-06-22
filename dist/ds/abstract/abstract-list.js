@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const abstract_collection_1 = require("./abstract-collection");
-const list_iterator_1 = require("../../classes/list-iterator");
 /**
  An abstract implementation of List interface
 */
@@ -53,14 +52,6 @@ class AbstractList extends abstract_collection_1.AbstractCollection {
     */
     lastIndexOf(item) {
         return this._store.lastIndexOf(item);
-    }
-    /**
-    * Returns a list iterator over the elements in this list
-    * @example
-    *   var listIterator = list.listIterator(); //starts at index 0
-    */
-    listIterator(index = 0) {
-        return new list_iterator_1.ListIterator(this._store, index);
     }
     /**
      * Returns the median of this list. If the list is empty returns undefined.

@@ -1,6 +1,5 @@
 import { AbstractCollection } from "./abstract-collection";
 import { List } from "../../interfaces/list";
-import { ListIterator } from "../../classes/list-iterator";
 /**
  An abstract implementation of List interface
 */
@@ -53,12 +52,6 @@ export declare class AbstractList<E> extends AbstractCollection<E> implements Li
     *   //Output: 3
     */
     lastIndexOf(item: E): number;
-    /**
-    * Returns a list iterator over the elements in this list
-    * @example
-    *   var listIterator = list.listIterator(); //starts at index 0
-    */
-    listIterator(index?: number): ListIterator<E>;
     /**
      * Returns the median of this list. If the list is empty returns undefined.
      * In case of two medians the later one is preferred.

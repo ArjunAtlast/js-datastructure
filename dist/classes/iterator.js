@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/** Used to iterate over Iterable objects*/
+/** Used to iterate over Iterable objects */
 class Iterator {
     constructor(target, index = 0) {
         this._index = 0;
@@ -39,7 +39,7 @@ class Iterator {
     *   //Output 25
     */
     next() {
-        return this.hasNext() ? this._target[this._index++] : undefined;
+        return this.hasNext() ? { value: this._target[this._index++], done: false } : { value: null, done: true };
     }
     /**
     * Removes from the underlying Iterable the last element returned by this iterator.
@@ -51,6 +51,12 @@ class Iterator {
     */
     remove() {
         this._target.splice(--this._index, 1);
+    }
+    /**
+     * Return the iterator
+     */
+    [Symbol.iterator]() {
+        return this;
     }
 }
 exports.Iterator = Iterator;

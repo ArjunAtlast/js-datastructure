@@ -6,13 +6,13 @@ exports.Edge = graph_1.Edge;
 //classes
 var iterator_1 = require("./classes/iterator");
 exports.Iterator = iterator_1.Iterator;
-var list_iterator_1 = require("./classes/list-iterator");
-exports.ListIterator = list_iterator_1.ListIterator;
 var relation_1 = require("./classes/relation");
 exports.Relation = relation_1.Relation;
 //datastructures
 var stack_1 = require("./ds/stack");
 exports.Stack = stack_1.Stack;
+var abstract_iterable_1 = require("./ds/abstract/abstract-iterable");
+exports.AbstractIterable = abstract_iterable_1.AbstractIterable;
 var abstract_collection_1 = require("./ds/abstract/abstract-collection");
 exports.AbstractCollection = abstract_collection_1.AbstractCollection;
 var abstract_queue_1 = require("./ds/abstract/abstract-queue");

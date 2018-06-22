@@ -62,8 +62,8 @@ class AbstractGraph {
         let it = this._vertices.iterator();
         while (it.hasNext()) {
             let v = it.next();
-            if (v.label === label) {
-                return this.removeVertex(v);
+            if (v.value.label === label) {
+                return this.removeVertex(v.value);
             }
         }
         return false;

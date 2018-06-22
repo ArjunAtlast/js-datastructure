@@ -7,12 +7,12 @@ import { AbstractList } from "./abstract-list";
 */
 export class BinaryTreeNode<E> {
   label: E;
-  left: BinaryTreeNode<E>|null;
-  right: BinaryTreeNode<E>|null;
+  left: BinaryTreeNode<E>;
+  right: BinaryTreeNode<E>;
 
   constructor(label:E)
   constructor(label:E, left:BinaryTreeNode<E>, right:BinaryTreeNode<E>)
-  constructor(label:E, left:BinaryTreeNode<E>|null=null, right:BinaryTreeNode<E>|null=null) {
+  constructor(label:E, left:BinaryTreeNode<E>=null, right:BinaryTreeNode<E>=null) {
     this.label = label;
     this.left = left;
     this.right = right;
@@ -23,7 +23,7 @@ export class BinaryTreeNode<E> {
 * Abstract Implementation of binary tree. (Note: This class cannot be used to initialize objects.)
 */
 export abstract class AbstractBinaryTree<E> implements BinaryTree<E> {
-  protected _root:BinaryTreeNode<E>|null;
+  protected _root:BinaryTreeNode<E>;
 
   constructor(label?:E) {
     this._root = label?new BinaryTreeNode<E>(label):null;

@@ -29,7 +29,7 @@ export declare class BinarySearchTree<E> extends AbstractBinaryTree<E> {
     * @example
     *   bst.search(25);
     */
-    search(item: E): E | null;
+    search(item: E): E;
     /**
     * Returns the compare function used to order the elements in this BST.
     * @example
@@ -37,9 +37,9 @@ export declare class BinarySearchTree<E> extends AbstractBinaryTree<E> {
     */
     comparator(): (x: E, y: E) => number;
     protected insertItem(item: E, node: BinaryTreeNode<E>): boolean;
-    protected deleteItem(item: E, node: BinaryTreeNode<E> | null): boolean;
+    protected deleteItem(item: E, node: BinaryTreeNode<E>): boolean;
     protected remove(node: BinaryTreeNode<E>): void;
-    protected searchItem(item: E, node: BinaryTreeNode<E> | null): E | null;
+    protected searchItem(item: E, node: BinaryTreeNode<E>): E;
     protected inorderSuccessor(node: BinaryTreeNode<E>): BinaryTreeNode<E>;
     protected inorderPredecessor(node: BinaryTreeNode<E>): BinaryTreeNode<E>;
     protected deepestLeft(node: BinaryTreeNode<E>): BinaryTreeNode<E>;
