@@ -2,14 +2,12 @@ import { AbstractMap } from "../abstract/abstract-map";
 import { AbstractSet } from "../abstract/abstract-set";
 import { Serializable } from "../../interfaces/serializable";
 import { Cloneable } from "../../interfaces/cloneable";
-import { MapEntry } from "../../interfaces/map";
 import { Set } from "../../interfaces/set";
 
 /**
   A Map whose keys are always of string type.
 */
 export class Dictionary<E> extends AbstractMap<string, E> implements Cloneable<Dictionary<E>>, Serializable {
-
   /**
   * Returns the number occurances of an item in the dictionary
   * @example

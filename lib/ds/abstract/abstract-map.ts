@@ -3,6 +3,7 @@ import {AbstractList} from "./abstract-list";
 import {AbstractSet} from "./abstract-set";
 
 export class AbstractMap<K, V> implements Map<K, V> {
+
   protected _values: AbstractList<V>;
   protected _keys: AbstractSet<K>;
 

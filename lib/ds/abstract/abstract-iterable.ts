@@ -1,10 +1,10 @@
 import { Iterable } from "../../interfaces/iterable";
 import { Iterator } from "../../classes/iterator";
-import { Collection } from "../../interfaces/collection";
 
 export abstract class AbstractIterable<E> implements Iterable<E> {
+    [index:number]:E;
 
-    abstract forEach(action:(item:E, index:number, collection:Collection<E>)=>void): void;
+    abstract forEach(action:(item:E, index:number, collection:Iterable<E>)=>void): void;
 
     abstract iterator(): Iterator<E>;
 
