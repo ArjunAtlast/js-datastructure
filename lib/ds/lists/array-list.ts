@@ -1,6 +1,5 @@
 import { AbstractList } from "../abstract/abstract-list";
 import { Cloneable } from "../../interfaces/cloneable";
-import { List } from "../../interfaces/list";
 import { Serializable } from "../../interfaces/serializable";
 
 /**

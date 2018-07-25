@@ -214,4 +214,11 @@ export class AbstractCollection<T> extends AbstractIterable<T> implements Collec
     return new Iterator<T>(this._store);
   }
 
+  /**
+   * Return the iterator
+   */
+  [Symbol.iterator](): IterableIterator<T> {
+    return this.iterator();
+  }
+
 }

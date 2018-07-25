@@ -1,6 +1,3 @@
-import { Iterable } from "./iterable";
-import { Iterator } from "../classes/iterator";
-
 /** Collection is a set of elements of same type.*/
 export interface Collection<T> extends Iterable<T> {
   /**
