@@ -1,4 +1,3 @@
-export { Iterable } from "./interfaces/iterable";
 export { Cloneable } from "./interfaces/cloneable";
 export { Collection } from "./interfaces/collection";
 export { Queue } from "./interfaces/queue";

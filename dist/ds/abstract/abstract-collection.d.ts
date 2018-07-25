@@ -130,4 +130,8 @@ export declare class AbstractCollection<T> extends AbstractIterable<T> implement
     *   var iterator = collection.iterator(); //returns an Iterator for the collection
     */
     iterator(): Iterator<T>;
+    /**
+     * Return the iterator
+     */
+    [Symbol.iterator](): IterableIterator<T>;
 }

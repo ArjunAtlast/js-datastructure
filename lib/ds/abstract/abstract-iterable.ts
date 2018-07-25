@@ -1,4 +1,3 @@
-import { Iterable } from "../../interfaces/iterable";
 import { Iterator } from "../../classes/iterator";
 
 export abstract class AbstractIterable<E> implements Iterable<E> {

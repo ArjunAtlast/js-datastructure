@@ -1,3 +1,5 @@
+import { Iterator } from "../classes/iterator";
+
 /** Collection is a set of elements of same type.*/
 export interface Collection<T> extends Iterable<T> {
   /**
@@ -56,4 +58,8 @@ export interface Collection<T> extends Iterable<T> {
     Performs an action for each item in this collection.
   */
   forEach(action:(item:T, index:number, collection:Collection<T>)=>void):void;
+  /**
+   * iterator
+   */
+  iterator(): Iterator<T>;
 }

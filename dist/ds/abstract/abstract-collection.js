@@ -195,5 +195,11 @@ class AbstractCollection extends abstract_iterable_1.AbstractIterable {
     iterator() {
         return new iterator_1.Iterator(this._store);
     }
+    /**
+     * Return the iterator
+     */
+    [Symbol.iterator]() {
+        return this.iterator();
+    }
 }
 exports.AbstractCollection = AbstractCollection;
