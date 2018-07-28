@@ -17535,7 +17535,8 @@
 												}
 											]
 										}
-									}
+									},
+									"defaultValue": " (item:E) => (JSON.stringify(item))"
 								}
 							],
 							"type": {
@@ -29324,7 +29325,8 @@
 												}
 											]
 										}
-									}
+									},
+									"defaultValue": " (item:E) => (JSON.stringify(item))"
 								}
 							],
 							"type": {
@@ -34122,7 +34124,8 @@
 												}
 											]
 										}
-									}
+									},
+									"defaultValue": " (item:E) => (JSON.stringify(item))"
 								}
 							],
 							"type": {
@@ -39702,7 +39705,8 @@
 												}
 											]
 										}
-									}
+									},
+									"defaultValue": " (item:E) => (JSON.stringify(item))"
 								}
 							],
 							"type": {
@@ -47457,7 +47461,8 @@
 												}
 											]
 										}
-									}
+									},
+									"defaultValue": " (item:E) => (JSON.stringify(item))"
 								}
 							],
 							"type": {
