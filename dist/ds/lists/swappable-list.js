@@ -74,7 +74,7 @@ class SwappableList extends abstract_list_1.AbstractList {
     *   //Output
     *   //"[1,2,3,4]"
     */
-    toString(serializerFn) {
+    toString(serializerFn = (item) => (JSON.stringify(item))) {
         return "[" + this._store.map((item) => {
             return serializerFn(item);
         }).join(",") + "]";

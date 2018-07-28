@@ -48,7 +48,7 @@ export declare class SwappableList<E> extends AbstractList<E> implements Cloneab
     *   //Output
     *   //"[1,2,3,4]"
     */
-    toString(serializerFn: (item: E) => string): string;
+    toString(serializerFn?: (item: E) => string): string;
     /**
     * Return the Object from the JSON string
     * @example

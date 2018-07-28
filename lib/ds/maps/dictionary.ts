@@ -58,7 +58,7 @@ export class Dictionary<E> extends AbstractMap<string, E> implements Cloneable<D
   *   //Output
   *   //'{"a":1,"b":2,"c":3}'
   */
-  toString(serializerFn: (item: E) => string): string {
+  toString(serializerFn: (item: E) => string = (item:E) => (JSON.stringify(item))): string {
     let ret:string[] = [];
     this.forEach((key, value, map)=>{
       ret.push(`"${key}":${serializerFn(value)}`);

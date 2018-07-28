@@ -100,7 +100,7 @@ export declare class ArrayList<E> extends AbstractList<E> implements Cloneable<A
     *   //Output
     *   //"[1,2,3,4]"
     */
-    toString(serializerFn: (item: E) => string): string;
+    toString(serializerFn?: (item: E) => string): string;
     /**
     * Return the Object from the JSON string
     * @example

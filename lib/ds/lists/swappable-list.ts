@@ -79,7 +79,7 @@ export class SwappableList<E> extends AbstractList<E> implements Cloneable<Swapp
   *   //Output
   *   //"[1,2,3,4]"
   */
-  toString(serializerFn:(item:E)=>string): string {
+  toString(serializerFn:(item:E)=>string = (item:E) => (JSON.stringify(item))): string {
     return "["+this._store.map((item:E) => {
       return serializerFn(item);
     }).join(",")+"]";

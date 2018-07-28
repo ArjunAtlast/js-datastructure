@@ -55,7 +55,7 @@ class Dictionary extends abstract_map_1.AbstractMap {
     *   //Output
     *   //'{"a":1,"b":2,"c":3}'
     */
-    toString(serializerFn) {
+    toString(serializerFn = (item) => (JSON.stringify(item))) {
         let ret = [];
         this.forEach((key, value, map) => {
             ret.push(`"${key}":${serializerFn(value)}`);
